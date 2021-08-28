@@ -6,10 +6,12 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D Rd;
     private Vector3 MoveDie;
-    private const float MoveSpeed = 30f;
-        
+    private const float MoveSpeed = 5f;
+    private Animator animator;
+
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         Rd = GetComponent<Rigidbody2D>();
     }
     
@@ -17,10 +19,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Rd.MoveRotation(0);
         float MoveX = 0f;
         float MoveY = 0f;
         
+        Rd.MoveRotation(0);
+
         if (Input.GetKey(KeyCode.W))
         {
             MoveY = +1f;
@@ -39,6 +42,11 @@ public class Player : MonoBehaviour
         }
         
         MoveDie = new Vector3(MoveX,MoveY).normalized;
+        
+        animator.SetFloat("MoveX",MoveX);
+        animator.SetFloat("MoveY",MoveY);
+        animator.SetFloat("Speed",MoveDie.sqrMagnitude);
+        
     }
 
     private void FixedUpdate()
