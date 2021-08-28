@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private LayerMask dashLayerMask;
     private Rigidbody2D Rd;
     private Vector3 MoveDie;
     private const float MoveSpeed = 5f;
     private Animator animator;
+    private bool isDashButtonDown;
 
     private void Awake()
     {
@@ -46,11 +48,32 @@ public class Player : MonoBehaviour
         animator.SetFloat("MoveX",MoveX);
         animator.SetFloat("MoveY",MoveY);
         animator.SetFloat("Speed",MoveDie.sqrMagnitude);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isDashButtonDown = true;
+        }
         
     }
 
     private void FixedUpdate()
     {
         Rd.velocity = MoveDie * MoveSpeed;
+
+        if (isDashButtonDown == true)
+        {
+            float dashAmount = 3f;
+
+            Vector3 dashPoint = transform.position + MoveDie * dashAmount;
+
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, dashAmount,dashLayerMask);
+            if (raycastHit2D.collider != null)
+            {
+                dashPoint = raycastHit2D.point;
+            }
+            
+            Rd.MovePosition(dashPoint);
+            isDashButtonDown = false;
+        }
     }
 }
