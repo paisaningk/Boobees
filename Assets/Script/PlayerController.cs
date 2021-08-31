@@ -2,7 +2,7 @@
 
 namespace Assets.Script
 {
-    public class Player : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [SerializeField] private LayerMask dashLayerMask;
         private Rigidbody2D Rd;
