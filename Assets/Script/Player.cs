@@ -21,8 +21,8 @@ namespace Assets.Script
         // Update is called once per frame
         private void Update()
         {
-            float MoveX = 0f;
-            float MoveY = 0f;
+            float MoveX = 0;
+            float MoveY = 0;
         
             Rd.MoveRotation(0);
 
@@ -47,7 +47,7 @@ namespace Assets.Script
         
             animator.SetFloat("MoveX",MoveX);
             animator.SetFloat("MoveY",MoveY);
-            animator.SetFloat("Speed",MoveDie.sqrMagnitude);
+            animator.SetFloat("Speed",MoveDie.sqrMagnitude); ;
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
