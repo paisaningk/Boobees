@@ -7,9 +7,12 @@ namespace Assets.Script
         [SerializeField] private LayerMask dashLayerMask;
         private Rigidbody2D Rd;
         private Vector3 MoveDie;
-        private const float MoveSpeed = 5f;
         private Animator animator;
         private bool isDashButtonDown;
+        
+        //ปรับได้
+        private const float MoveSpeed = 5f;
+        float dashAmount = 3f;
 
         private void Awake()
         {
@@ -42,6 +45,11 @@ namespace Assets.Script
             {
                 MoveX = +1f;
             }
+
+            if (Input.GetMouseButton(0))
+            {
+                Attack();
+            }
         
             MoveDie = new Vector3(MoveX,MoveY).normalized;
         
@@ -62,8 +70,6 @@ namespace Assets.Script
 
             if (isDashButtonDown == true)
             {
-                float dashAmount = 3f;
-
                 Vector3 dashPoint = transform.position + MoveDie * dashAmount;
 
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, dashAmount,dashLayerMask);
@@ -71,10 +77,14 @@ namespace Assets.Script
                 {
                     dashPoint = raycastHit2D.point;
                 }
-            
                 Rd.MovePosition(dashPoint);
                 isDashButtonDown = false;
             }
+        }
+
+        private void Attack()
+        {
+            print($"Attack");
         }
     }
 }

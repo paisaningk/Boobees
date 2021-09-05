@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -227,10 +228,10 @@ GameObject:
   m_Component:
   - component: {fileID: 817538183}
   - component: {fileID: 817538182}
-  - component: {fileID: 817538184}
   - component: {fileID: 817538185}
   - component: {fileID: 817538186}
   - component: {fileID: 817538187}
+  - component: {fileID: 817538184}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -370,7 +371,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0065136254, y: -0.14420485}
+  m_Offset: {x: 0.0065136254, y: -0.20608318}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -381,7 +382,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.79017013, y: 1.4116445}
+  m_Size: {x: 0.79017013, y: 1.2878878}
   m_EdgeRadius: 0
 --- !u!1001 &953031362
 PrefabInstance:
@@ -692,8 +693,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -484206163
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e8a0d69fe99881146be287b72513f2de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -788,8 +789,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -738736245
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
