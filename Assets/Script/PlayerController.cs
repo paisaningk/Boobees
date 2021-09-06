@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Assets.Script
 {
@@ -6,10 +7,12 @@ namespace Assets.Script
     {
         [SerializeField] private LayerMask dashLayerMask;
         private Rigidbody2D Rd;
+        private Vector3 Walk;
         private Vector3 MoveDie;
         private Animator animator;
+        private bool IsAttacking;
         private bool isDashButtonDown;
-        
+
         //ปรับได้
         private const float MoveSpeed = 5f;
         float dashAmount = 3f;
@@ -24,38 +27,27 @@ namespace Assets.Script
         // Update is called once per frame
         private void Update()
         {
-            float MoveX = 0;
-            float MoveY = 0;
-        
-            Rd.MoveRotation(0);
-
-            if (Input.GetKey(KeyCode.W))
-            {
-                MoveY = +1f;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                MoveY = -1f;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                MoveX = -1f;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                MoveX = +1f;
-            }
+            Walk = Vector3.zero;
+            Walk.x = Input.GetAxisRaw("Horizontal");
+            Walk.y = Input.GetAxisRaw("Vertical");
 
             if (Input.GetMouseButton(0))
             {
                 Attack();
             }
         
-            MoveDie = new Vector3(MoveX,MoveY).normalized;
-        
-            animator.SetFloat("MoveX",MoveX);
-            animator.SetFloat("MoveY",MoveY);
-            animator.SetFloat("Speed",MoveDie.sqrMagnitude); ;
+            MoveDie = Walk.normalized;
+
+            if (Walk != Vector3.zero)
+            {
+                animator.SetFloat("MoveX",Walk.x);
+                animator.SetFloat("MoveY",Walk.y);
+                animator.SetBool("Walking",true); ;
+            }
+            else
+            {
+                animator.SetBool("Walking",false); ;
+            }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -84,7 +76,20 @@ namespace Assets.Script
 
         private void Attack()
         {
+            StartCoroutine(TimerRoutine());
+            animator.SetBool("Attacking",true);
             print($"Attack");
+
+        }
+        
+        private IEnumerator TimerRoutine()
+        {
+            //code can be executed anywhere here before this next statement 
+            yield return new WaitForSeconds(0.4f); //code pauses for 5 seconds
+            animator.SetBool("Attacking",false);
+            print($"Attack false");
+            //code resumes after the 5 seconds and exits if there is nothing else to run
+ 
         }
     }
 }
