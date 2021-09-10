@@ -15,10 +15,10 @@ TagManager:
   - 
   - wall
   - Obj
-  - 
-  - 
-  - 
-  - 
+  - Playerhitbox
+  - PlayerAttack
+  - Enemyhitbox
+  - EnemyAttack
   - 
   - 
   - 

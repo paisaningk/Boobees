@@ -78,8 +78,7 @@ namespace Assets.Script
         {
             StartCoroutine(TimerRoutine());
             animator.SetBool("Attacking",true);
-            print($"Attack");
-
+            //print($"Attack");
         }
         
         private IEnumerator TimerRoutine()
@@ -87,7 +86,7 @@ namespace Assets.Script
             //code can be executed anywhere here before this next statement 
             yield return new WaitForSeconds(0.2f); //code pauses for 5 seconds
             animator.SetBool("Attacking",false);
-            print($"Attack false");
+            //print($"Attack false");
             //code resumes after the 5 seconds and exits if there is nothing else to run
  
         }
