@@ -11,7 +11,7 @@ namespace Assets.Script.Base
         private int hp;
         private int Atk;
         private float Speed;
-    
+        
         public void Start()
         {
             name = Player.Name;
