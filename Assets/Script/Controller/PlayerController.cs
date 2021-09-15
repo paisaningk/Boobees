@@ -6,12 +6,11 @@ namespace Assets.Script
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private LayerMask dashLayerMask;
+        private PlayerInputAction playerInput;
         private Rigidbody2D Rd;
-        private Vector3 Walk;
         private Vector3 MoveDie;
         private Animator animator;
         private bool IsAttacking;
-        private bool isDashButtonDown;
 
         //ปรับได้
         private const float MoveSpeed = 5f;
@@ -21,57 +20,29 @@ namespace Assets.Script
         {
             animator = GetComponent<Animator>();
             Rd = GetComponent<Rigidbody2D>();
+            playerInput = new PlayerInputAction();
+            playerInput.PlayerAction.Attack.performed += context => Attack();
+            playerInput.PlayerAction.Dash.performed += context => Dash();
+            OnEnable();
         }
-    
 
-        // Update is called once per frame
         private void Update()
         {
-            Walk = Vector3.zero;
-            Walk.x = Input.GetAxisRaw("Horizontal");
-            Walk.y = Input.GetAxisRaw("Vertical");
-
-            if (Input.GetMouseButton(0))
+            var walk = playerInput.PlayerAction.Move.ReadValue<Vector2>();
+            
+            MoveDie = walk.normalized;
+            
+            if (walk != Vector2.zero)
             {
-                Attack();
-            }
-        
-            MoveDie = Walk.normalized;
-
-            if (Walk != Vector3.zero)
-            {
-                animator.SetFloat("MoveX",Walk.x);
-                animator.SetFloat("MoveY",Walk.y);
+                animator.SetFloat("MoveX",walk.x);
+                animator.SetFloat("MoveY",walk.y);
                 animator.SetBool("Walking",true); ;
             }
             else
             {
                 animator.SetBool("Walking",false); ;
             }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                isDashButtonDown = true;
-            }
-        
-        }
-
-        private void FixedUpdate()
-        {
             Rd.velocity = MoveDie * MoveSpeed;
-
-            if (isDashButtonDown == true)
-            {
-                Vector3 dashPoint = transform.position + MoveDie * dashAmount;
-
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, dashAmount,dashLayerMask);
-                if (raycastHit2D.collider != null)
-                {
-                    dashPoint = raycastHit2D.point;
-                }
-                Rd.MovePosition(dashPoint);
-                isDashButtonDown = false;
-            }
         }
 
         private void Attack()
@@ -79,6 +50,18 @@ namespace Assets.Script
             StartCoroutine(TimerRoutine());
             animator.SetBool("Attacking",true);
             //print($"Attack");
+        }
+
+        private void Dash()
+        {
+            Vector3 dashPoint = transform.position + MoveDie * dashAmount;
+
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, dashAmount,dashLayerMask);
+            if (raycastHit2D.collider != null)
+            {
+                dashPoint = raycastHit2D.point;
+            }
+            Rd.MovePosition(dashPoint);
         }
         
         private IEnumerator TimerRoutine()
@@ -89,6 +72,16 @@ namespace Assets.Script
             //print($"Attack false");
             //code resumes after the 5 seconds and exits if there is nothing else to run
  
+        }
+        
+        private void OnEnable()
+        {
+            playerInput.Enable();
+        }
+
+        private void OnDisable()
+        {
+            playerInput.Disable();
         }
     }
 }
