@@ -5,17 +5,17 @@ namespace Assets.Script.Base
 {
     public class EnemyCharacter : MonoBehaviour
     {
-        [SerializeField] private CharacterSo enemyCharacterSo;
+        [SerializeField] private CharacterSO enemyCharacterSo;
     
-        private string name;
-        private int hp;
+        private string Name;
+        private int Hp;
         private int Atk;
         private float Speed;
         
         public void Start()
         {
-            name = enemyCharacterSo.Name;
-            hp = enemyCharacterSo.MaxHp;
+            Name = enemyCharacterSo.Name;
+            Hp = enemyCharacterSo.MaxHp;
             Atk = enemyCharacterSo.Atk;
             Speed = enemyCharacterSo.Speed;
             PrintAll();
@@ -24,8 +24,8 @@ namespace Assets.Script.Base
         public void PrintAll()
         {
             Debug.Log("Enemy");
-            Debug.Log($"name:{name}");
-            Debug.Log($"HP:{hp}");
+            Debug.Log($"name:{Name}");
+            Debug.Log($"HP:{Hp}");
             Debug.Log($"ATK:{Atk}");
             Debug.Log($"Speed:{Speed}");
         }
@@ -33,8 +33,8 @@ namespace Assets.Script.Base
         private void OnTriggerEnter2D(Collider2D other)
         {
             Debug.Log("hit");
-            hp -= 100;
-            if (hp <= 0)
+            Hp -= 100;
+            if (Hp <= 0)
             {
                gameObject.SetActive(false); 
             }

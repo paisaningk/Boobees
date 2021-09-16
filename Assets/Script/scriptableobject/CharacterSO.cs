@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Assets.Script.scriptableobject
 {
-    [CreateAssetMenu(menuName = "SO/CharacterSo")]
-    public class CharacterSo : ScriptableObject
+    [CreateAssetMenu(menuName = "CharacterSO")]
+    public class CharacterSO : ScriptableObject
     {
         public string Name;
         public int MaxHp;

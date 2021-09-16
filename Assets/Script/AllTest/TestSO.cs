@@ -5,17 +5,17 @@ namespace Assets.Script
 {
     public class TestSO : MonoBehaviour
     {
-        [SerializeField]private CharacterSo adc;
+        [SerializeField]private CharacterSO adc;
 
-        private string name;
-        private int hp;
+        private string Name;
+        private int Hp;
         private int Atk;
         private float Speed;
 
         public void Start()
         {
-            name = adc.Name;
-            hp = adc.MaxHp;
+            Name = adc.Name;
+            Hp = adc.MaxHp;
             Atk = adc.Atk;
             Speed = adc.Speed;
         }
@@ -23,7 +23,7 @@ namespace Assets.Script
         public void Update()
         {
             //adc.Print();
-            Debug.Log(hp);
+            Debug.Log(Hp);
         }
     }
 }
