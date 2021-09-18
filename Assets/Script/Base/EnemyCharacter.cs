@@ -9,7 +9,7 @@ namespace Assets.Script.Base
     
         private string Name;
         private int Hp;
-        private int Atk;
+        public int Atk;
         private float Speed;
         
         public void Start()
@@ -18,7 +18,7 @@ namespace Assets.Script.Base
             Hp = enemyCharacterSo.MaxHp;
             Atk = enemyCharacterSo.Atk;
             Speed = enemyCharacterSo.Speed;
-            PrintAll();
+            //PrintAll();
         }
 
         public void PrintAll()
@@ -32,11 +32,15 @@ namespace Assets.Script.Base
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("hit");
-            Hp -= 100;
-            if (Hp <= 0)
+            if (other.CompareTag("PlayerHitBox"))
             {
-               gameObject.SetActive(false); 
+                var atkPlayer = GameObject.Find("Player").GetComponent<PlayerCharacter>();
+                Hp -= atkPlayer.Atk;
+                if (Hp <= 0)
+                {
+                    gameObject.SetActive(false); 
+                }
+                Debug.Log($"{Name} have : {Hp}");
             }
         }
     }

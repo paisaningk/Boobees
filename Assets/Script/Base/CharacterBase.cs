@@ -9,7 +9,7 @@ public class CharacterBase : MonoBehaviour
     
     private string Name;
     private int Hp;
-    private int Atk;
+    public int Atk;
     private float Speed;
 
     public virtual void Setup()

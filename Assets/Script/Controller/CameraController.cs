@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Script
+namespace Assets.Script.Controller
 {
     public class CameraController : MonoBehaviour
     {

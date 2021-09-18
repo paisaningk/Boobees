@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Script
+namespace Assets.Script.Controller
 {
     public class PlayerController : MonoBehaviour
     {
@@ -36,11 +36,11 @@ namespace Assets.Script
             {
                 animator.SetFloat("MoveX",walk.x);
                 animator.SetFloat("MoveY",walk.y);
-                animator.SetBool("Walking",true); ;
+                animator.SetBool("Walking",true); 
             }
             else
             {
-                animator.SetBool("Walking",false); ;
+                animator.SetBool("Walking",false); 
             }
             Rd.velocity = MoveDie * MoveSpeed;
         }
