@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
     [SerializeField] private GameObject myPrefab;
-    private int wave;
+    [SerializeField] private TextMeshProUGUI waveText;
+    private int wave = 1;
     private int EnemyInWave = 2;
     private int Enemyspeawn = 0;
     private float nextSpawnTime;
     private float spawnDelay = 1;
+
+    private void Start()
+    {
+        SetTextWave();
+    }
 
     private void Update()
     {
@@ -34,7 +41,7 @@ public class Spawn : MonoBehaviour
         nextSpawnTime = Time.time + spawnDelay;
         Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         Enemyspeawn++;
-        Debug.Log(Enemyspeawn);
+        Debug.Log($"Spwan Enemy {Enemyspeawn} คน");
     }
 
     private bool waveend()
@@ -45,5 +52,10 @@ public class Spawn : MonoBehaviour
     private bool ShouldSpawn()
     {
         return Time.time >= nextSpawnTime;
+    }
+
+    private void SetTextWave()
+    {
+        waveText.text = $"Wave : {wave}";
     }
 }
