@@ -34,7 +34,7 @@ namespace Assets.Script.Base
         {
             if (other.CompareTag("PlayerHitBox"))
             {
-                var atkPlayer = GameObject.Find("Player").GetComponent<PlayerCharacter>();
+                var atkPlayer = GameObject.Find("Ronin Player").GetComponent<PlayerCharacter>();
                 Hp -= atkPlayer.Atk;
                 if (Hp <= 0)
                 {
