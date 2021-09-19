@@ -67,7 +67,7 @@ namespace Assets.Script.Controller
         private IEnumerator TimerRoutine()
         {
             //code can be executed anywhere here before this next statement 
-            yield return new WaitForSeconds(0.2f); //code pauses for 5 seconds
+            yield return new WaitForSeconds(0.4f); //code pauses for 5 seconds
             animator.SetBool("Attacking",false);
             //print($"Attack false");
             //code resumes after the 5 seconds and exits if there is nothing else to run

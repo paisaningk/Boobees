@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Attackt_Right
+  m_Name: PlayerRoini_Attack_Right
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -30,7 +30,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
+        time: 0.33333334
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -42,21 +42,23 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Hitbox Right
+    path: Attack Right
     classID: 61
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 06aae4ddb038e4d5db20cbfa9674d4ca, type: 3}
-    - time: 0.05
-      value: {fileID: 21300000, guid: 431ab203426d64ed7acac3c93c98b22d, type: 3}
-    - time: 0.1
-      value: {fileID: 21300000, guid: 94f37dc86c80b4bbcb69aa5196138416, type: 3}
-    - time: 0.15
-      value: {fileID: 21300000, guid: 431ab203426d64ed7acac3c93c98b22d, type: 3}
-    - time: 0.2
-      value: {fileID: 21300000, guid: 06aae4ddb038e4d5db20cbfa9674d4ca, type: 3}
+      value: {fileID: 5568151845743175453, guid: 52b84ffb5e9404a46ac9c7b2cf2ba95e,
+        type: 3}
+    - time: 0.11666667
+      value: {fileID: 5663890163309103981, guid: 52b84ffb5e9404a46ac9c7b2cf2ba95e,
+        type: 3}
+    - time: 0.21666667
+      value: {fileID: -2678481032799210562, guid: 52b84ffb5e9404a46ac9c7b2cf2ba95e,
+        type: 3}
+    - time: 0.33333334
+      value: {fileID: -1403726216225588497, guid: 52b84ffb5e9404a46ac9c7b2cf2ba95e,
+        type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -69,7 +71,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2313004924
+      path: 1224915960
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 61
@@ -83,17 +85,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 06aae4ddb038e4d5db20cbfa9674d4ca, type: 3}
-    - {fileID: 21300000, guid: 431ab203426d64ed7acac3c93c98b22d, type: 3}
-    - {fileID: 21300000, guid: 94f37dc86c80b4bbcb69aa5196138416, type: 3}
-    - {fileID: 21300000, guid: 431ab203426d64ed7acac3c93c98b22d, type: 3}
-    - {fileID: 21300000, guid: 06aae4ddb038e4d5db20cbfa9674d4ca, type: 3}
+    - {fileID: 5568151845743175453, guid: 52b84ffb5e9404a46ac9c7b2cf2ba95e, type: 3}
+    - {fileID: 5663890163309103981, guid: 52b84ffb5e9404a46ac9c7b2cf2ba95e, type: 3}
+    - {fileID: -2678481032799210562, guid: 52b84ffb5e9404a46ac9c7b2cf2ba95e, type: 3}
+    - {fileID: -1403726216225588497, guid: 52b84ffb5e9404a46ac9c7b2cf2ba95e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.21666667
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -122,7 +123,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
+        time: 0.33333334
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -134,7 +135,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Hitbox Right
+    path: Attack Right
     classID: 61
     script: {fileID: 0}
   m_EulerEditorCurves: []

@@ -6,12 +6,12 @@ namespace Assets.Script.Controller
     public class CameraController : MonoBehaviour
     {
         private Func<Vector3> getCameraPoitionFunc;
-        [SerializeField] private Transform Player;
+        [SerializeField] private GameObject Player;
         
         // Start is called before the first frame update
         void Start()
         {
-            getCameraPoitionFunc = () => Player.position;
+            getCameraPoitionFunc = () => Player.transform.position;
         }
 
         // Update is called once per frame

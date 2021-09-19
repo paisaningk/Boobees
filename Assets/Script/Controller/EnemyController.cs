@@ -12,7 +12,7 @@ namespace Assets.Script.Controller
         private void Start()
         {
             Rb = GetComponent<Rigidbody2D>();
-            player = GameObject.Find("Player").GetComponent<PlayerCharacter>().transform;
+            player = GameObject.Find("Main Camera").GetComponent<CameraController>().transform;
         }
 
         private void Update()

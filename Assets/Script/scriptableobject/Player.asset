@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: a
   MaxHp: 100
-  Atk: 10
+  Atk: 1
   Speed: 11
