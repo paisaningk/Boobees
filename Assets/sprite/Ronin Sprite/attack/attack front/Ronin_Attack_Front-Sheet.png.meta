@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -3112757320368077818
     second: Ronin_Attack_Front-Sheet_2
+  - first:
+      213: -4179628590819550193
+    second: Ronin_Attack_Front-Sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -194,6 +197,27 @@ TextureImporter:
       bones: []
       spriteID: 604c67f85b34dc4d0800000000000000
       internalID: -3112757320368077818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ronin_Attack_Front-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c5227f0f9fef5c0800000000000000
+      internalID: -4179628590819550193
       vertices: []
       indices: 
       edges: []
