@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178ef2267a93dbd4da8438b22270631f, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  MaxHp: 0
-  Atk: 0
-  Speed: 0
+  MaxHp: 100
+  Atk: 10
+  Speed: 2

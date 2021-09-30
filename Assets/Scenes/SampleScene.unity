@@ -333,52 +333,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230262501}
   m_CullTransparentMesh: 1
---- !u!1 &345352472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 345352474}
-  - component: {fileID: 345352473}
-  m_Layer: 12
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &345352473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345352472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e768bbc65d31b72449f08ae8a26d2f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPrefab: {fileID: 9159359481388322823, guid: 195cea39d7660d24abce007e28df13c9,
-    type: 3}
-  Wave: {fileID: 120657776}
---- !u!4 &345352474
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345352472}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,19 +532,22 @@ MonoBehaviour:
     SpawnTime: 2
     TypeOfEnemy:
     - {fileID: 9159359481388322823, guid: 195cea39d7660d24abce007e28df13c9, type: 3}
-    Item: []
+    Item:
+    - {fileID: 248476896050068838, guid: 2bf66564699c53044a8451a64c1e18d2, type: 3}
   - WaveName: Wave 3
     NumberOfEnemy: 15
     SpawnTime: 2
     TypeOfEnemy:
     - {fileID: 9159359481388322823, guid: 195cea39d7660d24abce007e28df13c9, type: 3}
-    Item: []
+    Item:
+    - {fileID: 248476896050068838, guid: 2bf66564699c53044a8451a64c1e18d2, type: 3}
   - WaveName: Wave 4
     NumberOfEnemy: 20
     SpawnTime: 2
     TypeOfEnemy:
     - {fileID: 9159359481388322823, guid: 195cea39d7660d24abce007e28df13c9, type: 3}
-    Item: []
+    Item:
+    - {fileID: 248476896050068838, guid: 2bf66564699c53044a8451a64c1e18d2, type: 3}
   SpawnPoint:
   - {fileID: 637697795}
   - {fileID: 691648390}
@@ -626,7 +583,7 @@ PrefabInstance:
     - target: {fileID: 8477775104798567495, guid: 5fc6e9bd52c5ff841a4e5384470e4a0d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8477775104798567495, guid: 5fc6e9bd52c5ff841a4e5384470e4a0d,
         type: 3}
@@ -930,7 +887,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1512474034
 GameObject:
@@ -1068,7 +1025,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1773763742
 PrefabInstance:
@@ -1085,7 +1042,7 @@ PrefabInstance:
     - target: {fileID: 2132391105640571617, guid: e7f550eb8127d174f80b5790c7664b73,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2132391105640571617, guid: e7f550eb8127d174f80b5790c7664b73,
         type: 3}
@@ -1299,7 +1256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833657137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.05, z: 0}
+  m_LocalPosition: {x: 5.58, y: -2.01, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7947,7 +7904,7 @@ PrefabInstance:
     - target: {fileID: 9159359481388322825, guid: 195cea39d7660d24abce007e28df13c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9159359481388322825, guid: 195cea39d7660d24abce007e28df13c9,
         type: 3}
