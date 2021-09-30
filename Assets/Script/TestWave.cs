@@ -1,5 +1,7 @@
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 namespace Assets.Script
@@ -9,8 +11,10 @@ namespace Assets.Script
     {
         public string WaveName;
         public int NumberOfEnemy;
-        public GameObject[] TypeOfEnemy;
         public float SpawnTime;
+        public GameObject[] TypeOfEnemy;
+        public GameObject[] Item;
+
     }
     public class TestWave : MonoBehaviour
     {
@@ -34,6 +38,7 @@ namespace Assets.Script
             CurrentWave = Wave[CurrentWaveNumber];
             SpawnWave();
             GameObject[] TolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            WaveText.text = $"Wave {WaveNumberText}";
             if (TolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber +1 != Wave.Length)
             {
                 NextSpawnWave();
@@ -60,10 +65,12 @@ namespace Assets.Script
 
         private void NextSpawnWave()
         {
+            var Randomitem = CurrentWave.Item[Random.Range(0, CurrentWave.Item.Length)];
+            Instantiate(Randomitem, new Vector3(0, 0), quaternion.identity);
             WaveNumberText++;
             CurrentWaveNumber++;
             CanSpawn = true;
-            WaveText.text = $"Wave {CurrentWave}";
+            
         }
     }
 }

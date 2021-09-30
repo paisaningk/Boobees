@@ -1,4 +1,5 @@
 using Assets.Script.scriptableobject;
+using Assets.Script.scriptableobject.Character;
 using UnityEngine;
 
 namespace Assets.Script.Base

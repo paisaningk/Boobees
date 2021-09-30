@@ -1,4 +1,5 @@
 ﻿using Assets.Script.scriptableobject;
+using Assets.Script.scriptableobject.Character;
 using UnityEngine;
 
 namespace Assets.Script.Base
@@ -7,10 +8,10 @@ namespace Assets.Script.Base
     {
         [SerializeField] private CharacterSO PlayerCharacterSo;
     
-        private string Name;
-        private int Hp;
+        public string Name;
+        public int Hp;
         public int Atk;
-        private float Speed;
+        public float Speed;
         
 
         public void Start()

@@ -15,6 +15,8 @@ namespace Assets.Script.Controller
         //ปรับได้
         private const float MoveSpeed = 5f;
         float dashAmount = 3f;
+        private float dashcooldowntime;
+        private float dashcooldown = 2f;
 
         private void Awake()
         {
@@ -57,14 +59,18 @@ namespace Assets.Script.Controller
 
         private void Dash()
         {
-            Vector3 dashPoint = transform.position + MoveDie * dashAmount;
-
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, dashAmount,dashLayerMask);
-            if (raycastHit2D.collider != null)
+            if (dashcooldowntime <= Time.time)
             {
-                dashPoint = raycastHit2D.point;
+                dashcooldowntime = Time.time + dashcooldown;
+                Vector3 dashPoint = transform.position + MoveDie * dashAmount;
+
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, dashAmount,dashLayerMask);
+                if (raycastHit2D.collider != null)
+                {
+                    dashPoint = raycastHit2D.point;
+                }
+                Rd.MovePosition(dashPoint);
             }
-            Rd.MovePosition(dashPoint);
         }
 
         private void AttackFinish()

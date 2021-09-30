@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea91e71a58608243b4236919f390779, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: 178ef2267a93dbd4da8438b22270631f, type: 3}
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  Name: a
-  MaxHp: 1000000
-  Atk: 10
-  Speed: 11
+  MaxHp: 0
+  Atk: 0
+  Speed: 0

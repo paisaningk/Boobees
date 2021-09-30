@@ -568,24 +568,29 @@ MonoBehaviour:
   Wave:
   - WaveName: Wave 1
     NumberOfEnemy: 5
+    SpawnTime: 2
     TypeOfEnemy:
     - {fileID: 9159359481388322823, guid: 195cea39d7660d24abce007e28df13c9, type: 3}
-    SpawnTime: 2
+    Item:
+    - {fileID: 248476896050068838, guid: 2bf66564699c53044a8451a64c1e18d2, type: 3}
   - WaveName: Wave 2
     NumberOfEnemy: 10
+    SpawnTime: 2
     TypeOfEnemy:
     - {fileID: 9159359481388322823, guid: 195cea39d7660d24abce007e28df13c9, type: 3}
-    SpawnTime: 2
+    Item: []
   - WaveName: Wave 3
     NumberOfEnemy: 15
+    SpawnTime: 2
     TypeOfEnemy:
     - {fileID: 9159359481388322823, guid: 195cea39d7660d24abce007e28df13c9, type: 3}
-    SpawnTime: 2
+    Item: []
   - WaveName: Wave 4
     NumberOfEnemy: 20
+    SpawnTime: 2
     TypeOfEnemy:
     - {fileID: 9159359481388322823, guid: 195cea39d7660d24abce007e28df13c9, type: 3}
-    SpawnTime: 2
+    Item: []
   SpawnPoint:
   - {fileID: 637697795}
   - {fileID: 691648390}
