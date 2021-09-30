@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   Name: a
-  MaxHp: 100
-  Atk: 1
+  MaxHp: 1000000
+  Atk: 10
   Speed: 11

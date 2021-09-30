@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: New Character SO
   m_EditorClassIdentifier: 
   Name: eeeeeeeeeee
-  MaxHp: 1000
-  Atk: 10
-  Speed: 10
+  MaxHp: 147
+  Atk: 167
+  Speed: 13.03

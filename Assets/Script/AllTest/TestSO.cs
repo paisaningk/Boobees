@@ -1,7 +1,7 @@
 ﻿using Assets.Script.scriptableobject;
 using UnityEngine;
 
-namespace Assets.Script
+namespace Assets.Script.AllTest
 {
     public class TestSO : MonoBehaviour
     {

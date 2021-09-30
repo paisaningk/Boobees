@@ -10,7 +10,7 @@ namespace Assets.Script.Controller
         private Rigidbody2D Rd;
         private Vector3 MoveDie;
         private Animator animator;
-        private bool IsAttacking;
+        private bool IsAttacking = false;
 
         //ปรับได้
         private const float MoveSpeed = 5f;
@@ -47,9 +47,12 @@ namespace Assets.Script.Controller
 
         private void Attack()
         {
-            StartCoroutine(TimerRoutine());
-            animator.SetBool("Attacking",true);
-            //print($"Attack");
+            if (IsAttacking == false)
+            {
+                IsAttacking = true;
+                animator.SetBool("Attacking",true);
+                print($"Attack");
+            }
         }
 
         private void Dash()
@@ -63,15 +66,11 @@ namespace Assets.Script.Controller
             }
             Rd.MovePosition(dashPoint);
         }
-        
-        private IEnumerator TimerRoutine()
+
+        private void AttackFinish()
         {
-            //code can be executed anywhere here before this next statement 
-            yield return new WaitForSeconds(0.4f); //code pauses for 5 seconds
+            IsAttacking = false;
             animator.SetBool("Attacking",false);
-            //print($"Attack false");
-            //code resumes after the 5 seconds and exits if there is nothing else to run
- 
         }
         
         private void OnEnable()

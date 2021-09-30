@@ -1,49 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour
+namespace Assets.Script
 {
-    [SerializeField] private GameObject myPrefab;
-    private int wave;
-    private int EnemyInWave = 2;
-    private int Enemyspeawn = 0;
-    private float nextSpawnTime;
-    private float spawnDelay = 1;
-
-    private void Update()
+    public class Spawn : MonoBehaviour
     {
-        SpawnedEnemy();
-    }
+        [SerializeField] private GameObject myPrefab;
+        [SerializeField] private TextMeshProUGUI Wave;
+        private int waveNumber = 1;
+        private int EnemyInWave = 2;
+        private int Enemyspeawn = 0;
+        private float nextSpawnTime;
+        private float spawnDelay = 1;
 
-    public void SpawnedEnemy()
-    {
-        if (waveend() != true)
+        private void Update()
         {
-            if (ShouldSpawn())
+            SpawnedEnemy();
+            Wave.text = $"Waveaaaa : {waveNumber}";
+        }
+
+        public void SpawnedEnemy()
+        {
+            if (waveend() != true)
             {
-                Spawnss();
+                if (ShouldSpawn())
+                {
+                    Spawnss();
+                }
+            }
+            else
+            {
+                var Enemydog = GameObject.FindGameObjectsWithTag("Enemy");
+            
+                if (Enemydog == null)
+                {
+                    EnemyInWave += 10;
+                    waveNumber++;
+                    print("next wave");
+                }
             }
         }
-        
-        
-    }
     
-    private void Spawnss()
-    {
-        nextSpawnTime = Time.time + spawnDelay;
-        Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        Enemyspeawn++;
-        Debug.Log(Enemyspeawn);
-    }
+        private void Spawnss()
+        {
+            nextSpawnTime = Time.time + spawnDelay;
+            Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            Enemyspeawn++;
+            //Debug.Log(Enemyspeawn);
+        }
 
-    private bool waveend()
-    {
-        return Enemyspeawn == EnemyInWave;
-    }
+        private bool waveend()
+        {
+            return Enemyspeawn == EnemyInWave;
+        }
     
-    private bool ShouldSpawn()
-    {
-        return Time.time >= nextSpawnTime;
+        private bool ShouldSpawn()
+        {
+            return Time.time >= nextSpawnTime;
+        }
     }
 }
