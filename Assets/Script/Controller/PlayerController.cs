@@ -16,7 +16,7 @@ namespace Assets.Script.Controller
         private const float MoveSpeed = 5f;
         float dashAmount = 3f;
         private float dashcooldowntime;
-        private float dashcooldown = 2f;
+        private float dashcooldown = 1f;
 
         private void Awake()
         {
