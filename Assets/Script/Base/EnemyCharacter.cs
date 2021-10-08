@@ -6,8 +6,8 @@ namespace Assets.Script.Base
 {
     public class EnemyCharacter : MonoBehaviour
     {
-        [SerializeField] private CharacterSO enemyCharacterSo;
-    
+        [SerializeField] private CharacterSO EnemyCharacterSo;
+
         private string Name;
         private int Hp;
         public int Atk;
@@ -15,10 +15,10 @@ namespace Assets.Script.Base
         
         public void Start()
         {
-            Name = enemyCharacterSo.Name;
-            Hp = enemyCharacterSo.MaxHp;
-            Atk = enemyCharacterSo.Atk;
-            Speed = enemyCharacterSo.Speed;
+            Name = EnemyCharacterSo.Name;
+            Hp = EnemyCharacterSo.MaxHp;
+            Atk = EnemyCharacterSo.Atk;
+            Speed = EnemyCharacterSo.Speed;
             //PrintAll();
         }
 
@@ -35,14 +35,18 @@ namespace Assets.Script.Base
         {
             if (other.CompareTag("PlayerHitBox"))
             {
+                //other.gameObject.GetComponent<PlayerCharacter>();
                 var atkPlayer = GameObject.Find("Ronin Player").GetComponent<PlayerCharacter>();
                 Hp -= atkPlayer.Atk;
                 if (Hp <= 0)
                 {
-                    gameObject.SetActive(false); 
+                    //gameObject.SetActive(false); 
+                    Destroy(this.gameObject);
                 }
                 Debug.Log($"{Name} have : {Hp}");
             }
         }
+        
+        
     }
 }

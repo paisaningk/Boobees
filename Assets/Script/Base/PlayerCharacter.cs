@@ -7,11 +7,12 @@ namespace Assets.Script.Base
     public class PlayerCharacter : MonoBehaviour
     {
         [SerializeField] private CharacterSO PlayerCharacterSo;
-    
-        public string Name;
+
+        private string Name;
         public int Hp;
         public int Atk;
         public float Speed;
+        public string Enemytag = "EnemyHitBox";
         
 
         public void Start()
@@ -34,7 +35,7 @@ namespace Assets.Script.Base
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("EnemyHitBox"))
+            if (other.CompareTag(Enemytag))
             {
                 var a = GameObject.Find(other.name).GetComponentInParent<EnemyCharacter>();
                 var atkPlayer = a.Atk;
