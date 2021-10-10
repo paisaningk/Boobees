@@ -15,4 +15,10 @@ namespace Assets.Script.scriptableobject.Character
             Debug.Log($"My Name is {Name} + MaxHp {MaxHp} + Atk {Atk} + speed {Speed}");
         }
     }
+
+    public enum Character
+    {
+        Player,
+        Enemy,
+    }
 }

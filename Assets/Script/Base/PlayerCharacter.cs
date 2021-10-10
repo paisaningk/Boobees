@@ -12,7 +12,7 @@ namespace Assets.Script.Base
         public int Hp;
         public int Atk;
         public float Speed;
-        public string Enemytag = "EnemyHitBox";
+        //public string Enemytag = "EnemyHitBox";
         
 
         public void Start()
@@ -35,7 +35,7 @@ namespace Assets.Script.Base
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag(Enemytag))
+            if (other.CompareTag("EnemyHitBox"))
             {
                 var a = GameObject.Find(other.name).GetComponentInParent<EnemyCharacter>();
                 var atkPlayer = a.Atk;

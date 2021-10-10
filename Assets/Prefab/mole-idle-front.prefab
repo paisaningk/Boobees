@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyCharacterSo: {fileID: 11400000, guid: ebcc235b79d3778499d90190108827eb, type: 2}
-  Name: 
+  knockbackLayerMask:
+    serializedVersion: 2
+    m_Bits: 768
   Atk: 0
 --- !u!114 &9159359481388322822
 MonoBehaviour:

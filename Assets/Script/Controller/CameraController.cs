@@ -39,10 +39,5 @@ namespace Assets.Script.Controller
                 transform.position = newCameraPointon;
             }
         }
-
-        private void CreateDashEffect(Vector3 position, Vector3 dir, float dashSize)
-        {
-            
-        }
     }
 }
