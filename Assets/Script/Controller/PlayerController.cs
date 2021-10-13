@@ -11,12 +11,17 @@ namespace Assets.Script.Controller
         private Vector3 MoveDie;
         private Animator animator;
         private bool IsAttacking = false;
+        private bool Attack01 = false;
+        private bool Attack02 = false;
+        private bool Attack03 = false;
 
         //ปรับได้
         private const float MoveSpeed = 5f;
         float dashAmount = 3f;
         private float dashcooldowntime;
         private float dashcooldown = 1f;
+        //private float Attackcooldowntime;
+        //private float Attackcooldown = 1f;
 
         private void Awake()
         {
@@ -51,9 +56,29 @@ namespace Assets.Script.Controller
         {
             if (IsAttacking == false)
             {
-                IsAttacking = true;
-                animator.SetBool("Attacking",true);
-                print($"Attack");
+                if (Attack01 == false)
+                {
+                    IsAttacking = true;
+                    Attack01 = true;
+                    animator.SetBool("Attacking",true); 
+                    animator.SetBool("Attack01",true);
+
+                }
+                else if (Attack02 == false)
+                {
+                    IsAttacking = true;
+                    Attack02 = true;
+                    animator.SetBool("Attacking",true);
+                    animator.SetBool("Attack02",true);
+                }
+                else if (Attack03 == false)
+                {
+                    IsAttacking = true;
+                    Attack03 = true;
+                    animator.SetBool("Attacking",true); 
+                    animator.SetBool("Attack03",true);
+                }
+
             }
         }
 
@@ -75,8 +100,20 @@ namespace Assets.Script.Controller
 
         private void AttackFinish()
         {
-            IsAttacking = false;
             animator.SetBool("Attacking",false);
+            IsAttacking = false;
+        }
+        
+        private void AttackFinish03()
+        {
+            animator.SetBool("Attacking",false);
+            animator.SetBool("Attack01",false);
+            animator.SetBool("Attack02",false);
+            animator.SetBool("Attack03",false);
+            IsAttacking = false;
+            Attack01 = false;
+            Attack02 = false;
+            Attack03 = false;
         }
         
         private void OnEnable()
