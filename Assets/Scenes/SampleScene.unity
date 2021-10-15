@@ -1391,12 +1391,16 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 2632007 (Merge branch 'master' of https://github.com/paisaningk/Boobees)
 --- !u!1 &1622560299 stripped
 =======
 --- !u!1 &1622560299
 >>>>>>> parent of 4e22f42 (add CharacterSo fix Script)
+=======
+--- !u!1 &1622560299
+>>>>>>> parent of 81460cd (+BowToArcher +FixArcher)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1492,6 +1496,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 81460cd (+BowToArcher +FixArcher)
   m_GameObject: {fileID: 1622560299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.71, y: -3.7, z: 0}
@@ -1508,9 +1515,12 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
 =======
+=======
+>>>>>>> parent of 81460cd (+BowToArcher +FixArcher)
   m_GameObject: {fileID: 1622560299}
   m_BodyType: 0
   m_Simulated: 1
@@ -1525,9 +1535,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+<<<<<<< HEAD
 >>>>>>> parent of 4e22f42 (add CharacterSo fix Script)
 =======
 >>>>>>> parent of 2632007 (Merge branch 'master' of https://github.com/paisaningk/Boobees)
+=======
+>>>>>>> parent of 81460cd (+BowToArcher +FixArcher)
 --- !u!1001 &1773763742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8471,6 +8484,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 2632007 (Merge branch 'master' of https://github.com/paisaningk/Boobees)
 --- !u!1001 &7475977143930521805
@@ -8556,3 +8570,5 @@ PrefabInstance:
 >>>>>>> parent of 4e22f42 (add CharacterSo fix Script)
 =======
 >>>>>>> parent of 2632007 (Merge branch 'master' of https://github.com/paisaningk/Boobees)
+=======
+>>>>>>> parent of 81460cd (+BowToArcher +FixArcher)
