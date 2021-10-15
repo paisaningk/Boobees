@@ -43,7 +43,7 @@ namespace Assets.Script.Controller
             {
                 animator.SetFloat("MoveX",walk.x);
                 animator.SetFloat("MoveY",walk.y);
-                animator.SetBool("Walking",true); 
+                animator.SetBool("Walking",true);
             }
             else
             {
@@ -62,7 +62,6 @@ namespace Assets.Script.Controller
                     Attack01 = true;
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack01",true);
-
                 }
                 else if (Attack02 == false)
                 {
