@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyArcher : MonoBehaviour
+public class EnemyArchor : MonoBehaviour
 {
     public float speed;
     public float stoppingDistance;
@@ -15,11 +15,6 @@ public class EnemyArcher : MonoBehaviour
 
     public GameObject projectile;
 
-    //TEST
-    Vector2 Direction;
-    public GameObject bow;
-
-
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -29,16 +24,9 @@ public class EnemyArcher : MonoBehaviour
 
     void Update()
     {
-        //TEST
-        Vector2 targetPos = player.position;
-        Direction = targetPos - (Vector2)transform.position;
-        //Test
-
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+        if(Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            bow.transform.up = Direction;
-
         }
 
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)

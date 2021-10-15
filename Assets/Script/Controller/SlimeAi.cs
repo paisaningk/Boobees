@@ -18,7 +18,7 @@ public class SlimeAi : MonoBehaviour
     private Vector2 movement;
 
     public Vector3 dir;
-   
+
     private bool isInChaseRange;
     private bool isInAttackRange;
 

@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &67946269 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2124330364419246635, guid: 6344f12fc074b9249a57e0c791334679,
-    type: 3}
-  m_PrefabInstance: {fileID: 6280896425344382085}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120657774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1390,9 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 2632007 (Merge branch 'master' of https://github.com/paisaningk/Boobees)
 --- !u!1 &1622560299 stripped
 =======
 --- !u!1 &1622560299
@@ -1494,6 +1491,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1622560299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.71, y: -3.7, z: 0}
@@ -1528,6 +1526,8 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 4
 >>>>>>> parent of 4e22f42 (add CharacterSo fix Script)
+=======
+>>>>>>> parent of 2632007 (Merge branch 'master' of https://github.com/paisaningk/Boobees)
 --- !u!1001 &1773763742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8470,130 +8470,76 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
---- !u!1001 &7475977143930521805
+<<<<<<< HEAD
 =======
---- !u!1001 &6280896425344382085
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
+>>>>>>> parent of 2632007 (Merge branch 'master' of https://github.com/paisaningk/Boobees)
+--- !u!1001 &7475977143930521805
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219049, guid: 6344f12fc074b9249a57e0c791334679,
-        type: 3}
-      propertyPath: bow
-      value: 
-      objectReference: {fileID: 67946269}
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.71
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.7
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360675, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219051, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360678, guid: 3f82006b288ce9340b37dc620b7b4717,
-=======
-    - target: {fileID: 6280896423724219054, guid: 6344f12fc074b9249a57e0c791334679,
->>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
         type: 3}
       propertyPath: m_Name
       value: EnemyArchor
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7475977143384360678, guid: 3f82006b288ce9340b37dc620b7b4717,
         type: 3}
       propertyPath: m_IsActive
@@ -8601,9 +8547,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f82006b288ce9340b37dc620b7b4717, type: 3}
+<<<<<<< HEAD
 =======
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6344f12fc074b9249a57e0c791334679, type: 3}
 >>>>>>> 81460cd6848a6161e79b9affad89ecc3fbd2cd43
 =======
 >>>>>>> parent of 4e22f42 (add CharacterSo fix Script)
+=======
+>>>>>>> parent of 2632007 (Merge branch 'master' of https://github.com/paisaningk/Boobees)
