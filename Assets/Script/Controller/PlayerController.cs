@@ -13,15 +13,15 @@ namespace Assets.Script.Controller
         private bool IsAttacking = false;
         private bool Attack01 = false;
         private bool Attack02 = false;
-        private bool Attack03 = false;
+        public bool Attack03 = false;
 
         //ปรับได้
         private const float MoveSpeed = 5f;
         float dashAmount = 3f;
         private float dashcooldowntime;
         private float dashcooldown = 1f;
-        //private float Attackcooldowntime;
-        //private float Attackcooldown = 1f;
+        private float Attackcooldowntime;
+        private float Attackcooldown = 5f;
 
         private void Awake()
         {
@@ -35,6 +35,7 @@ namespace Assets.Script.Controller
 
         private void Update()
         {
+            //Walk
             var walk = playerInput.PlayerAction.Move.ReadValue<Vector2>();
             
             MoveDie = walk.normalized;
@@ -50,6 +51,12 @@ namespace Assets.Script.Controller
                 animator.SetBool("Walking",false); 
             }
             Rd.velocity = MoveDie * MoveSpeed;
+            
+            //Reset attack
+            if (Attackcooldowntime <= Time.time)
+            {
+                AttackFinish03();
+            }
         }
 
         private void Attack()
@@ -62,7 +69,7 @@ namespace Assets.Script.Controller
                     Attack01 = true;
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack01",true);
-
+                    Attackcooldowntime = Time.time + Attackcooldown;
                 }
                 else if (Attack02 == false)
                 {
@@ -70,6 +77,7 @@ namespace Assets.Script.Controller
                     Attack02 = true;
                     animator.SetBool("Attacking",true);
                     animator.SetBool("Attack02",true);
+                    Attackcooldowntime = Time.time + Attackcooldown;
                 }
                 else if (Attack03 == false)
                 {
@@ -114,6 +122,7 @@ namespace Assets.Script.Controller
             Attack01 = false;
             Attack02 = false;
             Attack03 = false;
+            Attackcooldowntime = 0;
         }
         
         private void OnEnable()

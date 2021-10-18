@@ -39,21 +39,25 @@ namespace Assets.Script.Base
             {
                 //other.gameObject.GetComponent<PlayerCharacter>();
                 var atkPlayer = GameObject.Find("Ronin Player").GetComponent<PlayerCharacter>();
+                var playerController = GameObject.Find("Ronin Player").GetComponent<PlayerController>();
                 Hp -= atkPlayer.Atk;
                 if (Hp <= 0)
                 {
                     //gameObject.SetActive(false); 
                     Destroy(this.gameObject);
                 }
-
-                Knockback(other);
+                if (playerController.Attack03 == true)
+                {
+                    Knockback(other);
+                }
+                
                 Debug.Log($"{Name} have : {Hp}");
             }
         }
 
         private void Knockback(Collider2D other)
         {
-            var KnockbackDirection = 2000f;
+            var KnockbackDirection = 200f;
             var moveDirectionPush = Rb.transform.position - other.transform.position;
             RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,moveDirectionPush,KnockbackDirection,
                 knockbackLayerMask);

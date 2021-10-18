@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyTest
   m_EditorClassIdentifier: 
   Name: test1
-  MaxHp: 30
+  MaxHp: 100
   Atk: 0
   Speed: 0

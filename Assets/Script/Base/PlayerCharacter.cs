@@ -37,9 +37,8 @@ namespace Assets.Script.Base
         {
             if (other.CompareTag("EnemyHitBox"))
             {
-                var a = GameObject.Find(other.name).GetComponentInParent<EnemyCharacter>();
-                var atkPlayer = a.Atk;
-                Hp -= atkPlayer;
+                var enemyCharacter = GameObject.Find(other.name).GetComponentInParent<EnemyCharacter>();
+                Hp -= enemyCharacter.Atk;
                 if (Hp <= 0)
                 {
                     gameObject.SetActive(false); 
