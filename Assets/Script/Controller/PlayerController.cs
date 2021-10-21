@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Script.Controller
+namespace Script.Controller
 {
     public class PlayerController : MonoBehaviour
     {
@@ -13,15 +12,16 @@ namespace Assets.Script.Controller
         private bool IsAttacking = false;
         private bool Attack01 = false;
         private bool Attack02 = false;
-        public bool Attack03 = false;
-
+        private bool Attack03 = false;
+        public bool knockback = false;
+        
         //ปรับได้
         private const float MoveSpeed = 5f;
         float dashAmount = 3f;
         private float dashcooldowntime;
         private float dashcooldown = 1f;
         private float Attackcooldowntime;
-        private float Attackcooldown = 5f;
+        private float Attackcooldown = 2.5f;
 
         private void Awake()
         {
@@ -70,6 +70,7 @@ namespace Assets.Script.Controller
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack01",true);
                     Attackcooldowntime = Time.time + Attackcooldown;
+                    Debug.Log($"Attack 1");
                 }
                 else if (Attack02 == false)
                 {
@@ -78,6 +79,7 @@ namespace Assets.Script.Controller
                     animator.SetBool("Attacking",true);
                     animator.SetBool("Attack02",true);
                     Attackcooldowntime = Time.time + Attackcooldown;
+                    Debug.Log($"Attack 2");
                 }
                 else if (Attack03 == false)
                 {
@@ -85,6 +87,8 @@ namespace Assets.Script.Controller
                     Attack03 = true;
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack03",true);
+                    knockback = true;
+                    Debug.Log($"Attack 3");
                 }
 
             }
@@ -112,18 +116,19 @@ namespace Assets.Script.Controller
             IsAttacking = false;
         }
         
-        private void AttackFinish03()
+        public void AttackFinish03()
         {
-            animator.SetBool("Attacking",false);
-            animator.SetBool("Attack01",false);
-            animator.SetBool("Attack02",false);
-            animator.SetBool("Attack03",false);
             IsAttacking = false;
             Attack01 = false;
             Attack02 = false;
             Attack03 = false;
+            animator.SetBool("Attacking",false);
+            animator.SetBool("Attack01",false);
+            animator.SetBool("Attack02",false);
+            animator.SetBool("Attack03",false);
             Attackcooldowntime = 0;
         }
+        
         
         private void OnEnable()
         {

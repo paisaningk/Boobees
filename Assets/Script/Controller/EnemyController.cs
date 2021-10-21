@@ -1,30 +1,75 @@
-using Assets.Script.Base;
+using System.Collections;
 using UnityEngine;
 
-namespace Assets.Script.Controller
+namespace Script.Controller
 {
     public class EnemyController : MonoBehaviour
     {
         private Rigidbody2D Rb;
         private Transform player;
-        private float movespeed = 5f;
+        private Animator animator;
+        private float movespeed = 10f;
+        private float stoppingDistance = 2f;
+        private Vector3 directionnormalized;
+        private bool attacking = false;
 
         private void Start()
         {
             Rb = GetComponent<Rigidbody2D>();
-            player = GameObject.Find("Main Camera").GetComponent<CameraController>().transform;
+            animator = GetComponent<Animator>();
+            player = GameObject.FindWithTag("Player").transform;
         }
 
         private void Update()
         {
-            Vector2 direction = player.position - transform.position;
-            var directionNormalized = direction.normalized;
-            moveCharacter(directionNormalized);
+            Selectnextmove();
         }
     
-        private void moveCharacter(Vector2 diretion)
+        private void moveCharacter(Vector3 direction)
         {
-            Rb.MovePosition((Vector2)transform.position + (diretion * movespeed * Time.deltaTime));
+            Vector2 directionNormalized = direction.normalized;
+            var move = (Vector2) transform.position + (directionNormalized * movespeed * Time.deltaTime);
+            
+            animator.SetFloat("MoveX",directionnormalized.x);
+            animator.SetFloat("MoveY",directionnormalized.y);
+            animator.SetBool("Walking",true);
+            
+            Rb.MovePosition(move);
+        }
+        
+        IEnumerator Test()
+        {
+            yield return new WaitForSeconds(3);
+            attacking = false;
+        }
+
+        private void AttackFinish()
+        {
+            animator.SetBool("Attack",false);
+            StartCoroutine(Test());
+        }
+
+        private void Selectnextmove()
+        {
+            var distance = Vector2.Distance(transform.position, player.position);
+            var direction = player.position - transform.position;
+            directionnormalized = direction.normalized;
+
+            if ( distance >= stoppingDistance)
+            {
+                moveCharacter(direction);
+            }
+            else if ( distance <= stoppingDistance)
+            {
+                if (attacking == false)
+                {
+                    animator.SetBool("Walking",false);
+                    animator.SetBool("Attack",true);
+                    animator.SetFloat("MoveX",directionnormalized.x);
+                    animator.SetFloat("MoveY",directionnormalized.y);
+                    attacking = true;
+                }
+            }
         }
     }
 }

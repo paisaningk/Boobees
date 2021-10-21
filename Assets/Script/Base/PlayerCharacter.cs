@@ -37,7 +37,7 @@ namespace Assets.Script.Base
         {
             if (other.CompareTag("EnemyHitBox"))
             {
-                var enemyCharacter = GameObject.Find(other.name).GetComponentInParent<EnemyCharacter>();
+                var enemyCharacter = other.GetComponentInParent<EnemyCharacter>();
                 Hp -= enemyCharacter.Atk;
                 if (Hp <= 0)
                 {
