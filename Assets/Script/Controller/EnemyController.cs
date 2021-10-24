@@ -12,6 +12,7 @@ namespace Script.Controller
         private float stoppingDistance = 2f;
         private Vector3 directionnormalized;
         private bool attacking = false;
+        private bool nextMove = false;
 
         private void Start()
         {
@@ -22,7 +23,11 @@ namespace Script.Controller
 
         private void Update()
         {
-            Selectnextmove();
+            if (nextMove == false)
+            {
+                Selectnextmove();
+            }
+            
         }
     
         private void moveCharacter(Vector3 direction)
@@ -39,8 +44,11 @@ namespace Script.Controller
         
         IEnumerator Test()
         {
+            Rb.constraints = RigidbodyConstraints2D.FreezeAll;
             yield return new WaitForSeconds(3);
+            Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             attacking = false;
+            nextMove = false;
         }
 
         private void AttackFinish()
@@ -54,7 +62,7 @@ namespace Script.Controller
             var distance = Vector2.Distance(transform.position, player.position);
             var direction = player.position - transform.position;
             directionnormalized = direction.normalized;
-
+            
             if ( distance >= stoppingDistance)
             {
                 moveCharacter(direction);
@@ -67,6 +75,7 @@ namespace Script.Controller
                     animator.SetBool("Attack",true);
                     animator.SetFloat("MoveX",directionnormalized.x);
                     animator.SetFloat("MoveY",directionnormalized.y);
+                    nextMove = true;
                     attacking = true;
                 }
             }

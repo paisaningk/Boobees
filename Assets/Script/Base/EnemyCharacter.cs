@@ -14,7 +14,6 @@ namespace Assets.Script.Base
         public int Atk;
         private float Speed;
         private Rigidbody2D Rb;
-        private bool knockbacking = false;
         private PlayerController playerController;
         public void Start()
         {
@@ -55,16 +54,21 @@ namespace Assets.Script.Base
 
         private void Knockback(Collider2D other)
         {
-            var KnockbackDirection = 400;
-            var moveDirectionPush = Rb.transform.position - other.transform.position * KnockbackDirection;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position,moveDirectionPush,KnockbackDirection,
-                knockbackLayerMask);
-            if (raycastHit2D.collider != null)
-            {
-                moveDirectionPush = raycastHit2D.point;
-            }
-            Rb.MovePosition(moveDirectionPush.normalized);
+            // var knockbackDirection = 400;
+            // var moveDirectionPush = Rb.transform.position - other.transform.position * knockbackDirection;
+            // var raycastHit2D = Physics2D.Raycast(transform.position, moveDirectionPush, knockbackDirection,
+            //     knockbackLayerMask);
+            // if (raycastHit2D.collider != null) moveDirectionPush = raycastHit2D.point;
+            // Rb.MovePosition(moveDirectionPush.normalized);
+            
             playerController.knockback = false;
+            var knockbackForce = 300;
+            Vector2 difference = (Rb.transform.position - other.transform.position).normalized;
+            Vector2 force = difference * knockbackForce;
+            var raycastHit2D = Physics2D.Raycast(transform.position,difference,knockbackForce,knockbackLayerMask);
+            if (raycastHit2D.collider != null) force = raycastHit2D.point;
+            
+            Rb.AddForce(force,ForceMode2D.Impulse);
         }
         
     }
