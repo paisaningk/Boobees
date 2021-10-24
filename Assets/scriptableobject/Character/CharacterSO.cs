@@ -9,7 +9,8 @@ namespace Assets.Script.scriptableobject.Character
         public int MaxHp;
         public int Atk;
         public float Speed;
-
+        public GameObject Popup;
+        
         public void Print()
         {
             Debug.Log($"My Name is {Name} + MaxHp {MaxHp} + Atk {Atk} + speed {Speed}");

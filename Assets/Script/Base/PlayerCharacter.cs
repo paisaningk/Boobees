@@ -1,5 +1,6 @@
 ﻿using Assets.Script.scriptableobject;
 using Assets.Script.scriptableobject.Character;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Assets.Script.Base
@@ -12,6 +13,9 @@ namespace Assets.Script.Base
         public int Hp;
         public int Atk;
         public float Speed;
+        private GameObject Popup;
+        
+
         //public string Enemytag = "EnemyHitBox";
         
 
@@ -21,6 +25,7 @@ namespace Assets.Script.Base
             Hp = PlayerCharacterSo.MaxHp;
             Atk = PlayerCharacterSo.Atk;
             Speed = PlayerCharacterSo.Speed;
+            Popup = PlayerCharacterSo.Popup;
             //PrintAll();
         }
 
@@ -39,12 +44,21 @@ namespace Assets.Script.Base
             {
                 var enemyCharacter = other.GetComponentInParent<EnemyCharacter>();
                 Hp -= enemyCharacter.Atk;
+                ShowPopUp(enemyCharacter.Atk);
                 if (Hp <= 0)
                 {
                     gameObject.SetActive(false); 
                 }
                 Debug.Log($"{Name} have : {Hp}");
             }
+        }
+
+        private void ShowPopUp(int dmg)
+        {
+            var spawnPopup = Instantiate(Popup,transform.position,Quaternion.identity,transform);
+            var textMesh = spawnPopup.GetComponent<TextMesh>();
+            textMesh.text = $"{dmg}";
+            textMesh.color = Color.green;
         }
     }
 }

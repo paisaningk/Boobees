@@ -16,3 +16,4 @@ MonoBehaviour:
   MaxHp: 30
   Atk: 167
   Speed: 13.03
+  Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

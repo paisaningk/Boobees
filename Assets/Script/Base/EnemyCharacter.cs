@@ -15,13 +15,16 @@ namespace Assets.Script.Base
         private float Speed;
         private Rigidbody2D Rb;
         private PlayerController playerController;
+        private float playerCritRate = 10f;
+        private GameObject Popup;
         public void Start()
         {
             Name = EnemyCharacterSo.Name;
             Hp = EnemyCharacterSo.MaxHp;
             Atk = EnemyCharacterSo.Atk;
             Speed = EnemyCharacterSo.Speed;
-            //PrintAll();
+            Popup = EnemyCharacterSo.Popup;
+            
             Rb = GetComponent<Rigidbody2D>();
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
@@ -40,7 +43,20 @@ namespace Assets.Script.Base
             if (other.CompareTag("PlayerHitBox"))
             {
                 var atkPlayer = other.GetComponentInParent<PlayerCharacter>();
-                Hp -= atkPlayer.Atk;
+                var critPercentRand = Random.Range(1, 101);
+                
+                if (critPercentRand <= playerCritRate)
+                {
+                    var atkCrit = atkPlayer.Atk * 2;
+                    ShowPopUpCrit(atkCrit);
+                    Hp -= atkCrit;
+                }
+                else
+                {
+                    ShowPopUp(atkPlayer.Atk);
+                    Hp -= atkPlayer.Atk;
+                }
+                
                 if (Hp <= 0)
                 {
                     Destroy(this.gameObject);
@@ -54,13 +70,6 @@ namespace Assets.Script.Base
 
         private void Knockback(Collider2D other)
         {
-            // var knockbackDirection = 400;
-            // var moveDirectionPush = Rb.transform.position - other.transform.position * knockbackDirection;
-            // var raycastHit2D = Physics2D.Raycast(transform.position, moveDirectionPush, knockbackDirection,
-            //     knockbackLayerMask);
-            // if (raycastHit2D.collider != null) moveDirectionPush = raycastHit2D.point;
-            // Rb.MovePosition(moveDirectionPush.normalized);
-            
             playerController.knockback = false;
             var knockbackForce = 300;
             Vector2 difference = (Rb.transform.position - other.transform.position).normalized;
@@ -69,6 +78,22 @@ namespace Assets.Script.Base
             if (raycastHit2D.collider != null) force = raycastHit2D.point;
             
             Rb.AddForce(force,ForceMode2D.Impulse);
+        }
+        
+        private void ShowPopUp(int dmg)
+        {
+            var spawnPopup = Instantiate(Popup,transform.position,Quaternion.identity,transform);
+            var textMesh = spawnPopup.GetComponent<TextMesh>();
+            textMesh.text = $"{dmg}";
+            textMesh.color = Color.yellow;
+        }
+        
+        private void ShowPopUpCrit(int dmg)
+        {
+            var spawnPopup = Instantiate(Popup,transform.position,Quaternion.identity,transform);
+            var textMesh = spawnPopup.GetComponent<TextMesh>();
+            textMesh.text = $"{dmg}";
+            textMesh.color = Color.white;
         }
         
     }

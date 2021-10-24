@@ -895,6 +895,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-orange
       objectReference: {fileID: 0}
+    - target: {fileID: 8477775104798567493, guid: 5fc6e9bd52c5ff841a4e5384470e4a0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8477775104798567495, guid: 5fc6e9bd52c5ff841a4e5384470e4a0d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1602,120 +1607,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2132391105640571618, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2132391105640571619, guid: e7f550eb8127d174f80b5790c7664b73,
         type: 3}
       propertyPath: m_Name
       value: Ronin Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391105640571629, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.86173093
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391105640571629, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.75066894
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391105640571629, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.011622369
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391105640571629, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.4410757
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391105640571629, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391105921270809, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391106168130293, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391106168130295, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Name
-      value: Attack Letf
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391106427124989, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2132391106825301522, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_LightType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_UseNormalMap
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_PointLightQuality
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_PointLightDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_AlphaBlendOnOverlap
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_PointLightInnerRadius
-      value: 2.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 2.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_ShapeLightParametricSides
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_ShapeLightParametricRadius
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226204898266925239, guid: e7f550eb8127d174f80b5790c7664b73,
-        type: 3}
-      propertyPath: m_ShapeLightParametricAngleOffset
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f550eb8127d174f80b5790c7664b73, type: 3}
