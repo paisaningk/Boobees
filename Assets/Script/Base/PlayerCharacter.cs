@@ -14,11 +14,7 @@ namespace Assets.Script.Base
         public int Atk;
         public float Speed;
         private GameObject Popup;
-        
-
-        //public string Enemytag = "EnemyHitBox";
-        
-
+     
         public void Start()
         {
             Name = PlayerCharacterSo.Name;
@@ -58,7 +54,7 @@ namespace Assets.Script.Base
             var spawnPopup = Instantiate(Popup,transform.position,Quaternion.identity,transform);
             var textMesh = spawnPopup.GetComponent<TextMesh>();
             textMesh.text = $"{dmg}";
-            textMesh.color = Color.green;
+            textMesh.color = Color.red;
         }
     }
 }

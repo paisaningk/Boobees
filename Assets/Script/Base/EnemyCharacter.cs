@@ -70,13 +70,13 @@ namespace Assets.Script.Base
 
         private void Knockback(Collider2D other)
         {
+            //Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             playerController.knockback = false;
             var knockbackForce = 300;
             Vector2 difference = (Rb.transform.position - other.transform.position).normalized;
             Vector2 force = difference * knockbackForce;
             var raycastHit2D = Physics2D.Raycast(transform.position,difference,knockbackForce,knockbackLayerMask);
             if (raycastHit2D.collider != null) force = raycastHit2D.point;
-            
             Rb.AddForce(force,ForceMode2D.Impulse);
         }
         
@@ -85,7 +85,7 @@ namespace Assets.Script.Base
             var spawnPopup = Instantiate(Popup,transform.position,Quaternion.identity,transform);
             var textMesh = spawnPopup.GetComponent<TextMesh>();
             textMesh.text = $"{dmg}";
-            textMesh.color = Color.yellow;
+            textMesh.color = Color.white;
         }
         
         private void ShowPopUpCrit(int dmg)
@@ -93,7 +93,7 @@ namespace Assets.Script.Base
             var spawnPopup = Instantiate(Popup,transform.position,Quaternion.identity,transform);
             var textMesh = spawnPopup.GetComponent<TextMesh>();
             textMesh.text = $"{dmg}";
-            textMesh.color = Color.white;
+            textMesh.color = Color.yellow;
         }
         
     }
