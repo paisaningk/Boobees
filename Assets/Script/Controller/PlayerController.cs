@@ -4,6 +4,7 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
+using UnityEngine.UI;
 
 namespace Script.Controller
 {
@@ -39,6 +40,7 @@ namespace Script.Controller
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Ispause();
             OnEnable();
+            //adc
         }
 
         private void Update()
