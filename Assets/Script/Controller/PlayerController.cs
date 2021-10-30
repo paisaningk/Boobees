@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-﻿using Script.Menu;
+using Script.Menu;
 using UnityEngine;
-=======
-﻿using UnityEngine;
-<<<<<<< HEAD
 using UnityEngine.UI;
->>>>>>> f6829c9bd26dc8e9d58a6a72e2ee4a1b055b0b57
-=======
->>>>>>> parent of f6829c9 (+adding joy stick and attack button)
 
 namespace Script.Controller
 {
@@ -43,6 +36,7 @@ namespace Script.Controller
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Ispause();
             OnEnable();
+            //adc
         }
 
         private void Update()
