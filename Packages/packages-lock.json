@@ -79,13 +79,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.device-simulator": {
-      "version": "3.0.2-preview",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -103,12 +96,10 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.1.1",
+      "version": "1.0.2",
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.unity.modules.uielements": "1.0.0"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.mathematics": {
