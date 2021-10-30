@@ -29,7 +29,7 @@ namespace Script.Controller
             animator = GetComponent<Animator>();
             Rd = GetComponent<Rigidbody2D>();
             playerInput = new PlayerInputAction();
-            //playerInput.PlayerAction.Attack.performed += context => Attack();
+            playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             OnEnable();
         }
@@ -64,6 +64,11 @@ namespace Script.Controller
         public void AttackButton()
         {
             Attack();
+        }
+
+        public void DashButton()
+        {
+            Dash();
         }
 
         private void Attack()
