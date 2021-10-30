@@ -1,12 +1,16 @@
+<<<<<<< HEAD
+﻿using Script.Menu;
+using UnityEngine;
+=======
 ﻿using UnityEngine;
 using UnityEngine.UI;
+>>>>>>> f6829c9bd26dc8e9d58a6a72e2ee4a1b055b0b57
 
 namespace Script.Controller
 {
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private LayerMask dashLayerMask;
-        private PlayerInputAction playerInput;
         private Rigidbody2D Rd;
         private Vector3 MoveDie;
         private Animator animator;
@@ -15,6 +19,8 @@ namespace Script.Controller
         private bool Attack02 = false;
         private bool Attack03 = false;
         public bool knockback = false;
+        public PlayerInputAction playerInput;
+        public PlayMenu playMenu;
         
         //ปรับได้
         private const float MoveSpeed = 5f;
@@ -23,6 +29,7 @@ namespace Script.Controller
         private float dashcooldown = 1f;
         private float Attackcooldowntime;
         private float Attackcooldown = 2.5f;
+        private bool isPause = false;
 
         private void Awake()
         {
@@ -31,6 +38,7 @@ namespace Script.Controller
             playerInput = new PlayerInputAction();
             playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
+            playerInput.PlayerAction.Pause.performed += context => Ispause();
             OnEnable();
         }
 
@@ -139,6 +147,20 @@ namespace Script.Controller
             animator.SetBool("Attack02",false);
             animator.SetBool("Attack03",false);
             Attackcooldowntime = 0;
+        }
+        
+        private void Ispause()
+        {
+            if (isPause == false)
+            {
+                playMenu.Pause();
+                isPause = true;
+            }
+            else
+            {
+                playMenu.Resume();
+                isPause = false;
+            }
         }
         
         

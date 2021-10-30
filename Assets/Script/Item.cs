@@ -14,9 +14,9 @@ namespace Assets.Script
 
         private void Start()
         {
-            MaxHp = ItemSo.MaxHp;
-            Atk = ItemSo.Atk;
-            Speed = ItemSo.Speed;
+            MaxHp = ItemSo.maxHp;
+            Atk = ItemSo.atk;
+            Speed = ItemSo.speed;
 
         }
     
