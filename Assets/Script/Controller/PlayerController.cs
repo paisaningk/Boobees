@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Script.Controller
 {
@@ -28,7 +29,7 @@ namespace Script.Controller
             animator = GetComponent<Animator>();
             Rd = GetComponent<Rigidbody2D>();
             playerInput = new PlayerInputAction();
-            playerInput.PlayerAction.Attack.performed += context => Attack();
+            //playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             OnEnable();
         }
@@ -57,6 +58,12 @@ namespace Script.Controller
             {
                 AttackFinish03();
             }
+            
+        }
+
+        public void AttackButton()
+        {
+            Attack();
         }
 
         private void Attack()

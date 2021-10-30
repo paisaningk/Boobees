@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyTest
   m_EditorClassIdentifier: 
   Name: Tank
-  MaxHp: 1000
+  MaxHp: 50
   Atk: 10
   Speed: 0
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}
