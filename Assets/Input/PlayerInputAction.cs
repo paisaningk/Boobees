@@ -41,14 +41,6 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""82aeb69e-af36-4b87-9810-ca89b8966365"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -128,28 +120,6 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""69ad30ba-9d2c-4114-98a0-d54b9fc2df27"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""de938a77-a915-43c6-a62c-32762d8c4ff0"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -178,7 +148,6 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
         m_PlayerAction_Move = m_PlayerAction.FindAction("Move", throwIfNotFound: true);
         m_PlayerAction_Attack = m_PlayerAction.FindAction("Attack", throwIfNotFound: true);
         m_PlayerAction_Dash = m_PlayerAction.FindAction("Dash", throwIfNotFound: true);
-        m_PlayerAction_Pause = m_PlayerAction.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -231,7 +200,6 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerAction_Move;
     private readonly InputAction m_PlayerAction_Attack;
     private readonly InputAction m_PlayerAction_Dash;
-    private readonly InputAction m_PlayerAction_Pause;
     public struct PlayerActionActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -239,7 +207,6 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_PlayerAction_Move;
         public InputAction @Attack => m_Wrapper.m_PlayerAction_Attack;
         public InputAction @Dash => m_Wrapper.m_PlayerAction_Dash;
-        public InputAction @Pause => m_Wrapper.m_PlayerAction_Pause;
         public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,9 +225,6 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                 @Dash.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnDash;
-                @Pause.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPause;
-                @Pause.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPause;
-                @Pause.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerActionActionsCallbackInterface = instance;
             if (instance != null)
@@ -274,9 +238,6 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
-                @Pause.started += instance.OnPause;
-                @Pause.performed += instance.OnPause;
-                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -295,6 +256,5 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
-        void OnPause(InputAction.CallbackContext context);
     }
 }
