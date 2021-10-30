@@ -1,4 +1,5 @@
-﻿using Assets.Script.scriptableobject;
+﻿using System.Collections;
+using Assets.Script.scriptableobject;
 using Assets.Script.scriptableobject.Character;
 using Unity.Mathematics;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace Assets.Script.Base
         public int Atk;
         public float Speed;
         private GameObject Popup;
+        private Animator animator;
      
         public void Start()
         {
@@ -22,12 +24,11 @@ namespace Assets.Script.Base
             Atk = PlayerCharacterSo.Atk;
             Speed = PlayerCharacterSo.Speed;
             Popup = PlayerCharacterSo.Popup;
-            //PrintAll();
+            animator = GetComponent<Animator>();
         }
 
         public void PrintAll()
         {
-            //Debug.Log("Enemy");
             Debug.Log($"name:{Name}");
             Debug.Log($"HP:{Hp}");
             Debug.Log($"ATK:{Atk}");
@@ -43,7 +44,8 @@ namespace Assets.Script.Base
                 ShowPopUp(enemyCharacter.Atk);
                 if (Hp <= 0)
                 {
-                    gameObject.SetActive(false); 
+                    animator.SetBool("Dead",true);
+                    StartCoroutine(AnimatorDead());
                 }
                 Debug.Log($"{Name} have : {Hp}");
             }
@@ -56,5 +58,12 @@ namespace Assets.Script.Base
             textMesh.text = $"{dmg}";
             textMesh.color = Color.red;
         }
+        
+        IEnumerator AnimatorDead()
+        {
+            yield return new WaitForSeconds(1.517f);
+            
+        }
+        
     }
 }
