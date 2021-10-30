@@ -31,7 +31,7 @@ namespace Assets.Script
 
         private void Start()
         {
-            WaveText.text = $"Wave {WaveNumberText}";
+            WaveText.text = $"Wave : {WaveNumberText}";
         }
 
         private void Update()
@@ -39,7 +39,7 @@ namespace Assets.Script
             CurrentWave = Wave[CurrentWaveNumber];
             SpawnWave();
             GameObject[] TolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-            WaveText.text = $"Wave {WaveNumberText}";
+            WaveText.text = $"Wave : {WaveNumberText}";
             if (TolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber +1 != Wave.Length)
             {
                 NextSpawnWave();

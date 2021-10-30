@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 ﻿using Script.Menu;
 using UnityEngine;
+=======
+﻿using UnityEngine;
+using UnityEngine.UI;
+>>>>>>> f6829c9bd26dc8e9d58a6a72e2ee4a1b055b0b57
 
 namespace Script.Controller
 {
@@ -31,7 +36,7 @@ namespace Script.Controller
             animator = GetComponent<Animator>();
             Rd = GetComponent<Rigidbody2D>();
             playerInput = new PlayerInputAction();
-            playerInput.PlayerAction.Attack.performed += context => Attack();
+            //playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Ispause();
             OnEnable();
@@ -61,6 +66,12 @@ namespace Script.Controller
             {
                 AttackFinish03();
             }
+            
+        }
+
+        public void AttackButton()
+        {
+            Attack();
         }
 
         private void Attack()
