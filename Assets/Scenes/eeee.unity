@@ -267,7 +267,7 @@ PrefabInstance:
     - target: {fileID: 4269672613588630452, guid: ea5adf2693a31d2488617a13ecd2c38b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4269672613588630452, guid: ea5adf2693a31d2488617a13ecd2c38b,
         type: 3}
@@ -334,6 +334,12 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4269672613588630456, guid: ea5adf2693a31d2488617a13ecd2c38b,
+        type: 3}
+      propertyPath: EnemyCharacterSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bf25410822b9c04aaea7289db3b695e,
+        type: 2}
     - target: {fileID: 4269672613588630461, guid: ea5adf2693a31d2488617a13ecd2c38b,
         type: 3}
       propertyPath: m_Name
@@ -358,7 +364,7 @@ GameObject:
   - component: {fileID: 230262504}
   - component: {fileID: 230262503}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +562,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420034
 MonoBehaviour:
@@ -1056,7 +1062,7 @@ RectTransform:
   m_Children:
   - {fileID: 230262502}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1187,6 +1193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
     type: 3}
   m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
@@ -1238,7 +1245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1263541621
 PrefabInstance:
@@ -1247,6 +1254,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9159359481388322821, guid: 195cea39d7660d24abce007e28df13c9,
+        type: 3}
+      propertyPath: EnemyCharacterSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bf25410822b9c04aaea7289db3b695e,
+        type: 2}
     - target: {fileID: 9159359481388322822, guid: 195cea39d7660d24abce007e28df13c9,
         type: 3}
       propertyPath: m_Enabled
@@ -1265,7 +1278,7 @@ PrefabInstance:
     - target: {fileID: 9159359481388322825, guid: 195cea39d7660d24abce007e28df13c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9159359481388322825, guid: 195cea39d7660d24abce007e28df13c9,
         type: 3}
@@ -1555,7 +1568,7 @@ PrefabInstance:
     - target: {fileID: 2132391105640571617, guid: e7f550eb8127d174f80b5790c7664b73,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2132391105640571617, guid: e7f550eb8127d174f80b5790c7664b73,
         type: 3}
@@ -1612,6 +1625,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ronin Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2132391105640571628, guid: e7f550eb8127d174f80b5790c7664b73,
+        type: 3}
+      propertyPath: PlayerCharacterSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1200c21834260964494ba876aaebb44f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f550eb8127d174f80b5790c7664b73, type: 3}
 --- !u!1 &1833657137

@@ -1,17 +1,12 @@
 ﻿using UnityEngine;
-using Script.Menu;
-using UnityEngine;
 
-using UnityEngine.UI;
-
-using UnityEngine.UI;
 
 namespace Script.Controller
 {
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private LayerMask dashLayerMask;
-        private PlayerInputAction playerInput;
+        private Playerinput playerInput;
         private Rigidbody2D Rd;
         private Vector3 MoveDie;
         private Animator animator;
@@ -33,7 +28,7 @@ namespace Script.Controller
         {
             animator = GetComponent<Animator>();
             Rd = GetComponent<Rigidbody2D>();
-            playerInput = new PlayerInputAction();
+            playerInput = new Playerinput();
             playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             OnEnable();
