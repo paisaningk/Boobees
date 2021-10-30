@@ -40,6 +40,8 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""id"": ""de8f95a0-110c-4c59-8910-8f89ed09ac04"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
+<<<<<<< HEAD
+<<<<<<< HEAD
                     ""interactions"": """"
                 },
                 {
@@ -49,6 +51,13 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+=======
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+>>>>>>> f6829c9bd26dc8e9d58a6a72e2ee4a1b055b0b57
+=======
+                    ""interactions"": """"
+>>>>>>> parent of f6829c9 (+adding joy stick and attack button)
                 }
             ],
             ""bindings"": [

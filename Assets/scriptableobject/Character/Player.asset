@@ -13,7 +13,16 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   Name: Player
+<<<<<<< HEAD
   MaxHp: 1
   Atk: 10
+=======
+  MaxHp: 200
+<<<<<<< HEAD
+  Atk: 20
+>>>>>>> f6829c9bd26dc8e9d58a6a72e2ee4a1b055b0b57
+=======
+  Atk: 10
+>>>>>>> parent of f6829c9 (+adding joy stick and attack button)
   Speed: 11
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}
