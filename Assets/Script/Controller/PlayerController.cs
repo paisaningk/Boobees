@@ -1,4 +1,10 @@
 ﻿using UnityEngine;
+using Script.Menu;
+using UnityEngine;
+
+using UnityEngine.UI;
+
+using UnityEngine.UI;
 
 namespace Script.Controller
 {
@@ -31,6 +37,7 @@ namespace Script.Controller
             playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             OnEnable();
+            //adc
         }
 
         private void Update()
@@ -57,6 +64,11 @@ namespace Script.Controller
             {
                 AttackFinish03();
             }
+        }
+
+        public void DashButton()
+        {
+            Dash();
         }
 
         private void Attack()

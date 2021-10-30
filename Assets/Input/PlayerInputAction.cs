@@ -41,6 +41,17 @@ public class @PlayerInputAction : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""82aeb69e-af36-4b87-9810-ca89b8966365"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
