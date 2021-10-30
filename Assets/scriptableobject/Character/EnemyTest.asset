@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Tank
 <<<<<<< HEAD
+<<<<<<< HEAD
   MaxHp: 100
   Atk: 1
 =======
   MaxHp: 50
+=======
+  MaxHp: 1000
+>>>>>>> parent of f6829c9 (+adding joy stick and attack button)
   Atk: 10
 >>>>>>> f6829c9bd26dc8e9d58a6a72e2ee4a1b055b0b57
   Speed: 0

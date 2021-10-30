@@ -11,8 +11,7 @@
                     "id": "377d1754-c614-4f5e-a9c7-6fd4b5ec420a",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "Attack",
@@ -20,8 +19,7 @@
                     "id": "024bdceb-d6e4-4c90-ae1f-313b348a3848",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Dash",
@@ -29,6 +27,7 @@
                     "id": "de8f95a0-110c-4c59-8910-8f89ed09ac04",
                     "expectedControlType": "Button",
                     "processors": "",
+<<<<<<< HEAD
 <<<<<<< HEAD
                     "interactions": ""
                 },
@@ -43,6 +42,9 @@
                     "interactions": "",
                     "initialStateCheck": false
 >>>>>>> f6829c9bd26dc8e9d58a6a72e2ee4a1b055b0b57
+=======
+                    "interactions": ""
+>>>>>>> parent of f6829c9 (+adding joy stick and attack button)
                 }
             ],
             "bindings": [
@@ -100,17 +102,6 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "f1b1093d-9934-4956-a9f1-ba197883ee2b",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
