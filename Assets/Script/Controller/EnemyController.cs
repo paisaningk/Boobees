@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Script.Controller
+namespace Assets.Script.Controller
 {
     public class EnemyController : MonoBehaviour
     {

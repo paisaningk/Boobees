@@ -1,7 +1,9 @@
-﻿using Assets.Script.scriptableobject;
+﻿using Assets.Script.Controller;
+using Assets.Script.Pickup;
+using Assets.Script.scriptableobject;
 using Assets.Script.scriptableobject.Character;
-using Script.Controller;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace Assets.Script.Base
 {
@@ -9,6 +11,8 @@ namespace Assets.Script.Base
     {
         [SerializeField] private CharacterSO EnemyCharacterSo;
         [SerializeField] private LayerMask knockbackLayerMask;
+        [SerializeField] private GameObject GoldPrefab;
+        [SerializeField] private EnemyType enemyType;
         private string Name;
         private int Hp;
         public int Atk;
@@ -17,6 +21,7 @@ namespace Assets.Script.Base
         private PlayerController playerController;
         private float playerCritRate = 10f;
         private GameObject Popup;
+        
         public void Start()
         {
             Name = EnemyCharacterSo.Name;
@@ -24,8 +29,8 @@ namespace Assets.Script.Base
             Atk = EnemyCharacterSo.Atk;
             Speed = EnemyCharacterSo.Speed;
             Popup = EnemyCharacterSo.Popup;
-            
             Rb = GetComponent<Rigidbody2D>();
+            
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
 
@@ -59,6 +64,7 @@ namespace Assets.Script.Base
                 
                 if (Hp <= 0)
                 {
+                    DropGold();
                     Destroy(this.gameObject);
                 }
                 if (playerController.knockback == true)
@@ -95,6 +101,34 @@ namespace Assets.Script.Base
             textMesh.text = $"{dmg}";
             textMesh.color = Color.yellow;
         }
-        
+
+        private void DropGold()
+        {
+            var gold = 0;
+            switch (enemyType)
+            {
+                case EnemyType.Slime:
+                    gold = Random.Range(3 , 10);
+                    GoldPrefab.GetComponent<Gold>().goldAmount = gold;
+                    break;
+                case EnemyType.Ranger:
+                    gold = Random.Range(11 , 25);
+                    GoldPrefab.GetComponent<Gold>().goldAmount = gold;
+                    break;
+                case EnemyType.Golem:
+                    gold = Random.Range(20 , 31);
+                    GoldPrefab.GetComponent<Gold>().goldAmount = gold;
+                    break;
+                case EnemyType.Charger:
+                    gold = Random.Range(15 , 30);
+                    GoldPrefab.GetComponent<Gold>().goldAmount = gold;
+                    break;
+                case EnemyType.Boss:
+                    gold = Random.Range(35 , 41);
+                    GoldPrefab.GetComponent<Gold>().goldAmount = gold;
+                    break;
+            }
+            Instantiate(GoldPrefab,transform.position, Quaternion.identity);
+        }
     }
 }

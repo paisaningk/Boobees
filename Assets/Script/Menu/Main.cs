@@ -23,7 +23,7 @@ namespace Assets.Script.Menu
 
         private void StartGame()
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("eeee");
         }
 
         private void QuitGame()

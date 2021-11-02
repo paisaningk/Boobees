@@ -1,6 +1,7 @@
-﻿using Assets.Script.scriptableobject;
+﻿using System.Collections;
+using Assets.Script.Controller;
 using Assets.Script.scriptableobject.Character;
-using Unity.Mathematics;
+using Assets.scriptableobject.Item;
 using UnityEngine;
 
 namespace Assets.Script.Base
@@ -8,13 +9,19 @@ namespace Assets.Script.Base
     public class PlayerCharacter : MonoBehaviour
     {
         [SerializeField] private CharacterSO PlayerCharacterSo;
-
+        public ItemSO[] ItemSo;
+        private PlayerController playerController;
         private string Name;
         public int Hp;
         public int Atk;
+        public int Gold = 0;
         public float Speed;
+        public float DashCd;
+        public float CritAtk;
+        public float CritRate;
         private GameObject Popup;
-     
+        private Animator animator;
+
         public void Start()
         {
             Name = PlayerCharacterSo.Name;
@@ -22,6 +29,10 @@ namespace Assets.Script.Base
             Atk = PlayerCharacterSo.Atk;
             Speed = PlayerCharacterSo.Speed;
             Popup = PlayerCharacterSo.Popup;
+            
+            animator = GetComponent<Animator>();
+            playerController = GetComponent<PlayerController>();
+
             //PrintAll();
         }
 
@@ -43,7 +54,9 @@ namespace Assets.Script.Base
                 ShowPopUp(enemyCharacter.Atk);
                 if (Hp <= 0)
                 {
-                    gameObject.SetActive(false); 
+                    animator.SetBool("Dead",true);
+                    StartCoroutine(Dead());
+
                 }
                 Debug.Log($"{Name} have : {Hp}");
             }
@@ -55,6 +68,13 @@ namespace Assets.Script.Base
             var textMesh = spawnPopup.GetComponent<TextMesh>();
             textMesh.text = $"{dmg}";
             textMesh.color = Color.red;
+        }
+
+        IEnumerator Dead()
+        {
+            yield return new WaitForSeconds(2);
+            Debug.Log("dead it work");
+            playerController.Dead();
         }
     }
 }
