@@ -1,11 +1,10 @@
-using System.Collections;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-namespace Assets.Script
+namespace Assets.Script.Spawn
 {
     [System.Serializable]
     public class Wave

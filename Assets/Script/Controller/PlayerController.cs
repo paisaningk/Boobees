@@ -34,8 +34,7 @@ namespace Assets.Script.Controller
             Rd = GetComponent<Rigidbody2D>();
             playerCharacter = GetComponent<PlayerCharacter>();
 
-            dashcooldown = playerCharacter.DashCd;
-            MoveSpeed = playerCharacter.Speed;
+            
             
             playerInput = new Playerinput();
             playerInput.PlayerAction.Attack.performed += context => Attack();
@@ -47,6 +46,8 @@ namespace Assets.Script.Controller
 
         private void Update()
         {
+            dashcooldown = playerCharacter.DashCd;
+            MoveSpeed = playerCharacter.Speed;
             //Walk
             var walk = playerInput.PlayerAction.Move.ReadValue<Vector2>();
             

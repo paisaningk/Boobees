@@ -53,7 +53,12 @@ namespace Assets.Script.Pickup
             if (other.CompareTag("Player"))
             {
                 var playerGold = other.GetComponent<PlayerCharacter>().Gold;
-                
+                Debug.Log(playerGold >= price);
+                if (playerGold >= price)
+                {
+                    other.GetComponent<PlayerCharacter>().Gold -= price;
+                    PickUp(other);
+                }
             }
         }
 

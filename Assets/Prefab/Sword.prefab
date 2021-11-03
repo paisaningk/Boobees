@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1921084745
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4981687205440276836, guid: 0b36458a8212f8c499d64c7e23de62a8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -297,7 +297,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5267034846818344848, guid: 1a9abf24c541e014ea54d5ae32bfaab9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1a9abf24c541e014ea54d5ae32bfaab9, type: 3}
 --- !u!1 &4812545109399297521 stripped
 GameObject:

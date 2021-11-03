@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Assets.Script
+namespace Assets.Script.Spawn
 {
     public class Spawn : MonoBehaviour
     {

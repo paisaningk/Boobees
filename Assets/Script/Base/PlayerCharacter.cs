@@ -22,7 +22,7 @@ namespace Assets.Script.Base
         private GameObject Popup;
         private Animator animator;
 
-        public void Start()
+        public void Awake()
         {
             Name = PlayerCharacterSo.Name;
             Hp = PlayerCharacterSo.MaxHp;
@@ -34,6 +34,11 @@ namespace Assets.Script.Base
             playerController = GetComponent<PlayerController>();
 
             //PrintAll();
+        }
+
+        public void Update()
+        {
+           // Debug.Log(Gold);
         }
 
         public void PrintAll()
