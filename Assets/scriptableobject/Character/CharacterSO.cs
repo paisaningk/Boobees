@@ -8,6 +8,7 @@ namespace Assets.Script.scriptableobject.Character
         public string Name;
         public int MaxHp;
         public int Atk;
+        [Range(5f, 10f)]
         public float Speed;
         public GameObject Popup;
         

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Script.Menu
+namespace Assets.Script.Menu
 {
     public class Main : MonoBehaviour
     {
@@ -23,7 +23,7 @@ namespace Script.Menu
 
         private void StartGame()
         {
-            SceneManager.LoadScene("adc");
+            SceneManager.LoadScene("eeee");
         }
 
         private void QuitGame()

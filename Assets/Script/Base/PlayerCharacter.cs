@@ -1,23 +1,30 @@
 ﻿using System.Collections;
-using Assets.Script.scriptableobject;
+using Assets.Script.Controller;
 using Assets.Script.scriptableobject.Character;
-using Unity.Mathematics;
+using Assets.scriptableobject.Item;
 using UnityEngine;
 
 namespace Assets.Script.Base
 {
-    public class PlayerCharacter : MonoBehaviour
+    public class PlayerCharacter : MonoBehaviour 
     {
-        [SerializeField] private CharacterSO PlayerCharacterSo;
+        [SerializeField] public AdsManager adsManager;
 
+        [SerializeField] private CharacterSO PlayerCharacterSo;
+        public ItemSO[] ItemSo;
+        private PlayerController playerController;
         private string Name;
         public int Hp;
         public int Atk;
+        public int Gold = 0;
         public float Speed;
+        public float DashCd;
+        public float CritAtk;
+        public float CritRate;
         private GameObject Popup;
         private Animator animator;
-     
-        public void Start()
+
+        public void Awake()
         {
             Name = PlayerCharacterSo.Name;
             Hp = PlayerCharacterSo.MaxHp;
@@ -25,10 +32,19 @@ namespace Assets.Script.Base
             Speed = PlayerCharacterSo.Speed;
             Popup = PlayerCharacterSo.Popup;
             animator = GetComponent<Animator>();
+            playerController = GetComponent<PlayerController>();
+
+            //PrintAll();
+        }
+
+        public void Update()
+        {
+           // Debug.Log(Gold);
         }
 
         public void PrintAll()
         {
+            //Debug.Log("Enemy");
             Debug.Log($"name:{Name}");
             Debug.Log($"HP:{Hp}");
             Debug.Log($"ATK:{Atk}");
@@ -44,8 +60,8 @@ namespace Assets.Script.Base
                 ShowPopUp(enemyCharacter.Atk);
                 if (Hp <= 0)
                 {
-                    animator.SetBool("Dead",true);
-                    StartCoroutine(AnimatorDead());
+                    animator.SetBool("Dead", true);
+                    StartCoroutine(Dead());
                 }
                 Debug.Log($"{Name} have : {Hp}");
             }
@@ -58,12 +74,12 @@ namespace Assets.Script.Base
             textMesh.text = $"{dmg}";
             textMesh.color = Color.red;
         }
-        
-        IEnumerator AnimatorDead()
+
+        IEnumerator Dead()
         {
-            yield return new WaitForSeconds(1.517f);
-            
+            yield return new WaitForSeconds(2);
+            Debug.Log("dead it work");
+            playerController.Dead();
         }
-        
     }
 }

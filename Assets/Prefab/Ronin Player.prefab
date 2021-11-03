@@ -173,6 +173,7 @@ MonoBehaviour:
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 768
+  playMenu: {fileID: 0}
   knockback: 0
 --- !u!114 &2132391105640571628
 MonoBehaviour:
@@ -186,11 +187,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faac5826caff31748a03e48f2352d762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCharacterSo: {fileID: 11400000, guid: d8f9de924abf3bc48a370a4bee67a361, type: 2}
-  popupTransform: {fileID: 0}
+  PlayerCharacterSo: {fileID: 11400000, guid: 1200c21834260964494ba876aaebb44f, type: 2}
+  ItemSo: []
   Hp: 0
   Atk: 0
+  Gold: 0
   Speed: 0
+  DashCd: 0
+  CritAtk: 0
+  CritRate: 0
 --- !u!1 &2132391105921270811
 GameObject:
   m_ObjectHideFlags: 0

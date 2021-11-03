@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Script.Controller
+namespace Assets.Script.Controller
 {
     public class ChargeEnemyController : MonoBehaviour
     {

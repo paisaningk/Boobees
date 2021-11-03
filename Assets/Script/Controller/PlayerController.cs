@@ -1,19 +1,16 @@
-<<<<<<< HEAD
-﻿using Script.Menu;
+﻿using Assets.Script.Base;
+using Script.Menu;
 using UnityEngine;
-=======
-﻿using UnityEngine;
-<<<<<<< HEAD
-using UnityEngine.UI;
->>>>>>> f6829c9bd26dc8e9d58a6a72e2ee4a1b055b0b57
-=======
->>>>>>> parent of f6829c9 (+adding joy stick and attack button)
 
-namespace Script.Controller
+namespace Assets.Script.Controller
 {
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private LayerMask dashLayerMask;
+        [SerializeField] public PlayMenu playMenu;
+
+        private PlayerCharacter playerCharacter;
+        private Playerinput playerInput;
         private Rigidbody2D Rd;
         private Vector3 MoveDie;
         private Animator animator;
@@ -22,31 +19,36 @@ namespace Script.Controller
         private bool Attack02 = false;
         private bool Attack03 = false;
         public bool knockback = false;
-        public PlayerInputAction playerInput;
-        public PlayMenu playMenu;
-        
+
         //ปรับได้
-        private const float MoveSpeed = 5f;
+        private float MoveSpeed = 5f;
         float dashAmount = 3f;
         private float dashcooldowntime;
         private float dashcooldown = 1f;
         private float Attackcooldowntime;
         private float Attackcooldown = 2.5f;
-        private bool isPause = false;
 
         private void Awake()
         {
+            Time.timeScale = 1f;
             animator = GetComponent<Animator>();
             Rd = GetComponent<Rigidbody2D>();
-            playerInput = new PlayerInputAction();
+            playerCharacter = GetComponent<PlayerCharacter>();
+
+            
+            
+            playerInput = new Playerinput();
             playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
-            playerInput.PlayerAction.Pause.performed += context => Ispause();
+            playerInput.PlayerAction.Pause.performed += context => Menu();
             OnEnable();
+            //adc
         }
 
         private void Update()
         {
+            dashcooldown = playerCharacter.DashCd;
+            MoveSpeed = playerCharacter.Speed;
             //Walk
             var walk = playerInput.PlayerAction.Move.ReadValue<Vector2>();
             
@@ -71,9 +73,16 @@ namespace Script.Controller
             }
         }
 
-        public void DashButton()
+        private void Menu()
         {
-            Dash();
+            if (playMenu.isPause == false)
+            {
+                playMenu.Pause();
+            }
+            else
+            {
+                playMenu.Resume();
+            }
         }
 
         private void Attack()
@@ -145,19 +154,13 @@ namespace Script.Controller
             animator.SetBool("Attack03",false);
             Attackcooldowntime = 0;
         }
-        
-        private void Ispause()
+
+        public void Dead()
         {
-            if (isPause == false)
-            {
-                playMenu.Pause();
-                isPause = true;
-            }
-            else
-            {
-                playMenu.Resume();
-                isPause = false;
-            }
+            playMenu.Dead();
+            Rd.constraints = RigidbodyConstraints2D.FreezeAll;
+            OnDisable();
+            Time.timeScale = 0;
         }
         
         
