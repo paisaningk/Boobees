@@ -6,6 +6,8 @@ namespace Script.Menu
 {
     public class PlayMenu : MonoBehaviour
     {
+        [SerializeField] private AdsManager adsManager;
+
         [SerializeField] private GameObject pauseUi;
         [SerializeField] private GameObject DeadUI;
         [SerializeField] private GameObject WaveUI;
@@ -42,7 +44,16 @@ namespace Script.Menu
         
         private void Restart()
         {
-            SceneManager.LoadScene("Scenes/Kao");
+            var count = 0;
+            if (count <= 0)
+            {
+                count++;
+                adsManager.ShowAds("Rewarded_Android");
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
         public void Dead()
         {
@@ -50,6 +61,5 @@ namespace Script.Menu
             WaveUI.SetActive(false);
             DeadUI.SetActive(true);
         }
-
     }
 }

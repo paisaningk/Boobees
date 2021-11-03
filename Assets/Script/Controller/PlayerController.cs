@@ -8,6 +8,7 @@ namespace Assets.Script.Controller
     {
         [SerializeField] private LayerMask dashLayerMask;
         [SerializeField] public PlayMenu playMenu;
+
         private PlayerCharacter playerCharacter;
         private Playerinput playerInput;
         private Rigidbody2D Rd;

@@ -6,8 +6,10 @@ using UnityEngine;
 
 namespace Assets.Script.Base
 {
-    public class PlayerCharacter : MonoBehaviour
+    public class PlayerCharacter : MonoBehaviour 
     {
+        [SerializeField] public AdsManager adsManager;
+
         [SerializeField] private CharacterSO PlayerCharacterSo;
         public ItemSO[] ItemSo;
         private PlayerController playerController;
@@ -29,7 +31,6 @@ namespace Assets.Script.Base
             Atk = PlayerCharacterSo.Atk;
             Speed = PlayerCharacterSo.Speed;
             Popup = PlayerCharacterSo.Popup;
-            
             animator = GetComponent<Animator>();
             playerController = GetComponent<PlayerController>();
 
@@ -59,9 +60,8 @@ namespace Assets.Script.Base
                 ShowPopUp(enemyCharacter.Atk);
                 if (Hp <= 0)
                 {
-                    animator.SetBool("Dead",true);
+                    animator.SetBool("Dead", true);
                     StartCoroutine(Dead());
-
                 }
                 Debug.Log($"{Name} have : {Hp}");
             }
