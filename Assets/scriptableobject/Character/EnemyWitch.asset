@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ea91e71a58608243b4236919f390779, type: 3}
-  m_Name: Player
+  m_Name: EnemyWitch
   m_EditorClassIdentifier: 
-  Name: eeeeeeeeeee
+  Name: Witch
   MaxHp: 100
-  Atk: 100
+  Atk: 0
   Speed: 5
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}
