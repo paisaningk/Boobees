@@ -38,7 +38,7 @@ namespace Assets.Script.Controller
             
             
             playerInput = new Playerinput();
-            //playerInput.PlayerAction.Attack.performed += context => Attack();
+            playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Menu();
             OnEnable();
@@ -85,11 +85,6 @@ namespace Assets.Script.Controller
             }
         }
 
-        public void AttackButton()
-        {
-            Attack();
-        }
-
         private void Attack()
         {
             if (IsAttacking == false)
@@ -124,11 +119,13 @@ namespace Assets.Script.Controller
 
             }
         }
-
-        public void DashButton()
+        
+        public void AttackButton()
         {
-            Dash();
+            Attack();
+            Debug.Log("Button Active");
         }
+        
 
         private void Dash()
         {
@@ -144,6 +141,11 @@ namespace Assets.Script.Controller
                 }
                 Rd.MovePosition(dashPoint);
             }
+        }
+        
+        public void DashButton()
+        {
+            Dash();
         }
 
         private void AttackFinish()
