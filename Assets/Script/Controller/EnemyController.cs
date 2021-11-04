@@ -42,7 +42,7 @@ namespace Assets.Script.Controller
             Rb.MovePosition(move);
         }
         
-        IEnumerator Test()
+        IEnumerator Wait3sec()
         {
             Rb.constraints = RigidbodyConstraints2D.FreezeAll;
             yield return new WaitForSeconds(3);
@@ -54,7 +54,7 @@ namespace Assets.Script.Controller
         private void AttackFinish()
         {
             animator.SetBool("Attack",false);
-            StartCoroutine(Test());
+            StartCoroutine(Wait3sec());
         }
 
         private void Selectnextmove()

@@ -62,6 +62,15 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Buy"",
+                    ""type"": ""Button"",
+                    ""id"": ""39588b37-6b48-4161-8a30-958a7b201f2d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -159,8 +168,19 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""key and mouse"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b078352-4ff3-4837-bd7f-f8ff4b7e1175"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""key and mouse"",
+                    ""action"": ""Buy"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -183,6 +203,17 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""New control scheme"",
+            ""bindingGroup"": ""New control scheme"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Touchscreen>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
@@ -192,6 +223,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         m_PlayerAction_Attack = m_PlayerAction.FindAction("Attack", throwIfNotFound: true);
         m_PlayerAction_Dash = m_PlayerAction.FindAction("Dash", throwIfNotFound: true);
         m_PlayerAction_Pause = m_PlayerAction.FindAction("Pause", throwIfNotFound: true);
+        m_PlayerAction_Buy = m_PlayerAction.FindAction("Buy", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -255,6 +287,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerAction_Attack;
     private readonly InputAction m_PlayerAction_Dash;
     private readonly InputAction m_PlayerAction_Pause;
+    private readonly InputAction m_PlayerAction_Buy;
     public struct PlayerActionActions
     {
         private @Playerinput m_Wrapper;
@@ -263,6 +296,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_PlayerAction_Attack;
         public InputAction @Dash => m_Wrapper.m_PlayerAction_Dash;
         public InputAction @Pause => m_Wrapper.m_PlayerAction_Pause;
+        public InputAction @Buy => m_Wrapper.m_PlayerAction_Buy;
         public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -284,6 +318,9 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnPause;
+                @Buy.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnBuy;
+                @Buy.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnBuy;
+                @Buy.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnBuy;
             }
             m_Wrapper.m_PlayerActionActionsCallbackInterface = instance;
             if (instance != null)
@@ -300,6 +337,9 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Buy.started += instance.OnBuy;
+                @Buy.performed += instance.OnBuy;
+                @Buy.canceled += instance.OnBuy;
             }
         }
     }
@@ -313,11 +353,21 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_keyandmouseSchemeIndex];
         }
     }
+    private int m_NewcontrolschemeSchemeIndex = -1;
+    public InputControlScheme NewcontrolschemeScheme
+    {
+        get
+        {
+            if (m_NewcontrolschemeSchemeIndex == -1) m_NewcontrolschemeSchemeIndex = asset.FindControlSchemeIndex("New control scheme");
+            return asset.controlSchemes[m_NewcontrolschemeSchemeIndex];
+        }
+    }
     public interface IPlayerActionActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnBuy(InputAction.CallbackContext context);
     }
 }

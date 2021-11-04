@@ -147,10 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e613a744b385c4c95d8708168f02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCharacterSo: {fileID: 11400000, guid: ebcc235b79d3778499d90190108827eb, type: 2}
+  EnemyCharacterSo: {fileID: 11400000, guid: 2bf25410822b9c04aaea7289db3b695e, type: 2}
   knockbackLayerMask:
     serializedVersion: 2
     m_Bits: 768
+  GoldPrefab: {fileID: 0}
+  enemyType: 0
   Atk: 0
 --- !u!114 &9159359481388322822
 MonoBehaviour:

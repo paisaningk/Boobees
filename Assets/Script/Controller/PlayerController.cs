@@ -162,8 +162,7 @@ namespace Assets.Script.Controller
             OnDisable();
             Time.timeScale = 0;
         }
-        
-        
+
         private void OnEnable()
         {
             playerInput.Enable();
@@ -173,5 +172,6 @@ namespace Assets.Script.Controller
         {
             playerInput.Disable();
         }
+        
     }
 }
