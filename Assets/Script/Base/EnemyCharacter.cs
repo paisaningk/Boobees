@@ -19,7 +19,7 @@ namespace Assets.Script.Base
         private float Speed;
         private Rigidbody2D Rb;
         private PlayerController playerController;
-        private float playerCritRate = 10f;
+        private float playerCritRate;
         private GameObject Popup;
         
         public void Start()
@@ -48,11 +48,12 @@ namespace Assets.Script.Base
             if (other.CompareTag("PlayerHitBox"))
             {
                 var atkPlayer = other.GetComponentInParent<PlayerCharacter>();
+                playerCritRate = atkPlayer.CritRate;
                 var critPercentRand = Random.Range(1, 101);
                 
                 if (critPercentRand <= playerCritRate)
                 {
-                    var atkCrit = atkPlayer.Atk * 2;
+                    var atkCrit = atkPlayer.Atk * atkPlayer.CritAtk;
                     ShowPopUpCrit(atkCrit);
                     Hp -= atkCrit;
                 }

@@ -19,8 +19,8 @@ namespace Assets.Script.Base
         public int Gold = 0;
         public float Speed;
         public float DashCd;
-        public float CritAtk;
-        public float CritRate;
+        public int CritAtk = 1;
+        public int CritRate = 2;
         private GameObject Popup;
         private Animator animator;
 

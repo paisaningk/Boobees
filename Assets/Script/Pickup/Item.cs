@@ -18,8 +18,8 @@ namespace Assets.Script.Pickup
         private int atk;
         private float speed;
         private float dashCd;
-        private float critAtk;
-        private float critRate;
+        private int critAtk;
+        private int critRate;
         private int price;
         private Tier tier;
         private Collider2D player;
