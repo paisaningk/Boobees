@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ namespace Assets.Script.Menu
     {
         [SerializeField] private Button startButton;
         [SerializeField] private Button quitButton;
+        [SerializeField] private String gameScene;
     
         private void Awake()
         {
@@ -23,7 +25,7 @@ namespace Assets.Script.Menu
 
         private void StartGame()
         {
-            SceneManager.LoadScene("eeee");
+            SceneManager.LoadScene(gameScene);
         }
 
         private void QuitGame()
