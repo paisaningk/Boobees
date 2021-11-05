@@ -1,5 +1,6 @@
 using System;
 using Assets.Script.Base;
+using Assets.Script.Controller;
 using Assets.scriptableobject.Item;
 using UnityEngine;
 
@@ -10,14 +11,18 @@ namespace Assets.Script.Pickup
         [SerializeField] private ItemSO ItemSo;
         [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private GameObject Popup;
+        [SerializeField] private GameObject buy;
+        private Playerinput playerInput;
+        private bool Buying = false;
         private int maxHp;
         private int atk;
         private float speed;
         private float dashCd;
-        private float critAtk;
-        private float critRate;
+        private int critAtk;
+        private int critRate;
         private int price;
         private Tier tier;
+        private Collider2D player;
 
         private void Start()
         {
@@ -29,7 +34,12 @@ namespace Assets.Script.Pickup
             critRate = ItemSo.CritRate;
             tier = ItemSo.Tier;
             sprite.sprite = ItemSo.Sprite;
+            
             ShowPrice();
+            
+            playerInput = new Playerinput();
+            playerInput.PlayerAction.Buy.performed += context => Buy();
+            playerInput.Enable();
             //price = ItemSo.Price;
             //PrintAll();
         }
@@ -52,14 +62,17 @@ namespace Assets.Script.Pickup
         {
             if (other.CompareTag("Player"))
             {
-                var playerGold = other.GetComponent<PlayerCharacter>().Gold;
-                Debug.Log(playerGold >= price);
-                if (playerGold >= price)
-                {
-                    other.GetComponent<PlayerCharacter>().Gold -= price;
-                    PickUp(other);
-                }
+                player = other;
+                Buying = true;
+                buy.SetActive(Buying);
+                
             }
+        }
+
+        private void OnTriggerExit2D()
+        {
+            Buying = false;
+            buy.SetActive(Buying);
         }
 
         private void ShowPrice()
@@ -91,7 +104,6 @@ namespace Assets.Script.Pickup
         private void PickUp(Collider2D other)
         {
             var Player = other.GetComponent<PlayerCharacter>();
-            //Player.ItemSo.Add
             Player.Hp += maxHp;
             Player.Atk += atk;
             Player.Speed += speed;
@@ -101,6 +113,24 @@ namespace Assets.Script.Pickup
             Debug.Log("Player pickup");
                 
             Destroy(gameObject);
+        }
+
+        private void Buy()
+        {
+            if (Buying)
+            {
+                var playerGold = player.GetComponent<PlayerCharacter>().Gold;
+                if (playerGold >= price)
+                {
+                    player.GetComponent<PlayerCharacter>().Gold -= price;
+                    PickUp(player);
+                }
+            }
+            else
+            {
+                //เดี่ยวใส่เสียง
+                Debug.Log("can't pick up");
+            }
         }
     }
 }

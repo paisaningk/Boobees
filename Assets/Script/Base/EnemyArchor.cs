@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
+using System.Threading.Tasks;
+
 
 public class EnemyArchor : MonoBehaviour
 {
@@ -36,6 +39,7 @@ public class EnemyArchor : MonoBehaviour
 
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
+            
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
 
