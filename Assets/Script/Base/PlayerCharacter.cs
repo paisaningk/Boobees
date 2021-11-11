@@ -14,6 +14,7 @@ namespace Assets.Script.Base
         public ItemSO[] ItemSo;
         private PlayerController playerController;
         private string Name;
+        public int MaxHp;
         public int Hp;
         public int Atk;
         public int Gold = 0;
@@ -28,6 +29,7 @@ namespace Assets.Script.Base
         {
             Name = PlayerCharacterSo.Name;
             Hp = PlayerCharacterSo.MaxHp;
+            MaxHp = PlayerCharacterSo.MaxHp;
             Atk = PlayerCharacterSo.Atk;
             Speed = PlayerCharacterSo.Speed;
             Popup = PlayerCharacterSo.Popup;

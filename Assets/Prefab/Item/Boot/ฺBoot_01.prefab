@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7550875924435233662}
   m_Layer: 14
   m_Name: "\u0E3ABoot_01"
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,9 +155,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1921084745
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -484206163
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b342c387c47771c43a3fb7c33f07582a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

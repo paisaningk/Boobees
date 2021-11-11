@@ -1,6 +1,8 @@
 using System.Collections;
+using Assets.Script.Base;
 using Assets.scriptableobject.Item;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Script.Controller
 {
@@ -12,14 +14,83 @@ namespace Assets.Script.Controller
         [SerializeField] private GameObject[] Rare;
         [SerializeField] private GameObject[] Epic;
         [SerializeField] private GameObject[] Cursed;
+        [SerializeField] private GameObject shopMenu;
+        [SerializeField] private GameObject EPopup;
+        [SerializeField] private Button backButton;
+        [SerializeField] private Button rngButton;
+        [SerializeField] private Button healButton;
+        private bool Shop = false;
+        private Collider2D collider2D;
+        private Playerinput playerInput;
+        private Collider2D player;
         
         
         public void Start()
-        {
-            //StartCoroutine(Test());
-            
+        { 
             RngItemandSpawn();
+            playerInput = new Playerinput();
+            playerInput.PlayerAction.Buy.performed += context => Talk();
             
+            rngButton.onClick.AddListener(DeleteItem);
+            backButton.onClick.AddListener(Back);
+            healButton.onClick.AddListener(Heal);
+            
+            playerInput.Enable();
+        }
+
+        private void Talk()
+        {
+            if (Shop == true)
+            {
+                shopMenu.SetActive(true);
+            }
+            else
+            {
+                Back();
+            }
+        }
+
+        private void Back()
+        {
+            shopMenu.SetActive(false);
+        }
+        
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                player = other;
+                Shop = true;
+                EPopup.SetActive(true);
+            }
+        }
+
+        private void OnTriggerExit2D()
+        {
+            Shop = false;
+            EPopup.SetActive(false);
+            Back();
+        }
+
+        public void DeleteItem()
+        {
+            var iteminscene = GameObject.FindGameObjectsWithTag("Item");
+            foreach (var item in iteminscene)
+            {
+                Destroy(item);
+            }
+            RngItemandSpawn();
+        }
+
+        public void Heal()
+        {
+            var playerCharacter= player.GetComponent<PlayerCharacter>();
+            var heal50= playerCharacter.MaxHp / 2;
+            playerCharacter.Hp += heal50;
+            if (playerCharacter.Hp >= playerCharacter.MaxHp)
+            {
+                playerCharacter.Hp = playerCharacter.MaxHp;
+            }
         }
 
         public void RngItemandSpawn()
