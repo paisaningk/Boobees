@@ -172,7 +172,7 @@ namespace Assets.Script.Controller
             playMenu.Dead();
             Rd.constraints = RigidbodyConstraints2D.FreezeAll;
             OnDisable();
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
 
         private void OnEnable()

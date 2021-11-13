@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 94068204154348939}
   m_Layer: 14
   m_Name: Sword_02
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1921084745
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -484206163
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4981687205440276836, guid: 0b36458a8212f8c499d64c7e23de62a8,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

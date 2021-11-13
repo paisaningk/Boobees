@@ -13,7 +13,8 @@ namespace Assets.Script.Base
         [SerializeField] private CharacterSO PlayerCharacterSo;
         public ItemSO[] ItemSo;
         private PlayerController playerController;
-        private string Name;
+        public string Name;
+        public int MaxHp;
         public int Hp;
         public int Atk;
         public int Gold = 0;
@@ -28,6 +29,7 @@ namespace Assets.Script.Base
         {
             Name = PlayerCharacterSo.Name;
             Hp = PlayerCharacterSo.MaxHp;
+            MaxHp = PlayerCharacterSo.MaxHp;
             Atk = PlayerCharacterSo.Atk;
             Speed = PlayerCharacterSo.Speed;
             Popup = PlayerCharacterSo.Popup;
@@ -58,6 +60,19 @@ namespace Assets.Script.Base
                 var enemyCharacter = other.GetComponentInParent<EnemyCharacter>();
                 Hp -= enemyCharacter.Atk;
                 ShowPopUp(enemyCharacter.Atk);
+                if (Hp <= 0)
+                {
+                    animator.SetBool("Dead", true);
+                    StartCoroutine(Dead());
+                }
+                Debug.Log($"{Name} have : {Hp}");
+            }
+
+            if (other.CompareTag("Projectile"))
+            {
+                var arrow = other.GetComponent<Arrow>();
+                Hp -= arrow.DMG;
+                ShowPopUp(arrow.DMG);
                 if (Hp <= 0)
                 {
                     animator.SetBool("Dead", true);

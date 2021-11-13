@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: adsadas
   m_EditorClassIdentifier: 
   Name: adsa
-  MaxHp: 10
+  MaxHp: 20
   Atk: 10
   Speed: 3
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

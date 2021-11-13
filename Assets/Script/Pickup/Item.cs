@@ -104,7 +104,7 @@ namespace Assets.Script.Pickup
         private void PickUp(Collider2D other)
         {
             var Player = other.GetComponent<PlayerCharacter>();
-            Player.Hp += maxHp;
+            Player.MaxHp += maxHp;
             Player.Atk += atk;
             Player.Speed += speed;
             Player.DashCd += dashCd;
