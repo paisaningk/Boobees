@@ -187,7 +187,7 @@ MonoBehaviour:
   EnemyCharacterSo: {fileID: 11400000, guid: b5d4aeb1e62430a48b31ff0ee83fe4e5, type: 2}
   knockbackLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   GoldPrefab: {fileID: 6553757506690030909, guid: 78ee19a0df208fe4e89f36ba6e168720,
     type: 3}
   enemyType: 1

@@ -8,6 +8,7 @@ TagManager:
   - EnemyHitBox
   - Enemy
   - Item
+  - Projectile
   layers:
   - Default
   - TransparentFX

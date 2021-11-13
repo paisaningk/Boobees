@@ -1,6 +1,7 @@
 using System.Collections;
 using Assets.Script.Base;
 using Assets.scriptableobject.Item;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,8 +20,13 @@ namespace Assets.Script.Controller
         [SerializeField] private Button backButton;
         [SerializeField] private Button rngButton;
         [SerializeField] private Button healButton;
+        [SerializeField] private TextMeshProUGUI Text;
+        [SerializeField] private TextMeshProUGUI HealcostText;
+        [SerializeField] private TextMeshProUGUI RNGText;
+        
+        private int HealCost = 20;
+        private int RNGCost = 20;
         private bool Shop = false;
-        private Collider2D collider2D;
         private Playerinput playerInput;
         private Collider2D player;
         
@@ -35,18 +41,23 @@ namespace Assets.Script.Controller
             backButton.onClick.AddListener(Back);
             healButton.onClick.AddListener(Heal);
             
+            
             playerInput.Enable();
         }
+        
+        
 
         private void Talk()
         {
             if (Shop == true)
             {
+                string[] talk = new[] {"Hello , You cum again ","Hello nigga" , "you give me a monkey" };
+                string[] talka = new[] {"Hello","Hello adc" , "you give me" };
+                var range = Random.Range(0, talk.Length);
                 shopMenu.SetActive(true);
-            }
-            else
-            {
-                Back();
+                Text.text = talka[range];
+                HealcostText.text = $"{HealCost}";
+                RNGText.text = $"{RNGCost}";
             }
         }
 
@@ -69,59 +80,76 @@ namespace Assets.Script.Controller
         {
             Shop = false;
             EPopup.SetActive(false);
-            Back();
         }
 
-        public void DeleteItem()
+        private void DeleteItem()
         {
-            var iteminscene = GameObject.FindGameObjectsWithTag("Item");
-            foreach (var item in iteminscene)
+            var playerCharacter = player.GetComponent<PlayerCharacter>();
+            if (playerCharacter.Gold >= RNGCost)
             {
-                Destroy(item);
+                playerCharacter.Gold -= RNGCost;
+                var iteminscene = GameObject.FindGameObjectsWithTag("Item");
+                foreach (var item in iteminscene)
+                {
+                    Destroy(item);
+                }
+                RngItemandSpawn();
             }
-            RngItemandSpawn();
-        }
-
-        public void Heal()
-        {
-            var playerCharacter= player.GetComponent<PlayerCharacter>();
-            var heal50= playerCharacter.MaxHp / 2;
-            playerCharacter.Hp += heal50;
-            if (playerCharacter.Hp >= playerCharacter.MaxHp)
+            else
             {
-                playerCharacter.Hp = playerCharacter.MaxHp;
+                Text.text = $"GOLD not enough";
             }
         }
 
-        public void RngItemandSpawn()
+        private void Heal()
+        {
+            var playerCharacter = player.GetComponent<PlayerCharacter>();
+            if (playerCharacter.Gold >= HealCost)
+            {
+                playerCharacter.Gold -= HealCost;
+                //var heal50= playerCharacter.MaxHp / 2;
+                playerCharacter.Hp += HealCost;
+                if (playerCharacter.Hp >= playerCharacter.MaxHp)
+                {
+                    playerCharacter.Hp = playerCharacter.MaxHp;
+                }
+            }
+            else
+
+            {
+                Text.text = $"GOLD not enough";
+            }
+        }
+
+        private void RngItemandSpawn()
         {
             foreach (var t in SpawnPoint)
             {
                 var rngTier = Random.Range(1 , 156);
                 if (rngTier <= 68)
                 {
-                    var Rngitem = Random.Range(0, Common.Length);
-                    Instantiate(Common[Rngitem], t.position ,Quaternion.identity);
+                    var rngitem = Random.Range(0, Common.Length);
+                    Instantiate(Common[rngitem], t.position ,Quaternion.identity);
                 }
                 else if (rngTier <= 114)
                 {
-                    var Rngitem = Random.Range(0, Common.Length);
-                    Instantiate(Uncommon[Rngitem], t.position ,Quaternion.identity);
+                    var rngitem = Random.Range(0, Common.Length);
+                    Instantiate(Uncommon[rngitem], t.position ,Quaternion.identity);
                 }
                 else if (rngTier <= 138)
                 {
-                    var Rngitem = Random.Range(0, Common.Length);
-                    Instantiate(Rare[Rngitem], t.position ,Quaternion.identity);
+                    var rngitem = Random.Range(0, Common.Length);
+                    Instantiate(Rare[rngitem], t.position ,Quaternion.identity);
                 }
                 else if (rngTier <= 149)
                 {
-                    var Rngitem = Random.Range(0, Common.Length);
-                    Instantiate(Epic[Rngitem], t.position ,Quaternion.identity);
+                    var rngitem = Random.Range(0, Common.Length);
+                    Instantiate(Epic[rngitem], t.position ,Quaternion.identity);
                 }
                 else if (rngTier <= 155)
                 {
-                    var Rngitem = Random.Range(0, Common.Length);
-                    Instantiate(Cursed[Rngitem], t.position ,Quaternion.identity);
+                    var rngitem = Random.Range(0, Common.Length);
+                    Instantiate(Cursed[rngitem], t.position ,Quaternion.identity);
                 }
             }
         }

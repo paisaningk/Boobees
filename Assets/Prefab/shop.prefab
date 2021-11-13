@@ -420,6 +420,10 @@ MonoBehaviour:
   EPopup: {fileID: 8850059686402583518}
   backButton: {fileID: 0}
   rngButton: {fileID: 0}
+  healButton: {fileID: 0}
+  Text: {fileID: 0}
+  HealcostText: {fileID: 0}
+  RNGText: {fileID: 0}
 --- !u!1 &273751100689021574
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,12 +527,12 @@ PrefabInstance:
     - target: {fileID: 2580463158571480519, guid: 7d1e5b612ede6d447b403a178af80e29,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.891
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 2580463158571480519, guid: 7d1e5b612ede6d447b403a178af80e29,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.32
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 2580463158571480519, guid: 7d1e5b612ede6d447b403a178af80e29,
         type: 3}

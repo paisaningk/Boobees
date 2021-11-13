@@ -13,7 +13,6 @@ namespace Assets.Script.Spawn
         public int NumberOfEnemy;
         public float SpawnTime;
         public GameObject[] TypeOfEnemy;
-        public GameObject[] Item;
 
     }
     public class TestWave : MonoBehaviour
@@ -21,7 +20,9 @@ namespace Assets.Script.Spawn
         [SerializeField] private Wave[] Wave;
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
-
+        [SerializeField] private GameObject Shop;
+        
+        
         private Wave CurrentWave;
         private int CurrentWaveNumber;
         private bool CanSpawn = true;
@@ -37,7 +38,7 @@ namespace Assets.Script.Spawn
         {
             CurrentWave = Wave[CurrentWaveNumber];
             SpawnWave();
-            GameObject[] TolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            var TolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
             WaveText.text = $"Wave : {WaveNumberText}";
             if (TolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber +1 != Wave.Length)
             {
@@ -65,8 +66,6 @@ namespace Assets.Script.Spawn
 
         private void NextSpawnWave()
         {
-            var Randomitem = CurrentWave.Item[Random.Range(0, CurrentWave.Item.Length)];
-            Instantiate(Randomitem, new Vector3(0, 0), quaternion.identity);
             WaveNumberText++;
             CurrentWaveNumber++;
             CanSpawn = true;
