@@ -9,10 +9,10 @@ namespace Assets.Script.Spawn
     [System.Serializable]
     public class Wave
     {
-        public string WaveName;
-        public int NumberOfEnemy;
-        public float SpawnTime;
-        public GameObject[] TypeOfEnemy;
+        public string waveName;
+        public int numberOfEnemy;
+        public float spawnTime;
+        public GameObject[] typeOfEnemy;
 
     }
     public class TestWave : MonoBehaviour
@@ -38,9 +38,9 @@ namespace Assets.Script.Spawn
         {
             CurrentWave = Wave[CurrentWaveNumber];
             SpawnWave();
-            var TolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
             WaveText.text = $"Wave : {WaveNumberText}";
-            if (TolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber +1 != Wave.Length)
+            if (tolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber +1 != Wave.Length)
             {
                 NextSpawnWave();
             }
@@ -50,14 +50,14 @@ namespace Assets.Script.Spawn
         {
             if (CanSpawn && NextSpawnTime < Time.time)
             {
-                GameObject RandomEnemy = CurrentWave.TypeOfEnemy[Random.Range(0, CurrentWave.TypeOfEnemy.Length)];
+                GameObject RandomEnemy = CurrentWave.typeOfEnemy[Random.Range(0, CurrentWave.typeOfEnemy.Length)];
                 Transform RandomSpawnPoint = SpawnPoint[Random.Range(0, SpawnPoint.Length)];
                 Instantiate(RandomEnemy, RandomSpawnPoint.position, Quaternion.identity);
                 
-                CurrentWave.NumberOfEnemy--;
-                NextSpawnTime = Time.time + CurrentWave.SpawnTime;   
+                CurrentWave.numberOfEnemy--;
+                NextSpawnTime = Time.time + CurrentWave.spawnTime;   
                 
-                if (CurrentWave.NumberOfEnemy == 0)
+                if (CurrentWave.numberOfEnemy == 0)
                 {
                     CanSpawn = false;
                 }

@@ -1,8 +1,8 @@
 ﻿using Assets.Script.Base;
-using Script.Menu;
+using Assets.Script.Menu;
 using UnityEngine;
 
-namespace Assets.Script.Controller
+namespace Script.Controller
 {
     public class PlayerController : MonoBehaviour
     {

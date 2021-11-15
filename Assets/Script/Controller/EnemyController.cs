@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Script.Controller
+namespace Script.Controller
 {
     public class EnemyController : MonoBehaviour
     {
@@ -13,6 +13,7 @@ namespace Assets.Script.Controller
         private Vector3 directionnormalized;
         private bool attacking = false;
         private bool nextMove = false;
+        
 
         private void Start()
         {

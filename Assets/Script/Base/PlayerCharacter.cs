@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using Assets.Script.Controller;
 using Assets.Script.scriptableobject.Character;
 using Assets.scriptableobject.Item;
+using Script.Controller;
 using UnityEngine;
 
 namespace Assets.Script.Base
@@ -14,8 +14,8 @@ namespace Assets.Script.Base
         public ItemSO[] ItemSo;
         private PlayerController playerController;
         public string Name;
-        public int MaxHp;
-        public int Hp;
+        public float MaxHp;
+        public float Hp;
         public int Atk;
         public int Gold = 0;
         public float Speed;

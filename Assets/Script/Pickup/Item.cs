@@ -1,6 +1,5 @@
 using System;
 using Assets.Script.Base;
-using Assets.Script.Controller;
 using Assets.scriptableobject.Item;
 using UnityEngine;
 

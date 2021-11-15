@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8412787090587808444}
   - component: {fileID: 1609723562}
   - component: {fileID: 735913950}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}

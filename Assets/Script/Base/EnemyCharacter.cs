@@ -1,7 +1,7 @@
-﻿using Assets.Script.Controller;
-using Assets.Script.Pickup;
+﻿using Assets.Script.Pickup;
 using Assets.Script.scriptableobject;
 using Assets.Script.scriptableobject.Character;
+using Script.Controller;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 

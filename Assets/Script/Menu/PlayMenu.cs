@@ -1,20 +1,26 @@
+using Assets.Script.Base;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Script.Menu
+namespace Assets.Script.Menu
 {
     public class PlayMenu : MonoBehaviour
     {
         [SerializeField] private AdsManager adsManager;
-
         [SerializeField] private GameObject pauseUi;
-        [SerializeField] private GameObject DeadUI;
-        [SerializeField] private GameObject WaveUI;
+        [SerializeField] private GameObject deadUI;
+        [SerializeField] private GameObject waveUI;
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
         [SerializeField] private Button deadquitButton;
         [SerializeField] private Button restartButton;
+        [SerializeField] private TextMeshProUGUI goldText;
+        [SerializeField] private PlayerCharacter player;
+        [SerializeField] private Image blood;
+        private int count = 0;
+        
         public bool isPause = false;
 
         private void Awake()
@@ -24,6 +30,14 @@ namespace Script.Menu
             deadquitButton.onClick.AddListener(Quit);
             restartButton.onClick.AddListener(Restart);
         }
+
+        private void Update()
+        {
+            goldText.text = $"Gold : {player.Gold}";
+            var a = player.Hp / player.MaxHp;
+            blood.fillAmount = a;
+        }
+        
         public void Pause()
         {
             pauseUi.SetActive(true);
@@ -44,22 +58,22 @@ namespace Script.Menu
         
         private void Restart()
         {
-            var count = 0;
-            if (count <= 0)
-            {
-                count++;
-                adsManager.ShowAds("Rewarded_Android");
-            }
-            else
-            {
-                SceneManager.LoadScene("MainMenu");
-            }
+            // if (count <= 0)
+            // {
+            //     count++;
+            //     adsManager.ShowAds("Rewarded_Android");
+            // }
+            // else
+            // {
+            //     SceneManager.LoadScene("MainMenu");
+            // }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         public void Dead()
         {
             pauseUi.SetActive(false);
-            WaveUI.SetActive(false);
-            DeadUI.SetActive(true);
+            waveUI.SetActive(false);
+            deadUI.SetActive(true);
         }
     }
 }

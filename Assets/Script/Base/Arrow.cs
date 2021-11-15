@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Script.Base;
+using Script.Controller;
 using UnityEngine;
-using Assets.Script.Controller;
 
 public class Arrow : MonoBehaviour
 {

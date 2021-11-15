@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2580463158571480519}
   - component: {fileID: 6214317901360053907}
   - component: {fileID: 525036000707976500}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: BuyPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4658696177631241987}
   - component: {fileID: 8677209595462591520}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: e
   m_TagString: Untagged
   m_Icon: {fileID: 0}
