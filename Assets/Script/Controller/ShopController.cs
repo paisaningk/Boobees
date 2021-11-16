@@ -36,7 +36,7 @@ namespace Script.Controller
             _playerInput = new Playerinput();
             _playerInput.PlayerAction.Buy.performed += context => Talk();
             
-            rngButton.onClick.AddListener(DeleteItem);
+            rngButton.onClick.AddListener(CheckGoldForReroll);
             backButton.onClick.AddListener(Back);
             healButton.onClick.AddListener(Heal);
             
@@ -81,22 +81,27 @@ namespace Script.Controller
             ePopup.SetActive(false);
         }
 
-        private void DeleteItem()
+        public void CheckGoldForReroll()
         {
             var playerCharacter = _player.GetComponent<PlayerCharacter>();
             if (playerCharacter.Gold >= rngCost)
             {
                 playerCharacter.Gold -= rngCost;
-                var iteminscene = GameObject.FindGameObjectsWithTag("Item");
-                foreach (var item in iteminscene)
-                {
-                    Destroy(item);
-                }
+                Deleteitem();
                 RngItemandSpawn();
             }
             else
             {
                 text.text = $"GOLD not enough";
+            }
+        }
+
+        public void Deleteitem()
+        {
+            var iteminscene = GameObject.FindGameObjectsWithTag("Item");
+            foreach (var item in iteminscene)
+            {
+                Destroy(item);
             }
         }
 

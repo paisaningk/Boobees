@@ -153,6 +153,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 273751100407979914}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &235286273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 235286273, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1016526024929411989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &249956437
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,7 +4137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &819900536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4145,23 +4151,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wave:
-  - waveName: 
-    numberOfEnemy: 0
-    spawnTime: 0
-    typeOfEnemy: []
-  - waveName: 
-    numberOfEnemy: 0
-    spawnTime: 0
-    typeOfEnemy: []
-  - waveName: 
-    numberOfEnemy: 0
-    spawnTime: 0
-    typeOfEnemy: []
+  - numberOfEnemy: 1
+    spawnTime: 3
+    typeOfEnemy:
+    - {fileID: 4269672613588630461, guid: ea5adf2693a31d2488617a13ecd2c38b, type: 3}
+    - {fileID: 3023544850715760398, guid: c723e9cb5bfab0f43b44a87bf4441815, type: 3}
   SpawnPoint:
   - {fileID: 637697795}
   - {fileID: 691648390}
   WaveText: {fileID: 120657776}
   Shop: {fileID: 183317184}
+  shopSpawnPoint: {fileID: 833434474}
+  win: {fileID: 235286273}
+  shopingtime: 20
 --- !u!4 &819900537
 Transform:
   m_ObjectHideFlags: 0
@@ -4175,8 +4177,39 @@ Transform:
   m_Children:
   - {fileID: 637697795}
   - {fileID: 691648390}
+  - {fileID: 833434474}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &833434473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833434474}
+  m_Layer: 0
+  m_Name: ShopSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &833434474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833434473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.25, y: 3.87, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 819900537}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &836019259
 GameObject:
@@ -29349,7 +29382,7 @@ PrefabInstance:
     - target: {fileID: 273751100222277798, guid: c1eab51a60dcad643b9a6fdcae2e0732,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
         type: 3}
@@ -29395,11 +29428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 889255919892632402, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1016526024559318544, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
       propertyPath: m_Name
@@ -29520,15 +29548,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1773763743}
-    - target: {fileID: 1682401128911608006, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+    - target: {fileID: 1016526025120178408, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6229808985733820347, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+    - target: {fileID: 8805443890185055625, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_text
+      value: 'Restart
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805443890185055625, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d084eebb5cb9c42b0005c31cb69f1b, type: 3}

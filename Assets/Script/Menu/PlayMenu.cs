@@ -15,12 +15,15 @@ namespace Assets.Script.Menu
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
         [SerializeField] private Button deadquitButton;
+        [SerializeField] private Button deadwinButton;
+        [SerializeField] private Button restartwinButton;
         [SerializeField] private Button restartButton;
+        [SerializeField] private Button restartpauseButton;
         [SerializeField] private TextMeshProUGUI goldText;
         [SerializeField] private PlayerCharacter player;
         [SerializeField] private Image blood;
-        private int count = 0;
         
+        private int count = 0;
         public bool isPause = false;
 
         private void Awake()
@@ -28,7 +31,10 @@ namespace Assets.Script.Menu
             resumeButton.onClick.AddListener(Resume);
             quitButton.onClick.AddListener(Quit);
             deadquitButton.onClick.AddListener(Quit);
+            deadwinButton.onClick.AddListener(Quit);
             restartButton.onClick.AddListener(Restart);
+            restartwinButton.onClick.AddListener(Restart);
+            restartpauseButton.onClick.AddListener(Restart);
         }
 
         private void Update()

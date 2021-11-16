@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Script.Spawn
+namespace Script.Spawn
 {
     public class SpawnItem : MonoBehaviour
     {
