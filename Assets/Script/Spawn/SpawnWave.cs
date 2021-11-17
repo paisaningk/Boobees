@@ -3,6 +3,7 @@ using Script.Controller;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Sound;
 
 
 namespace Script.Spawn
@@ -67,6 +68,7 @@ namespace Script.Spawn
         {
             if (CanSpawn && NextSpawnTime < Time.time)
             {
+                SoundManager.Instance.Play(SoundManager.Sound.SpawnEnemy);
                 GameObject RandomEnemy = CurrentWave.typeOfEnemy[Random.Range(0, CurrentWave.typeOfEnemy.Length)];
                 Transform RandomSpawnPoint = SpawnPoint[Random.Range(0, SpawnPoint.Length)];
                 Instantiate(RandomEnemy, RandomSpawnPoint.position, Quaternion.identity);

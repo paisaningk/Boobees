@@ -48,6 +48,7 @@ namespace Sound
             PlayerTakeHit1,
             PlayerTakeHit2,
             Coin,
+            SpawnEnemy,
 
             EnemyExplode
         }
