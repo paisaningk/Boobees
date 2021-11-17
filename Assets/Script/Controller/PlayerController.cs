@@ -1,6 +1,7 @@
 ﻿using Assets.Script.Base;
 using Assets.Script.Menu;
 using UnityEngine;
+using Sound;
 
 namespace Script.Controller
 {
@@ -72,6 +73,7 @@ namespace Script.Controller
             }
             else
             {
+                SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
                 animator.SetBool("Walking",false); 
             }
             Rd.velocity = MoveDie * MoveSpeed;
@@ -101,6 +103,7 @@ namespace Script.Controller
             {
                 if (Attack01 == false)
                 {
+                    SoundManager.Instance.Play(SoundManager.Sound.PlayerHit1);
                     IsAttacking = true;
                     Attack01 = true;
                     animator.SetBool("Attacking",true); 
@@ -110,6 +113,7 @@ namespace Script.Controller
                 }
                 else if (Attack02 == false)
                 {
+                    SoundManager.Instance.Play(SoundManager.Sound.PlayerHit2);
                     IsAttacking = true;
                     Attack02 = true;
                     animator.SetBool("Attacking",true);
@@ -119,6 +123,7 @@ namespace Script.Controller
                 }
                 else if (Attack03 == false)
                 {
+                    SoundManager.Instance.Play(SoundManager.Sound.PlayerHit3);
                     IsAttacking = true;
                     Attack03 = true;
                     animator.SetBool("Attacking",true); 
@@ -141,6 +146,7 @@ namespace Script.Controller
         {
             if (dashcooldowntime <= Time.time)
             {
+                SoundManager.Instance.Play(SoundManager.Sound.PlayerDash);
                 dashcooldowntime = Time.time + dashcooldown;
                 Vector3 dashPoint = transform.position + MoveDie * dashAmount;
 

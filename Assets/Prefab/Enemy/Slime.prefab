@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 720477750}
   - component: {fileID: 9210852617662411685}
   - component: {fileID: 720477756}
+  - component: {fileID: 619330586}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -187,3 +188,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   dir: {x: 0, y: 0, z: 0}
+--- !u!114 &619330586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696651408628596625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e613a744b385c4c95d8708168f02ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyCharacterSo: {fileID: 11400000, guid: 1c56ac0ea8bde8043999e6c6a186b19b, type: 2}
+  knockbackLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  GoldPrefab: {fileID: 6553757506690030909, guid: 78ee19a0df208fe4e89f36ba6e168720,
+    type: 3}
+  enemyType: 0
+  Atk: 0

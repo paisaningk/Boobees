@@ -4,6 +4,7 @@ using Assets.Script.scriptableobject.Character;
 using Script.Controller;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using Sound;
 
 namespace Assets.Script.Base
 {
@@ -65,6 +66,7 @@ namespace Assets.Script.Base
                 
                 if (Hp <= 0)
                 {
+                    SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
                     DropGold();
                     Destroy(this.gameObject);
                 }

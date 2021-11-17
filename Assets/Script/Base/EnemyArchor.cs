@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
 using System.Threading.Tasks;
+using Sound;
 
 
 public class EnemyArchor : MonoBehaviour
@@ -27,7 +28,8 @@ public class EnemyArchor : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, player.position) > stoppingDistance)
+
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
@@ -39,12 +41,12 @@ public class EnemyArchor : MonoBehaviour
 
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
-            
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
 
         if(timeBtwShots <= 0)
         {
+            SoundManager.Instance.Play(SoundManager.Sound.WitchAttack);
             Instantiate(projectile, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
         }

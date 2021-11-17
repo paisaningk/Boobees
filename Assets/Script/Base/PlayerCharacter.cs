@@ -3,6 +3,7 @@ using Assets.Script.scriptableobject.Character;
 using Assets.scriptableobject.Item;
 using Script.Controller;
 using UnityEngine;
+using Sound;
 
 namespace Assets.Script.Base
 {
@@ -70,6 +71,7 @@ namespace Assets.Script.Base
 
             if (other.CompareTag("Projectile"))
             {
+                SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit1);
                 var arrow = other.GetComponent<Arrow>();
                 Hp -= arrow.DMG;
                 ShowPopUp(arrow.DMG);

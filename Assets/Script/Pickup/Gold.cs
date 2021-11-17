@@ -2,6 +2,7 @@ using System;
 using Assets.Script.Base;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Sound;
 
 namespace Assets.Script.Pickup
 {
@@ -14,6 +15,7 @@ namespace Assets.Script.Pickup
             
             if (other.CompareTag("Player"))
             {
+                SoundManager.Instance.Play(SoundManager.Sound.Coin);
                 AddGold(other,goldAmount);
             }
         }

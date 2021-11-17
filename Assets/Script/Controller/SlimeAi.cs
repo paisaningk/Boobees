@@ -1,4 +1,5 @@
 using UnityEngine;
+using Sound;
 
 namespace Script.Controller
 {
@@ -47,7 +48,7 @@ namespace Script.Controller
         }
         private void FixedUpdate()
         {
-            if(isInChaseRange && !isInAttackRange)
+            if (isInChaseRange && !isInAttackRange)
             {
                 MoveCharacter(movement);
             }
