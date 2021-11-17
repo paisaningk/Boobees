@@ -65,7 +65,7 @@ namespace Assets.Script.Base
                     animator.SetBool("Dead", true);
                     StartCoroutine(Dead());
                 }
-                Debug.Log($"{Name} have : {Hp}");
+                //Debug.Log($"{Name} have : {Hp}");
             }
 
             if (other.CompareTag("Projectile"))
@@ -78,7 +78,7 @@ namespace Assets.Script.Base
                     animator.SetBool("Dead", true);
                     StartCoroutine(Dead());
                 }
-                Debug.Log($"{Name} have : {Hp}");
+                //Debug.Log($"{Name} have : {Hp}");
             }
         }
 

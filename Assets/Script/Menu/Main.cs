@@ -17,12 +17,6 @@ namespace Assets.Script.Menu
             quitButton.onClick.AddListener(QuitGame);
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
-
         private void StartGame()
         {
             SceneManager.LoadScene(gameScene);

@@ -45,9 +45,7 @@ namespace Script.Controller
         
         IEnumerator Wait3sec()
         {
-            Rb.constraints = RigidbodyConstraints2D.FreezeAll;
             yield return new WaitForSeconds(3);
-            Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             attacking = false;
             nextMove = false;
         }

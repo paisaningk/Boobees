@@ -68,10 +68,7 @@ namespace Assets.Script.Base
                     DropGold();
                     Destroy(this.gameObject);
                 }
-                if (playerController.knockback == true)
-                {
-                    Knockback(other);
-                }
+                
             }
         }
 

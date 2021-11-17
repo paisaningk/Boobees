@@ -28,8 +28,7 @@ namespace Script.Spawn
         
         private Wave CurrentWave;
         private int CurrentWaveNumber = 0;
-        private bool rng = true;
-        private bool nextspawn = true;
+        private bool nextwave = true;
         private bool CanSpawn = true;
         private float NextSpawnTime;
         private int WaveNumberText =1;
@@ -38,7 +37,6 @@ namespace Script.Spawn
         private void Start()
         {
             WaveText.text = $"Wave {WaveNumberText}";
-            
         }
 
         private void Update()
@@ -51,11 +49,12 @@ namespace Script.Spawn
                 WaveText.text = $"Wave : {WaveNumberText}";
                 if (tolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber + 1 != Wave.Length)
                 {
-                    StartCoroutine(Shoping());
-                }
-                else if (tolalEnemies.Length == 0 && !CanSpawn)
-                {
-                    NextSpawnWave();
+                    if (nextwave)
+                    {
+                        StartCoroutine(Shoping());
+                        nextwave = false;
+                    }
+                    
                 }
             }
             else
@@ -74,7 +73,7 @@ namespace Script.Spawn
                 
                 CurrentWave.numberOfEnemy--;
                 NextSpawnTime = Time.time + CurrentWave.spawnTime;   
-                
+                Debug.Log($"numberOfEnemy {CurrentWave.numberOfEnemy}");
                 if (CurrentWave.numberOfEnemy == 0)
                 {
                     CanSpawn = false;
@@ -86,20 +85,15 @@ namespace Script.Spawn
         {
             ShopController = Shop.GetComponent<ShopController>();
             Shop.SetActive(true);
-            if (rng == true)
-            {
-                ShopController.Deleteitem();
-                rng = false;
-            }
-            yield return new WaitForSeconds(2);
-            if (nextspawn)
-            {
-                Shop.SetActive(false);
-                ShopController.Deleteitem();
-                NextSpawnWave();
-                nextspawn = false;
-            }
+            ShopController.RngItemandSpawn();
+            Debug.Log("shop open");
             
+            yield return new WaitForSeconds(shopingtime);
+            
+            Shop.SetActive(false);
+            ShopController.Deleteitem();
+            NextSpawnWave();
+            Debug.Log("shop close");
             
         }
 
@@ -108,15 +102,9 @@ namespace Script.Spawn
             WaveNumberText++;
             CurrentWaveNumber++;
             CanSpawn = true;
-            rng = true;
-            StartCoroutine(Setnextspawn());
+            nextwave = true;
         }
-
-        IEnumerator Setnextspawn()
-        {
-            yield return new WaitForSeconds(2);
-            nextspawn = true;
-        }
+        
 
         
     }

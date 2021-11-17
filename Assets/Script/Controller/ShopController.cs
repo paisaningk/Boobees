@@ -32,7 +32,7 @@ namespace Script.Controller
         
         public void Start()
         { 
-            RngItemandSpawn();
+            //RngItemandSpawn();
             _playerInput = new Playerinput();
             _playerInput.PlayerAction.Buy.performed += context => Talk();
             
@@ -125,7 +125,7 @@ namespace Script.Controller
             }
         }
 
-        private void RngItemandSpawn()
+       public void RngItemandSpawn()
         {
             foreach (var t in spawnPoint)
             {

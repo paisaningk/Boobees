@@ -41,8 +41,18 @@ namespace Script.Controller
             playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Menu();
+            playerInput.PlayerAction.Buy.performed += context => adc();
             OnEnable();
             //adc
+        }
+
+        private void adc()
+        {
+            var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var VARIABLE in tolalEnemies)
+            {
+                Destroy(VARIABLE);
+            }
         }
 
         private void Update()
@@ -96,7 +106,7 @@ namespace Script.Controller
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack01",true);
                     Attackcooldowntime = Time.time + Attackcooldown;
-                    Debug.Log($"Attack 1");
+                    //Debug.Log($"Attack 1");
                 }
                 else if (Attack02 == false)
                 {
@@ -105,7 +115,7 @@ namespace Script.Controller
                     animator.SetBool("Attacking",true);
                     animator.SetBool("Attack02",true);
                     Attackcooldowntime = Time.time + Attackcooldown;
-                    Debug.Log($"Attack 2");
+                    //Debug.Log($"Attack 2");
                 }
                 else if (Attack03 == false)
                 {
@@ -114,7 +124,7 @@ namespace Script.Controller
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack03",true);
                     knockback = true;
-                    Debug.Log($"Attack 3");
+                    //Debug.Log($"Attack 3");
                 }
 
             }
@@ -123,7 +133,7 @@ namespace Script.Controller
         public void AttackButton()
         {
             Attack();
-            Debug.Log("Button Active");
+            //Debug.Log("Button Active");
         }
         
 

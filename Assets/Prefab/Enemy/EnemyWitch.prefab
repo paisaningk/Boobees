@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187e9a5ba0f6161419ec7bef70702e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  stoppingDistance: 8
+  speed: 2.5
+  stoppingDistance: 5
   retreatDistance: 4
-  startTimeBtwShots: 2
+  startTimeBtwShots: 3
   projectile: {fileID: 4626256943966877042, guid: c6ac7d5af47f51a42bfd4c66234098c8,
     type: 3}
 --- !u!114 &-4304983170205496369
