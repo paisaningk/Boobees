@@ -1,6 +1,7 @@
 using System;
 using Assets.Script.Base;
 using Assets.scriptableobject.Item;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Script.Pickup
@@ -11,6 +12,7 @@ namespace Assets.Script.Pickup
         [SerializeField] private SpriteRenderer sprite;
         [SerializeField] private GameObject Popup;
         [SerializeField] private GameObject buy;
+        [SerializeField] private GameObject text;
         private Playerinput playerInput;
         private bool Buying = false;
         private int maxHp;
@@ -33,7 +35,8 @@ namespace Assets.Script.Pickup
             critRate = ItemSo.CritRate;
             tier = ItemSo.Tier;
             sprite.sprite = ItemSo.Sprite;
-            
+            var textMesh = text.GetComponent<TextMesh>();
+            textMesh.text = $"{ItemSo.text}";
             ShowPrice();
             
             playerInput = new Playerinput();
@@ -64,11 +67,10 @@ namespace Assets.Script.Pickup
                 player = other;
                 Buying = true;
                 buy.SetActive(Buying);
-                
             }
         }
 
-        private void OnTriggerExit2D()
+        private void OnTriggerExit2D(Collider2D other)
         {
             Buying = false;
             buy.SetActive(Buying);

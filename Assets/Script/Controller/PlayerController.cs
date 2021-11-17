@@ -1,4 +1,5 @@
-﻿using Assets.Script.Base;
+﻿using System.Collections;
+using Assets.Script.Base;
 using Assets.Script.Menu;
 using UnityEngine;
 using Sound;
@@ -19,13 +20,14 @@ namespace Script.Controller
         private bool Attack01 = false;
         private bool Attack02 = false;
         private bool Attack03 = false;
+        private bool CanDash = true;
         public bool knockback = false;
+        
 
         //ปรับได้
         private float MoveSpeed = 5f;
         float dashAmount = 3f;
-        private float dashcooldowntime;
-        private float dashcooldown = 1f;
+        private float dashcooldown = 3f;
         private float Attackcooldowntime;
         private float Attackcooldown = 2.5f;
 
@@ -42,7 +44,6 @@ namespace Script.Controller
             playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Menu();
-            playerInput.PlayerAction.Buy.performed += context => adc();
             OnEnable();
             //adc
         }
@@ -78,7 +79,6 @@ namespace Script.Controller
             }
             Rd.velocity = MoveDie * MoveSpeed;
             
-            //Reset attack
             if (Attackcooldowntime <= Time.time)
             {
                 AttackFinish03();
@@ -138,16 +138,15 @@ namespace Script.Controller
         public void AttackButton()
         {
             Attack();
-            //Debug.Log("Button Active");
         }
         
 
         private void Dash()
         {
-            if (dashcooldowntime <= Time.time)
+            if (CanDash)
             {
+                CanDash = false;
                 SoundManager.Instance.Play(SoundManager.Sound.PlayerDash);
-                dashcooldowntime = Time.time + dashcooldown;
                 Vector3 dashPoint = transform.position + MoveDie * dashAmount;
 
                 RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, dashAmount,dashLayerMask);
@@ -156,7 +155,14 @@ namespace Script.Controller
                     dashPoint = raycastHit2D.point;
                 }
                 Rd.MovePosition(dashPoint);
+                StartCoroutine(DashCooldown());
             }
+        }
+
+        IEnumerator DashCooldown()
+        {
+            yield return new WaitForSeconds(dashcooldown);
+            CanDash = true;
         }
         
         public void DashButton()

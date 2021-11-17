@@ -195,7 +195,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f87666a5b64390d49822aa27f35e9769, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.44459772, g: 0.9716981, b: 0.7509049, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e613a744b385c4c95d8708168f02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCharacterSo: {fileID: 11400000, guid: 2bf25410822b9c04aaea7289db3b695e, type: 2}
+  EnemyCharacterSo: {fileID: 11400000, guid: 32c6de6a45255474295a1cb28f753503, type: 2}
   knockbackLayerMask:
     serializedVersion: 2
     m_Bits: 768

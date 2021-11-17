@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178ef2267a93dbd4da8438b22270631f, type: 3}
   m_Name: bracelet_05
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 7df60ee47f5e4454b9c219884cc9b77b, type: 3}
+  Sprite: {fileID: 21300000, guid: 10341f44051e76549b5b48f0f0eb10ee, type: 3}
   Tier: 4
   MaxHp: 0
   Atk: 0
-  Speed: -3
+  Speed: 0
   DashCd: 0
   CritAtk: 0
   CritRate: 0
+  text: Dash cooldown 0

@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178ef2267a93dbd4da8438b22270631f, type: 3}
   m_Name: Boot_05
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: b342c387c47771c43a3fb7c33f07582a, type: 3}
+  Sprite: {fileID: 21300000, guid: f2e1993a965e0d94bbe008f97dd79f67, type: 3}
   Tier: 4
   MaxHp: 0
-  Atk: -2
-  Speed: 7
+  Atk: 0
+  Speed: 10
   DashCd: 0
   CritAtk: 0
   CritRate: 0
+  text: Speed + 10

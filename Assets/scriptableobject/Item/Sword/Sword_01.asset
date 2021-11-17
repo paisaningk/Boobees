@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178ef2267a93dbd4da8438b22270631f, type: 3}
   m_Name: Sword_01
   m_EditorClassIdentifier: 
-  Sprite: {fileID: -115708577067447641, guid: 0b36458a8212f8c499d64c7e23de62a8, type: 3}
+  Sprite: {fileID: 21300000, guid: 3399d8fcc2b51ed48a3eab2425160620, type: 3}
   Tier: 0
   MaxHp: 0
-  Atk: 2
+  Atk: 20
   Speed: 0
   DashCd: 0
   CritAtk: 0
   CritRate: 0
+  text: ATK + 20

@@ -13,6 +13,7 @@ namespace Assets.scriptableobject.Item
         public float DashCd;
         public int CritAtk;
         public int CritRate;
+        public string text;
         //public int Price;
 
         // Atk    ค่าพลังโจมตีของผู้เล่น

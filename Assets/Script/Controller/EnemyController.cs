@@ -45,7 +45,7 @@ namespace Script.Controller
         
         IEnumerator Wait3sec()
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.5f);
             attacking = false;
             nextMove = false;
         }

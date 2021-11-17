@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178ef2267a93dbd4da8438b22270631f, type: 3}
   m_Name: Ring_01
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 54cef8f8c63a38c4aada3b8d472c51a5, type: 3}
+  Sprite: {fileID: 21300000, guid: 2297e1d51d5cfd24e80a464149f969e9, type: 3}
   Tier: 0
   MaxHp: 0
   Atk: 0
@@ -20,3 +20,4 @@ MonoBehaviour:
   DashCd: 0
   CritAtk: 0
   CritRate: 10
+  text: Crit Rate + 10%

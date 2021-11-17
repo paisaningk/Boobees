@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178ef2267a93dbd4da8438b22270631f, type: 3}
   m_Name: heartlocket_04
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: ade2efe73ab451c4d8f0ec1f8c169228, type: 3}
+  Sprite: {fileID: 21300000, guid: c04b3b7536d125b4790ae228a3eea36f, type: 3}
   Tier: 3
   MaxHp: 9
   Atk: 0
@@ -20,3 +20,4 @@ MonoBehaviour:
   DashCd: 0
   CritAtk: 0
   CritRate: 0
+  text: Max HP + 90

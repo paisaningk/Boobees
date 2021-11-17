@@ -57,6 +57,11 @@ namespace Script.Spawn
                     }
                     
                 }
+                else if (tolalEnemies.Length == 0 && !CanSpawn)
+                {
+                    Debug.Log($"next wave");
+                    CurrentWaveNumber++;
+                }
             }
             else
             {
