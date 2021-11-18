@@ -27,7 +27,7 @@ namespace Script.Controller
         //ปรับได้
         private float MoveSpeed = 5f;
         float dashAmount = 3f;
-        private float dashcooldown = 3f;
+        private float dashcooldown = 1;
         private float Attackcooldowntime;
         private float Attackcooldown = 2.5f;
 
@@ -161,7 +161,9 @@ namespace Script.Controller
 
         IEnumerator DashCooldown()
         {
+            Debug.Log($" candash {CanDash} and w dash");
             yield return new WaitForSeconds(dashcooldown);
+            Debug.Log($" candash {CanDash} and dash");
             CanDash = true;
         }
         

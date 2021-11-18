@@ -153,6 +153,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 273751100407979914}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &183317185
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183317184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 886fd106fb266394ab78625c2d01408e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &235286273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 235286273, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
@@ -4277,6 +4296,12 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &787962591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 787962591, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1016526024929411989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &819900535
 GameObject:
   m_ObjectHideFlags: 0
@@ -4336,9 +4361,10 @@ MonoBehaviour:
   - {fileID: 691648390}
   WaveText: {fileID: 120657776}
   Shop: {fileID: 183317184}
-  shopSpawnPoint: {fileID: 833434474}
   win: {fileID: 235286273}
   shopingtime: 20
+  Nextwavetext: {fileID: 1436114788}
+  nextwaveGameObject: {fileID: 787962591}
 --- !u!4 &819900537
 Transform:
   m_ObjectHideFlags: 0
@@ -13053,6 +13079,18 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &1436114788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1436114788, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1016526024929411989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1440989800 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1440989800, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
@@ -22976,6 +23014,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2132391105640571628, guid: e7f550eb8127d174f80b5790c7664b73,
         type: 3}
+      propertyPath: DashCd
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2132391105640571628, guid: e7f550eb8127d174f80b5790c7664b73,
+        type: 3}
       propertyPath: adsManager
       value: 
       objectReference: {fileID: 2065491820}
@@ -30083,6 +30126,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 273751098927294529, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 39b25f99e6b66d14c9972b33d17f83c6,
+        type: 3}
+    - target: {fileID: 273751099809165839, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 39b25f99e6b66d14c9972b33d17f83c6,
+        type: 3}
+    - target: {fileID: 273751100222277796, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5187565832217461001, guid: 622887068e73c924d90b6d9529ebf0b4,
+        type: 3}
     - target: {fileID: 273751100222277797, guid: c1eab51a60dcad643b9a6fdcae2e0732,
         type: 3}
       propertyPath: m_RootOrder
@@ -30148,6 +30209,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 273751100222277799, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 273751100222277799, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.84
+      objectReference: {fileID: 0}
     - target: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
         type: 3}
       propertyPath: text
@@ -30180,9 +30251,20 @@ PrefabInstance:
       objectReference: {fileID: 904586812}
     - target: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
         type: 3}
+      propertyPath: BuyingPhone
+      value: 
+      objectReference: {fileID: 1016526024929411990}
+    - target: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
       propertyPath: healCostText
       value: 
       objectReference: {fileID: 1455853230}
+    - target: {fileID: 273751100689021575, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 39b25f99e6b66d14c9972b33d17f83c6,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1eab51a60dcad643b9a6fdcae2e0732, type: 3}
 --- !u!1001 &1016526024929411989
@@ -30312,10 +30394,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1773763743}
-    - target: {fileID: 1682401128911608006, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+    - target: {fileID: 1727244638177691924, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8687332576522461579, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
+      propertyPath: m_ControlPath
+      value: <Touchscreen>/touch1/tap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d084eebb5cb9c42b0005c31cb69f1b, type: 3}
+--- !u!1 &1016526024929411990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2679007095211988196, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1016526024929411989}
+  m_PrefabAsset: {fileID: 0}

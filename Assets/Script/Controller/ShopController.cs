@@ -16,6 +16,7 @@ namespace Script.Controller
         [SerializeField] private GameObject[] cursed;
         [SerializeField] private GameObject shopMenu;
         [SerializeField] private GameObject ePopup;
+        [SerializeField] private GameObject BuyingPhone;
         [SerializeField] private Button backButton;
         [SerializeField] private Button rngButton;
         [SerializeField] private Button healButton;
@@ -50,11 +51,10 @@ namespace Script.Controller
         {
             if (_shop == true)
             {
-                string[] talk = new[] {"Hello , You cum again ","Hello nigga" , "you give me a monkey" };
-                string[] talka = new[] {"Hello","Hello adc" , "you give me" };
+                string[] talk = new[] {"Hello , You come again","Oh, are you still alive?" , "HOW much money do you have " };
                 var range = Random.Range(0, talk.Length);
                 shopMenu.SetActive(true);
-                text.text = talka[range];
+                text.text = talk[range];
                 healCostText.text = $"{healCost}";
                 rngText.text = $"{rngCost}";
             }
@@ -69,6 +69,7 @@ namespace Script.Controller
         {
             if (other.CompareTag("Player"))
             {
+                BuyingPhone.SetActive(true);
                 _player = other;
                 _shop = true;
                 ePopup.SetActive(true);
@@ -77,6 +78,7 @@ namespace Script.Controller
 
         private void OnTriggerExit2D(Collider2D other)
         {
+            BuyingPhone.SetActive(false);
             _shop = false;
             ePopup.SetActive(false);
         }
@@ -89,6 +91,7 @@ namespace Script.Controller
                 playerCharacter.Gold -= rngCost;
                 Deleteitem();
                 RngItemandSpawn();
+                text.text = $"Thank you for using the service. ";
             }
             else
             {
@@ -116,6 +119,7 @@ namespace Script.Controller
                 if (playerCharacter.Hp >= playerCharacter.MaxHp)
                 {
                     playerCharacter.Hp = playerCharacter.MaxHp;
+                    text.text = $"You gain hp +20. ";
                 }
             }
             else

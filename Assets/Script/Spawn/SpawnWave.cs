@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Globalization;
 using Script.Controller;
 using TMPro;
 using UnityEngine;
@@ -22,13 +23,15 @@ namespace Script.Spawn
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
         [SerializeField] private GameObject Shop;
-        [SerializeField] private Transform shopSpawnPoint;
         [SerializeField] private GameObject win;
         [SerializeField] private float shopingtime = 20;
-        
-        
+        [SerializeField] private TextMeshProUGUI Nextwavetext;
+        [SerializeField] private GameObject nextwaveGameObject;
+
+
         private Wave CurrentWave;
         private int CurrentWaveNumber = 0;
+        private bool Counttimenextwave = false;
         private bool nextwave = true;
         private bool CanSpawn = true;
         private float NextSpawnTime;
@@ -42,7 +45,8 @@ namespace Script.Spawn
 
         private void Update()
         {
-            if (CurrentWaveNumber < Wave.Length )
+
+            if (CurrentWaveNumber < Wave.Length)
             {
                 CurrentWave = Wave[CurrentWaveNumber];
                 spawnWave();
@@ -55,17 +59,22 @@ namespace Script.Spawn
                         StartCoroutine(Shoping());
                         nextwave = false;
                     }
-                    
                 }
                 else if (tolalEnemies.Length == 0 && !CanSpawn)
                 {
-                    Debug.Log($"next wave");
                     CurrentWaveNumber++;
                 }
             }
             else
             {
                 win.SetActive(true);
+            }
+
+            if (Counttimenextwave)
+            {
+                nextwaveGameObject.SetActive(true);
+                var a = shopingtime -= Time.deltaTime;
+                Nextwavetext.text = $"Next Wave in coming in {a.ToString("F", CultureInfo.InvariantCulture)} Sce";
             }
         }
 
@@ -74,8 +83,8 @@ namespace Script.Spawn
             if (CanSpawn && NextSpawnTime < Time.time)
             {
                 SoundManager.Instance.Play(SoundManager.Sound.SpawnEnemy);
-                GameObject RandomEnemy = CurrentWave.typeOfEnemy[Random.Range(0, CurrentWave.typeOfEnemy.Length)];
-                Transform RandomSpawnPoint = SpawnPoint[Random.Range(0, SpawnPoint.Length)];
+                var RandomEnemy = CurrentWave.typeOfEnemy[Random.Range(0, CurrentWave.typeOfEnemy.Length)];
+                var RandomSpawnPoint = SpawnPoint[Random.Range(0, SpawnPoint.Length)];
                 Instantiate(RandomEnemy, RandomSpawnPoint.position, Quaternion.identity);
                 
                 CurrentWave.numberOfEnemy--;
@@ -93,14 +102,15 @@ namespace Script.Spawn
             ShopController = Shop.GetComponent<ShopController>();
             Shop.SetActive(true);
             ShopController.RngItemandSpawn();
-            Debug.Log("shop open");
+            Counttimenextwave = true;
             
             yield return new WaitForSeconds(shopingtime);
             
             Shop.SetActive(false);
             ShopController.Deleteitem();
             NextSpawnWave();
-            Debug.Log("shop close");
+            Counttimenextwave = false;
+            nextwaveGameObject.SetActive(false);
             
         }
 
@@ -111,8 +121,5 @@ namespace Script.Spawn
             CanSpawn = true;
             nextwave = true;
         }
-        
-
-        
     }
 }

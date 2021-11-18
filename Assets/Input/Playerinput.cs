@@ -153,11 +153,33 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""cb93baf9-0198-4cf5-b5b7-4d3da36c0b8b"",
+                    ""path"": ""<Touchscreen>/touch0/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""d0aac234-b7a9-4349-830a-7c7ca6035717"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""key and mouse"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc366652-6319-4c29-b892-4c3d97f688a8"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Phos"",
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -194,6 +216,17 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""action"": ""Buy"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb936e13-0f03-43c4-9d1e-01186de6bedf"",
+                    ""path"": ""<Touchscreen>/touch1/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Phos"",
+                    ""action"": ""Buy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -216,12 +249,12 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""New control scheme"",
-            ""bindingGroup"": ""New control scheme"",
+            ""name"": ""Phos"",
+            ""bindingGroup"": ""Phos"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Touchscreen>"",
-                    ""isOptional"": false,
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -364,13 +397,13 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_keyandmouseSchemeIndex];
         }
     }
-    private int m_NewcontrolschemeSchemeIndex = -1;
-    public InputControlScheme NewcontrolschemeScheme
+    private int m_PhosSchemeIndex = -1;
+    public InputControlScheme PhosScheme
     {
         get
         {
-            if (m_NewcontrolschemeSchemeIndex == -1) m_NewcontrolschemeSchemeIndex = asset.FindControlSchemeIndex("New control scheme");
-            return asset.controlSchemes[m_NewcontrolschemeSchemeIndex];
+            if (m_PhosSchemeIndex == -1) m_PhosSchemeIndex = asset.FindControlSchemeIndex("Phos");
+            return asset.controlSchemes[m_PhosSchemeIndex];
         }
     }
     public interface IPlayerActionActions
