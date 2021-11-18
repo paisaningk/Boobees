@@ -1,34 +1,22 @@
 fileFormatVersion: 2
-guid: 2f2e4c0f1204473419b90e0cd64b1a14
+guid: 8197f91989b779247ba106445bdc09b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6013863849089778357
-    second: Reaper_idle_anim_0
+      213: 6018518101470942177
+    second: Executioner_walk_0
   - first:
-      213: -209293162175478107
-    second: Reaper_idle_anim_1
+      213: -6730147574404229976
+    second: Executioner_walk_1
   - first:
-      213: 7463091593435581666
-    second: Reaper_idle_anim_2
+      213: 3868301362791156147
+    second: Executioner_walk_2
   - first:
-      213: -4082623335671489838
-    second: Reaper_idle_anim_3
+      213: -2163438190156575239
+    second: Executioner_walk_3
   - first:
-      213: -2311001364132056937
-    second: Reaper_idle_anim_4
-  - first:
-      213: 6499861153803639014
-    second: Reaper_idle_anim_5
-  - first:
-      213: 2018115905962702377
-    second: Reaper_idle_anim_6
-  - first:
-      213: 2838373148556207904
-    second: Reaper_idle_anim_7
-  - first:
-      213: -8080498867626029390
-    second: Reaper_idle_anim_8
+      213: 7454699993403588528
+    second: Executioner_walk_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -92,7 +80,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -104,7 +92,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -116,7 +104,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -128,7 +116,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -140,7 +128,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -154,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reaper_idle_anim_0
+      name: Executioner_walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -168,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4db07b21b67a8ca0800000000000000
-      internalID: -6013863849089778357
+      spriteID: 1e31f686352168350800000000000000
+      internalID: 6018518101470942177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reaper_idle_anim_1
+      name: Executioner_walk_1
       rect:
         serializedVersion: 2
         x: 768
@@ -189,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a6cc965af0781df0800000000000000
-      internalID: -209293162175478107
+      spriteID: 8a4ddad5076b992a0800000000000000
+      internalID: -6730147574404229976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reaper_idle_anim_2
+      name: Executioner_walk_2
       rect:
         serializedVersion: 2
         x: 1536
@@ -210,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ec8ee8534a329760800000000000000
-      internalID: 7463091593435581666
+      spriteID: 3b983552897fea530800000000000000
+      internalID: 3868301362791156147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reaper_idle_anim_3
+      name: Executioner_walk_3
       rect:
         serializedVersion: 2
         x: 2304
@@ -231,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2da9495f4bb9757c0800000000000000
-      internalID: -4082623335671489838
+      spriteID: 9fd043ead6ce9f1e0800000000000000
+      internalID: -2163438190156575239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reaper_idle_anim_4
+      name: Executioner_walk_4
       rect:
         serializedVersion: 2
         x: 3072
@@ -252,92 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7903777e08cadefd0800000000000000
-      internalID: -2311001364132056937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reaper_idle_anim_5
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 768
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e893d91845243a50800000000000000
-      internalID: 6499861153803639014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reaper_idle_anim_6
-      rect:
-        serializedVersion: 2
-        x: 4608
-        y: 0
-        width: 768
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 926f87a59b9c10c10800000000000000
-      internalID: 2018115905962702377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reaper_idle_anim_7
-      rect:
-        serializedVersion: 2
-        x: 5376
-        y: 0
-        width: 768
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02723bb175de36720800000000000000
-      internalID: 2838373148556207904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reaper_idle_anim_8
-      rect:
-        serializedVersion: 2
-        x: 6144
-        y: 0
-        width: 768
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2be443b971d4cdf80800000000000000
-      internalID: -8080498867626029390
+      spriteID: 0bf7de5b52a647760800000000000000
+      internalID: 7454699993403588528
       vertices: []
       indices: 
       edges: []
