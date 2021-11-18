@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: b05741c6a81b64e4a859034599d25ffa
+guid: fed323a95cf792d4194450e593b1aefc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3698783650734459191
-    second: Executioner_walk_anim_0
+      213: -3870218377304605876
+    second: Reaper_walk_anim_0
   - first:
-      213: -6777828679540452719
-    second: Executioner_walk_anim_1
+      213: -8231942842112378375
+    second: Reaper_walk_anim_1
   - first:
-      213: 7607835377634695591
-    second: Executioner_walk_anim_2
+      213: 4894232017780961830
+    second: Reaper_walk_anim_2
   - first:
-      213: 6379673511591577938
-    second: Executioner_walk_anim_3
+      213: 8328752213703204803
+    second: Reaper_walk_anim_3
   - first:
-      213: -972383980808477484
-    second: Executioner_walk_anim_4
+      213: -3913050515497273446
+    second: Reaper_walk_anim_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -142,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Executioner_walk_anim_0
+      name: Reaper_walk_anim_0
       rect:
         serializedVersion: 2
         x: 0
@@ -156,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c633fcddd74bacc0800000000000000
-      internalID: -3698783650734459191
+      spriteID: c4bf19124e83a4ac0800000000000000
+      internalID: -3870218377304605876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner_walk_anim_1
+      name: Reaper_walk_anim_1
       rect:
         serializedVersion: 2
         x: 768
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1925987f9b050f1a0800000000000000
-      internalID: -6777828679540452719
+      spriteID: 9f9729c899342cd80800000000000000
+      internalID: -8231942842112378375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner_walk_anim_2
+      name: Reaper_walk_anim_2
       rect:
         serializedVersion: 2
         x: 1536
@@ -198,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a9d099c7f5749960800000000000000
-      internalID: 7607835377634695591
+      spriteID: 6227d24e61ecbe340800000000000000
+      internalID: 4894232017780961830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner_walk_anim_3
+      name: Reaper_walk_anim_3
       rect:
         serializedVersion: 2
         x: 2304
@@ -219,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25982610247298850800000000000000
-      internalID: 6379673511591577938
+      spriteID: 3cf1700c20ca59370800000000000000
+      internalID: 8328752213703204803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner_walk_anim_4
+      name: Reaper_walk_anim_4
       rect:
         serializedVersion: 2
         x: 3072
@@ -240,8 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d461aedbe56182f0800000000000000
-      internalID: -972383980808477484
+      spriteID: a9730a3d94d02b9c0800000000000000
+      internalID: -3913050515497273446
       vertices: []
       indices: 
       edges: []

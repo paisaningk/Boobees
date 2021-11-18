@@ -1,61 +1,61 @@
 fileFormatVersion: 2
-guid: 7e4d7dbb820f98a4cb492e338b6a1ecc
+guid: 71c1bb34a8024db4ea70ed69d7b3ddca
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1839788478054622711
-    second: Executioner-charge_Attack_anim,_0
+      213: -4313651374722602357
+    second: Reaper-charge_Attack_anim,_0
   - first:
-      213: 2046757098773689153
-    second: Executioner-charge_Attack_anim,_1
+      213: 6527554230401803639
+    second: Reaper-charge_Attack_anim,_1
   - first:
-      213: 1606594603979301349
-    second: Executioner-charge_Attack_anim,_2
+      213: 2418069828414710856
+    second: Reaper-charge_Attack_anim,_2
   - first:
-      213: 3693852183247055991
-    second: Executioner-charge_Attack_anim,_3
+      213: 2747648492951705150
+    second: Reaper-charge_Attack_anim,_3
   - first:
-      213: -14478080944029223
-    second: Executioner-charge_Attack_anim,_4
+      213: 9168687193200334047
+    second: Reaper-charge_Attack_anim,_4
   - first:
-      213: 1601647110074678423
-    second: Executioner-charge_Attack_anim,_5
+      213: -611598944133809471
+    second: Reaper-charge_Attack_anim,_5
   - first:
-      213: 8841801853238653027
-    second: Executioner-charge_Attack_anim,_6
+      213: -816160497551435662
+    second: Reaper-charge_Attack_anim,_6
   - first:
-      213: -6650233545437349585
-    second: Executioner-charge_Attack_anim,_7
+      213: 3101837967874776626
+    second: Reaper-charge_Attack_anim,_7
   - first:
-      213: -495831526086575623
-    second: Executioner-charge_Attack_anim,_8
+      213: -3202814576181521917
+    second: Reaper-charge_Attack_anim,_8
   - first:
-      213: -2531556998688090353
-    second: Executioner-charge_Attack_anim,_9
+      213: -3284239036386199483
+    second: Reaper-charge_Attack_anim,_9
   - first:
-      213: 1842473300536716919
-    second: Executioner-charge_Attack_anim,_10
+      213: 8049969604897633239
+    second: Reaper-charge_Attack_anim,_10
   - first:
-      213: -5117749238961359488
-    second: Executioner-charge_Attack_anim,_11
+      213: 2955345096330209382
+    second: Reaper-charge_Attack_anim,_11
   - first:
-      213: -7691750832230779290
-    second: Executioner-charge_Attack_anim,_12
+      213: -4280626039583410337
+    second: Reaper-charge_Attack_anim,_12
   - first:
-      213: -942947862448001042
-    second: Executioner-charge_Attack_anim,_13
+      213: -5955754463691358425
+    second: Reaper-charge_Attack_anim,_13
   - first:
-      213: -8629797034623522146
-    second: Executioner-charge_Attack_anim,_14
+      213: -6908169295855584484
+    second: Reaper-charge_Attack_anim,_14
   - first:
-      213: -7759697259921228588
-    second: Executioner-charge_Attack_anim,_15
+      213: -2404161267569528880
+    second: Reaper-charge_Attack_anim,_15
   - first:
-      213: -1175981737859811313
-    second: Executioner-charge_Attack_anim,_16
+      213: -4559392963944465162
+    second: Reaper-charge_Attack_anim,_16
   - first:
-      213: 1138418564508918949
-    second: Executioner-charge_Attack_anim,_17
+      213: -2919698512569556855
+    second: Reaper-charge_Attack_anim,_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -181,7 +181,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_0
+      name: Reaper-charge_Attack_anim,_0
       rect:
         serializedVersion: 2
         x: 0
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a92b77022c776e0800000000000000
-      internalID: -1839788478054622711
+      spriteID: b8aa8ccede4d224c0800000000000000
+      internalID: -4313651374722602357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_1
+      name: Reaper-charge_Attack_anim,_1
       rect:
         serializedVersion: 2
         x: 768
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1433ae5bcba876c10800000000000000
-      internalID: 2046757098773689153
+      spriteID: 775a233fcf7869a50800000000000000
+      internalID: 6527554230401803639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_2
+      name: Reaper-charge_Attack_anim,_2
       rect:
         serializedVersion: 2
         x: 1536
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e1ee3cb745cb4610800000000000000
-      internalID: 1606594603979301349
+      spriteID: 844afbc82b5be8120800000000000000
+      internalID: 2418069828414710856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_3
+      name: Reaper-charge_Attack_anim,_3
       rect:
         serializedVersion: 2
         x: 2304
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77ced336df2334330800000000000000
-      internalID: 3693852183247055991
+      spriteID: e3616062fbb912620800000000000000
+      internalID: 2747648492951705150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_4
+      name: Reaper-charge_Attack_anim,_4
       rect:
         serializedVersion: 2
         x: 3072
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d14d4813409ccff0800000000000000
-      internalID: -14478080944029223
+      spriteID: fd41167ac68bd3f70800000000000000
+      internalID: 9168687193200334047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_5
+      name: Reaper-charge_Attack_anim,_5
       rect:
         serializedVersion: 2
         x: 3840
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79c388b8f813a3610800000000000000
-      internalID: 1601647110074678423
+      spriteID: 1ca76ed200a2387f0800000000000000
+      internalID: -611598944133809471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_6
+      name: Reaper-charge_Attack_anim,_6
       rect:
         serializedVersion: 2
         x: 4608
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3603eac80f364ba70800000000000000
-      internalID: 8841801853238653027
+      spriteID: 2789db70a5a6ca4f0800000000000000
+      internalID: -816160497551435662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_7
+      name: Reaper-charge_Attack_anim,_7
       rect:
         serializedVersion: 2
         x: 5376
@@ -342,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f29f1da23df95b3a0800000000000000
-      internalID: -6650233545437349585
+      spriteID: 23edef19231fb0b20800000000000000
+      internalID: 3101837967874776626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_8
+      name: Reaper-charge_Attack_anim,_8
       rect:
         serializedVersion: 2
         x: 6144
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f97b23aad37e19f0800000000000000
-      internalID: -495831526086575623
+      spriteID: 302d149bc115d83d0800000000000000
+      internalID: -3202814576181521917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_9
+      name: Reaper-charge_Attack_anim,_9
       rect:
         serializedVersion: 2
         x: 6912
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f07da8c825a1edcd0800000000000000
-      internalID: -2531556998688090353
+      spriteID: 548babe3ff90c62d0800000000000000
+      internalID: -3284239036386199483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_10
+      name: Reaper-charge_Attack_anim,_10
       rect:
         serializedVersion: 2
         x: 7680
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77ee1aa74b7c19910800000000000000
-      internalID: 1842473300536716919
+      spriteID: 7d37d9084bc37bf60800000000000000
+      internalID: 8049969604897633239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_11
+      name: Reaper-charge_Attack_anim,_11
       rect:
         serializedVersion: 2
         x: 8448
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 085be22ae2a1af8b0800000000000000
-      internalID: -5117749238961359488
+      spriteID: 668647ff4be730920800000000000000
+      internalID: 2955345096330209382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_12
+      name: Reaper-charge_Attack_anim,_12
       rect:
         serializedVersion: 2
         x: 9216
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 666b118ee59614590800000000000000
-      internalID: -7691750832230779290
+      spriteID: f57f756fb492894c0800000000000000
+      internalID: -4280626039583410337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_13
+      name: Reaper-charge_Attack_anim,_13
       rect:
         serializedVersion: 2
         x: 9984
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eefa2114ae9f9e2f0800000000000000
-      internalID: -942947862448001042
+      spriteID: 72fba36ced8e85da0800000000000000
+      internalID: -5955754463691358425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_14
+      name: Reaper-charge_Attack_anim,_14
       rect:
         serializedVersion: 2
         x: 10752
@@ -489,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9aab83d15dcc3880800000000000000
-      internalID: -8629797034623522146
+      spriteID: c1b744060a04120a0800000000000000
+      internalID: -6908169295855584484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_15
+      name: Reaper-charge_Attack_anim,_15
       rect:
         serializedVersion: 2
         x: 11520
@@ -510,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dcb2d96474005490800000000000000
-      internalID: -7759697259921228588
+      spriteID: 0dfe3cf9014b2aed0800000000000000
+      internalID: -2404161267569528880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_16
+      name: Reaper-charge_Attack_anim,_16
       rect:
         serializedVersion: 2
         x: 12288
@@ -531,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f08f48c07d21eafe0800000000000000
-      internalID: -1175981737859811313
+      spriteID: 6fcbca88148c9b0c0800000000000000
+      internalID: -4559392963944465162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_17
+      name: Reaper-charge_Attack_anim,_17
       rect:
         serializedVersion: 2
         x: 13056
@@ -552,8 +552,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a4a34f17a97ccf00800000000000000
-      internalID: 1138418564508918949
+      spriteID: 9802e0b0ca52b77d0800000000000000
+      internalID: -2919698512569556855
       vertices: []
       indices: 
       edges: []
