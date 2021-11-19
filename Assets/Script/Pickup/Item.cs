@@ -108,7 +108,7 @@ namespace Assets.Script.Pickup
             Player.MaxHp += maxHp;
             Player.Atk += atk;
             Player.Speed += speed;
-            Player.DashCd += dashCd;
+            Player.DashCd = dashCd;
             Player.CritAtk += critAtk;
             Player.CritRate += critRate;
             Debug.Log("Player pickup");

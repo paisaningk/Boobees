@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Assets.Script.Base;
 using Assets.Script.Menu;
 using UnityEngine;
@@ -30,6 +31,7 @@ namespace Script.Controller
         private float dashcooldown = 1;
         private float Attackcooldowntime;
         private float Attackcooldown = 2.5f;
+        private bool Soundplay;
 
         private void Awake()
         {
@@ -37,15 +39,16 @@ namespace Script.Controller
             animator = GetComponent<Animator>();
             Rd = GetComponent<Rigidbody2D>();
             playerCharacter = GetComponent<PlayerCharacter>();
-
-            
-            
             playerInput = new Playerinput();
             playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Menu();
             OnEnable();
-            //adc
+        }
+
+        private void Start()
+        {
+            SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
         }
 
         private void adc()
@@ -68,17 +71,23 @@ namespace Script.Controller
             
             if (walk != Vector2.zero)
             {
+                if (Soundplay)
+                {
+                    SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
+                    Soundplay = false;
+                }
                 animator.SetFloat("MoveX",walk.x);
                 animator.SetFloat("MoveY",walk.y);
-                animator.SetBool("Walking",true); 
+                animator.SetBool("Walking",true);
             }
             else
             {
-                SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
+                SoundManager.Instance.Stop(SoundManager.Sound.PlayerMovement);
+                Soundplay = true;
                 animator.SetBool("Walking",false); 
             }
             Rd.velocity = MoveDie * MoveSpeed;
-            
+
             if (Attackcooldowntime <= Time.time)
             {
                 AttackFinish03();
@@ -161,9 +170,7 @@ namespace Script.Controller
 
         IEnumerator DashCooldown()
         {
-            Debug.Log($" candash {CanDash} and w dash");
             yield return new WaitForSeconds(dashcooldown);
-            Debug.Log($" candash {CanDash} and dash");
             CanDash = true;
         }
         

@@ -36,13 +36,6 @@ namespace Assets.Script.Base
             Popup = PlayerCharacterSo.Popup;
             animator = GetComponent<Animator>();
             playerController = GetComponent<PlayerController>();
-
-            //PrintAll();
-        }
-
-        public void Update()
-        {
-           // Debug.Log(Gold);
         }
 
         public void PrintAll()
@@ -58,6 +51,7 @@ namespace Assets.Script.Base
         {
             if (other.CompareTag("EnemyHitBox"))
             {
+                SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit1);
                 var enemyCharacter = other.GetComponentInParent<EnemyCharacter>();
                 Hp -= enemyCharacter.Atk;
                 ShowPopUp(enemyCharacter.Atk);
@@ -66,7 +60,6 @@ namespace Assets.Script.Base
                     animator.SetBool("Dead", true);
                     StartCoroutine(Dead());
                 }
-                //Debug.Log($"{Name} have : {Hp}");
             }
 
             if (other.CompareTag("Projectile"))

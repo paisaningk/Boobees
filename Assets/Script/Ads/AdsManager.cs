@@ -86,8 +86,4 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
 
         }
     }
-
-
-
-
 }

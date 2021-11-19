@@ -58,7 +58,7 @@ namespace Sound
         {
             public Sound sound;
             public AudioClip audioClip;
-            [Range(0, 5)] public float soundVolume;
+            [Range(0, 1)] public float soundVolume;
             public bool loop = false;
             [HideInInspector]
             public AudioSource audioSource;
@@ -89,6 +89,16 @@ namespace Sound
             }
             return null;
             //return default(SoundClip);
+        }
+        
+        public void Stop(Sound sound)
+        {
+            var soundClip = GetSoundClip(sound);
+            if (soundClip.audioSource == null)
+            {
+                soundClip.audioSource = gameObject.AddComponent<AudioSource>();
+            }
+            soundClip.audioSource.Stop();
         }
     }
 }

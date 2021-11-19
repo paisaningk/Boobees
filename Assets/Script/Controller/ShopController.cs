@@ -114,7 +114,7 @@ namespace Script.Controller
             if (playerCharacter.Gold >= healCost)
             {
                 playerCharacter.Gold -= healCost;
-                //var heal50= playerCharacter.MaxHp / 2;
+                var heal50= (playerCharacter.MaxHp * 25)/100;
                 playerCharacter.Hp += healCost;
                 if (playerCharacter.Hp >= playerCharacter.MaxHp)
                 {

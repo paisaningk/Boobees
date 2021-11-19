@@ -9,7 +9,7 @@ namespace Script.Controller
         private Transform player;
         private Animator animator;
         private float movespeed = 10f;
-        private float stoppingDistance = 2f;
+        private float stoppingDistance = 1.7f;
         private Vector3 directionnormalized;
         private bool attacking = false;
         private bool nextMove = false;
@@ -46,6 +46,7 @@ namespace Script.Controller
         IEnumerator Wait3sec()
         {
             yield return new WaitForSeconds(1.5f);
+            Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             attacking = false;
             nextMove = false;
         }
@@ -70,6 +71,7 @@ namespace Script.Controller
             {
                 if (attacking == false)
                 {
+                    Rb.constraints = RigidbodyConstraints2D.FreezeAll;
                     animator.SetBool("Walking",false);
                     animator.SetBool("Attack",true);
                     animator.SetFloat("MoveX",directionnormalized.x);

@@ -36,11 +36,13 @@ namespace Script.Spawn
         private bool CanSpawn = true;
         private float NextSpawnTime;
         private int WaveNumberText =1;
+        private float timeshopshow;
         private ShopController ShopController;
 
         private void Start()
         {
             WaveText.text = $"Wave {WaveNumberText}";
+            timeshopshow = shopingtime;
         }
 
         private void Update()
@@ -58,6 +60,7 @@ namespace Script.Spawn
                     {
                         StartCoroutine(Shoping());
                         nextwave = false;
+                        timeshopshow = shopingtime;
                     }
                 }
                 else if (tolalEnemies.Length == 0 && !CanSpawn)
@@ -73,7 +76,7 @@ namespace Script.Spawn
             if (Counttimenextwave)
             {
                 nextwaveGameObject.SetActive(true);
-                var a = shopingtime -= Time.deltaTime;
+                var a = timeshopshow -= Time.deltaTime;
                 Nextwavetext.text = $"Next Wave in coming in {a.ToString("F", CultureInfo.InvariantCulture)} Sce";
             }
         }
