@@ -1,61 +1,61 @@
 fileFormatVersion: 2
-guid: 7e4d7dbb820f98a4cb492e338b6a1ecc
+guid: f0ddcfc026441fb4794f4e143c02c9c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1839788478054622711
-    second: Executioner-charge_Attack_anim,_0
+      213: -3603572407506524545
+    second: Executioner_chargeattack_0
   - first:
-      213: 2046757098773689153
-    second: Executioner-charge_Attack_anim,_1
+      213: 8499015486122259898
+    second: Executioner_chargeattack_1
   - first:
-      213: 1606594603979301349
-    second: Executioner-charge_Attack_anim,_2
+      213: -1875510170782306977
+    second: Executioner_chargeattack_2
   - first:
-      213: 3693852183247055991
-    second: Executioner-charge_Attack_anim,_3
+      213: -766288758017979520
+    second: Executioner_chargeattack_3
   - first:
-      213: -14478080944029223
-    second: Executioner-charge_Attack_anim,_4
+      213: 6502751771825280165
+    second: Executioner_chargeattack_4
   - first:
-      213: 1601647110074678423
-    second: Executioner-charge_Attack_anim,_5
+      213: 2722311161388705233
+    second: Executioner_chargeattack_5
   - first:
-      213: 8841801853238653027
-    second: Executioner-charge_Attack_anim,_6
+      213: -6109261674480179551
+    second: Executioner_chargeattack_6
   - first:
-      213: -6650233545437349585
-    second: Executioner-charge_Attack_anim,_7
+      213: 3463157028347430580
+    second: Executioner_chargeattack_7
   - first:
-      213: -495831526086575623
-    second: Executioner-charge_Attack_anim,_8
+      213: 499693586628669182
+    second: Executioner_chargeattack_8
   - first:
-      213: -2531556998688090353
-    second: Executioner-charge_Attack_anim,_9
+      213: 6803695463634961390
+    second: Executioner_chargeattack_9
   - first:
-      213: 1842473300536716919
-    second: Executioner-charge_Attack_anim,_10
+      213: -3533151973394634574
+    second: Executioner_chargeattack_10
   - first:
-      213: -5117749238961359488
-    second: Executioner-charge_Attack_anim,_11
+      213: 6496579899122154984
+    second: Executioner_chargeattack_11
   - first:
-      213: -7691750832230779290
-    second: Executioner-charge_Attack_anim,_12
+      213: -8746056349246514645
+    second: Executioner_chargeattack_12
   - first:
-      213: -942947862448001042
-    second: Executioner-charge_Attack_anim,_13
+      213: 1315438133717699729
+    second: Executioner_chargeattack_13
   - first:
-      213: -8629797034623522146
-    second: Executioner-charge_Attack_anim,_14
+      213: 2002778347327774751
+    second: Executioner_chargeattack_14
   - first:
-      213: -7759697259921228588
-    second: Executioner-charge_Attack_anim,_15
+      213: -6500379160030658115
+    second: Executioner_chargeattack_15
   - first:
-      213: -1175981737859811313
-    second: Executioner-charge_Attack_anim,_16
+      213: 8065159376358698284
+    second: Executioner_chargeattack_16
   - first:
-      213: 1138418564508918949
-    second: Executioner-charge_Attack_anim,_17
+      213: -8249098745332434224
+    second: Executioner_chargeattack_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -119,7 +119,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -131,7 +131,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -143,7 +143,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -155,7 +155,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -167,7 +167,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -181,7 +181,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_0
+      name: Executioner_chargeattack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a92b77022c776e0800000000000000
-      internalID: -1839788478054622711
+      spriteID: f76ac28ecf98dfdc0800000000000000
+      internalID: -3603572407506524545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_1
+      name: Executioner_chargeattack_1
       rect:
         serializedVersion: 2
         x: 768
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1433ae5bcba876c10800000000000000
-      internalID: 2046757098773689153
+      spriteID: ab57cde0e8192f570800000000000000
+      internalID: 8499015486122259898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_2
+      name: Executioner_chargeattack_2
       rect:
         serializedVersion: 2
         x: 1536
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e1ee3cb745cb4610800000000000000
-      internalID: 1606594603979301349
+      spriteID: f5d63e1cf69d8f5e0800000000000000
+      internalID: -1875510170782306977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_3
+      name: Executioner_chargeattack_3
       rect:
         serializedVersion: 2
         x: 2304
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77ced336df2334330800000000000000
-      internalID: 3693852183247055991
+      spriteID: 08b86fe3f689d55f0800000000000000
+      internalID: -766288758017979520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_4
+      name: Executioner_chargeattack_4
       rect:
         serializedVersion: 2
         x: 3072
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d14d4813409ccff0800000000000000
-      internalID: -14478080944029223
+      spriteID: 5a4103e884a6e3a50800000000000000
+      internalID: 6502751771825280165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_5
+      name: Executioner_chargeattack_5
       rect:
         serializedVersion: 2
         x: 3840
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79c388b8f813a3610800000000000000
-      internalID: 1601647110074678423
+      spriteID: 1d5a7aee39797c520800000000000000
+      internalID: 2722311161388705233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_6
+      name: Executioner_chargeattack_6
       rect:
         serializedVersion: 2
         x: 4608
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3603eac80f364ba70800000000000000
-      internalID: 8841801853238653027
+      spriteID: 1a663b410ea873ba0800000000000000
+      internalID: -6109261674480179551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_7
+      name: Executioner_chargeattack_7
       rect:
         serializedVersion: 2
         x: 5376
@@ -342,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f29f1da23df95b3a0800000000000000
-      internalID: -6650233545437349585
+      spriteID: 4b6cb0cf7fa9f0030800000000000000
+      internalID: 3463157028347430580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_8
+      name: Executioner_chargeattack_8
       rect:
         serializedVersion: 2
         x: 6144
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f97b23aad37e19f0800000000000000
-      internalID: -495831526086575623
+      spriteID: efeea876ba44fe600800000000000000
+      internalID: 499693586628669182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_9
+      name: Executioner_chargeattack_9
       rect:
         serializedVersion: 2
         x: 6912
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f07da8c825a1edcd0800000000000000
-      internalID: -2531556998688090353
+      spriteID: ee306e50af49b6e50800000000000000
+      internalID: 6803695463634961390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_10
+      name: Executioner_chargeattack_10
       rect:
         serializedVersion: 2
         x: 7680
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77ee1aa74b7c19910800000000000000
-      internalID: 1842473300536716919
+      spriteID: 2b8a758eff8b7fec0800000000000000
+      internalID: -3533151973394634574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_11
+      name: Executioner_chargeattack_11
       rect:
         serializedVersion: 2
         x: 8448
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 085be22ae2a1af8b0800000000000000
-      internalID: -5117749238961359488
+      spriteID: 8ed7e167ffc782a50800000000000000
+      internalID: 6496579899122154984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_12
+      name: Executioner_chargeattack_12
       rect:
         serializedVersion: 2
         x: 9216
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 666b118ee59614590800000000000000
-      internalID: -7691750832230779290
+      spriteID: b2a9c95c614cf9680800000000000000
+      internalID: -8746056349246514645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_13
+      name: Executioner_chargeattack_13
       rect:
         serializedVersion: 2
         x: 9984
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eefa2114ae9f9e2f0800000000000000
-      internalID: -942947862448001042
+      spriteID: 19c0f3c5300614210800000000000000
+      internalID: 1315438133717699729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_14
+      name: Executioner_chargeattack_14
       rect:
         serializedVersion: 2
         x: 10752
@@ -489,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9aab83d15dcc3880800000000000000
-      internalID: -8629797034623522146
+      spriteID: f10e054bb4c4bcb10800000000000000
+      internalID: 2002778347327774751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_15
+      name: Executioner_chargeattack_15
       rect:
         serializedVersion: 2
         x: 11520
@@ -510,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dcb2d96474005490800000000000000
-      internalID: -7759697259921228588
+      spriteID: db1450d28930ac5a0800000000000000
+      internalID: -6500379160030658115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_16
+      name: Executioner_chargeattack_16
       rect:
         serializedVersion: 2
         x: 12288
@@ -531,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f08f48c07d21eafe0800000000000000
-      internalID: -1175981737859811313
+      spriteID: c2d65c4c8b33def60800000000000000
+      internalID: 8065159376358698284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Executioner-charge_Attack_anim,_17
+      name: Executioner_chargeattack_17
       rect:
         serializedVersion: 2
         x: 13056
@@ -552,8 +552,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a4a34f17a97ccf00800000000000000
-      internalID: 1138418564508918949
+      spriteID: 0daf65f8560558d80800000000000000
+      internalID: -8249098745332434224
       vertices: []
       indices: 
       edges: []
