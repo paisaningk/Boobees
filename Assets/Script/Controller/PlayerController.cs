@@ -13,7 +13,7 @@ namespace Script.Controller
         [SerializeField] public PlayMenu playMenu;
 
         private PlayerCharacter playerCharacter;
-        private Playerinput playerInput;
+        public static Playerinput playerInput;
         private Rigidbody2D Rd;
         private Vector3 MoveDie;
         private Animator animator;
@@ -100,7 +100,7 @@ namespace Script.Controller
             {
                 playMenu.Pause();
             }
-            else
+            else if (playMenu.isPause == true)
             {
                 playMenu.Resume();
             }

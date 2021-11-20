@@ -17,7 +17,7 @@ MonoBehaviour:
   MaxHp: 0
   Atk: 0
   Speed: 0
-  DashCd: 0.5
+  DashCd: 1.5
   CritAtk: 0
   CritRate: 0
   text: Dash cooldown 0.5

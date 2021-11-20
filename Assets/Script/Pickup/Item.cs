@@ -1,6 +1,7 @@
 using System;
 using Assets.Script.Base;
 using Assets.scriptableobject.Item;
+using Script.Controller;
 using TMPro;
 using UnityEngine;
 
@@ -13,7 +14,6 @@ namespace Assets.Script.Pickup
         [SerializeField] private GameObject Popup;
         [SerializeField] private GameObject buy;
         [SerializeField] private GameObject text;
-        private Playerinput playerInput;
         private bool Buying = false;
         private int maxHp;
         private int atk;
@@ -38,10 +38,8 @@ namespace Assets.Script.Pickup
             var textMesh = text.GetComponent<TextMesh>();
             textMesh.text = $"{ItemSo.text}";
             ShowPrice();
+            PlayerController.playerInput.PlayerAction.Buy.performed += context => Buy();
             
-            playerInput = new Playerinput();
-            playerInput.PlayerAction.Buy.performed += context => Buy();
-            playerInput.Enable();
             //price = ItemSo.Price;
             //PrintAll();
         }
@@ -67,6 +65,7 @@ namespace Assets.Script.Pickup
                 player = other;
                 Buying = true;
                 buy.SetActive(Buying);
+                //ShopController.BuyingPhone.SetActive(true);
             }
         }
 
@@ -74,6 +73,7 @@ namespace Assets.Script.Pickup
         {
             Buying = false;
             buy.SetActive(Buying);
+            //ShopController.BuyingPhone.SetActive(false);
         }
 
         private void ShowPrice()
@@ -108,11 +108,15 @@ namespace Assets.Script.Pickup
             Player.MaxHp += maxHp;
             Player.Atk += atk;
             Player.Speed += speed;
-            Player.DashCd = dashCd;
+            Player.DashCd -= dashCd;
             Player.CritAtk += critAtk;
             Player.CritRate += critRate;
             Debug.Log("Player pickup");
-                
+
+            if (Player.DashCd < 0)
+            {
+                Player.DashCd = 0;
+            }
             Destroy(gameObject);
         }
 

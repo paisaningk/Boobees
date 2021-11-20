@@ -1,4 +1,5 @@
 using Assets.Script.Base;
+using Script.Controller;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ namespace Assets.Script.Menu
     public class PlayMenu : MonoBehaviour
     {
         [SerializeField] private AdsManager adsManager;
+        [SerializeField] private ShopController shopController;
         [SerializeField] private GameObject pauseUi;
         [SerializeField] private GameObject deadUI;
         [SerializeField] private GameObject waveUI;
@@ -46,15 +48,25 @@ namespace Assets.Script.Menu
         
         public void Pause()
         {
-            pauseUi.SetActive(true);
-            Time.timeScale = 0;
-            isPause = true;
+            if (shopController.shoping == false)
+            {
+                
+                PlayerController.playerInput.PlayerAction.Attack.Disable();
+                PlayerController.playerInput.PlayerAction.Dash.Disable();
+                PlayerController.playerInput.PlayerAction.Move.Disable();
+                pauseUi.SetActive(true);
+                Time.timeScale = 0;
+                isPause = true;
+            }
         }
         public void Resume()
         {
             pauseUi.SetActive(false);
             Time.timeScale = 1;
             isPause = false;
+            PlayerController.playerInput.PlayerAction.Attack.Enable();
+            PlayerController.playerInput.PlayerAction.Dash.Enable();
+            PlayerController.playerInput.PlayerAction.Move.Enable();
         }
 
         private void Quit()

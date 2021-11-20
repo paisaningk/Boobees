@@ -198,7 +198,7 @@ MonoBehaviour:
   Speed: 0
   DashCd: 2
   CritAtk: 2
-  CritRate: 0
+  CritRate: 1
 --- !u!1 &2132391105921270811
 GameObject:
   m_ObjectHideFlags: 0

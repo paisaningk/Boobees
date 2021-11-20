@@ -15,6 +15,7 @@ namespace Assets.Script.Menu
         {
             startButton.onClick.AddListener(StartGame);
             quitButton.onClick.AddListener(QuitGame);
+            Time.timeScale = 1;
         }
 
         private void StartGame()

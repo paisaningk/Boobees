@@ -16,8 +16,8 @@ MonoBehaviour:
   Tier: 3
   MaxHp: 0
   Atk: 0
-  Speed: 7
+  Speed: 4
   DashCd: 0
   CritAtk: 0
   CritRate: 0
-  text: Speed + 7
+  text: Speed +4

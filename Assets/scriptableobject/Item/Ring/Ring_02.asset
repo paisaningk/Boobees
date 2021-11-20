@@ -19,5 +19,5 @@ MonoBehaviour:
   Speed: 0
   DashCd: 0
   CritAtk: 0
-  CritRate: 20
-  text: Crit Rate + 20%
+  CritRate: 6
+  text: Crit Rate + 6%

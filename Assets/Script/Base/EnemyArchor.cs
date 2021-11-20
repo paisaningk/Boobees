@@ -15,7 +15,6 @@ public class EnemyArchor : MonoBehaviour
     private Transform player;
 
     private float timeBtwShots;
-    public float startTimeBtwShots;
 
     public GameObject projectile;
 
@@ -23,7 +22,8 @@ public class EnemyArchor : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
 
-        timeBtwShots = startTimeBtwShots;
+        var random = Random.Range(2, 5);
+        timeBtwShots = random;
     }
 
     void Update()
@@ -48,7 +48,8 @@ public class EnemyArchor : MonoBehaviour
         {
             SoundManager.Instance.Play(SoundManager.Sound.WitchAttack);
             Instantiate(projectile, transform.position, Quaternion.identity);
-            timeBtwShots = startTimeBtwShots;
+            var random = Random.Range(2, 5);
+            timeBtwShots = random;
         }
 
         else

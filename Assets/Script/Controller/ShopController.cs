@@ -16,7 +16,8 @@ namespace Script.Controller
         [SerializeField] private GameObject[] cursed;
         [SerializeField] private GameObject shopMenu;
         [SerializeField] private GameObject ePopup;
-        [SerializeField] private GameObject BuyingPhone;
+        [SerializeField] private GameObject buyingPhone1;
+        [SerializeField] public static GameObject BuyingPhone;
         [SerializeField] private Button backButton;
         [SerializeField] private Button rngButton;
         [SerializeField] private Button healButton;
@@ -27,22 +28,20 @@ namespace Script.Controller
         private int healCost = 20;
         private int rngCost = 20;
         private bool _shop = false;
-        private Playerinput _playerInput;
         private Collider2D _player;
+        public bool shoping = false;
         
         
         public void Start()
         { 
             //RngItemandSpawn();
-            _playerInput = new Playerinput();
-            _playerInput.PlayerAction.Buy.performed += context => Talk();
+            
+            PlayerController.playerInput.PlayerAction.Buy.performed += context => Talk();
             
             rngButton.onClick.AddListener(CheckGoldForReroll);
             backButton.onClick.AddListener(Back);
             healButton.onClick.AddListener(Heal);
-            
-            
-            _playerInput.Enable();
+            BuyingPhone = buyingPhone1;
         }
         
         
@@ -51,18 +50,22 @@ namespace Script.Controller
         {
             if (_shop == true)
             {
-                string[] talk = new[] {"Hello , You come again","Oh, are you still alive?" , "HOW much money do you have " };
+                var talk = new[] {"Hello , You come again","Oh, are you still alive?" , "HOW much money do you have " };
                 var range = Random.Range(0, talk.Length);
                 shopMenu.SetActive(true);
                 text.text = talk[range];
                 healCostText.text = $"{healCost}";
                 rngText.text = $"{rngCost}";
+                shoping = true;
+                PlayerController.playerInput.Disable();
             }
         }
 
         private void Back()
         {
             shopMenu.SetActive(false);
+            shoping = false;
+            PlayerController.playerInput.Enable();
         }
         
         private void OnTriggerStay2D(Collider2D other)

@@ -15,9 +15,9 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 2938705c460e0b045b8cef794369bfa3, type: 3}
   Tier: 3
   MaxHp: 0
-  Atk: 20
+  Atk: 8
   Speed: 0
   DashCd: 0
   CritAtk: 0
   CritRate: 0
-  text: ATK + 20
+  text: ATK + 8
