@@ -64,14 +64,15 @@ namespace Assets.Script.Pickup
             {
                 player = other;
                 Buying = true;
+                ShopController.BuyingPhone.SetActive(true);
                 buy.SetActive(Buying);
-                //ShopController.BuyingPhone.SetActive(true);
             }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
             Buying = false;
+            ShopController.BuyingPhone.SetActive(Buying);
             buy.SetActive(Buying);
             //ShopController.BuyingPhone.SetActive(false);
         }

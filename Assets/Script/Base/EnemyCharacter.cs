@@ -109,22 +109,27 @@ namespace Assets.Script.Base
             {
                 case EnemyType.Slime:
                     gold = Random.Range(3 , 10);
+                    gold /= 2;
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
                 case EnemyType.Ranger:
                     gold = Random.Range(11 , 25);
+                    gold /= 2;
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
                 case EnemyType.Golem:
                     gold = Random.Range(20 , 31);
+                    gold /= 2;
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
                 case EnemyType.Charger:
                     gold = Random.Range(15 , 30);
+                    gold /= 2;
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
                 case EnemyType.Boss:
                     gold = Random.Range(35 , 41);
+                    gold /= 2;
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
             }

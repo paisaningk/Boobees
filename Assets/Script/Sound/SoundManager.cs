@@ -78,6 +78,12 @@ namespace Sound
             soundClip.audioSource.Play();
         }
 
+        public void Playfrompause(Sound sound)
+        {
+            var soundClip = GetSoundClip(sound);
+            soundClip.audioSource.Play();
+        }
+
         private SoundClip GetSoundClip(Sound sound)
         {
             foreach (var soundClip in soundClips)
@@ -94,10 +100,6 @@ namespace Sound
         public void Stop(Sound sound)
         {
             var soundClip = GetSoundClip(sound);
-            if (soundClip.audioSource == null)
-            {
-                soundClip.audioSource = gameObject.AddComponent<AudioSource>();
-            }
             soundClip.audioSource.Stop();
         }
     }

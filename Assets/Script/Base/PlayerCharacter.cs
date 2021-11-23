@@ -40,7 +40,6 @@ namespace Assets.Script.Base
 
         public void PrintAll()
         {
-            //Debug.Log("Enemy");
             Debug.Log($"name:{Name}");
             Debug.Log($"HP:{Hp}");
             Debug.Log($"ATK:{Atk}");
@@ -58,7 +57,7 @@ namespace Assets.Script.Base
                 if (Hp <= 0)
                 {
                     animator.SetBool("Dead", true);
-                    StartCoroutine(Dead());
+                    playerController.Dead();
                 }
             }
 
@@ -71,9 +70,8 @@ namespace Assets.Script.Base
                 if (Hp <= 0)
                 {
                     animator.SetBool("Dead", true);
-                    StartCoroutine(Dead());
+                    playerController.Dead();
                 }
-                //Debug.Log($"{Name} have : {Hp}");
             }
         }
 
@@ -88,8 +86,7 @@ namespace Assets.Script.Base
         IEnumerator Dead()
         {
             yield return new WaitForSeconds(2);
-            Debug.Log("dead it work");
-            playerController.Dead();
+            
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Script.Controller
         [SerializeField] private GameObject shopMenu;
         [SerializeField] private GameObject ePopup;
         [SerializeField] private GameObject buyingPhone1;
-        [SerializeField] public static GameObject BuyingPhone;
+        public static GameObject BuyingPhone;
         [SerializeField] private Button backButton;
         [SerializeField] private Button rngButton;
         [SerializeField] private Button healButton;

@@ -3630,7 +3630,6 @@ Transform:
   - {fileID: 5844438568499212104}
   - {fileID: 3874220979424501827}
   - {fileID: 2333442148319938985}
-  - {fileID: 4971392127883343829}
   - {fileID: 3486117495345933032}
   m_Father: {fileID: 1016526024559318556}
   m_RootOrder: 3
@@ -4055,7 +4054,7 @@ RectTransform:
   m_LocalScale: {x: 0.37, y: 0.37, z: 1}
   m_Children: []
   m_Father: {fileID: 3825955401467167096}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4515,6 +4514,8 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+<<<<<<< HEAD
+=======
 --- !u!1 &3494031254787884432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4789,6 +4790,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+>>>>>>> 9ee29e6313db2005d67ee908a443072fa1b0687f
 --- !u!1 &3934177559220192539
 GameObject:
   m_ObjectHideFlags: 0
