@@ -28,7 +28,7 @@ namespace Sound
 
         private void Start()
         {
-            Play(SoundManager.Sound.BGM);
+            Play(Sound.BGM);
         }
 
         public enum Sound

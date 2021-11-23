@@ -25,7 +25,6 @@ namespace Assets.Script.Base
         
         public void Start()
         {
-            var adc = 10;
             Name = EnemyCharacterSo.Name;
             Hp = EnemyCharacterSo.MaxHp;
             Atk = EnemyCharacterSo.Atk;

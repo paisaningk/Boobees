@@ -21,7 +21,7 @@ namespace Script.Controller
         private bool Attack01 = false;
         private bool Attack02 = false;
         private bool Attack03 = false;
-        private bool CanDash = true;
+        public static bool CanDash = true;
         public bool knockback = false;
         
 
@@ -144,12 +144,6 @@ namespace Script.Controller
             }
         }
         
-        public void AttackButton()
-        {
-            Attack();
-        }
-        
-
         private void Dash()
         {
             if (CanDash)

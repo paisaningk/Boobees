@@ -10,21 +10,22 @@ namespace Assets.Script.Base
     public class PlayerCharacter : MonoBehaviour 
     {
         [SerializeField] public AdsManager adsManager;
-
         [SerializeField] private CharacterSO PlayerCharacterSo;
+        [Header("Player Status")]
+        [SerializeField] public string Name;
+        [SerializeField] public float MaxHp;
+        [SerializeField] public float Hp;
+        [SerializeField] public int Atk;
+        [SerializeField] public int Gold = 0;
+        [SerializeField] public float Speed;
+        [SerializeField] public float DashCd;
+        [SerializeField] public int CritAtk = 1;
+        [SerializeField] public int CritRate = 2;
         public ItemSO[] ItemSo;
-        private PlayerController playerController;
-        public string Name;
-        public float MaxHp;
-        public float Hp;
-        public int Atk;
-        public int Gold = 0;
-        public float Speed;
-        public float DashCd;
-        public int CritAtk = 1;
-        public int CritRate = 2;
+
         private GameObject Popup;
         private Animator animator;
+        private PlayerController playerController;
 
         public void Awake()
         {

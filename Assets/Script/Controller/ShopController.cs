@@ -8,6 +8,7 @@ namespace Script.Controller
 {
     public class ShopController : MonoBehaviour
     {
+        [Header("Item")]
         [SerializeField] private Transform[]  spawnPoint;
         [SerializeField] private GameObject[] common;
         [SerializeField] private GameObject[] uncommon;
@@ -114,7 +115,7 @@ namespace Script.Controller
         private void Heal()
         {
             var playerCharacter = _player.GetComponent<PlayerCharacter>();
-            if (playerCharacter.Gold >= healCost)
+            if (playerCharacter.Gold >= healCost && playerCharacter.Hp == playerCharacter.MaxHp)
             {
                 playerCharacter.Gold -= healCost;
                 var heal50= (playerCharacter.MaxHp * 25)/100;
@@ -125,10 +126,13 @@ namespace Script.Controller
                     text.text = $"You gain hp +20. ";
                 }
             }
-            else
-
+            else if (playerCharacter.Hp == playerCharacter.MaxHp)
             {
-                text.text = $"GOLD not enough";
+                text.text = $"Your blood is full  stop healing.";
+            }
+            else
+            {
+                text.text = $"GOLD not enough.";
             }
         }
 
