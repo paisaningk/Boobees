@@ -14,6 +14,7 @@ namespace Assets.Script.Menu
         [SerializeField] private GameObject pauseUi;
         [SerializeField] private GameObject deadUI;
         [SerializeField] private GameObject waveUI;
+        [SerializeField] private GameObject ScoreBoard;
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
         [SerializeField] private Button deadquitButton;
@@ -24,7 +25,8 @@ namespace Assets.Script.Menu
         [SerializeField] private TextMeshProUGUI goldText;
         [SerializeField] private PlayerCharacter player;
         [SerializeField] private Image blood;
-        
+
+
         private int count = 0;
         public bool isPause = false;
 
@@ -92,6 +94,7 @@ namespace Assets.Script.Menu
             pauseUi.SetActive(false);
             waveUI.SetActive(false);
             deadUI.SetActive(true);
+            ScoreBoard.SetActive(true);
         }
     }
 }
