@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Script.Base;
@@ -18,6 +19,7 @@ namespace Assets.Script.Menu
         [SerializeField] private GameObject pauseUi;
         [SerializeField] private GameObject deadUI;
         [SerializeField] private GameObject waveUI;
+        [SerializeField] private GameObject StatusUI;
         //[SerializeField] private GameObject ScoreBoard;
         [Header("Button")]
         [SerializeField] private Button resumeButton;
@@ -32,11 +34,20 @@ namespace Assets.Script.Menu
         [SerializeField] private PlayerCharacter player;
         [SerializeField] private Image blood;
         [SerializeField] private Image Dash;
-
+        [Header("Status")]
+        [SerializeField] private TextMeshProUGUI MaxHPText;
+        [SerializeField] private TextMeshProUGUI AtkText;
+        [SerializeField] private TextMeshProUGUI SpeedText;
+        [SerializeField] private TextMeshProUGUI DashCdText;
+        [SerializeField] private TextMeshProUGUI CritRateText;
+        [SerializeField] private TextMeshProUGUI GoldText;
+        [SerializeField] private Button quitStatusButton;
+        
         private int count = 0;
         public bool isPause = false;
         private float DashCd = 0;
         private bool candash = true;
+        private bool StatusShow = false;
 
         private void Awake()
         {
@@ -47,7 +58,13 @@ namespace Assets.Script.Menu
             restartButton.onClick.AddListener(Restart);
             restartwinButton.onClick.AddListener(Restart);
             restartpauseButton.onClick.AddListener(Restart);
+            quitStatusButton.onClick.AddListener(Back);
             Dash.fillAmount = 1;
+        }
+
+        private void Start()
+        {
+            PlayerController.playerInput.PlayerAction.Status.performed += context => OpenStatus();
         }
 
         private void Update()
@@ -55,14 +72,13 @@ namespace Assets.Script.Menu
             goldText.text = $"Gold : {player.Gold}";
             var playerHp = player.Hp / player.MaxHp;
             blood.fillAmount = playerHp;
-
+            SetStatus();
             if (PlayerController.CanDash == false)
             {
                 if (candash == true)
                 {
                     Dash.fillAmount = 0;
                     DashCd = 0;
-                    Debug.Log("work candash");
                     candash = false;
                 }
                 DashCd += Time.deltaTime;
@@ -74,12 +90,44 @@ namespace Assets.Script.Menu
                 }
             }
         }
+        
+        private void OpenStatus()
+        {
+            if (StatusShow == false)
+            {
+                StatusUI.SetActive(true);
+                StatusShow = true;
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Back();
+            }
+            
+        }
+
+        private void Back()
+        {
+            StatusUI.SetActive(false);
+            StatusShow = false;
+            Time.timeScale = 1;
+        }
 
         IEnumerator SetDashCd()
         {
             yield return new WaitForSeconds(0.1f);
             candash = true;
             StopCoroutine(SetDashCd());
+        }
+
+        private void SetStatus()
+        {
+            MaxHPText.text = $"{player.MaxHp}";
+            SpeedText.text = $"{player.Speed}";
+            AtkText.text = $"{player.Atk}";
+            DashCdText.text = $"{player.DashCd}";
+            CritRateText.text = $"{player.CritRate}";
+            GoldText.text = $"{player.Gold}";
         }
         
         public void Pause()
@@ -111,16 +159,16 @@ namespace Assets.Script.Menu
         
         private void Restart()
         {
-            if (count <= 0)
-            {
-                count++;
-                adsManager.ShowAds("Rewarded_Android");
-            }
-            else
-            {
-                SceneManager.LoadScene("MainMenu");
-            }
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // if (count <= 0)
+            // {
+            //     count++;
+            //     adsManager.ShowAds("Rewarded_Android");
+            // }
+            // else
+            // {
+            //     SceneManager.LoadScene("MainMenu");
+            // }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void Dead()

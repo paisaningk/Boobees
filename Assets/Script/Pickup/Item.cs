@@ -2,6 +2,7 @@ using System;
 using Assets.Script.Base;
 using Assets.scriptableobject.Item;
 using Script.Controller;
+using Sound;
 using TMPro;
 using UnityEngine;
 
@@ -94,7 +95,7 @@ namespace Assets.Script.Pickup
                     price = 50;
                     break;
                 case Tier.Cursed:
-                    price = 44;
+                    price = 100;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -124,6 +125,7 @@ namespace Assets.Script.Pickup
             {
                 Player.Speed = 8;
             }
+            SoundManager.Instance.Play(SoundManager.Sound.Pickup);
             Destroy(gameObject);
         }
 

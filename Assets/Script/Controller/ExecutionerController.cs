@@ -1,4 +1,5 @@
 using System.Collections;
+using Sound;
 using UnityEngine;
 
 namespace Script.Controller
@@ -22,7 +23,7 @@ namespace Script.Controller
             player = GameObject.FindWithTag("Player").transform;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (nextMove == false)
             {
@@ -40,6 +41,11 @@ namespace Script.Controller
             animator.SetBool("Walking",true);
             
             Rb.MovePosition(move);
+        }
+
+        private void Playsound()
+        {
+            SoundManager.Instance.Play(SoundManager.Sound.ExecutionerAttack);
         }
         
         IEnumerator Wait3sec()

@@ -1,5 +1,6 @@
 using System.Collections;
 using Assets.Script.Base;
+using Sound;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,9 +26,9 @@ namespace Script.Controller
         [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private TextMeshProUGUI healCostText;
         [SerializeField] private TextMeshProUGUI rngText;
-        
-        private int healCost = 20;
-        private int rngCost = 20;
+        [Header("Cost")]
+        [SerializeField] private int healCost = 20;
+        [SerializeField] private int rngCost = 20;
         private bool _shop = false;
         private Collider2D _player;
         public bool shoping = false;
@@ -51,6 +52,7 @@ namespace Script.Controller
         {
             if (_shop == true)
             {
+                SoundManager.Instance.Play(SoundManager.Sound.TalkWithShop);
                 var talk = new[] {"Hello , You come again","Oh, are you still alive?" , "HOW much money do you have " };
                 var range = Random.Range(0, talk.Length);
                 shopMenu.SetActive(true);
@@ -93,13 +95,20 @@ namespace Script.Controller
             if (playerCharacter.Gold >= rngCost)
             {
                 playerCharacter.Gold -= rngCost;
+                rngCost += 5;
+                if (rngCost >= 50)
+                {
+                    rngCost = 50;
+                }
                 Deleteitem();
                 RngItemandSpawn();
                 text.text = $"Thank you for using the service. ";
+                SoundManager.Instance.Play(SoundManager.Sound.ThankYou);
             }
             else
             {
                 text.text = $"GOLD not enough";
+                SoundManager.Instance.Play(SoundManager.Sound.NoMoney);
             }
         }
 
@@ -123,16 +132,18 @@ namespace Script.Controller
                 if (playerCharacter.Hp >= playerCharacter.MaxHp)
                 {
                     playerCharacter.Hp = playerCharacter.MaxHp;
-                    text.text = $"You gain hp +{heal50}. ";
                 }
+                text.text = $"You gain hp +{heal50}. ";
+                SoundManager.Instance.Play(SoundManager.Sound.ThankYou);
             }
-            else if (playerCharacter.Hp == playerCharacter.MaxHp)
+            else if (playerCharacter.Hp >= playerCharacter.MaxHp)
             {
                 text.text = $"Your blood is full  stop healing.";
             }
             else
             {
                 text.text = $"GOLD not enough.";
+                SoundManager.Instance.Play(SoundManager.Sound.NoMoney);
             }
         }
 

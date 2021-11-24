@@ -1,10 +1,14 @@
-﻿using Assets.Script.Pickup;
+﻿using System;
+using System.Collections;
+using Assets.Script.Pickup;
 using Assets.Script.scriptableobject;
 using Assets.Script.scriptableobject.Character;
 using Script.Controller;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using Sound;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Assets.Script.Base
 {
@@ -15,13 +19,15 @@ namespace Assets.Script.Base
         [SerializeField] private GameObject GoldPrefab;
         [SerializeField] private EnemyType enemyType;
         private string Name;
-        private int Hp;
+        public int Hp;
         public int Atk;
-        private float Speed;
+        public float Speed;
         private Rigidbody2D Rb;
         private PlayerController playerController;
         private float playerCritRate;
         private GameObject Popup;
+        private bool isdead = true;
+        private Vector3 offset;
         
         public void Start()
         {
@@ -34,6 +40,7 @@ namespace Assets.Script.Base
             
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
+        
 
         public void PrintAll()
         {
@@ -66,12 +73,24 @@ namespace Assets.Script.Base
                 
                 if (Hp <= 0)
                 {
-                    SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
-                    DropGold();
-                    Destroy(this.gameObject);
+                    if (isdead == true)
+                    {
+                        isdead = false;
+                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
+                        StartCoroutine(Deaddelay());
+                        
+                    }
+                    
                 }
                 
             }
+        }
+
+        IEnumerator Deaddelay()
+        {
+            DropGold();
+            yield return new WaitForSeconds(0.1f);
+            Destroy(this.gameObject);
         }
 
         private void Knockback(Collider2D other)
@@ -113,23 +132,19 @@ namespace Assets.Script.Base
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
                 case EnemyType.Ranger:
-                    gold = Random.Range(11 , 25);
-                    gold /= 2;
+                    gold = Random.Range(7 , 12);
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
                 case EnemyType.Golem:
-                    gold = Random.Range(20 , 31);
-                    gold /= 2;
+                    gold = Random.Range(8 , 12);
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
                 case EnemyType.Charger:
-                    gold = Random.Range(15 , 30);
-                    gold /= 2;
+                    gold = Random.Range(12 , 18);
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
                 case EnemyType.Boss:
                     gold = Random.Range(35 , 41);
-                    gold /= 2;
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
             }

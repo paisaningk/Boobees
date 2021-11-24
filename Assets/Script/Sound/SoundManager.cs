@@ -38,19 +38,21 @@ namespace Sound
             PlayerHit1,
             PlayerHit2,
             PlayerHit3,
-            SlimeMovement,
-            SlimeAttack,
-            WitchMovement,
             WitchAttack,
-            WitchTakeHit,
             EnemyTakeHit,
-            PlayerTakeHit1,
-            PlayerTakeHit2,
+            PlayerTakeHit,
             Coin,
             SpawnEnemy,
             Shop,
-
-            EnemyExplode
+            ExecutionerAttack,
+            TankAttack,
+            Pickup,
+            TalkWithShop,
+            OpenShop,
+            NoMoney,
+            ThankYou,
+            PlayerDie,
+            PlayerDieBGM
         }
 
         [Serializable]

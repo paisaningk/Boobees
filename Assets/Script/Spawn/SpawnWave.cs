@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Globalization;
+using Assets.Script.Base;
 using Script.Controller;
 using TMPro;
 using UnityEngine;
@@ -46,7 +47,7 @@ namespace Script.Spawn
             timeshopshow = shopingtime;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
 
             if (CurrentWaveNumber < Wave.Length)
@@ -72,6 +73,7 @@ namespace Script.Spawn
             else
             {
                 win.SetActive(true);
+                PlayerController.playerInput.PlayerAction.Disable();
             }
 
             if (Counttimenextwave)
@@ -109,6 +111,7 @@ namespace Script.Spawn
 
         IEnumerator Shoping()
         {
+            SoundManager.Instance.Play(SoundManager.Sound.OpenShop);
             ShopController = Shop.GetComponent<ShopController>();
             Shop.SetActive(true);
             ShopController.RngItemandSpawn();
@@ -131,8 +134,22 @@ namespace Script.Spawn
             CanSpawn = true;
             nextwave = true;
             Soundplay = true;
-            //SoundManager.Instance.Stop(SoundManager.Sound.Shop);
+            if (WaveNumberText >= 5)
+            {
+                AddStatus();
+            }
+            SoundManager.Instance.Stop(SoundManager.Sound.Shop);
             SoundManager.Instance.Playfrompause(SoundManager.Sound.BGM);
+        }
+
+        private void AddStatus()
+        {
+            var a = CurrentWave.typeOfEnemy;
+            foreach (var VARIABLE in a)
+            {
+                VARIABLE.GetComponent<EnemyCharacter>().Hp += 10;
+                VARIABLE.GetComponent<EnemyCharacter>().Atk += 5;
+            }
         }
     }
 }

@@ -51,7 +51,7 @@ namespace Assets.Script.Base
         {
             if (other.CompareTag("EnemyHitBox"))
             {
-                SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit1);
+                SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit);
                 var enemyCharacter = other.GetComponentInParent<EnemyCharacter>();
                 Hp -= enemyCharacter.Atk;
                 ShowPopUp(enemyCharacter.Atk);
@@ -64,7 +64,7 @@ namespace Assets.Script.Base
 
             if (other.CompareTag("Projectile"))
             {
-                SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit1);
+                SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit);
                 var arrow = other.GetComponent<Arrow>();
                 Hp -= arrow.DMG;
                 ShowPopUp(arrow.DMG);
@@ -84,9 +84,10 @@ namespace Assets.Script.Base
             textMesh.color = Color.red;
         }
 
-        IEnumerator Dead()
+        private void Dead()
         {
-            yield return new WaitForSeconds(2);
+            Time.timeScale = 0;
+            SoundManager.Instance.Stop(SoundManager.Sound.BGM);
             
         }
     }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Sound;
 using UnityEngine;
 
 namespace Script.Controller
@@ -8,7 +9,7 @@ namespace Script.Controller
         private Rigidbody2D Rb;
         private Transform player;
         private Animator animator;
-        private float movespeed = 10f;
+        private float movespeed = 8f;
         private float stoppingDistance = 1.7f;
         private Vector3 directionnormalized;
         private bool attacking = false;
@@ -22,13 +23,18 @@ namespace Script.Controller
             player = GameObject.FindWithTag("Player").transform;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (nextMove == false)
             {
                 Selectnextmove();
             }
             
+        }
+        
+        private void Playsound()
+        {
+            SoundManager.Instance.Play(SoundManager.Sound.TankAttack);
         }
     
         private void moveCharacter(Vector3 direction)

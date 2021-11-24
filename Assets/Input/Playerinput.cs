@@ -71,6 +71,24 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cheat "",
+                    ""type"": ""Button"",
+                    ""id"": ""e494ea4a-93d1-4703-b38c-3f36406a8e5e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Status"",
+                    ""type"": ""Button"",
+                    ""id"": ""2e5711b1-edd2-4617-8187-7e2d193864d0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -186,17 +204,6 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""70cdcfa8-73de-45c1-bfa9-ec8b9b106450"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""key and mouse"",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""bc234798-9c11-475d-b6c2-94e870b56927"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
@@ -225,6 +232,28 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Phos"",
                     ""action"": ""Buy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c02719d0-9268-4997-b3d3-f29f3af780d8"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cheat "",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f6a7e94-d337-44ec-84e2-57d346ca4fc1"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Status"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -268,6 +297,8 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         m_PlayerAction_Dash = m_PlayerAction.FindAction("Dash", throwIfNotFound: true);
         m_PlayerAction_Pause = m_PlayerAction.FindAction("Pause", throwIfNotFound: true);
         m_PlayerAction_Buy = m_PlayerAction.FindAction("Buy", throwIfNotFound: true);
+        m_PlayerAction_Cheat = m_PlayerAction.FindAction("Cheat ", throwIfNotFound: true);
+        m_PlayerAction_Status = m_PlayerAction.FindAction("Status", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -332,6 +363,8 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerAction_Dash;
     private readonly InputAction m_PlayerAction_Pause;
     private readonly InputAction m_PlayerAction_Buy;
+    private readonly InputAction m_PlayerAction_Cheat;
+    private readonly InputAction m_PlayerAction_Status;
     public struct PlayerActionActions
     {
         private @Playerinput m_Wrapper;
@@ -341,6 +374,8 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_PlayerAction_Dash;
         public InputAction @Pause => m_Wrapper.m_PlayerAction_Pause;
         public InputAction @Buy => m_Wrapper.m_PlayerAction_Buy;
+        public InputAction @Cheat => m_Wrapper.m_PlayerAction_Cheat;
+        public InputAction @Status => m_Wrapper.m_PlayerAction_Status;
         public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -365,6 +400,12 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Buy.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnBuy;
                 @Buy.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnBuy;
                 @Buy.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnBuy;
+                @Cheat.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnCheat;
+                @Cheat.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnCheat;
+                @Cheat.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnCheat;
+                @Status.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnStatus;
+                @Status.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnStatus;
+                @Status.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnStatus;
             }
             m_Wrapper.m_PlayerActionActionsCallbackInterface = instance;
             if (instance != null)
@@ -384,6 +425,12 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Buy.started += instance.OnBuy;
                 @Buy.performed += instance.OnBuy;
                 @Buy.canceled += instance.OnBuy;
+                @Cheat.started += instance.OnCheat;
+                @Cheat.performed += instance.OnCheat;
+                @Cheat.canceled += instance.OnCheat;
+                @Status.started += instance.OnStatus;
+                @Status.performed += instance.OnStatus;
+                @Status.canceled += instance.OnStatus;
             }
         }
     }
@@ -413,5 +460,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnBuy(InputAction.CallbackContext context);
+        void OnCheat(InputAction.CallbackContext context);
+        void OnStatus(InputAction.CallbackContext context);
     }
 }

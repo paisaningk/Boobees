@@ -189,16 +189,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adsManager: {fileID: 0}
   PlayerCharacterSo: {fileID: 11400000, guid: 1200c21834260964494ba876aaebb44f, type: 2}
-  ItemSo: []
   Name: 
   MaxHp: 0
   Hp: 0
   Atk: 0
   Gold: 0
   Speed: 0
-  DashCd: 2
+  DashCd: 3.5
   CritAtk: 2
   CritRate: 1
+  ItemSo: []
 --- !u!1 &2132391105921270811
 GameObject:
   m_ObjectHideFlags: 0

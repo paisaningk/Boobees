@@ -20,4 +20,4 @@ MonoBehaviour:
   DashCd: 0
   CritAtk: 0
   CritRate: 15
-  text: Crit Rate + 15%
+  text: Crit Rate + 10%

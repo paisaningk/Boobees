@@ -45,11 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundClips:
-  - sound: 6
-    audioClip: {fileID: 8300000, guid: 9ee3c51ed06da2c42906baa0459d26ea, type: 3}
-    soundVolume: 0.09
-    loop: 1
-    audioSource: {fileID: 0}
   - sound: 2
     audioClip: {fileID: 8300000, guid: f49518f22ae30d34d96ee7821447dfd4, type: 3}
     soundVolume: 0.3
@@ -60,14 +55,9 @@ MonoBehaviour:
     soundVolume: 0.3
     loop: 1
     audioSource: {fileID: 0}
-  - sound: 9
-    audioClip: {fileID: 8300000, guid: f41dea3ba56faa6499c2f92206a45b4c, type: 3}
-    soundVolume: 0.25
-    loop: 0
-    audioSource: {fileID: 0}
   - sound: 0
     audioClip: {fileID: 8300000, guid: 1f1f7a448fc28554a8a938035191adfb, type: 3}
-    soundVolume: 0.2
+    soundVolume: 0.1
     loop: 1
     audioSource: {fileID: 0}
   - sound: 3
@@ -85,30 +75,80 @@ MonoBehaviour:
     soundVolume: 0.5
     loop: 0
     audioSource: {fileID: 0}
-  - sound: 11
-    audioClip: {fileID: 8300000, guid: 1d45ec898f24a5c47ba2cb6ad0af2559, type: 3}
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: cb787629077b5374d9ef17cde88c3c9c, type: 3}
     soundVolume: 0.5
     loop: 0
     audioSource: {fileID: 0}
-  - sound: 12
+  - sound: 8
     audioClip: {fileID: 8300000, guid: fb9a4d1eba4f55249a4794b5324e98c1, type: 3}
     soundVolume: 0.57
     loop: 0
     audioSource: {fileID: 0}
-  - sound: 14
-    audioClip: {fileID: 8300000, guid: bfbd29e9254cf5e4fbbc873ce99b23be, type: 3}
-    soundVolume: 1
+  - sound: 9
+    audioClip: {fileID: 8300000, guid: eaf5cfa8f3ff6824e8d74d8bcdae810b, type: 3}
+    soundVolume: 0.15
     loop: 0
     audioSource: {fileID: 0}
-  - sound: 15
+  - sound: 10
     audioClip: {fileID: 8300000, guid: 09fa866c7b1e77a429fbf4ffc6c6cc90, type: 3}
     soundVolume: 0.05
     loop: 0
     audioSource: {fileID: 0}
-  - sound: 16
+  - sound: 11
     audioClip: {fileID: 8300000, guid: e979ef9ba8879f74bab1143bb941edb6, type: 3}
     soundVolume: 0.05
+    loop: 1
+    audioSource: {fileID: 0}
+  - sound: 6
+    audioClip: {fileID: 8300000, guid: e0bdb654de7474544abe4be60634c25e, type: 3}
+    soundVolume: 0.5
     loop: 0
+    audioSource: {fileID: 0}
+  - sound: 12
+    audioClip: {fileID: 8300000, guid: f2117cb3babea9744bad5b91e43140be, type: 3}
+    soundVolume: 0.5
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 13
+    audioClip: {fileID: 8300000, guid: a2b5e02d14b2d214184b9146fe8840d4, type: 3}
+    soundVolume: 0.5
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 14
+    audioClip: {fileID: 8300000, guid: 58c8c571ce579b4488a417bcb4f9532c, type: 3}
+    soundVolume: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 15
+    audioClip: {fileID: 8300000, guid: 1269bec23f6d7df429dbf8dce849a893, type: 3}
+    soundVolume: 0.25
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 16
+    audioClip: {fileID: 8300000, guid: c40fce96ec57b434db54c794c4bff5d3, type: 3}
+    soundVolume: 0.25
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 17
+    audioClip: {fileID: 8300000, guid: 58a695e0956b29f45af2a8c021e0ffb8, type: 3}
+    soundVolume: 0.25
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 18
+    audioClip: {fileID: 8300000, guid: 1f980541d366ede478022ca2e595fcde, type: 3}
+    soundVolume: 0.25
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 19
+    audioClip: {fileID: 8300000, guid: ca277db75d157bd488fa1973f1e8ad8f, type: 3}
+    soundVolume: 0.25
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 20
+    audioClip: {fileID: 8300000, guid: 9f9dd466f54d0a84ca6fda8eaf714bae, type: 3}
+    soundVolume: 0.25
+    loop: 1
     audioSource: {fileID: 0}
 --- !u!82 &5105912758939187067
 AudioSource:

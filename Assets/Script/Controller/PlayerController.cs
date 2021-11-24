@@ -43,6 +43,7 @@ namespace Script.Controller
             playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Menu();
+            playerInput.PlayerAction.Cheat.performed += context => Cheat();
             OnEnable();
         }
 
@@ -51,13 +52,10 @@ namespace Script.Controller
             SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
         }
 
-        private void adc()
+        private void Cheat()
         {
-            var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (var VARIABLE in tolalEnemies)
-            {
-                Destroy(VARIABLE);
-            }
+            playerCharacter.Gold += 100;
+            playerCharacter.Hp += 100;
         }
 
         private void Update()
@@ -86,12 +84,16 @@ namespace Script.Controller
                 Soundplay = true;
                 animator.SetBool("Walking",false); 
             }
-            Rd.velocity = MoveDie * MoveSpeed;
 
             if (Attackcooldowntime <= Time.time)
             {
                 AttackFinish03();
             }
+        }
+
+        private void FixedUpdate()
+        {
+            Rd.velocity = MoveDie * MoveSpeed;
         }
 
         private void Menu()
@@ -194,6 +196,7 @@ namespace Script.Controller
 
         public void Dead()
         {
+            SoundManager.Instance.Play(SoundManager.Sound.PlayerDie);
             playMenu.Dead();
             Rd.constraints = RigidbodyConstraints2D.FreezeAll;
             OnDisable();
