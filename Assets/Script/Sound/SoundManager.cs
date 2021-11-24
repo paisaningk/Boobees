@@ -18,7 +18,6 @@ namespace Sound
             if (Instance == null)
             {
                 Instance = this;
-                //DontDestroyOnLoad(gameObject);
             }
             else
             {
@@ -49,6 +48,7 @@ namespace Sound
             PlayerTakeHit2,
             Coin,
             SpawnEnemy,
+            Shop,
 
             EnemyExplode
         }

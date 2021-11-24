@@ -66,8 +66,8 @@ MonoBehaviour:
     loop: 0
     audioSource: {fileID: 0}
   - sound: 0
-    audioClip: {fileID: 8300000, guid: 34d438804e02cea4a96ca08f95ac9a93, type: 3}
-    soundVolume: 0.5
+    audioClip: {fileID: 8300000, guid: 1f1f7a448fc28554a8a938035191adfb, type: 3}
+    soundVolume: 0.2
     loop: 1
     audioSource: {fileID: 0}
   - sound: 3
@@ -102,7 +102,12 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - sound: 15
     audioClip: {fileID: 8300000, guid: 09fa866c7b1e77a429fbf4ffc6c6cc90, type: 3}
-    soundVolume: 0.1
+    soundVolume: 0.05
+    loop: 0
+    audioSource: {fileID: 0}
+  - sound: 16
+    audioClip: {fileID: 8300000, guid: e979ef9ba8879f74bab1143bb941edb6, type: 3}
+    soundVolume: 0.05
     loop: 0
     audioSource: {fileID: 0}
 --- !u!82 &5105912758939187067

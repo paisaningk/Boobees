@@ -115,7 +115,7 @@ namespace Script.Controller
         private void Heal()
         {
             var playerCharacter = _player.GetComponent<PlayerCharacter>();
-            if (playerCharacter.Gold >= healCost && playerCharacter.Hp == playerCharacter.MaxHp)
+            if (playerCharacter.Gold >= healCost && playerCharacter.Hp <= playerCharacter.MaxHp)
             {
                 playerCharacter.Gold -= healCost;
                 var heal50= (playerCharacter.MaxHp * 25)/100;
@@ -123,7 +123,7 @@ namespace Script.Controller
                 if (playerCharacter.Hp >= playerCharacter.MaxHp)
                 {
                     playerCharacter.Hp = playerCharacter.MaxHp;
-                    text.text = $"You gain hp +20. ";
+                    text.text = $"You gain hp +{heal50}. ";
                 }
             }
             else if (playerCharacter.Hp == playerCharacter.MaxHp)

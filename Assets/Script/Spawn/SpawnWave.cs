@@ -34,6 +34,7 @@ namespace Script.Spawn
         private bool Counttimenextwave = false;
         private bool nextwave = true;
         private bool CanSpawn = true;
+        private bool Soundplay = true;
         private float NextSpawnTime;
         private int WaveNumberText =1;
         private float timeshopshow;
@@ -75,6 +76,12 @@ namespace Script.Spawn
 
             if (Counttimenextwave)
             {
+                if (Soundplay)
+                {
+                    SoundManager.Instance.Stop(SoundManager.Sound.BGM);
+                    SoundManager.Instance.Play(SoundManager.Sound.Shop);
+                    Soundplay = false;
+                }
                 nextwaveGameObject.SetActive(true);
                 var a = timeshopshow -= Time.deltaTime;
                 Nextwavetext.text = $"Next Wave in coming in {a:0.##} Sce";
@@ -123,6 +130,9 @@ namespace Script.Spawn
             CurrentWaveNumber++;
             CanSpawn = true;
             nextwave = true;
+            Soundplay = true;
+            //SoundManager.Instance.Stop(SoundManager.Sound.Shop);
+            SoundManager.Instance.Playfrompause(SoundManager.Sound.BGM);
         }
     }
 }

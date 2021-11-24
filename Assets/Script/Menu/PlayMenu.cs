@@ -111,16 +111,16 @@ namespace Assets.Script.Menu
         
         private void Restart()
         {
-            // if (count <= 0)
-            // {
-            //     count++;
-            //     adsManager.ShowAds("Rewarded_Android");
-            // }
-            // else
-            // {
-            //     SceneManager.LoadScene("MainMenu");
-            // }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (count <= 0)
+            {
+                count++;
+                adsManager.ShowAds("Rewarded_Android");
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void Dead()

@@ -107,6 +107,7 @@ namespace Assets.Script.Pickup
         {
             var Player = other.GetComponent<PlayerCharacter>();
             Player.MaxHp += maxHp;
+            Player.Hp += maxHp;
             Player.Atk += atk;
             Player.Speed += speed;
             Player.DashCd -= dashCd;
@@ -114,9 +115,14 @@ namespace Assets.Script.Pickup
             Player.CritRate += critRate;
             Debug.Log("Player pickup");
 
-            if (Player.DashCd < 0)
+            if (Player.DashCd < 0.5)
             {
-                Player.DashCd = 0;
+                Player.DashCd = 0.5f;
+            }
+
+            if (Player.Speed > 8)
+            {
+                Player.Speed = 8;
             }
             Destroy(gameObject);
         }

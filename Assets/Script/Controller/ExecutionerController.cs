@@ -8,8 +8,8 @@ namespace Script.Controller
         private Rigidbody2D Rb;
         private Transform player;
         private Animator animator;
-        private float movespeed = 10f;
-        private float stoppingDistance = 1.7f;
+        private float movespeed = 8f;
+        private float stoppingDistance = 2f;
         private Vector3 directionnormalized;
         private bool attacking = false;
         private bool nextMove = false;
