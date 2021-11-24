@@ -176,7 +176,7 @@ namespace Assets.Script.Menu
             pauseUi.SetActive(false);
             waveUI.SetActive(false);
             deadUI.SetActive(true);
-            //ScoreBoard.SetActive(true);
+            ScoreBoard.SetActive(true);
         }
 
         
