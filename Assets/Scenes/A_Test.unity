@@ -6887,8 +6887,10 @@ MonoBehaviour:
   - {fileID: 1573512699}
   - {fileID: 52528773}
   WaveText: {fileID: 385899979}
+  PlayerScore: {fileID: 1454147107}
   Shop: {fileID: 2123662379}
   win: {fileID: 2059262006}
+  Scoreboard: {fileID: 568503017}
   shopingtime: 20
   Nextwavetext: {fileID: 1778907396}
   nextwaveGameObject: {fileID: 1471147553}
@@ -8141,7 +8143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &903368741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14351,7 +14353,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15236,7 +15240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55.200012, y: -25}
+  m_AnchoredPosition: {x: 55.2, y: -25}
   m_SizeDelta: {x: 110.4, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821000283
@@ -22107,6 +22111,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 560281051}
+    - target: {fileID: 1016526024522432002, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1016526024559318544, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
       propertyPath: m_Name
@@ -22242,6 +22251,11 @@ PrefabInstance:
       propertyPath: shopController
       value: 
       objectReference: {fileID: 2123662380}
+    - target: {fileID: 1727244638177691924, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4736237267875072636, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

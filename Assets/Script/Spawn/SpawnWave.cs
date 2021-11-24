@@ -22,8 +22,10 @@ namespace Script.Spawn
         [SerializeField] private Wave[] Wave;
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
+        [SerializeField] private TextMeshProUGUI PlayerScore;
         [SerializeField] private GameObject Shop;
         [SerializeField] private GameObject win;
+        [SerializeField] private GameObject Scoreboard;
         [SerializeField] private float shopingtime = 20;
         [SerializeField] private TextMeshProUGUI Nextwavetext;
         [SerializeField] private GameObject nextwaveGameObject;
@@ -43,6 +45,7 @@ namespace Script.Spawn
         private void Start()
         {
             WaveText.text = $"Wave {WaveNumberText}";
+            PlayerScore.text = $"{WaveNumberText}";
             timeshopshow = shopingtime;
         }
 
@@ -55,6 +58,7 @@ namespace Script.Spawn
                 spawnWave();
                 var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
                 WaveText.text = $"Wave : {WaveNumberText}";
+                PlayerScore.text = $"{WaveNumberText}";
                 if (tolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber + 1 != Wave.Length)
                 {
                     if (nextwave)
@@ -72,6 +76,7 @@ namespace Script.Spawn
             else
             {
                 win.SetActive(true);
+                Scoreboard.SetActive(true);
             }
 
             if (Counttimenextwave)

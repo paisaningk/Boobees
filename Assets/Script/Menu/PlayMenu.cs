@@ -18,7 +18,7 @@ namespace Assets.Script.Menu
         [SerializeField] private GameObject pauseUi;
         [SerializeField] private GameObject deadUI;
         [SerializeField] private GameObject waveUI;
-        //[SerializeField] private GameObject ScoreBoard;
+        [SerializeField] private GameObject ScoreBoard;
         [Header("Button")]
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
@@ -128,7 +128,7 @@ namespace Assets.Script.Menu
             pauseUi.SetActive(false);
             waveUI.SetActive(false);
             deadUI.SetActive(true);
-            //ScoreBoard.SetActive(true);
+            ScoreBoard.SetActive(true);
         }
 
         
