@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Script.Base;
 using Script.Controller;
+using Script.Spawn;
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
@@ -22,6 +23,10 @@ public class Arrow : MonoBehaviour
         target = new Vector2(player.position.x, player.position.y);
 
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        if (SpawnWave.CurrentWaveNumber >= 5)
+        {
+            DMG += 10;
+        }
 
     }
     
@@ -33,6 +38,7 @@ public class Arrow : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 
 

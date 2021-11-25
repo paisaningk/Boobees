@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Assets.Script.Base;
-using Assets.Script.Menu;
+using Script.Menu;
 using UnityEngine;
 using Sound;
 

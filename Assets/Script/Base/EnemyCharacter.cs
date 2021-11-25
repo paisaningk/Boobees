@@ -4,6 +4,7 @@ using Assets.Script.Pickup;
 using Assets.Script.scriptableobject;
 using Assets.Script.scriptableobject.Character;
 using Script.Controller;
+using Script.Spawn;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using Sound;
@@ -14,7 +15,7 @@ namespace Assets.Script.Base
 {
     public class EnemyCharacter : MonoBehaviour
     {
-        [SerializeField] private CharacterSO EnemyCharacterSo;
+        [SerializeField] public CharacterSO EnemyCharacterSo;
         [SerializeField] private LayerMask knockbackLayerMask;
         [SerializeField] private GameObject GoldPrefab;
         [SerializeField] private EnemyType enemyType;
@@ -37,7 +38,12 @@ namespace Assets.Script.Base
             Speed = EnemyCharacterSo.Speed;
             Popup = EnemyCharacterSo.Popup;
             Rb = GetComponent<Rigidbody2D>();
-            
+
+            if (SpawnWave.CurrentWaveNumber >= 5)
+            {
+                Hp += 30;
+                Atk += 10;
+            }
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
         

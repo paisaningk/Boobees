@@ -33,7 +33,7 @@ namespace Script.Spawn
 
 
         private Wave CurrentWave;
-        private int CurrentWaveNumber = 0;
+        public static int CurrentWaveNumber = 0;
         private bool Counttimenextwave = false;
         private bool nextwave = true;
         private bool CanSpawn = true;
@@ -46,7 +46,7 @@ namespace Script.Spawn
         private void Start()
         {
             WaveText.text = $"Wave {WaveNumberText}";
-            PlayerScore.text = $"{WaveNumberText}";
+            //PlayerScore.text = $"{WaveNumberText}";
             timeshopshow = shopingtime;
         }
 
@@ -59,7 +59,7 @@ namespace Script.Spawn
                 spawnWave();
                 var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
                 WaveText.text = $"Wave : {WaveNumberText}";
-                PlayerScore.text = $"{WaveNumberText}";
+                //PlayerScore.text = $"{WaveNumberText}";
                 if (tolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber + 1 != Wave.Length)
                 {
                     if (nextwave)
@@ -140,7 +140,7 @@ namespace Script.Spawn
             Soundplay = true;
             if (WaveNumberText >= 5)
             {
-                AddStatus();
+                //AddStatus();
             }
             SoundManager.Instance.Stop(SoundManager.Sound.Shop);
             SoundManager.Instance.Playfrompause(SoundManager.Sound.BGM);
@@ -151,8 +151,8 @@ namespace Script.Spawn
             var a = CurrentWave.typeOfEnemy;
             foreach (var VARIABLE in a)
             {
-                VARIABLE.GetComponent<EnemyCharacter>().Hp += 10;
-                VARIABLE.GetComponent<EnemyCharacter>().Atk += 5;
+                VARIABLE.GetComponent<EnemyCharacter>().EnemyCharacterSo.Atk += 5;
+                VARIABLE.GetComponent<EnemyCharacter>().EnemyCharacterSo.MaxHp += 10;
             }
         }
     }

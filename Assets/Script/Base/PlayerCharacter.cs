@@ -86,9 +86,9 @@ namespace Assets.Script.Base
 
         private void Dead()
         {
-            Time.timeScale = 0;
             SoundManager.Instance.Stop(SoundManager.Sound.BGM);
-            
+            SoundManager.Instance.Play(SoundManager.Sound.PlayerDieBGM);
+            Time.timeScale = 0;
         }
     }
 }

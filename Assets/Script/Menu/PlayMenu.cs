@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Assets.Script.Base;
 using Script.Controller;
 using TMPro;
@@ -8,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Assets.Script.Menu
+namespace Script.Menu
 {
     public class PlayMenu : MonoBehaviour
     {
@@ -20,7 +18,8 @@ namespace Assets.Script.Menu
         [SerializeField] private GameObject deadUI;
         [SerializeField] private GameObject waveUI;
         [SerializeField] private GameObject StatusUI;
-        //[SerializeField] private GameObject ScoreBoard;
+        [SerializeField] private GameObject ScoreBoard;
+        [SerializeField] private GameObject phoneUI;
         [Header("Button")]
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
@@ -42,6 +41,7 @@ namespace Assets.Script.Menu
         [SerializeField] private TextMeshProUGUI CritRateText;
         [SerializeField] private TextMeshProUGUI GoldText;
         [SerializeField] private Button quitStatusButton;
+        [SerializeField] private bool isphone;
         
         private int count = 0;
         public bool isPause = false;
@@ -95,6 +95,7 @@ namespace Assets.Script.Menu
         {
             if (StatusShow == false)
             {
+                phoneUI.SetActive(false);
                 StatusUI.SetActive(true);
                 StatusShow = true;
                 Time.timeScale = 0;
@@ -111,6 +112,7 @@ namespace Assets.Script.Menu
             StatusUI.SetActive(false);
             StatusShow = false;
             Time.timeScale = 1;
+            phoneUI.SetActive(true);
         }
 
         IEnumerator SetDashCd()
@@ -134,6 +136,7 @@ namespace Assets.Script.Menu
         {
             if (shopController.shoping == false)
             {
+                phoneUI.SetActive(false);
                 PlayerController.playerInput.PlayerAction.Attack.Disable();
                 PlayerController.playerInput.PlayerAction.Dash.Disable();
                 PlayerController.playerInput.PlayerAction.Move.Disable();
@@ -144,6 +147,7 @@ namespace Assets.Script.Menu
         }
         public void Resume()
         {
+            phoneUI.SetActive(true);
             pauseUi.SetActive(false);
             Time.timeScale = 1;
             isPause = false;
@@ -159,16 +163,23 @@ namespace Assets.Script.Menu
         
         private void Restart()
         {
-            // if (count <= 0)
-            // {
-            //     count++;
-            //     adsManager.ShowAds("Rewarded_Android");
-            // }
-            // else
-            // {
-            //     SceneManager.LoadScene("MainMenu");
-            // }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (isphone)
+            {
+                if (count <= 0)
+                {
+                    count++;
+                    adsManager.ShowAds("Rewarded_Android");
+                }
+                else
+                {
+                    SceneManager.LoadScene("MainMenu");
+                }
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            
         }
 
         public void Dead()
@@ -176,7 +187,12 @@ namespace Assets.Script.Menu
             pauseUi.SetActive(false);
             waveUI.SetActive(false);
             deadUI.SetActive(true);
-            ScoreBoard.SetActive(true);
+            phoneUI.SetActive(false);
+            if (isphone)
+            {
+                ScoreBoard.SetActive(true);
+            }
+            
         }
 
         

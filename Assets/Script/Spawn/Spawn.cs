@@ -1,3 +1,5 @@
+using System;
+using Script.Controller;
 using TMPro;
 using UnityEngine;
 
@@ -5,58 +7,41 @@ namespace Script.Spawn
 {
     public class Spawn : MonoBehaviour
     {
-        [SerializeField] private GameObject myPrefab;
-        [SerializeField] private TextMeshProUGUI Wave;
-        private int waveNumber = 1;
-        private int EnemyInWave = 2;
-        private int Enemyspeawn = 0;
-        private float nextSpawnTime;
-        private float spawnDelay = 1;
+        [SerializeField] private GameObject Enemy;
+        [SerializeField] private Transform spawn;
+        [SerializeField] private GameObject popup;
+        
+        private bool isTrigger = false;
+        private Collider2D collider2D;
 
         private void Update()
         {
-            SpawnedEnemy();
-            Wave.text = $"Waveaaaa : {waveNumber}";
+            PlayerController.playerInput.PlayerAction.Buy.performed += context => SpawnEnemy();
         }
 
-        public void SpawnedEnemy()
+        private void SpawnEnemy()
         {
-            if (waveend() != true)
+            if (isTrigger == true)
             {
-                if (ShouldSpawn())
-                {
-                    Spawnss();
-                }
+                Instantiate(Enemy, spawn.position, Quaternion.identity);
             }
-            else
-            {
-                var Enemydog = GameObject.FindGameObjectsWithTag("Enemy");
-            
-                if (Enemydog == null)
-                {
-                    EnemyInWave += 10;
-                    waveNumber++;
-                    print("next wave");
-                }
-            }
-        }
-    
-        private void Spawnss()
-        {
-            nextSpawnTime = Time.time + spawnDelay;
-            Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-            Enemyspeawn++;
-            //Debug.Log(Enemyspeawn);
         }
 
-        private bool waveend()
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            return Enemyspeawn == EnemyInWave;
+            if (other.CompareTag("Player"))
+            {
+                isTrigger = true;
+                popup.SetActive(true);
+            }
         }
-    
-        private bool ShouldSpawn()
+
+        private void OnTriggerExit2D(Collider2D other)
         {
-            return Time.time >= nextSpawnTime;
+            isTrigger = false;
+            popup.SetActive(false);
         }
+
+        
     }
 }
