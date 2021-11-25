@@ -46,7 +46,7 @@ namespace Script.Spawn
         private void Start()
         {
             WaveText.text = $"Wave {WaveNumberText}";
-            //PlayerScore.text = $"{WaveNumberText}";
+            PlayerScore.text = $"{WaveNumberText}";
             timeshopshow = shopingtime;
         }
 
@@ -59,7 +59,7 @@ namespace Script.Spawn
                 spawnWave();
                 var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
                 WaveText.text = $"Wave : {WaveNumberText}";
-                //PlayerScore.text = $"{WaveNumberText}";
+                PlayerScore.text = $"{WaveNumberText}";
                 if (tolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber + 1 != Wave.Length)
                 {
                     if (nextwave)
