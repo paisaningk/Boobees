@@ -7760,7 +7760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 100
+  m_MovementRange: 30
   m_ControlPath: <Gamepad>/leftStick
 --- !u!1 &6229808985733820347
 GameObject:
@@ -8685,7 +8685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Touchscreen>/primaryTouch/tap
+  m_ControlPath: <Touchscreen>/touch2/tap
 --- !u!1 &8667895261700553200
 GameObject:
   m_ObjectHideFlags: 0
