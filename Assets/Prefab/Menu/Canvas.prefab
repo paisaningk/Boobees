@@ -1875,8 +1875,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScreenCapture, Assembly-CSharp
+      - m_Target: {fileID: 6086454329370497414}
+        m_TargetAssemblyTypeName: Script.Menu.ScreenCapture, Assembly-CSharp
         m_MethodName: TakeScreenShot
         m_Mode: 1
         m_Arguments:
@@ -3080,7 +3080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1016526024522432015
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3156,6 +3156,7 @@ GameObject:
   - component: {fileID: 1016526024559318547}
   - component: {fileID: 1016526024559318559}
   - component: {fileID: 1016526024929411992}
+  - component: {fileID: 6086454329370497414}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3306,6 +3307,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testMode: 1
+--- !u!114 &6086454329370497414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016526024559318544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7d65848a1b8a8439064f3851a086f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  captureWidth: 1920
+  captureHeight: 1080
+  format: 1
+  isProcressing: 0
 --- !u!1 &1016526024716297916
 GameObject:
   m_ObjectHideFlags: 0
@@ -9066,12 +9083,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c0d62cf287456342a3f72926a3fc315, type: 3}
---- !u!224 &998904885335277889 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 272397116565211245, guid: 5c0d62cf287456342a3f72926a3fc315,
-    type: 3}
-  m_PrefabInstance: {fileID: 1016526024654588204}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6534750636131111140 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6101097784451029448, guid: 5c0d62cf287456342a3f72926a3fc315,
@@ -9096,6 +9107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &998904885335277889 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 272397116565211245, guid: 5c0d62cf287456342a3f72926a3fc315,
+    type: 3}
+  m_PrefabInstance: {fileID: 1016526024654588204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1016526025913192187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9220,6 +9237,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54cb3504a05b3864db469643fff32510, type: 3}
+--- !u!224 &1215264399292605913 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2217479110857157410, guid: 54cb3504a05b3864db469643fff32510,
+    type: 3}
+  m_PrefabInstance: {fileID: 1016526025913192187}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1215264398221783738 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2217479111927856193, guid: 54cb3504a05b3864db469643fff32510,
@@ -9232,9 +9255,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1215264399292605913 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2217479110857157410, guid: 54cb3504a05b3864db469643fff32510,
-    type: 3}
-  m_PrefabInstance: {fileID: 1016526025913192187}
-  m_PrefabAsset: {fileID: 0}
