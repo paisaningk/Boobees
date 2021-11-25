@@ -7220,7 +7220,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 1921084745
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!114 &568690391 stripped
 MonoBehaviour:
@@ -15041,6 +15041,18 @@ PrefabInstance:
       objectReference: {fileID: 2022406730}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f550eb8127d174f80b5790c7664b73, type: 3}
+--- !u!114 &1632434176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2132391105640571628, guid: e7f550eb8127d174f80b5790c7664b73,
+    type: 3}
+  m_PrefabInstance: {fileID: 1632434175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faac5826caff31748a03e48f2352d762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1735221321
 GameObject:
   m_ObjectHideFlags: 0
@@ -22029,6 +22041,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1016526024522432002, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1016526024559318544, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
       propertyPath: m_Name
@@ -22144,21 +22161,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2060478811}
-    - target: {fileID: 1016526024559318557, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+    - target: {fileID: 1016526024559318559, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1016526025120178408, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1632434176}
+    - target: {fileID: 1016526024559318559, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1727244638177691924, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: ScoreBoard
+      value: 
+      objectReference: {fileID: 568503017}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d084eebb5cb9c42b0005c31cb69f1b, type: 3}
 --- !u!1 &1985984600

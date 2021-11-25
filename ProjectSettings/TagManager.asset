@@ -56,3 +56,6 @@ TagManager:
   - name: Ui
     uniqueID: 1921084745
     locked: 0
+  - name: Scorebord
+    uniqueID: 4010464797
+    locked: 0

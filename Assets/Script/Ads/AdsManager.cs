@@ -73,16 +73,19 @@ public class AdsManager : MonoBehaviour, IUnityAdsListener
         {
             Debug.Log("REBORN!!!!!!!! KAO REBORN HERE");
            // AdsHealPlayer = true;
-            SceneManager.LoadScene("Scenes/Kao");
+            SceneManager.LoadScene("Scenes/A_Test");
 
         }
         else if (showResult == ShowResult.Failed)
         {
             Debug.Log("AdsFailYouDie_SHOW MENU SHOW SCORE?");
+            SceneManager.LoadScene("Scenes/A_Test");
+
         }
         else if (showResult == ShowResult.Skipped)
         {
             Debug.Log("AdsSKIP_ SHOW MENU SHOW SCORE");
+
 
         }
     }
