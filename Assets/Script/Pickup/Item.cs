@@ -2,6 +2,7 @@ using System;
 using Assets.scriptableobject.Item;
 using Script.Base;
 using Script.Controller;
+using Script.Menu;
 using Script.Sound;
 using UnityEngine;
 
@@ -65,7 +66,20 @@ namespace Script.Pickup
                 player = other;
                 Buying = true;
                 ShopController.BuyingPhone.SetActive(true);
-                buy.SetActive(Buying);
+                if (PlayMenu.Isphone)
+                {
+                    player = other;
+                    Buying = true;
+                    ShopController.BuyingPhone.SetActive(true);
+                }
+                else
+                {
+                    player = other;
+                    Buying = true;
+                    ShopController.BuyingPhone.SetActive(true);
+                    buy.SetActive(Buying);
+                }
+               
             }
         }
 
@@ -74,7 +88,7 @@ namespace Script.Pickup
             Buying = false;
             ShopController.BuyingPhone.SetActive(Buying);
             buy.SetActive(Buying);
-            //ShopController.BuyingPhone.SetActive(false);
+            
         }
 
         private void ShowPrice()

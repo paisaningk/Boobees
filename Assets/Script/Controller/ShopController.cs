@@ -79,7 +79,7 @@ namespace Script.Controller
                 BuyingPhone.SetActive(true);
                 _player = other;
                 _shop = true;
-                if (PlayMenu.Isphone)
+                if (PlayMenu.Isphone == false)
                 {
                     ePopup.SetActive(true);
                 }

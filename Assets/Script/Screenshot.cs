@@ -17,7 +17,7 @@ namespace Script
                 "Screenshot_" + 
                 System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + 
                 ".png";
-            NativeGallery.SaveImageToGallery(texture2D, screenshotName, name);
+            NativeGallery.SaveImageToGallery(texture2D, "boobeegame", screenshotName);
         }
 
         public void eeee()
@@ -35,6 +35,7 @@ namespace Script
                 ".png";
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName));
             Debug.Log(folderPath + screenshotName);
+            ui.SetActive(true);
         }
     }
 }

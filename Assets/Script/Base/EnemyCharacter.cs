@@ -35,7 +35,27 @@ namespace Script.Base
             Popup = EnemyCharacterSo.Popup;
             Rb = GetComponent<Rigidbody2D>();
 
-            if (SpawnWave.CurrentWaveNumber >= 5)
+            if (SpawnWave.CurrentWaveNumber > 5)
+            {
+                Hp += 30;
+                Atk += 10;
+            }
+            if (SpawnWave.CurrentWaveNumber > 6)
+            {
+                Hp += 30;
+                Atk += 10;
+            }
+            if (SpawnWave.CurrentWaveNumber > 7)
+            {
+                Hp += 30;
+                Atk += 10;
+            }
+            if (SpawnWave.CurrentWaveNumber > 8)
+            {
+                Hp += 30;
+                Atk += 10;
+            }
+            if (SpawnWave.CurrentWaveNumber > 9)
             {
                 Hp += 30;
                 Atk += 10;

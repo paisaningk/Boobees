@@ -6971,6 +6971,18 @@ PrefabInstance:
       objectReference: {fileID: 395802480}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1eab51a60dcad643b9a6fdcae2e0732, type: 3}
+--- !u!114 &508341038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+    type: 3}
+  m_PrefabInstance: {fileID: 508341037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123662379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5772416d66b7b264caf39984837db690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &563278558
 GameObject:
   m_ObjectHideFlags: 0
@@ -8148,15 +8160,15 @@ MonoBehaviour:
     profileSprite: {fileID: 0}
     playerScore: 39
   - playerName: A
-    rankNumber: 5
+    rankNumber: 4
     profileSprite: {fileID: 0}
     playerScore: 39
   - playerName: BBuck
-    rankNumber: 6
+    rankNumber: 5
     profileSprite: {fileID: 0}
     playerScore: 39
   - playerName: Ong
-    rankNumber: 7
+    rankNumber: 6
     profileSprite: {fileID: 0}
     playerScore: 39
 --- !u!4 &957142469
@@ -10307,9 +10319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '8
-
-'
+  m_text: 7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14938,6 +14948,12 @@ PrefabInstance:
       propertyPath: adsManager
       value: 
       objectReference: {fileID: 2022406731}
+    - target: {fileID: 2132391105640571628, guid: e7f550eb8127d174f80b5790c7664b73,
+        type: 3}
+      propertyPath: PlayerCharacterSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1200c21834260964494ba876aaebb44f,
+        type: 2}
     - target: {fileID: 2132391105640571631, guid: e7f550eb8127d174f80b5790c7664b73,
         type: 3}
       propertyPath: playMenu
@@ -15082,7 +15098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55.2, y: -25}
+  m_AnchoredPosition: {x: 55.200012, y: -25}
   m_SizeDelta: {x: 110.4, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821000283
@@ -22220,6 +22236,11 @@ PrefabInstance:
       propertyPath: ScoreBoard
       value: 
       objectReference: {fileID: 568503017}
+    - target: {fileID: 1016526024559318559, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
+      propertyPath: shopController
+      value: 
+      objectReference: {fileID: 508341038}
     - target: {fileID: 1016526024856802414, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
       propertyPath: m_CullTransparentMesh
@@ -22274,6 +22295,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -476.29333
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086454329370497414, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
+      propertyPath: isProcressing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7291690977814871895, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}

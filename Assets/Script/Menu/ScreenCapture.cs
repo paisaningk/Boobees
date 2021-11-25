@@ -26,7 +26,8 @@ namespace Script.Menu
         // Start is called before the first frame update
         void Start()
         {
-            outputFolder = Application.persistentDataPath + "/Screenshots/";
+            
+            outputFolder = Directory.GetCurrentDirectory() + "/Screenshot/";
             if (!Directory.Exists(outputFolder))
             {
                 Directory.CreateDirectory(outputFolder);
