@@ -19,7 +19,7 @@ namespace Script.Menu
         [SerializeField] private GameObject deadUI;
         [SerializeField] private GameObject waveUI;
         [SerializeField] private GameObject StatusUI;
-        [SerializeField] private GameObject ScoreBoard;
+        //[SerializeField] private GameObject ScoreBoard;
         [SerializeField] private GameObject phoneUI;
         [Header("Button")]
         [SerializeField] private Button resumeButton;
@@ -193,7 +193,7 @@ namespace Script.Menu
             phoneUI.SetActive(false);
             if (isphone)
             {
-                ScoreBoard.SetActive(true);
+                //ScoreBoard.SetActive(true);
             }
             
         }

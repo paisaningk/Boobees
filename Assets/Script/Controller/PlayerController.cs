@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using Script.Base;
 using Script.Menu;
 using Script.Sound;
+using TMPro;
 using UnityEngine;
+using ScreenCapture = UnityEngine.ScreenCapture;
 
 namespace Script.Controller
 {
@@ -11,6 +14,9 @@ namespace Script.Controller
     {
         [SerializeField] private LayerMask dashLayerMask;
         [SerializeField] public PlayMenu playMenu;
+        [SerializeField] private GameObject ui;
+        [SerializeField] private GameObject text;
+        [SerializeField] private TextMeshProUGUI textScreenshot;
 
         private PlayerCharacter playerCharacter;
         public static Playerinput playerInput;
@@ -44,9 +50,9 @@ namespace Script.Controller
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Menu();
             playerInput.PlayerAction.Cheat.performed += context => Cheat();
+            playerInput.PlayerAction.Screenshot.performed += context => CaptureScreenshot();
             OnEnable();
         }
-
         private void Start()
         {
             SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
@@ -89,6 +95,34 @@ namespace Script.Controller
             {
                 AttackFinish03();
             }
+        }
+        
+        private void CaptureScreenshot()
+        {
+            ui.SetActive(false);
+            string folderPath = Directory.GetCurrentDirectory() + "/Screenshot/";
+
+ 
+            if (!System.IO.Directory.Exists(folderPath))
+                System.IO.Directory.CreateDirectory(folderPath);
+ 
+            var screenshotName = 
+                "Screenshot_" + 
+                System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + 
+                ".png";
+            
+            ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName));
+            Debug.Log(folderPath + screenshotName);
+            ui.SetActive(true);
+            text.SetActive(true);
+            textScreenshot.text = $"Screenshot SAVE : {folderPath + screenshotName}";
+            StartCoroutine(Textsetactive());
+        }
+
+        IEnumerator Textsetactive()
+        {
+            yield return new WaitForSeconds(3f);
+            text.SetActive(false);
         }
 
         private void FixedUpdate()

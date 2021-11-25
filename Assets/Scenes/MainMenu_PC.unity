@@ -604,7 +604,7 @@ MonoBehaviour:
   tutorialButton: {fileID: 458508483}
   quitButton: {fileID: 825479344}
   gameScene: Kao
-  isphone: 1
+  isphone: 0
 --- !u!4 &480985814
 Transform:
   m_ObjectHideFlags: 0

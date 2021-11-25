@@ -89,6 +89,15 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Screenshot"",
+                    ""type"": ""Button"",
+                    ""id"": ""36c50bec-d7bf-4f65-bb29-1316019527e2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -256,6 +265,17 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""action"": ""Status"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23b5a431-1d0a-4606-96b8-dceb7b853a0d"",
+                    ""path"": ""<Keyboard>/f12"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Screenshot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -299,6 +319,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         m_PlayerAction_Buy = m_PlayerAction.FindAction("Buy", throwIfNotFound: true);
         m_PlayerAction_Cheat = m_PlayerAction.FindAction("Cheat ", throwIfNotFound: true);
         m_PlayerAction_Status = m_PlayerAction.FindAction("Status", throwIfNotFound: true);
+        m_PlayerAction_Screenshot = m_PlayerAction.FindAction("Screenshot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -365,6 +386,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerAction_Buy;
     private readonly InputAction m_PlayerAction_Cheat;
     private readonly InputAction m_PlayerAction_Status;
+    private readonly InputAction m_PlayerAction_Screenshot;
     public struct PlayerActionActions
     {
         private @Playerinput m_Wrapper;
@@ -376,6 +398,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         public InputAction @Buy => m_Wrapper.m_PlayerAction_Buy;
         public InputAction @Cheat => m_Wrapper.m_PlayerAction_Cheat;
         public InputAction @Status => m_Wrapper.m_PlayerAction_Status;
+        public InputAction @Screenshot => m_Wrapper.m_PlayerAction_Screenshot;
         public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -406,6 +429,9 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Status.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnStatus;
                 @Status.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnStatus;
                 @Status.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnStatus;
+                @Screenshot.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnScreenshot;
+                @Screenshot.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnScreenshot;
+                @Screenshot.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnScreenshot;
             }
             m_Wrapper.m_PlayerActionActionsCallbackInterface = instance;
             if (instance != null)
@@ -431,6 +457,9 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Status.started += instance.OnStatus;
                 @Status.performed += instance.OnStatus;
                 @Status.canceled += instance.OnStatus;
+                @Screenshot.started += instance.OnScreenshot;
+                @Screenshot.performed += instance.OnScreenshot;
+                @Screenshot.canceled += instance.OnScreenshot;
             }
         }
     }
@@ -462,5 +491,6 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         void OnBuy(InputAction.CallbackContext context);
         void OnCheat(InputAction.CallbackContext context);
         void OnStatus(InputAction.CallbackContext context);
+        void OnScreenshot(InputAction.CallbackContext context);
     }
 }
