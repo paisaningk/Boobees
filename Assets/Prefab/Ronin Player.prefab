@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adsManager: {fileID: 0}
-  PlayerCharacterSo: {fileID: 11400000, guid: 1200c21834260964494ba876aaebb44f, type: 2}
+  PlayerCharacterSo: {fileID: 11400000, guid: d8f9de924abf3bc48a370a4bee67a361, type: 2}
   Name: 
   MaxHp: 0
   Hp: 0
