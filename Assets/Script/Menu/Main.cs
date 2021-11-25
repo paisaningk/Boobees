@@ -28,7 +28,7 @@ namespace Script.Menu
 
         private void StartGame()
         {
-            if (isphone)
+            if (PlayMenu.Isphone)
             {
                 SceneManager.LoadScene("A_Test");
             }

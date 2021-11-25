@@ -24526,6 +24526,12 @@ PrefabInstance:
       propertyPath: adsManager
       value: 
       objectReference: {fileID: 2065491820}
+    - target: {fileID: 2132391105640571628, guid: e7f550eb8127d174f80b5790c7664b73,
+        type: 3}
+      propertyPath: PlayerCharacterSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1200c21834260964494ba876aaebb44f,
+        type: 2}
     - target: {fileID: 2132391105640571631, guid: e7f550eb8127d174f80b5790c7664b73,
         type: 3}
       propertyPath: playMenu
@@ -31871,9 +31877,19 @@ PrefabInstance:
       objectReference: {fileID: 1773763743}
     - target: {fileID: 1016526024559318559, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
         type: 3}
+      propertyPath: isphone
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016526024559318559, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
       propertyPath: shopController
       value: 
       objectReference: {fileID: 183317186}
+    - target: {fileID: 1727244638177691924, guid: 51d084eebb5cb9c42b0005c31cb69f1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51d084eebb5cb9c42b0005c31cb69f1b, type: 3}
 --- !u!1001 &1566331500744485668

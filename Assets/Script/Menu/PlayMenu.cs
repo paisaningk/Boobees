@@ -44,6 +44,7 @@ namespace Script.Menu
         [SerializeField] private bool isphone;
         
         private int count = 0;
+        public static bool Isphone;
         public bool isPause = false;
         private float DashCd = 0;
         private bool candash = true;
@@ -65,6 +66,7 @@ namespace Script.Menu
         private void Start()
         {
             PlayerController.playerInput.PlayerAction.Status.performed += context => OpenStatus();
+            Isphone = isphone;
         }
 
         private void Update()
@@ -91,7 +93,7 @@ namespace Script.Menu
             }
         }
         
-        private void OpenStatus()
+        public void OpenStatus()
         {
             if (StatusShow == false)
             {

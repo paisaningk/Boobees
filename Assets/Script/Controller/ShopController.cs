@@ -1,5 +1,6 @@
 using System.Collections;
 using Assets.Script.Base;
+using Script.Menu;
 using Sound;
 using TMPro;
 using UnityEngine;
@@ -78,7 +79,11 @@ namespace Script.Controller
                 BuyingPhone.SetActive(true);
                 _player = other;
                 _shop = true;
-                ePopup.SetActive(true);
+                if (PlayMenu.Isphone)
+                {
+                    ePopup.SetActive(true);
+                }
+                
             }
         }
 
