@@ -11,6 +11,7 @@ namespace Script.Menu
         [SerializeField] private Button tutorialButton;
         [SerializeField] private Button quitButton;
         [SerializeField] private String gameScene;
+        [SerializeField] private bool isphone;
     
         private void Awake()
         {
@@ -27,7 +28,15 @@ namespace Script.Menu
 
         private void StartGame()
         {
-            SceneManager.LoadScene(gameScene);
+            if (isphone)
+            {
+                SceneManager.LoadScene("A_Test");
+            }
+            else
+            {
+                SceneManager.LoadScene("Kao");
+            }
+            
         }
 
         private void QuitGame()
