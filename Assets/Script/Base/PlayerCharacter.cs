@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using Assets.Script.scriptableobject.Character;
+﻿using Assets.Script.scriptableobject.Character;
 using Assets.scriptableobject.Item;
+using Script.Ads;
 using Script.Controller;
+using Script.Sound;
 using UnityEngine;
-using Sound;
 
-namespace Assets.Script.Base
+namespace Script.Base
 {
     public class PlayerCharacter : MonoBehaviour 
     {

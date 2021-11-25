@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Script.AllTest
+namespace Script.AllTest
 {
     public class Hittest : MonoBehaviour
     {

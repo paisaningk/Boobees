@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections;
-using Assets.Script.Pickup;
-using Assets.Script.scriptableobject;
+﻿using System.Collections;
 using Assets.Script.scriptableobject.Character;
 using Script.Controller;
+using Script.Pickup;
+using Script.Sound;
 using Script.Spawn;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using Sound;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace Assets.Script.Base
+namespace Script.Base
 {
     public class EnemyCharacter : MonoBehaviour
     {

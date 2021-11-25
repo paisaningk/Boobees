@@ -1,4 +1,4 @@
-﻿namespace Assets.Script.Pickup
+﻿namespace Script.Base
 {
     public enum EnemyType
     {

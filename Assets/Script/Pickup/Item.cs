@@ -1,12 +1,11 @@
 using System;
-using Assets.Script.Base;
 using Assets.scriptableobject.Item;
+using Script.Base;
 using Script.Controller;
-using Sound;
-using TMPro;
+using Script.Sound;
 using UnityEngine;
 
-namespace Assets.Script.Pickup
+namespace Script.Pickup
 {
     public class Item : MonoBehaviour
     {

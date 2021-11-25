@@ -1,10 +1,8 @@
-using System;
-using Assets.Script.Base;
+using Script.Base;
+using Script.Sound;
 using UnityEngine;
-using Random = UnityEngine.Random;
-using Sound;
 
-namespace Assets.Script.Pickup
+namespace Script.Pickup
 {
     public class Gold : MonoBehaviour
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
-using Assets.Script.Base;
+using Script.Base;
 using Script.Menu;
+using Script.Sound;
 using UnityEngine;
-using Sound;
 
 namespace Script.Controller
 {

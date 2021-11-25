@@ -1,5 +1,4 @@
 using UnityEngine;
-using Sound;
 
 namespace Script.Controller
 {

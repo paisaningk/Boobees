@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Sound
+namespace Script.Sound
 {
     public class SoundManager : MonoBehaviour
     {

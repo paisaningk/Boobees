@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Globalization;
-using Assets.Script.Base;
+using Script.Base;
 using Script.Controller;
+using Script.Sound;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using Sound;
 
 
 namespace Script.Spawn
@@ -24,6 +24,7 @@ namespace Script.Spawn
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
         [SerializeField] private TextMeshProUGUI PlayerScore;
+        [SerializeField] private GameObject boss;
         [SerializeField] private GameObject Shop;
         [SerializeField] private GameObject win;
         [SerializeField] private GameObject Scoreboard;
@@ -141,6 +142,11 @@ namespace Script.Spawn
             if (WaveNumberText >= 5)
             {
                 //AddStatus();
+            }
+
+            if (CurrentWaveNumber == Wave.Length)
+            {
+                Instantiate(boss, transform.position, Quaternion.identity);
             }
             SoundManager.Instance.Stop(SoundManager.Sound.Shop);
             SoundManager.Instance.Playfrompause(SoundManager.Sound.BGM);

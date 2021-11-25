@@ -1,5 +1,5 @@
 using System.Collections;
-using Sound;
+using Script.Sound;
 using UnityEngine;
 
 namespace Script.Controller

@@ -1,5 +1,6 @@
 using System.Collections;
-using Assets.Script.Base;
+using Script.Ads;
+using Script.Base;
 using Script.Controller;
 using TMPro;
 using UnityEngine;

@@ -1,7 +1,7 @@
 using System.Collections;
-using Assets.Script.Base;
+using Script.Base;
 using Script.Menu;
-using Sound;
+using Script.Sound;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

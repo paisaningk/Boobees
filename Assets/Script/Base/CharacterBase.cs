@@ -1,8 +1,7 @@
-using Assets.Script.scriptableobject;
 using Assets.Script.scriptableobject.Character;
 using UnityEngine;
 
-namespace Assets.Script.Base
+namespace Script.Base
 {
     public class CharacterBase : MonoBehaviour
     {
