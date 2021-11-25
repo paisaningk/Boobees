@@ -194,7 +194,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fc366652-6319-4c29-b892-4c3d97f688a8"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""path"": ""<Touchscreen>/touch2/tap"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Phos"",
