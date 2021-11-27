@@ -23,6 +23,7 @@ namespace Script.Spawn
         [SerializeField] private Wave[] Wave;
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
+        [SerializeField] private GameObject SkipText;
         //[SerializeField] private TextMeshProUGUI PlayerScore;
         [SerializeField] private GameObject boss;
         [SerializeField] private GameObject Shop;
@@ -34,21 +35,23 @@ namespace Script.Spawn
 
 
         private Wave CurrentWave;
-        public static int CurrentWaveNumber = 0;
+        private int CurrentWaveNumber = 0;
         private bool Counttimenextwave = false;
         private bool nextwave = true;
         private bool CanSpawn = true;
         private bool Soundplay = true;
         private float NextSpawnTime;
-        private int WaveNumberText =1;
+        public static int WaveNumberText =1;
         private float timeshopshow;
         private ShopController ShopController;
+        private bool shopOpen = false;
 
         private void Start()
         {
             WaveText.text = $"Wave {WaveNumberText}";
             //PlayerScore.text = $"{WaveNumberText}";
             timeshopshow = shopingtime;
+            //PlayerController.playerInput.PlayerAction.Skip.performed += context => Skip();
         }
 
         private void FixedUpdate()
@@ -102,6 +105,11 @@ namespace Script.Spawn
                 SoundManager.Instance.Play(SoundManager.Sound.SpawnEnemy);
                 var RandomEnemy = CurrentWave.typeOfEnemy[Random.Range(0, CurrentWave.typeOfEnemy.Length)];
                 var RandomSpawnPoint = SpawnPoint[Random.Range(0, SpawnPoint.Length)];
+                if (WaveNumberText >= 2)
+                {
+                    RandomEnemy.GetComponent<EnemyCharacter>().Atk += 5;
+                    RandomEnemy.GetComponent<EnemyCharacter>().Hp += 10;
+                }
                 Instantiate(RandomEnemy, RandomSpawnPoint.position, Quaternion.identity);
                 
                 CurrentWave.numberOfEnemy--;
@@ -114,22 +122,42 @@ namespace Script.Spawn
             }
         }
 
-        IEnumerator Shoping()
+        private void Skip()
+        {
+            if (shopOpen == true)
+            {
+                Debug.Log("skip");
+                StopCoroutine(Shoping());
+                Shop.SetActive(false);
+                SkipText.SetActive(false);
+                ShopController.Deleteitem();
+                NextSpawnWave();
+                Counttimenextwave = false;
+                nextwaveGameObject.SetActive(false);
+                shopOpen = false;
+            }
+        }
+
+        private IEnumerator Shoping()
         {
             SoundManager.Instance.Play(SoundManager.Sound.OpenShop);
             ShopController = Shop.GetComponent<ShopController>();
             Shop.SetActive(true);
+            //SkipText.SetActive(true);
             ShopController.RngItemandSpawn();
             Counttimenextwave = true;
+            shopOpen = true;
             
             yield return new WaitForSeconds(shopingtime);
             
             Shop.SetActive(false);
+            //SkipText.SetActive(false);
             ShopController.Deleteitem();
             NextSpawnWave();
             Counttimenextwave = false;
             nextwaveGameObject.SetActive(false);
-            
+            shopOpen = false;
+
         }
 
         private void NextSpawnWave()
@@ -139,7 +167,7 @@ namespace Script.Spawn
             CanSpawn = true;
             nextwave = true;
             Soundplay = true;
-            if (WaveNumberText >= 5)
+            if (WaveNumberText >= 1)
             {
                 //AddStatus();
             }
@@ -157,8 +185,8 @@ namespace Script.Spawn
             var a = CurrentWave.typeOfEnemy;
             foreach (var VARIABLE in a)
             {
-                VARIABLE.GetComponent<EnemyCharacter>().EnemyCharacterSo.Atk += 5;
-                VARIABLE.GetComponent<EnemyCharacter>().EnemyCharacterSo.MaxHp += 10;
+                VARIABLE.GetComponent<EnemyCharacter>().Atk += 5;
+                VARIABLE.GetComponent<EnemyCharacter>().Hp += 10;
             }
         }
     }

@@ -20,7 +20,7 @@ namespace Script.Menu
         [SerializeField] private GameObject waveUI;
         [SerializeField] private GameObject StatusUI;
         //[SerializeField] private GameObject ScoreBoard;
-        [SerializeField] private GameObject phoneUI;
+        //[SerializeField] private GameObject phoneUI;
         [Header("Button")]
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
@@ -86,7 +86,7 @@ namespace Script.Menu
                 }
                 DashCd += Time.deltaTime;
                 Dash.fillAmount = DashCd / player.DashCd;
-                Debug.Log(DashCd / player.DashCd);
+                //Debug.Log(DashCd / player.DashCd);
                 if (DashCd / player.DashCd >= 1)
                 {
                     StartCoroutine(SetDashCd());
@@ -98,7 +98,7 @@ namespace Script.Menu
         {
             if (StatusShow == false)
             {
-                phoneUI.SetActive(false);
+                //phoneUI.SetActive(false);
                 StatusUI.SetActive(true);
                 StatusShow = true;
                 Time.timeScale = 0;
@@ -115,7 +115,7 @@ namespace Script.Menu
             StatusUI.SetActive(false);
             StatusShow = false;
             Time.timeScale = 1;
-            phoneUI.SetActive(true);
+            //phoneUI.SetActive(true);
         }
 
         IEnumerator SetDashCd()
@@ -139,7 +139,7 @@ namespace Script.Menu
         {
             if (shopController.shoping == false)
             {
-                phoneUI.SetActive(false);
+                //phoneUI.SetActive(false);
                 PlayerController.playerInput.PlayerAction.Attack.Disable();
                 PlayerController.playerInput.PlayerAction.Dash.Disable();
                 PlayerController.playerInput.PlayerAction.Move.Disable();
@@ -150,7 +150,7 @@ namespace Script.Menu
         }
         public void Resume()
         {
-            phoneUI.SetActive(true);
+            //phoneUI.SetActive(true);
             pauseUi.SetActive(false);
             Time.timeScale = 1;
             isPause = false;
@@ -161,7 +161,7 @@ namespace Script.Menu
 
         private void Quit()
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenu_PC");
         }
         
         private void Restart()
@@ -180,7 +180,7 @@ namespace Script.Menu
             }
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene("Scenes/Kao");
             }
             
         }
@@ -190,7 +190,7 @@ namespace Script.Menu
             pauseUi.SetActive(false);
             waveUI.SetActive(false);
             deadUI.SetActive(true);
-            phoneUI.SetActive(false);
+            //phoneUI.SetActive(false);
             if (isphone)
             {
                 //ScoreBoard.SetActive(true);

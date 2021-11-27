@@ -98,6 +98,15 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""0716ddb3-6895-4586-afbd-c24914faacd2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -276,6 +285,17 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""action"": ""Screenshot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69049f10-9469-446d-afb0-23249a59d4bf"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""key and mouse"",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -320,6 +340,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         m_PlayerAction_Cheat = m_PlayerAction.FindAction("Cheat ", throwIfNotFound: true);
         m_PlayerAction_Status = m_PlayerAction.FindAction("Status", throwIfNotFound: true);
         m_PlayerAction_Screenshot = m_PlayerAction.FindAction("Screenshot", throwIfNotFound: true);
+        m_PlayerAction_Skip = m_PlayerAction.FindAction("Skip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -387,6 +408,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerAction_Cheat;
     private readonly InputAction m_PlayerAction_Status;
     private readonly InputAction m_PlayerAction_Screenshot;
+    private readonly InputAction m_PlayerAction_Skip;
     public struct PlayerActionActions
     {
         private @Playerinput m_Wrapper;
@@ -399,6 +421,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         public InputAction @Cheat => m_Wrapper.m_PlayerAction_Cheat;
         public InputAction @Status => m_Wrapper.m_PlayerAction_Status;
         public InputAction @Screenshot => m_Wrapper.m_PlayerAction_Screenshot;
+        public InputAction @Skip => m_Wrapper.m_PlayerAction_Skip;
         public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -432,6 +455,9 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Screenshot.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnScreenshot;
                 @Screenshot.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnScreenshot;
                 @Screenshot.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnScreenshot;
+                @Skip.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnSkip;
+                @Skip.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnSkip;
+                @Skip.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnSkip;
             }
             m_Wrapper.m_PlayerActionActionsCallbackInterface = instance;
             if (instance != null)
@@ -460,6 +486,9 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Screenshot.started += instance.OnScreenshot;
                 @Screenshot.performed += instance.OnScreenshot;
                 @Screenshot.canceled += instance.OnScreenshot;
+                @Skip.started += instance.OnSkip;
+                @Skip.performed += instance.OnSkip;
+                @Skip.canceled += instance.OnSkip;
             }
         }
     }
@@ -492,5 +521,6 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         void OnCheat(InputAction.CallbackContext context);
         void OnStatus(InputAction.CallbackContext context);
         void OnScreenshot(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
     }
 }

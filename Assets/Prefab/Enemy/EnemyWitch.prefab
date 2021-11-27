@@ -169,7 +169,6 @@ MonoBehaviour:
   speed: 2.5
   stoppingDistance: 5
   retreatDistance: 4
-  startTimeBtwShots: 3
   projectile: {fileID: 4626256943966877042, guid: c6ac7d5af47f51a42bfd4c66234098c8,
     type: 3}
 --- !u!114 &-4304983170205496369
@@ -184,11 +183,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e613a744b385c4c95d8708168f02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCharacterSo: {fileID: 11400000, guid: a5a2357c3cc33a8449b69b6398eee9b0, type: 2}
+  EnemyCharacterSo:
+  - {fileID: 11400000, guid: a5a2357c3cc33a8449b69b6398eee9b0, type: 2}
+  - {fileID: 11400000, guid: d912d62c1307b2e40a0a33b739cf3150, type: 2}
+  - {fileID: 11400000, guid: de4c82c6fcbc78942a5f7ada410a2116, type: 2}
+  - {fileID: 11400000, guid: d20c2560c68898d4aac1ade1b8be457d, type: 2}
   knockbackLayerMask:
     serializedVersion: 2
     m_Bits: 768
   GoldPrefab: {fileID: 6553757506690030909, guid: 78ee19a0df208fe4e89f36ba6e168720,
     type: 3}
   enemyType: 1
+  isBoss: 0
+  Hp: 0
   Atk: 0
+  Speed: 0
+  isDeadForBoss: 0

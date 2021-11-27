@@ -1,4 +1,5 @@
-﻿using Assets.Script.scriptableobject.Character;
+﻿using System.Collections;
+using Assets.Script.scriptableobject.Character;
 using Assets.scriptableobject.Item;
 using Script.Ads;
 using Script.Controller;
@@ -26,6 +27,8 @@ namespace Script.Base
         private GameObject Popup;
         private Animator animator;
         private PlayerController playerController;
+        private SpriteRenderer spriteRenderer;
+        private bool isTakedmg = false;
 
         public void Awake()
         {
@@ -37,6 +40,7 @@ namespace Script.Base
             Popup = PlayerCharacterSo.Popup;
             animator = GetComponent<Animator>();
             playerController = GetComponent<PlayerController>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         public void PrintAll()
@@ -49,31 +53,54 @@ namespace Script.Base
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("EnemyHitBox"))
+            if (isTakedmg == false)
             {
-                SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit);
-                var enemyCharacter = other.GetComponentInParent<EnemyCharacter>();
-                Hp -= enemyCharacter.Atk;
-                ShowPopUp(enemyCharacter.Atk);
-                if (Hp <= 0)
+                if (other.CompareTag("EnemyHitBox"))
                 {
-                    animator.SetBool("Dead", true);
-                    playerController.Dead();
-                }
-            }
+                    SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit);
+                    var enemyCharacter = other.GetComponentInParent<EnemyCharacter>();
+                    Hp -= enemyCharacter.Atk;
+                    StartCoroutine(Setcoloattack());
+                    ShowPopUp(enemyCharacter.Atk);
+                    isTakedmg = true;
 
-            if (other.CompareTag("Projectile"))
-            {
-                SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit);
-                var arrow = other.GetComponent<Arrow>();
-                Hp -= arrow.DMG;
-                ShowPopUp(arrow.DMG);
-                if (Hp <= 0)
+                    if (Hp <= 0)
+                    {
+                        animator.SetBool("Dead", true);
+                        playerController.Dead();
+                    }
+                }
+
+                if (other.CompareTag("Projectile"))
                 {
-                    animator.SetBool("Dead", true);
-                    playerController.Dead();
+                    SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit);
+                    var arrow = other.GetComponent<Arrow>();
+                    Hp -= arrow.DMG;
+                    ShowPopUp(arrow.DMG);
+                    StartCoroutine(Setcoloattack());
+                    isTakedmg = true;
+                    if (Hp <= 0)
+                    {
+                        animator.SetBool("Dead", true);
+                        playerController.Dead();
+                    }
                 }
             }
+        }
+
+        IEnumerator Blockdmg()
+        {
+            spriteRenderer.color = Color.blue;
+            yield return new WaitForSeconds(0.5f);
+            isTakedmg = false;
+            spriteRenderer.color = Color.white;
+        }
+        
+        IEnumerator Setcoloattack()
+        { 
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            StartCoroutine(Blockdmg());
         }
 
         private void ShowPopUp(int dmg)

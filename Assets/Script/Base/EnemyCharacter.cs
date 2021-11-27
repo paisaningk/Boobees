@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Assets.Script.scriptableobject.Character;
 using Script.Controller;
 using Script.Pickup;
@@ -11,57 +12,68 @@ namespace Script.Base
 {
     public class EnemyCharacter : MonoBehaviour
     {
-        [SerializeField] public CharacterSO EnemyCharacterSo;
+        [SerializeField] public CharacterSO[] EnemyCharacterSo;
         [SerializeField] private LayerMask knockbackLayerMask;
         [SerializeField] private GameObject GoldPrefab;
         [SerializeField] private EnemyType enemyType;
+        [SerializeField] private bool isBoss;
         private string Name;
         public int Hp;
         public int Atk;
         public float Speed;
         private Rigidbody2D Rb;
-        private PlayerController playerController;
+        private PlayerCharacter player;
         private float playerCritRate;
         private GameObject Popup;
-        private bool isdead = true;
         private Vector3 offset;
+        private SpriteRenderer spriteRenderer;
+        public bool isDeadForBoss = false;
+        private int wave = 1;
         
+
         public void Start()
         {
-            Name = EnemyCharacterSo.Name;
-            Hp = EnemyCharacterSo.MaxHp;
-            Atk = EnemyCharacterSo.Atk;
-            Speed = EnemyCharacterSo.Speed;
-            Popup = EnemyCharacterSo.Popup;
-            Rb = GetComponent<Rigidbody2D>();
-
-            if (SpawnWave.CurrentWaveNumber > 5)
+            player = GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>();
+            if (isBoss == true)
             {
-                Hp += 30;
-                Atk += 10;
+                SetSO(0);
             }
-            if (SpawnWave.CurrentWaveNumber > 6)
+            else
             {
-                Hp += 30;
-                Atk += 10;
+                if (SpawnWave.WaveNumberText <= 5)
+                {
+                   SetSO(0);
+                }
+                else
+                {
+                    if (player.Atk > 20)
+                    {
+                        SetSO(1);
+                    }
+                    else if (player.Atk > 30)
+                    {
+                        SetSO(2);
+                    }
+                    else if (player.Atk > 40)
+                    {
+                        SetSO(3);
+                    }
+                   
+                }
             }
-            if (SpawnWave.CurrentWaveNumber > 7)
-            {
-                Hp += 30;
-                Atk += 10;
-            }
-            if (SpawnWave.CurrentWaveNumber > 8)
-            {
-                Hp += 30;
-                Atk += 10;
-            }
-            if (SpawnWave.CurrentWaveNumber > 9)
-            {
-                Hp += 30;
-                Atk += 10;
-            }
-            playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         }
+
+        private void SetSO(int a)
+        {
+            Name = EnemyCharacterSo[a].Name;
+            Hp = EnemyCharacterSo[a].MaxHp;
+            Atk = EnemyCharacterSo[a].Atk;
+            Speed = EnemyCharacterSo[a].Speed;
+            Popup = EnemyCharacterSo[a].Popup;
+            Rb = GetComponent<Rigidbody2D>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+        
         
 
         public void PrintAll()
@@ -86,26 +98,40 @@ namespace Script.Base
                     var atkCrit = atkPlayer.Atk * atkPlayer.CritAtk;
                     ShowPopUpCrit(atkCrit);
                     Hp -= atkCrit;
+                    StartCoroutine(Setcoloattack());
                 }
                 else
                 {
                     ShowPopUp(atkPlayer.Atk);
                     Hp -= atkPlayer.Atk;
+                    StartCoroutine(Setcoloattack());
                 }
                 
                 if (Hp <= 0)
                 {
-                    if (isdead == true)
+                    if (isBoss == true)
                     {
-                        isdead = false;
+                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
+                        isDeadForBoss = true;
+                    }
+                    else
+                    {
                         SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
                         StartCoroutine(Deaddelay());
-                        
                     }
                     
                 }
                 
             }
+        }
+
+        
+        
+        IEnumerator Setcoloattack()
+        { 
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            spriteRenderer.color = Color.white;
         }
 
         IEnumerator Deaddelay()
@@ -118,7 +144,7 @@ namespace Script.Base
         private void Knockback(Collider2D other)
         {
             //Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            playerController.knockback = false;
+            //playerController.knockback = false;
             var knockbackForce = 300;
             Vector2 difference = (Rb.transform.position - other.transform.position).normalized;
             Vector2 force = difference * knockbackForce;

@@ -144,11 +144,10 @@ MonoBehaviour:
   - {fileID: 1566331499313954827}
   - {fileID: 1566331500368633770}
   WaveText: {fileID: 0}
-  PlayerScore: {fileID: 0}
+  SkipText: {fileID: 0}
   boss: {fileID: 904702811331331927, guid: 260b0a672545bd64fa7ce869405076a0, type: 3}
   Shop: {fileID: 0}
   win: {fileID: 0}
-  Scoreboard: {fileID: 0}
   shopingtime: 20
   Nextwavetext: {fileID: 0}
   nextwaveGameObject: {fileID: 0}

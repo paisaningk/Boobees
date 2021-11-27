@@ -22,7 +22,7 @@ namespace Script.Base
             target = new Vector2(player.position.x, player.position.y);
 
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-            if (SpawnWave.CurrentWaveNumber >= 5)
+            if (SpawnWave.WaveNumberText >= 5)
             {
                 DMG += 10;
             }

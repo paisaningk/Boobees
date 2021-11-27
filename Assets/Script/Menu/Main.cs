@@ -28,15 +28,15 @@ namespace Script.Menu
 
         private void StartGame()
         {
-            if (PlayMenu.Isphone)
+            if (isphone == true)
             {
                 SceneManager.LoadScene("A_Test");
             }
-            else
+            else if (isphone == false)
             {
                 SceneManager.LoadScene("Kao");
             }
-            
+
         }
 
         private void QuitGame()

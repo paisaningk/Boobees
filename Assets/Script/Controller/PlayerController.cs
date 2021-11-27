@@ -112,15 +112,16 @@ namespace Script.Controller
                 ".png";
             
             ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName));
+            var adc = folderPath + screenshotName;
             Debug.Log(folderPath + screenshotName);
             ui.SetActive(true);
-            text.SetActive(true);
-            textScreenshot.text = $"Screenshot SAVE : {folderPath + screenshotName}";
-            StartCoroutine(Textsetactive());
+            StartCoroutine(Textsetactive(adc));
         }
 
-        IEnumerator Textsetactive()
+        IEnumerator Textsetactive(string adc)
         {
+            text.SetActive(true);
+            textScreenshot.text = $"Screenshot SAVE : {adc}";
             yield return new WaitForSeconds(3f);
             text.SetActive(false);
         }

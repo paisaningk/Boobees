@@ -65,18 +65,18 @@ namespace Script.Pickup
             {
                 player = other;
                 Buying = true;
-                ShopController.BuyingPhone.SetActive(true);
-                if (PlayMenu.Isphone)
+                //ShopController.BuyingPhone.SetActive(true);
+                if (PlayMenu.Isphone == true)
                 {
                     player = other;
                     Buying = true;
-                    ShopController.BuyingPhone.SetActive(true);
+                    //ShopController.BuyingPhone.SetActive(true);
                 }
                 else
                 {
                     player = other;
                     Buying = true;
-                    ShopController.BuyingPhone.SetActive(true);
+                    //ShopController.BuyingPhone.SetActive(true);
                     buy.SetActive(Buying);
                 }
                
@@ -86,7 +86,7 @@ namespace Script.Pickup
         private void OnTriggerExit2D(Collider2D other)
         {
             Buying = false;
-            ShopController.BuyingPhone.SetActive(Buying);
+            //ShopController.BuyingPhone.SetActive(Buying);
             buy.SetActive(Buying);
             
         }
