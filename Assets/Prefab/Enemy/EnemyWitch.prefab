@@ -195,6 +195,7 @@ MonoBehaviour:
     type: 3}
   enemyType: 1
   isBoss: 0
+  Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}
   Hp: 0
   Atk: 0
   Speed: 0

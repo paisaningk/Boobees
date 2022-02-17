@@ -17,6 +17,7 @@ namespace Script.Base
         [SerializeField] private GameObject GoldPrefab;
         [SerializeField] private EnemyType enemyType;
         [SerializeField] private bool isBoss;
+        [SerializeField] private GameObject Popup;
         private string Name;
         public int Hp;
         public int Atk;
@@ -24,7 +25,6 @@ namespace Script.Base
         private Rigidbody2D Rb;
         private PlayerCharacter player;
         private float playerCritRate;
-        private GameObject Popup;
         private Vector3 offset;
         private SpriteRenderer spriteRenderer;
         public bool isDeadForBoss = false;
