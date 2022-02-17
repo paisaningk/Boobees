@@ -19,8 +19,6 @@ namespace Script.Controller
         [SerializeField] private GameObject[] cursed;
         [SerializeField] private GameObject shopMenu;
         [SerializeField] private GameObject ePopup;
-        [SerializeField] private GameObject buyingPhone1;
-        public static GameObject BuyingPhone;
         [SerializeField] private Button backButton;
         [SerializeField] private Button rngButton;
         [SerializeField] private Button healButton;
@@ -44,7 +42,6 @@ namespace Script.Controller
             rngButton.onClick.AddListener(CheckGoldForReroll);
             backButton.onClick.AddListener(Back);
             healButton.onClick.AddListener(Heal);
-            BuyingPhone = buyingPhone1;
         }
         
         
@@ -76,7 +73,6 @@ namespace Script.Controller
         {
             if (other.CompareTag("Player"))
             {
-                BuyingPhone.SetActive(true);
                 _player = other;
                 _shop = true;
                 if (PlayMenu.Isphone == false)
@@ -89,7 +85,6 @@ namespace Script.Controller
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            BuyingPhone.SetActive(false);
             _shop = false;
             ePopup.SetActive(false);
         }

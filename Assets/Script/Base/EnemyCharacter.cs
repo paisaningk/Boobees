@@ -34,48 +34,8 @@ namespace Script.Base
         public void Start()
         {
             player = GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>();
-            if (isBoss == true)
-            {
-                SetSO(0);
-            }
-            else
-            {
-                if (SpawnWave.WaveNumberText <= 5)
-                {
-                   SetSO(0);
-                }
-                else
-                {
-                    if (player.Atk > 20)
-                    {
-                        SetSO(1);
-                    }
-                    else if (player.Atk > 30)
-                    {
-                        SetSO(2);
-                    }
-                    else if (player.Atk > 40)
-                    {
-                        SetSO(3);
-                    }
-                   
-                }
-            }
-        }
-
-        private void SetSO(int a)
-        {
-            Name = EnemyCharacterSo[a].Name;
-            Hp = EnemyCharacterSo[a].MaxHp;
-            Atk = EnemyCharacterSo[a].Atk;
-            Speed = EnemyCharacterSo[a].Speed;
-            Popup = EnemyCharacterSo[a].Popup;
-            Rb = GetComponent<Rigidbody2D>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
         }
         
-        
-
         public void PrintAll()
         {
             Debug.Log("Enemy");

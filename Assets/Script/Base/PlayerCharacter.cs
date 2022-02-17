@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using Assets.Script.scriptableobject.Character;
 using Assets.scriptableobject.Item;
-using Script.Ads;
 using Script.Controller;
 using Script.Sound;
 using UnityEngine;
@@ -10,7 +9,6 @@ namespace Script.Base
 {
     public class PlayerCharacter : MonoBehaviour 
     {
-        [SerializeField] public AdsManager adsManager;
         [SerializeField] private CharacterSO PlayerCharacterSo;
         [Header("Player Status")]
         [SerializeField] public string Name;

@@ -6,7 +6,6 @@ namespace Script.Base
 {
     public class Arrow : MonoBehaviour
     {
-
         public float speed;
         public int DMG;
 
@@ -22,6 +21,7 @@ namespace Script.Base
             target = new Vector2(player.position.x, player.position.y);
 
             playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            
             if (SpawnWave.WaveNumberText >= 5)
             {
                 DMG += 10;

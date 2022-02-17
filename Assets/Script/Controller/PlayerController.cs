@@ -14,9 +14,6 @@ namespace Script.Controller
     {
         [SerializeField] private LayerMask dashLayerMask;
         [SerializeField] public PlayMenu playMenu;
-        [SerializeField] private GameObject ui;
-        [SerializeField] private GameObject text;
-        [SerializeField] private TextMeshProUGUI textScreenshot;
 
         private PlayerCharacter playerCharacter;
         public static Playerinput playerInput;
@@ -50,7 +47,6 @@ namespace Script.Controller
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Menu();
             playerInput.PlayerAction.Cheat.performed += context => Cheat();
-            playerInput.PlayerAction.Screenshot.performed += context => CaptureScreenshot();
             OnEnable();
         }
         private void Start()
@@ -95,35 +91,6 @@ namespace Script.Controller
             {
                 AttackFinish03();
             }
-        }
-        
-        private void CaptureScreenshot()
-        {
-            ui.SetActive(false);
-            string folderPath = Directory.GetCurrentDirectory() + "/Screenshot/";
-
- 
-            if (!System.IO.Directory.Exists(folderPath))
-                System.IO.Directory.CreateDirectory(folderPath);
- 
-            var screenshotName = 
-                "Screenshot_" + 
-                System.DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + 
-                ".png";
-            
-            ScreenCapture.CaptureScreenshot(System.IO.Path.Combine(folderPath, screenshotName));
-            var adc = folderPath + screenshotName;
-            Debug.Log(folderPath + screenshotName);
-            ui.SetActive(true);
-            StartCoroutine(Textsetactive(adc));
-        }
-
-        IEnumerator Textsetactive(string adc)
-        {
-            text.SetActive(true);
-            textScreenshot.text = $"Screenshot SAVE : {adc}";
-            yield return new WaitForSeconds(3f);
-            text.SetActive(false);
         }
 
         private void FixedUpdate()
@@ -189,7 +156,8 @@ namespace Script.Controller
                 SoundManager.Instance.Play(SoundManager.Sound.PlayerDash);
                 Vector3 dashPoint = transform.position + MoveDie * dashAmount;
 
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, dashAmount,dashLayerMask);
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, 
+                    dashAmount,dashLayerMask);
                 if (raycastHit2D.collider != null)
                 {
                     dashPoint = raycastHit2D.point;

@@ -1,5 +1,4 @@
 using System.Collections;
-using Script.Ads;
 using Script.Base;
 using Script.Controller;
 using TMPro;
@@ -12,7 +11,6 @@ namespace Script.Menu
     public class PlayMenu : MonoBehaviour
     {
         [Header("Script")]
-        [SerializeField] private AdsManager adsManager;
         [SerializeField] private ShopController shopController;
         [Header("UI")]
         [SerializeField] private GameObject pauseUi;
@@ -42,8 +40,7 @@ namespace Script.Menu
         [SerializeField] private TextMeshProUGUI CritRateText;
         [SerializeField] private TextMeshProUGUI GoldText;
         [SerializeField] private Button quitStatusButton;
-        [SerializeField] private bool isphone;
-        
+
         private int count = 0;
         public static bool Isphone;
         public bool isPause = false;
@@ -67,7 +64,6 @@ namespace Script.Menu
         private void Start()
         {
             PlayerController.playerInput.PlayerAction.Status.performed += context => OpenStatus();
-            Isphone = isphone;
         }
 
         private void Update()
@@ -166,23 +162,7 @@ namespace Script.Menu
         
         private void Restart()
         {
-            if (isphone)
-            {
-                if (count <= 0)
-                {
-                    count++;
-                    adsManager.ShowAds("Rewarded_Android");
-                }
-                else
-                {
-                    SceneManager.LoadScene("MainMenu");
-                }
-            }
-            else
-            {
-                SceneManager.LoadScene("Scenes/Kao");
-            }
-            
+            SceneManager.LoadScene("Scenes/Kao");
         }
 
         public void Dead()
@@ -190,12 +170,6 @@ namespace Script.Menu
             pauseUi.SetActive(false);
             waveUI.SetActive(false);
             deadUI.SetActive(true);
-            //phoneUI.SetActive(false);
-            if (isphone)
-            {
-                //ScoreBoard.SetActive(true);
-            }
-            
         }
 
         

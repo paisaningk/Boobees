@@ -23,12 +23,9 @@ namespace Script.Spawn
         [SerializeField] private Wave[] Wave;
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
-        [SerializeField] private GameObject SkipText;
-        //[SerializeField] private TextMeshProUGUI PlayerScore;
         [SerializeField] private GameObject boss;
         [SerializeField] private GameObject Shop;
         [SerializeField] private GameObject win;
-        //[SerializeField] private GameObject Scoreboard;
         [SerializeField] private float shopingtime = 20;
         [SerializeField] private TextMeshProUGUI Nextwavetext;
         [SerializeField] private GameObject nextwaveGameObject;
@@ -49,7 +46,7 @@ namespace Script.Spawn
         private void Start()
         {
             WaveText.text = $"Wave {WaveNumberText}";
-            //PlayerScore.text = $"{WaveNumberText}";
+            Shop.SetActive(false);
             timeshopshow = shopingtime;
             //PlayerController.playerInput.PlayerAction.Skip.performed += context => Skip();
         }
@@ -63,7 +60,6 @@ namespace Script.Spawn
                 spawnWave();
                 var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
                 WaveText.text = $"Wave : {WaveNumberText}";
-                //PlayerScore.text = $"{WaveNumberText}";
                 if (tolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber + 1 != Wave.Length)
                 {
                     if (nextwave)
@@ -129,7 +125,6 @@ namespace Script.Spawn
                 Debug.Log("skip");
                 StopCoroutine(Shoping());
                 Shop.SetActive(false);
-                SkipText.SetActive(false);
                 ShopController.Deleteitem();
                 NextSpawnWave();
                 Counttimenextwave = false;
