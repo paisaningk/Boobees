@@ -183,6 +183,7 @@ MonoBehaviour:
   Hp: 0
   Atk: 0
   Speed: 0
+  spriteRenderer: {fileID: 131390158208929809}
   isDeadForBoss: 0
 --- !u!114 &131390158208929818
 MonoBehaviour:

@@ -40,8 +40,7 @@ namespace Script.Menu
         [SerializeField] private TextMeshProUGUI CritRateText;
         [SerializeField] private TextMeshProUGUI GoldText;
         [SerializeField] private Button quitStatusButton;
-
-        private int count = 0;
+        
         public static bool Isphone;
         public bool isPause = false;
         private float DashCd = 0;

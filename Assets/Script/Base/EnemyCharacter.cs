@@ -26,10 +26,9 @@ namespace Script.Base
         private PlayerCharacter player;
         private float playerCritRate;
         private Vector3 offset;
-        private SpriteRenderer spriteRenderer;
+        [SerializeField] private SpriteRenderer spriteRenderer;
         public bool isDeadForBoss = false;
-        private int wave = 1;
-        
+
 
         public void Start()
         {
