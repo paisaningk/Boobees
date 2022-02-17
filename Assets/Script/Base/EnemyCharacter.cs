@@ -33,6 +33,19 @@ namespace Script.Base
         public void Start()
         {
             player = GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>();
+            SetSO(0);
+            PrintAll();
+        }
+        
+        private void SetSO(int a)
+        {
+            Name = EnemyCharacterSo[a].Name;
+            Hp = EnemyCharacterSo[a].MaxHp;
+            Atk = EnemyCharacterSo[a].Atk;
+            Speed = EnemyCharacterSo[a].Speed;
+            Popup = EnemyCharacterSo[a].Popup;
+            Rb = GetComponent<Rigidbody2D>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
         
         public void PrintAll()
