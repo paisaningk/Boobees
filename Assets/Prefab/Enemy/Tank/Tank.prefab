@@ -283,11 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e613a744b385c4c95d8708168f02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCharacterSo:
-  - {fileID: 11400000, guid: 32c6de6a45255474295a1cb28f753503, type: 2}
-  - {fileID: 11400000, guid: 25839aaf2a903f54b82e04133c6995e6, type: 2}
-  - {fileID: 11400000, guid: 27195b92f82892e4ab8c0e676074009f, type: 2}
-  - {fileID: 11400000, guid: 3394357c6e621f94ea1f037956f7767f, type: 2}
+  EnemyCharacterSo: {fileID: 11400000, guid: 32c6de6a45255474295a1cb28f753503, type: 2}
   knockbackLayerMask:
     serializedVersion: 2
     m_Bits: 768
@@ -296,8 +292,8 @@ MonoBehaviour:
   enemyType: 2
   isBoss: 0
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}
-  Hp: 0
-  Atk: 0
+  Hp: 20
+  Atk: 10
   Speed: 0
   spriteRenderer: {fileID: 4269672613588630455}
   isDeadForBoss: 0

@@ -6,7 +6,6 @@ using Script.Menu;
 using Script.Sound;
 using TMPro;
 using UnityEngine;
-using ScreenCapture = UnityEngine.ScreenCapture;
 
 namespace Script.Controller
 {
@@ -122,7 +121,7 @@ namespace Script.Controller
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack01",true);
                     Attackcooldowntime = Time.time + Attackcooldown;
-                    //Debug.Log($"Attack 1");
+                    
                 }
                 else if (Attack02 == false)
                 {

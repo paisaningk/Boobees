@@ -48,9 +48,10 @@ namespace Script.Controller
             SoundManager.Instance.Play(SoundManager.Sound.ExecutionerAttack);
         }
         
-        IEnumerator Wait3sec()
+        IEnumerator Wait()
         {
-            yield return new WaitForSeconds(1.5f);
+            var a = Random.Range(1.5f,2);
+            yield return new WaitForSeconds(a);
             Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             attacking = false;
             nextMove = false;
@@ -59,7 +60,7 @@ namespace Script.Controller
         private void AttackFinish()
         {
             animator.SetBool("Attack",false);
-            StartCoroutine(Wait3sec());
+            StartCoroutine(Wait());
         }
 
         private void Selectnextmove()

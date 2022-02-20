@@ -21,28 +21,30 @@ namespace Script.Base
             animator = GetComponent<Animator>();
             player = GameObject.FindWithTag("Player").transform;
             rb = GetComponent<Rigidbody2D>();
-            var random = Random.Range(2, 5);
+            var random = Random.Range(2,3);
             timeBtwShots = random;
         }
 
         void FixedUpdate()
         {
-
+            float distance = Vector2.Distance(transform.position, player.position);
             if (attacking)
             {
-                if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+                if ( distance > stoppingDistance)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, player.position
+                        , speed * Time.deltaTime);
                 }
 
-                else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+                else if (distance < stoppingDistance && distance > retreatDistance)
                 {
                     transform.position = this.transform.position;
                 }
 
-                else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+                else if (distance < retreatDistance)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, player.position
+                        , -speed * Time.deltaTime);
                 }
 
                 if(timeBtwShots <= 0)

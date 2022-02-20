@@ -12,7 +12,7 @@ namespace Script.Base
 {
     public class EnemyCharacter : MonoBehaviour
     {
-        [SerializeField] public CharacterSO[] EnemyCharacterSo;
+        [SerializeField] public CharacterSO EnemyCharacterSo;
         [SerializeField] private LayerMask knockbackLayerMask;
         [SerializeField] private GameObject GoldPrefab;
         [SerializeField] private EnemyType enemyType;
@@ -33,17 +33,16 @@ namespace Script.Base
         public void Start()
         {
             player = GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>();
-            SetSO(0);
-            PrintAll();
+            SetSO();
         }
         
-        private void SetSO(int a)
+        private void SetSO()
         {
-            Name = EnemyCharacterSo[a].Name;
-            Hp = EnemyCharacterSo[a].MaxHp;
-            Atk = EnemyCharacterSo[a].Atk;
-            Speed = EnemyCharacterSo[a].Speed;
-            Popup = EnemyCharacterSo[a].Popup;
+            Name = EnemyCharacterSo.Name;
+            Hp = EnemyCharacterSo.MaxHp;
+            Atk = EnemyCharacterSo.Atk;
+            Speed = EnemyCharacterSo.Speed;
+            Popup = EnemyCharacterSo.Popup;
             Rb = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
         }

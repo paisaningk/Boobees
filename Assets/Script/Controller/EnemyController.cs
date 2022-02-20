@@ -6,7 +6,7 @@ namespace Script.Controller
 {
     public class EnemyController : MonoBehaviour
     {
-        private Rigidbody2D Rb;
+        private Rigidbody2D rb;
         private Transform player;
         private Animator animator;
         private float movespeed = 8f;
@@ -18,7 +18,7 @@ namespace Script.Controller
 
         private void Start()
         {
-            Rb = GetComponent<Rigidbody2D>();
+            rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             player = GameObject.FindWithTag("Player").transform;
         }
@@ -37,7 +37,7 @@ namespace Script.Controller
             SoundManager.Instance.Play(SoundManager.Sound.TankAttack);
         }
     
-        private void moveCharacter(Vector3 direction)
+        private void MoveCharacter(Vector3 direction)
         {
             Vector2 directionNormalized = direction.normalized;
             var move = (Vector2) transform.position + (directionNormalized * movespeed * Time.deltaTime);
@@ -46,13 +46,14 @@ namespace Script.Controller
             animator.SetFloat("MoveY",directionnormalized.y);
             animator.SetBool("Walking",true);
             
-            Rb.MovePosition(move);
+            rb.MovePosition(move);
         }
         
-        IEnumerator Wait3sec()
+        IEnumerator Wait()
         {
-            yield return new WaitForSeconds(1.5f);
-            Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            var a = Random.Range(1.5f,2);
+            yield return new WaitForSeconds(a);
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             attacking = false;
             nextMove = false;
         }
@@ -60,7 +61,7 @@ namespace Script.Controller
         private void AttackFinish()
         {
             animator.SetBool("Attack",false);
-            StartCoroutine(Wait3sec());
+            StartCoroutine(Wait());
         }
 
         private void Selectnextmove()
@@ -71,13 +72,13 @@ namespace Script.Controller
             
             if ( distance >= stoppingDistance)
             {
-                moveCharacter(direction);
+                MoveCharacter(direction);
             }
             else if ( distance <= stoppingDistance)
             {
                 if (attacking == false)
                 {
-                    Rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                    rb.constraints = RigidbodyConstraints2D.FreezeAll;
                     animator.SetBool("Walking",false);
                     animator.SetBool("Attack",true);
                     animator.SetFloat("MoveX",directionnormalized.x);

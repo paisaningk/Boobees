@@ -17,8 +17,6 @@ namespace Script.Menu
         [SerializeField] private GameObject deadUI;
         [SerializeField] private GameObject waveUI;
         [SerializeField] private GameObject StatusUI;
-        //[SerializeField] private GameObject ScoreBoard;
-        //[SerializeField] private GameObject phoneUI;
         [Header("Button")]
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
@@ -46,6 +44,7 @@ namespace Script.Menu
         private float DashCd = 0;
         private bool candash = true;
         private bool StatusShow = false;
+        
 
         private void Awake()
         {
@@ -63,6 +62,7 @@ namespace Script.Menu
         private void Start()
         {
             PlayerController.playerInput.PlayerAction.Status.performed += context => OpenStatus();
+            player = GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>();
         }
 
         private void Update()
@@ -79,9 +79,12 @@ namespace Script.Menu
                     DashCd = 0;
                     candash = false;
                 }
+            }
+
+            if (candash == false)
+            {
                 DashCd += Time.deltaTime;
                 Dash.fillAmount = DashCd / player.DashCd;
-                //Debug.Log(DashCd / player.DashCd);
                 if (DashCd / player.DashCd >= 1)
                 {
                     StartCoroutine(SetDashCd());
