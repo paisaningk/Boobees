@@ -9,20 +9,26 @@ using UnityEngine;
 
 namespace Script.Controller
 {
+    public enum PlayerType 
+    {
+        SwordMan, Gun
+    }
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private LayerMask dashLayerMask;
         [SerializeField] public PlayMenu playMenu;
-
+        [SerializeField] private PlayerType playerType;
         private PlayerCharacter playerCharacter;
         public static Playerinput playerInput;
         private Rigidbody2D Rd;
         private Vector3 MoveDie;
         private Animator animator;
+        private Camera cam;
         private bool IsAttacking = false;
         private bool Attack01 = false;
         private bool Attack02 = false;
         private bool Attack03 = false;
+        [SerializeField] private Transform Gun;
         public static bool CanDash = true;
         public bool knockback = false;
         
@@ -42,10 +48,18 @@ namespace Script.Controller
             Rd = GetComponent<Rigidbody2D>();
             playerCharacter = GetComponent<PlayerCharacter>();
             playerInput = new Playerinput();
-            playerInput.PlayerAction.Attack.performed += context => Attack();
             playerInput.PlayerAction.Dash.performed += context => Dash();
             playerInput.PlayerAction.Pause.performed += context => Menu();
             playerInput.PlayerAction.Cheat.performed += context => Cheat();
+            if (playerType == PlayerType.SwordMan)
+            {
+                playerInput.PlayerAction.Attack.performed += context => Attack();
+            }
+            else
+            {
+                playerInput.PlayerAction.Attack.performed += context => Shot();
+                cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+            }
             OnEnable();
         }
         private void Start()
@@ -65,9 +79,13 @@ namespace Script.Controller
             MoveSpeed = playerCharacter.Speed;
             //Walk
             var walk = playerInput.PlayerAction.Move.ReadValue<Vector2>();
-            
             MoveDie = walk.normalized;
             
+            if (playerType == PlayerType.Gun)
+            {
+                GunFollowMouse();
+            }
+
             if (walk != Vector2.zero)
             {
                 if (Soundplay)
@@ -107,6 +125,22 @@ namespace Script.Controller
             {
                 playMenu.Resume();
             }
+        }
+
+        private void Shot()
+        {
+            Debug.Log("pew pew");
+        }
+
+        private void GunFollowMouse()
+        {
+            Vector2 mousePosition = playerInput.PlayerAction.Mouse.ReadValue<Vector2>();
+            var a = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
+            var mouse = cam.ScreenToWorldPoint(a);
+            
+            Vector3 difference = mouse - transform.position;
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            Gun.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         }
 
         private void Attack()

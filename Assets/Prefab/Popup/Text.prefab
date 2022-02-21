@@ -51,7 +51,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
+  - {fileID: 2100000, guid: ee80b6adf85f948458d6047af7068cf6, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,7 +91,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
+  m_Font: {fileID: 12800000, guid: ee80b6adf85f948458d6047af7068cf6, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295

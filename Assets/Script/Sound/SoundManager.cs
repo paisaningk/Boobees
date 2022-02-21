@@ -52,7 +52,9 @@ namespace Script.Sound
             NoMoney,
             ThankYou,
             PlayerDie,
-            PlayerDieBGM
+            PlayerDieBGM,
+            Shot,
+            
         }
 
         [Serializable]
