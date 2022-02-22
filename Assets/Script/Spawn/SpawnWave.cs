@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Globalization;
 using Script.Base;
@@ -20,7 +21,8 @@ namespace Script.Spawn
     }
     public class SpawnWave : MonoBehaviour
     {
-        [SerializeField] private Wave[] Wave;
+        [SerializeField] private Wave[] WaveForPlayerMelee;
+        [SerializeField] private Wave[] WaveForPlayerGun;
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
         [SerializeField] private GameObject boss;
@@ -29,9 +31,10 @@ namespace Script.Spawn
         [SerializeField] private float shopingtime = 20;
         [SerializeField] private TextMeshProUGUI Nextwavetext;
         [SerializeField] private GameObject nextwaveGameObject;
-
+        [SerializeField] private PlayerController PlayerController;
 
         private Wave CurrentWave;
+        private Wave[] Wave;
         private int CurrentWaveNumber = 0;
         private bool Counttimenextwave = false;
         private bool nextwave = true;
@@ -43,12 +46,36 @@ namespace Script.Spawn
         private ShopController ShopController;
         private bool shopOpen = false;
 
+        private void Awake()
+        {
+            PlayerController = GetComponent<PlayerController>();
+            if (PlayerController.playerType == PlayerType.Gun) 
+            {
+                Wave = WaveForPlayerGun;
+            }
+            else
+            {
+                Wave = WaveForPlayerMelee;
+            }
+            
+        }
+
         private void Start()
         {
+            WaveNumberText = 1;
             WaveText.text = $"Wave {WaveNumberText}";
             Shop.SetActive(false);
             timeshopshow = shopingtime;
             //PlayerController.playerInput.PlayerAction.Skip.performed += context => Skip();
+            // if (PlayerController.playerType == PlayerType.Gun) 
+            // {
+            //     Wave = WaveForPlayerGun;
+            // }
+            // else
+            // {
+            //     Wave = WaveForPlayerMelee;
+            // }
+            //
         }
 
         private void FixedUpdate()
@@ -77,7 +104,7 @@ namespace Script.Spawn
             else
             {
                 win.SetActive(true);
-                PlayerController.playerInput.PlayerAction.Disable();
+                Controller.PlayerController.playerInput.PlayerAction.Disable();
             }
 
             if (Counttimenextwave)
@@ -101,13 +128,7 @@ namespace Script.Spawn
                 SoundManager.Instance.Play(SoundManager.Sound.SpawnEnemy);
                 var RandomEnemy = CurrentWave.typeOfEnemy[Random.Range(0, CurrentWave.typeOfEnemy.Length)];
                 var RandomSpawnPoint = SpawnPoint[Random.Range(0, SpawnPoint.Length)];
-                if (WaveNumberText >= 2)
-                {
-                    RandomEnemy.GetComponent<EnemyCharacter>().Atk += 5;
-                    RandomEnemy.GetComponent<EnemyCharacter>().Hp += 10;
-                }
                 Instantiate(RandomEnemy, RandomSpawnPoint.position, Quaternion.identity);
-                
                 CurrentWave.numberOfEnemy--;
                 NextSpawnTime = Time.time + CurrentWave.spawnTime;   
                 Debug.Log($"numberOfEnemy {CurrentWave.numberOfEnemy}");
@@ -173,16 +194,6 @@ namespace Script.Spawn
             }
             SoundManager.Instance.Stop(SoundManager.Sound.Shop);
             SoundManager.Instance.Playfrompause(SoundManager.Sound.BGM);
-        }
-
-        private void AddStatus()
-        {
-            var a = CurrentWave.typeOfEnemy;
-            foreach (var VARIABLE in a)
-            {
-                VARIABLE.GetComponent<EnemyCharacter>().Atk += 5;
-                VARIABLE.GetComponent<EnemyCharacter>().Hp += 10;
-            }
         }
     }
 }

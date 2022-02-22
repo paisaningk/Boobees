@@ -499,6 +499,7 @@ MonoBehaviour:
   tutorialButton: {fileID: 458508483}
   quitButton: {fileID: 825479344}
   gameScene: Kao
+  cursorTexture: {fileID: 2800000, guid: ac373a40b349b6c41843a47e4724522d, type: 3}
   isphone: 0
 --- !u!4 &480985814
 Transform:

@@ -6,6 +6,7 @@ using Script.Menu;
 using Script.Sound;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Script.Controller
 {
@@ -17,7 +18,7 @@ namespace Script.Controller
     {
         [SerializeField] private LayerMask dashLayerMask;
         [SerializeField] public PlayMenu playMenu;
-        [SerializeField] private PlayerType playerType;
+        [SerializeField] public PlayerType playerType;
         private PlayerCharacter playerCharacter;
         public static Playerinput playerInput;
         private Rigidbody2D Rd;
@@ -29,8 +30,11 @@ namespace Script.Controller
         private bool Attack02 = false;
         private bool Attack03 = false;
         [SerializeField] private Transform Gun;
+        [SerializeField] private GunController gunController;
         public static bool CanDash = true;
         public bool knockback = false;
+        public bool fire = false;
+        public bool canfire = true;
         
 
         //ปรับได้
@@ -40,6 +44,8 @@ namespace Script.Controller
         private float Attackcooldowntime;
         private float Attackcooldown = 2.5f;
         private bool Soundplay;
+        public int Ammo;
+        public float ReloadTime = 2;
 
         private void Awake()
         {
@@ -58,7 +64,9 @@ namespace Script.Controller
             else
             {
                 playerInput.PlayerAction.Attack.performed += context => Shot();
+                playerInput.PlayerAction.Reload.performed += context => AllReload();
                 cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+                gunController = GetComponent<GunController>();
             }
             OnEnable();
         }
@@ -84,6 +92,11 @@ namespace Script.Controller
             if (playerType == PlayerType.Gun)
             {
                 GunFollowMouse();
+                if (Ammo == 5)
+                {
+                    StartCoroutine(ResetAmmo());
+                    StartCoroutine(Reload());
+                }
             }
 
             if (walk != Vector2.zero)
@@ -127,9 +140,18 @@ namespace Script.Controller
             }
         }
 
+        private void AllReload()
+        {
+            if (Ammo > 0)
+            {
+                StartCoroutine(ResetAmmo());
+                StartCoroutine(Reload());
+            }
+        }
+
         private void Shot()
         {
-            Debug.Log("pew pew");
+            fire = true;
         }
 
         private void GunFollowMouse()
@@ -141,7 +163,34 @@ namespace Script.Controller
             Vector3 difference = mouse - transform.position;
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             Gun.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+           // Debug.Log(rotationZ);
+
+            if (canfire && fire)
+            {
+                Ammo++;
+                fire = false;
+                float distance = difference.magnitude;
+                Vector2 direction = difference / distance;
+                direction.Normalize();
+                gunController.FireBullet(direction, rotationZ,Ammo);
+            }
         }
+
+        IEnumerator Reload()
+        {
+            fire = false;
+            canfire = false;
+            yield return new WaitForSeconds(ReloadTime);
+            canfire = true;
+            fire = false;
+        }
+        
+        IEnumerator ResetAmmo()
+        {
+            yield return new WaitForSeconds(0.1f);
+            Ammo = 0;
+        }
+        
 
         private void Attack()
         {

@@ -20,6 +20,7 @@ namespace Script.Base
         [SerializeField] public float DashCd;
         [SerializeField] public int CritAtk = 1;
         [SerializeField] public int CritRate = 2;
+        public PlayerType PlayerType;
         public ItemSO[] ItemSo;
 
         private GameObject Popup;
@@ -39,6 +40,14 @@ namespace Script.Base
             animator = GetComponent<Animator>();
             playerController = GetComponent<PlayerController>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+            if (PlayerType == PlayerType.SwordMan)
+            {
+                DashCd = 3.5f;
+            }
+            else
+            {
+                DashCd = 5;
+            }
         }
 
         public void PrintAll()
@@ -77,6 +86,7 @@ namespace Script.Base
                     ShowPopUp(arrow.DMG);
                     StartCoroutine(Setcoloattack());
                     isTakedmg = true;
+                    //other.gameObject.SetActive(false);
                     if (Hp <= 0)
                     {
                         animator.SetBool("Dead", true);
@@ -88,7 +98,14 @@ namespace Script.Base
 
         IEnumerator Blockdmg()
         {
-            spriteRenderer.color = Color.blue;
+            if (PlayerType == PlayerType.SwordMan)
+            {
+                spriteRenderer.color = Color.blue;
+            }
+            else
+            {
+                spriteRenderer.color = Color.green;
+            }
             yield return new WaitForSeconds(0.5f);
             isTakedmg = false;
             spriteRenderer.color = Color.white;

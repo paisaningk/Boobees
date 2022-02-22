@@ -11,6 +11,7 @@ namespace Script.Menu
         [SerializeField] private Button tutorialButton;
         [SerializeField] private Button quitButton;
         [SerializeField] private String gameScene;
+        [SerializeField] private Texture2D cursorTexture;
         [SerializeField] private bool isphone;
     
         private void Awake()

@@ -11,6 +11,8 @@ TagManager:
   - Projectile
   - Shop
   - Gun
+  - Bullet
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - Enemyhitbox
   - EnemyAttack
   - item
-  - 
+  - Bullet
   - 
   - 
   - 

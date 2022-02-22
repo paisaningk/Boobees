@@ -1,6 +1,7 @@
 using System.Collections;
 using Script.Base;
 using Script.Controller;
+using Script.Sound;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,7 +28,7 @@ namespace Script.Menu
         [SerializeField] private Button restartpauseButton;
         [Header("Player")]
         [SerializeField] private TextMeshProUGUI goldText;
-        [SerializeField] private PlayerCharacter player;
+        [SerializeField] private PlayerCharacter PlayerCharacter;
         [SerializeField] private Image blood;
         [SerializeField] private Image Dash;
         [Header("Status")]
@@ -38,12 +39,20 @@ namespace Script.Menu
         [SerializeField] private TextMeshProUGUI CritRateText;
         [SerializeField] private TextMeshProUGUI GoldText;
         [SerializeField] private Button quitStatusButton;
+        [Header("Gun")] 
+        [SerializeField] private GameObject Ammoui;
+        [SerializeField] private GameObject[] Ammo;
+        [SerializeField] private GameObject AmmoText;
+        [SerializeField] private SpriteRenderer statusSpriteRenderer;
+        [SerializeField] private Sprite PlayerWGun;
+        private PlayerController playerController;
         
         public static bool Isphone;
         public bool isPause = false;
         private float DashCd = 0;
         private bool candash = true;
         private bool StatusShow = false;
+        private bool isReload;
         
 
         private void Awake()
@@ -57,18 +66,61 @@ namespace Script.Menu
             restartpauseButton.onClick.AddListener(Restart);
             quitStatusButton.onClick.AddListener(Back);
             Dash.fillAmount = 1;
+            var a = GameObject.FindWithTag("Player");
+            PlayerCharacter = a.GetComponent<PlayerCharacter>();
+            playerController = a.GetComponent<PlayerController>();
+            Ammoui.SetActive(PlayerCharacter.PlayerType == PlayerType.Gun);
         }
 
         private void Start()
         {
             PlayerController.playerInput.PlayerAction.Status.performed += context => OpenStatus();
-            player = GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>();
+            if (PlayerCharacter.PlayerType == PlayerType.Gun)
+            {
+                PlayerController.playerInput.PlayerAction.Reload.performed += context => Reloadative();
+                statusSpriteRenderer.sprite = PlayerWGun;
+            }
         }
 
         private void Update()
         {
-            goldText.text = $"Gold : {player.Gold}";
-            var playerHp = player.Hp / player.MaxHp;
+            if (PlayerCharacter.PlayerType == PlayerType.Gun)
+            {
+                var ammo = playerController.Ammo;
+
+                if (isReload)
+                {
+                    foreach (var VARIABLE in Ammo)
+                    {
+                        VARIABLE.SetActive(true);
+                    }
+                    isReload = false;
+                }
+                else if (ammo == 1)
+                {
+                    Ammo[ammo-1].SetActive(false);
+                }
+                else if (ammo == 2)
+                {
+                    Ammo[ammo-1].SetActive(false);
+                }
+                else if (ammo == 3)
+                {
+                    Ammo[ammo-1].SetActive(false);
+                }
+                else if (ammo == 4)
+                {
+                    Ammo[ammo-1].SetActive(false);
+                }
+                else if (ammo == 5)
+                {
+                    Ammo[ammo-1].SetActive(false);
+                    StartCoroutine(Reload());
+                }
+            }
+
+            goldText.text = $"Gold : {PlayerCharacter.Gold}";
+            var playerHp = PlayerCharacter.Hp / PlayerCharacter.MaxHp;
             blood.fillAmount = playerHp;
             SetStatus();
             if (PlayerController.CanDash == false)
@@ -84,12 +136,33 @@ namespace Script.Menu
             if (candash == false)
             {
                 DashCd += Time.deltaTime;
-                Dash.fillAmount = DashCd / player.DashCd;
-                if (DashCd / player.DashCd >= 1)
+                Dash.fillAmount = DashCd / PlayerCharacter.DashCd;
+                if (DashCd / PlayerCharacter.DashCd >= 1)
                 {
                     StartCoroutine(SetDashCd());
                 }
             }
+        }
+
+        public void Reloadative()
+        {
+            if (playerController.Ammo > 0)
+            {
+                StartCoroutine(Reload());
+            }
+        }
+        
+        IEnumerator Reload()
+        {
+            SoundManager.Instance.Play(SoundManager.Sound.Reload);
+            foreach (var VARIABLE in Ammo)
+            {
+                VARIABLE.SetActive(false);
+            }
+            AmmoText.SetActive(true);
+            yield return new WaitForSeconds(playerController.ReloadTime);
+            AmmoText.SetActive(false);
+            isReload = true;
         }
         
         public void OpenStatus()
@@ -125,12 +198,12 @@ namespace Script.Menu
 
         private void SetStatus()
         {
-            MaxHPText.text = $"{player.MaxHp}";
-            SpeedText.text = $"{player.Speed}";
-            AtkText.text = $"{player.Atk}";
-            DashCdText.text = $"{player.DashCd}";
-            CritRateText.text = $"{player.CritRate}";
-            GoldText.text = $"{player.Gold}";
+            MaxHPText.text = $"{PlayerCharacter.MaxHp}";
+            SpeedText.text = $"{PlayerCharacter.Speed}";
+            AtkText.text = $"{PlayerCharacter.Atk}";
+            DashCdText.text = $"{PlayerCharacter.DashCd}";
+            CritRateText.text = $"{PlayerCharacter.CritRate}";
+            GoldText.text = $"{PlayerCharacter.Gold}";
         }
         
         public void Pause()

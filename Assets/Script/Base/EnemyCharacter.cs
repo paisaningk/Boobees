@@ -90,19 +90,54 @@ namespace Script.Base
                         SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
                         StartCoroutine(Deaddelay());
                     }
-                    
                 }
                 
+            }
+            else if (other.CompareTag("Bullet"))
+            {
+                var atkPlayer = other.GetComponent<Bullet>();
+                playerCritRate = atkPlayer.CritRate;
+                var critPercentRand = Random.Range(1, 101);
+                
+                if (critPercentRand <= playerCritRate)
+                {
+                    var atkCrit = atkPlayer.Atk * atkPlayer.CritAtk;
+                    ShowPopUpCrit(atkCrit);
+                    Hp -= atkCrit;
+                    StartCoroutine(Setcoloattack());
+                }
+                else
+                {
+                    ShowPopUp(atkPlayer.Atk);
+                    Hp -= atkPlayer.Atk;
+                    StartCoroutine(Setcoloattack());
+                }
+                
+                if (Hp <= 0)
+                {
+                    if (isBoss == true)
+                    {
+                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
+                        isDeadForBoss = true;
+                    }
+                    else
+                    {
+                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
+                        StartCoroutine(Deaddelay());
+                    }
+                    
+                }
             }
         }
 
         
         
         IEnumerator Setcoloattack()
-        { 
+        {
+            var a = spriteRenderer.color;
             spriteRenderer.color = Color.red;
             yield return new WaitForSeconds(0.2f);
-            spriteRenderer.color = Color.white;
+            spriteRenderer.color = a;
         }
 
         IEnumerator Deaddelay()

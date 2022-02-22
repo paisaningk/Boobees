@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1831773851010157862}
   - component: {fileID: 6882884768715852613}
   - component: {fileID: 3643022697535420762}
+  - component: {fileID: 680822647412136826}
   m_Layer: 13
   m_Name: Soul
   m_TagString: Projectile
@@ -114,3 +115,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   DMG: 12
+--- !u!50 &680822647412136826
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626256943966877042}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -116,6 +116,15 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""2dd47ee0-8853-4193-94fe-810e7cc9a577"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -316,6 +325,17 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                     ""action"": ""Mouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""40598703-b3c9-40d4-8b75-1af407ce1e74"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -362,6 +382,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         m_PlayerAction_Screenshot = m_PlayerAction.FindAction("Screenshot", throwIfNotFound: true);
         m_PlayerAction_Skip = m_PlayerAction.FindAction("Skip", throwIfNotFound: true);
         m_PlayerAction_Mouse = m_PlayerAction.FindAction("Mouse", throwIfNotFound: true);
+        m_PlayerAction_Reload = m_PlayerAction.FindAction("Reload", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -431,6 +452,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerAction_Screenshot;
     private readonly InputAction m_PlayerAction_Skip;
     private readonly InputAction m_PlayerAction_Mouse;
+    private readonly InputAction m_PlayerAction_Reload;
     public struct PlayerActionActions
     {
         private @Playerinput m_Wrapper;
@@ -445,6 +467,7 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         public InputAction @Screenshot => m_Wrapper.m_PlayerAction_Screenshot;
         public InputAction @Skip => m_Wrapper.m_PlayerAction_Skip;
         public InputAction @Mouse => m_Wrapper.m_PlayerAction_Mouse;
+        public InputAction @Reload => m_Wrapper.m_PlayerAction_Reload;
         public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -484,6 +507,9 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Mouse.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnMouse;
                 @Mouse.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnMouse;
                 @Mouse.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnMouse;
+                @Reload.started -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_PlayerActionActionsCallbackInterface.OnReload;
             }
             m_Wrapper.m_PlayerActionActionsCallbackInterface = instance;
             if (instance != null)
@@ -518,6 +544,9 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
                 @Mouse.started += instance.OnMouse;
                 @Mouse.performed += instance.OnMouse;
                 @Mouse.canceled += instance.OnMouse;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
             }
         }
     }
@@ -552,5 +581,6 @@ public partial class @Playerinput : IInputActionCollection2, IDisposable
         void OnScreenshot(InputAction.CallbackContext context);
         void OnSkip(InputAction.CallbackContext context);
         void OnMouse(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
 }

@@ -6,6 +6,8 @@ namespace Script.Controller
 {
     public class ExecutionerController : MonoBehaviour
     {
+        [SerializeField] private float StarMove = 1.5f;
+        [SerializeField] private float StarMoveslowe = 2f;
         private Rigidbody2D Rb;
         private Transform player;
         private Animator animator;
@@ -29,7 +31,6 @@ namespace Script.Controller
             {
                 Selectnextmove();
             }
-            
         }
     
         private void moveCharacter(Vector3 direction)
@@ -50,7 +51,7 @@ namespace Script.Controller
         
         IEnumerator Wait()
         {
-            var a = Random.Range(1.5f,2);
+            var a = Random.Range(StarMove,StarMoveslowe);
             yield return new WaitForSeconds(a);
             Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             attacking = false;

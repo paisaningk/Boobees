@@ -8,6 +8,8 @@ namespace Script.Base
         public float speed;
         public float stoppingDistance;
         public float retreatDistance;
+        public float StartShot = 1.5f;
+        public float EndShot = 2.5f;
         private Rigidbody2D rb;
         private Animator animator;
         private Transform player;
@@ -21,7 +23,7 @@ namespace Script.Base
             animator = GetComponent<Animator>();
             player = GameObject.FindWithTag("Player").transform;
             rb = GetComponent<Rigidbody2D>();
-            var random = Random.Range(2,3);
+            var random = Random.Range(StartShot,EndShot);
             timeBtwShots = random;
         }
 
@@ -61,8 +63,10 @@ namespace Script.Base
         private void Shots()
         {
             SoundManager.Instance.Play(SoundManager.Sound.WitchAttack);
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            var random = Random.Range(2, 5);
+            var arrow = ObjectPool.SharedInstance.GetPooledObject("Projectile");
+            arrow.SetActive(true);
+            arrow.transform.position = transform.position;
+            var random = Random.Range(StartShot,EndShot);
             timeBtwShots = random;
         }
 

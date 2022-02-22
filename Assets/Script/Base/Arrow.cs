@@ -1,3 +1,4 @@
+using System;
 using Script.Controller;
 using Script.Spawn;
 using UnityEngine;
@@ -13,29 +14,27 @@ namespace Script.Base
         private Vector2 target;
 
         private PlayerController playerController;
+        private bool updatePlayer = false;
 
-        void Start()
+        private void Start()
         {
             player = GameObject.FindWithTag("Player").transform;
-
-            target = new Vector2(player.position.x, player.position.y);
-
-            playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-            
-            if (SpawnWave.WaveNumberText >= 5)
-            {
-                DMG += 10;
-            }
-
         }
+        
     
         void Update()
         {
+            if (updatePlayer == false)
+            {
+                target = new Vector2(player.position.x, player.position.y);
+                updatePlayer = true;
+            }
             transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
             if (transform.position.x == target.x && transform.position.y == target.y)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                updatePlayer = false;
             }
         
         }
@@ -45,7 +44,7 @@ namespace Script.Base
         {
             if (other.CompareTag("PlayerHitBox"))
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

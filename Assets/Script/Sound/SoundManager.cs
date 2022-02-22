@@ -54,7 +54,8 @@ namespace Script.Sound
             PlayerDie,
             PlayerDieBGM,
             Shot,
-            
+            Reload,
+            Ammo
         }
 
         [Serializable]
