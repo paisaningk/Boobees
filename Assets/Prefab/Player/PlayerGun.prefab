@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2897250007268149232
 Transform:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   Gold: 0
   Speed: 0
   DashCd: 5
-  CritAtk: 1
+  CritAtk: 2
   CritRate: 2
   PlayerType: 1
   ItemSo: []

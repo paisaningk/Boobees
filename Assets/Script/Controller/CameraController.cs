@@ -1,18 +1,19 @@
-﻿using System;
-using Cinemachine;
+﻿using Cinemachine;
 using UnityEngine;
 
-
-[RequireComponent(typeof(CinemachineVirtualCamera))]
-public class CameraController : MonoBehaviour
+namespace Script.Controller
 {
-    private new CinemachineVirtualCamera camera;
-    private Transform player;
-
-    private void Start()
+    [RequireComponent(typeof(CinemachineVirtualCamera))]
+    public class CameraController : MonoBehaviour
     {
-        camera = GetComponent<CinemachineVirtualCamera>();
-        player = GameObject.FindWithTag("Player").transform;
-        camera.Follow = player;
+        private new CinemachineVirtualCamera camera;
+        private Transform player;
+
+        private void Start()
+        {
+            camera = GetComponent<CinemachineVirtualCamera>();
+            player = GameObject.FindWithTag("Player").transform;
+            camera.Follow = player;
+        }
     }
 }

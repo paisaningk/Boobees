@@ -45,6 +45,7 @@ namespace Script.Menu
         [SerializeField] private GameObject AmmoText;
         [SerializeField] private SpriteRenderer statusSpriteRenderer;
         [SerializeField] private Sprite PlayerWGun;
+        [SerializeField] private SceneName sceneName;
         private PlayerController playerController;
         
         public static bool Isphone;
@@ -66,14 +67,14 @@ namespace Script.Menu
             restartpauseButton.onClick.AddListener(Restart);
             quitStatusButton.onClick.AddListener(Back);
             Dash.fillAmount = 1;
-            var a = GameObject.FindWithTag("Player");
-            PlayerCharacter = a.GetComponent<PlayerCharacter>();
-            playerController = a.GetComponent<PlayerController>();
-            Ammoui.SetActive(PlayerCharacter.PlayerType == PlayerType.Gun);
         }
 
         private void Start()
         {
+            var a = GameObject.FindWithTag("Player");
+            PlayerCharacter = a.GetComponent<PlayerCharacter>();
+            playerController = a.GetComponent<PlayerController>();
+            Ammoui.SetActive(PlayerCharacter.PlayerType == PlayerType.Gun);
             PlayerController.playerInput.PlayerAction.Status.performed += context => OpenStatus();
             if (PlayerCharacter.PlayerType == PlayerType.Gun)
             {
@@ -237,7 +238,7 @@ namespace Script.Menu
         
         private void Restart()
         {
-            SceneManager.LoadScene("Scenes/Kao");
+            SceneManager.LoadScene($"{sceneName}");
         }
 
         public void Dead()

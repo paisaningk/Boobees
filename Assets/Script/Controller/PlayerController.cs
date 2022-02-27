@@ -46,6 +46,7 @@ namespace Script.Controller
         private bool Soundplay;
         public int Ammo;
         public float ReloadTime = 2;
+        private bool FireRateCoolDown = true;
 
         private void Awake()
         {
@@ -151,7 +152,10 @@ namespace Script.Controller
 
         private void Shot()
         {
-            fire = true;
+            if (FireRateCoolDown)
+            {
+                fire = true;
+            }
         }
 
         private void GunFollowMouse()
@@ -167,6 +171,7 @@ namespace Script.Controller
 
             if (canfire && fire)
             {
+                StartCoroutine(FireRate());
                 Ammo++;
                 fire = false;
                 float distance = difference.magnitude;
@@ -174,6 +179,13 @@ namespace Script.Controller
                 direction.Normalize();
                 gunController.FireBullet(direction, rotationZ,Ammo);
             }
+        }
+        
+        IEnumerator FireRate()
+        {
+            FireRateCoolDown = false;
+            yield return new WaitForSeconds(0.2f);
+            FireRateCoolDown = true;
         }
 
         IEnumerator Reload()
@@ -287,12 +299,12 @@ namespace Script.Controller
             OnDisable();
         }
 
-        private void OnEnable()
+        public void OnEnable()
         {
             playerInput.Enable();
         }
 
-        private void OnDisable()
+        public void OnDisable()
         {
             playerInput.Disable();
         }

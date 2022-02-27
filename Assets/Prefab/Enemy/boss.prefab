@@ -408,11 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e613a744b385c4c95d8708168f02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCharacterSo:
-  - {fileID: 11400000, guid: 424192ead0f31cb439712cd6d9380c82, type: 2}
-  - {fileID: 11400000, guid: 424192ead0f31cb439712cd6d9380c82, type: 2}
-  - {fileID: 11400000, guid: 424192ead0f31cb439712cd6d9380c82, type: 2}
-  - {fileID: 11400000, guid: 424192ead0f31cb439712cd6d9380c82, type: 2}
+  EnemyCharacterSo: {fileID: 11400000, guid: 424192ead0f31cb439712cd6d9380c82, type: 2}
   knockbackLayerMask:
     serializedVersion: 2
     m_Bits: 768

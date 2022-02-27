@@ -3,6 +3,7 @@ using System.Collections;
 using Assets.Script.scriptableobject.Character;
 using Script.Controller;
 using Script.Pickup;
+using Script.Save;
 using Script.Sound;
 using Script.Spawn;
 using UnityEngine;
@@ -130,8 +131,6 @@ namespace Script.Base
             }
         }
 
-        
-        
         IEnumerator Setcoloattack()
         {
             var a = spriteRenderer.color;
@@ -142,6 +141,7 @@ namespace Script.Base
 
         IEnumerator Deaddelay()
         {
+            SaveData.Instance.Killednow++;
             DropGold();
             yield return new WaitForSeconds(0.1f);
             Destroy(this.gameObject);

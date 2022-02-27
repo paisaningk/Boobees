@@ -10,10 +10,8 @@ namespace Script.Menu
         [SerializeField] private Button startButton;
         [SerializeField] private Button tutorialButton;
         [SerializeField] private Button quitButton;
-        [SerializeField] private String gameScene;
         [SerializeField] private Texture2D cursorTexture;
-        [SerializeField] private bool isphone;
-    
+
         private void Awake()
         {
             startButton.onClick.AddListener(StartGame);
@@ -24,20 +22,12 @@ namespace Script.Menu
 
         private void Tutorial()
         {
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("ChooseCharacterTutorial");
         }
 
         private void StartGame()
         {
-            if (isphone == true)
-            {
-                SceneManager.LoadScene("A_Test");
-            }
-            else if (isphone == false)
-            {
-                SceneManager.LoadScene("Kao");
-            }
-
+            SceneManager.LoadScene("ChooseCharacter");
         }
 
         private void QuitGame()

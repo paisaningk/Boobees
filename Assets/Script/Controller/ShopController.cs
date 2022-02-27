@@ -34,9 +34,7 @@ namespace Script.Controller
         
         
         public void Start()
-        { 
-            //RngItemandSpawn();
-            
+        {
             PlayerController.playerInput.PlayerAction.Buy.performed += context => Talk();
             
             rngButton.onClick.AddListener(CheckGoldForReroll);
@@ -51,7 +49,12 @@ namespace Script.Controller
             if (_shop == true)
             {
                 SoundManager.Instance.Play(SoundManager.Sound.TalkWithShop);
-                var talk = new[] {"Hello , You come again","Oh, are you still alive?" , "HOW much money do you have " };
+                var talk = new[]
+                {
+                    "Hello , You come again","Oh, are you still alive?" , "HOW much money do you have " ,
+                    "I think I saw your friend here." ,"if you get rich what do you do ",
+                    "Hello World" ,"sometime we will meet again"
+                };
                 var range = Random.Range(0, talk.Length);
                 shopMenu.SetActive(true);
                 text.text = talk[range];

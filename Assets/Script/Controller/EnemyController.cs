@@ -12,7 +12,7 @@ namespace Script.Controller
         private Transform player;
         private Animator animator;
         private float movespeed = 8f;
-        private float stoppingDistance = 1.7f;
+        private float stoppingDistance = 1.9f;
         private Vector3 directionnormalized;
         private bool attacking = false;
         private bool nextMove = false;
