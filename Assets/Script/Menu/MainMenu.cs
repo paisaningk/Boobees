@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 namespace Script.Menu
 {
-    public class Main : MonoBehaviour
+    //this Script use in Main Menu Scene
+    //It is responsible for change Scene.
+    public class MainMenu : MonoBehaviour
     {
         [SerializeField] private Button startButton;
         [SerializeField] private Button tutorialButton;
         [SerializeField] private Button quitButton;
-        [SerializeField] private Texture2D cursorTexture;
 
         private void Awake()
         {

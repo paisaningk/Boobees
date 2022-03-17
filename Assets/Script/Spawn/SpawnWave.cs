@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Globalization;
-using Script.Base;
 using Script.Controller;
 using Script.Sound;
 using TMPro;

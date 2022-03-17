@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.IO;
+﻿using System.Collections;
 using Script.Base;
 using Script.Menu;
 using Script.Sound;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace Script.Controller
 {
@@ -17,7 +13,7 @@ namespace Script.Controller
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private LayerMask dashLayerMask;
-        [SerializeField] public PlayMenu playMenu;
+        [SerializeField] public GameplaySceneMenu GameplaySceneMenu;
         [SerializeField] public PlayerType playerType;
         private PlayerCharacter playerCharacter;
         public static Playerinput playerInput;
@@ -131,13 +127,13 @@ namespace Script.Controller
 
         private void Menu()
         {
-            if (playMenu.isPause == false)
+            if (GameplaySceneMenu.isPause == false)
             {
-                playMenu.Pause();
+                GameplaySceneMenu.Pause();
             }
-            else if (playMenu.isPause == true)
+            else if (GameplaySceneMenu.isPause == true)
             {
-                playMenu.Resume();
+                GameplaySceneMenu.Resume();
             }
         }
 
@@ -294,7 +290,7 @@ namespace Script.Controller
         public void Dead()
         {
             SoundManager.Instance.Play(SoundManager.Sound.PlayerDie);
-            playMenu.Dead();
+            GameplaySceneMenu.Dead();
             Rd.constraints = RigidbodyConstraints2D.FreezeAll;
             OnDisable();
         }

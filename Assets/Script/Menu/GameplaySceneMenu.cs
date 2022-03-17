@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Script.Menu
 {
-    public class PlayMenu : MonoBehaviour
+    public class GameplaySceneMenu : MonoBehaviour
     {
         [Header("Script")]
         [SerializeField] private ShopController shopController;
@@ -71,9 +71,9 @@ namespace Script.Menu
 
         private void Start()
         {
-            var a = GameObject.FindWithTag("Player");
-            PlayerCharacter = a.GetComponent<PlayerCharacter>();
-            playerController = a.GetComponent<PlayerController>();
+            var player = GameObject.FindWithTag("Player");
+            PlayerCharacter = player.GetComponent<PlayerCharacter>();
+            playerController = player.GetComponent<PlayerController>();
             Ammoui.SetActive(PlayerCharacter.PlayerType == PlayerType.Gun);
             PlayerController.playerInput.PlayerAction.Status.performed += context => OpenStatus();
             if (PlayerCharacter.PlayerType == PlayerType.Gun)

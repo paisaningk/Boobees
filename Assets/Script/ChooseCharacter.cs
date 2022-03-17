@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 namespace Script
 {
+    //this Script use in Choose Character Scene
+    //It is responsible for Choose Character and popup confirm 
     public enum SceneName
     {
         Kao,

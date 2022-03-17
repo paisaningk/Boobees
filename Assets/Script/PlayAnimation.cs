@@ -22,8 +22,7 @@ namespace Script
         {
             DontDestroyOnLoad(Save);
         }
-
-
+        
         public void Update()
         {
             if (SaveData.Instance.Wave == false && PlayerType == PlayerType.Gun)

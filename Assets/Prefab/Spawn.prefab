@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1566331499945368413
 Transform:
   m_ObjectHideFlags: 0
@@ -162,6 +162,11 @@ MonoBehaviour:
     - {fileID: 2520280702331542886, guid: c5bb87d19b79bae4a940f8cef44759b0, type: 3}
     - {fileID: 5908116429384257543, guid: 9a4ba3e2692ee5d42ba36f19de516d72, type: 3}
     - {fileID: 2541218422868871902, guid: ed8e56d983c59504394037cebf251b78, type: 3}
+  - WaveName: 
+    numberOfEnemy: 1
+    spawnTime: 0
+    typeOfEnemy:
+    - {fileID: 904702811331331927, guid: 260b0a672545bd64fa7ce869405076a0, type: 3}
   WaveForPlayerGun:
   - WaveName: 
     numberOfEnemy: 4
@@ -247,6 +252,11 @@ MonoBehaviour:
     - {fileID: 2541218422868871902, guid: 953e8d633f1460a49aa1ea17fa65061f, type: 3}
     - {fileID: 2520280702331542886, guid: 39afd9491bbf20e44a3416d379e532ac, type: 3}
     - {fileID: 5908116429384257543, guid: 79e051ecb70bd5a4a9c2718921e0b794, type: 3}
+  - WaveName: 
+    numberOfEnemy: 1
+    spawnTime: 0
+    typeOfEnemy:
+    - {fileID: 904702811331331927, guid: 260b0a672545bd64fa7ce869405076a0, type: 3}
   SpawnPoint:
   - {fileID: 1566331500107093031}
   - {fileID: 1566331500089613474}
