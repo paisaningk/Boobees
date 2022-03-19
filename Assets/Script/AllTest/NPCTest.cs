@@ -1,14 +1,47 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCTest : MonoBehaviour
+public class NpcTest : MonoBehaviour
 {
-    
-    
-    private void OnCollisionEnter2D(Collision2D col)
+    [Header("Button")]
+    public GameObject Button;
+    [Header("Text")]
+    public TextAsset InkJson;
+    private bool playerInRange;
+
+
+    private void Start()
     {
-        Debug.Log("adc");
+        Button.SetActive(false);
+        playerInRange = false;
+    }
+
+    private void Update()
+    {
+        Button.SetActive(playerInRange);
+        if (playerInRange)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(InkJson);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+            DialogueManager.GetInstance().ExitDialogueMode();
+        }
     }
 }
