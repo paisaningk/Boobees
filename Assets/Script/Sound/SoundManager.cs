@@ -8,12 +8,10 @@ namespace Script.Sound
         [SerializeField] private SoundClip[] soundClips;
 
         public static SoundManager Instance { get; private set; }
-        //private AudioSource audioSource;
 
         public void Awake()
         {
             Debug.Assert(soundClips != null && soundClips.Length != 0, "Sound clips need to be setup");
-            //audioSource = GetComponent<AudioSource>();
 
             if (Instance == null)
             {

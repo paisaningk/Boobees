@@ -78,11 +78,7 @@ namespace Script.Controller
             {
                 _player = other;
                 _shop = true;
-                if (GameplaySceneMenu.Isphone == false)
-                {
-                    ePopup.SetActive(true);
-                }
-                
+
             }
         }
 

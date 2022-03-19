@@ -1,0 +1,79 @@
+fileFormatVersion: 2
+guid: a10db0ec3f2832a4dabdc2e36a37fd0a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
+  missingFiles: []
+  errors:
+  - Errors detected in tileset 'Grass Land - tileset-cliff.tsx'. Check the tileset
+    inspector for more details. Your map may be broken until these are fixed.
+  - Could not find tile 2570. Make sure the tilesets were successfully imported.
+  - Could not find tile 2549. Make sure the tilesets were successfully imported.
+  - Could not find tile 2540. Make sure the tilesets were successfully imported.
+  - Could not find tile 2559. Make sure the tilesets were successfully imported.
+  - Could not find tile 2569. Make sure the tilesets were successfully imported.
+  - Could not find tile 2580. Make sure the tilesets were successfully imported.
+  - Could not find tile 2572. Make sure the tilesets were successfully imported.
+  - Could not find tile 2553. Make sure the tilesets were successfully imported.
+  - Could not find tile 2542. Make sure the tilesets were successfully imported.
+  - Could not find tile 2563. Make sure the tilesets were successfully imported.
+  - Could not find tile 2573. Make sure the tilesets were successfully imported.
+  - Could not find tile 2582. Make sure the tilesets were successfully imported.
+  - Could not find tile 2581. Make sure the tilesets were successfully imported.
+  - Could not find tile 2541. Make sure the tilesets were successfully imported.
+  - Could not find tile 2550. Make sure the tilesets were successfully imported.
+  - Could not find tile 2552. Make sure the tilesets were successfully imported.
+  - Could not find tile 2592. Make sure the tilesets were successfully imported.
+  - Could not find tile 2590. Make sure the tilesets were successfully imported.
+  - Could not find tile 2580. Make sure the tilesets were successfully imported.
+  - Could not find tile 2569. Make sure the tilesets were successfully imported.
+  - Could not find tile 2582. Make sure the tilesets were successfully imported.
+  - Could not find tile 2573. Make sure the tilesets were successfully imported.
+  - Could not find tile 2584. Make sure the tilesets were successfully imported.
+  - Could not find tile 2594. Make sure the tilesets were successfully imported.
+  - Could not find tile 2544. Make sure the tilesets were successfully imported.
+  - Could not find tile 2554. Make sure the tilesets were successfully imported.
+  - Could not find tile 2575. Make sure the tilesets were successfully imported.
+  - Could not find tile 2556. Make sure the tilesets were successfully imported.
+  - Could not find tile 2557. Make sure the tilesets were successfully imported.
+  - Could not find tile 2586. Make sure the tilesets were successfully imported.
+  - Could not find tile 2587. Make sure the tilesets were successfully imported.
+  - Could not find tile 2606. Make sure the tilesets were successfully imported.
+  - Could not find tile 2607. Make sure the tilesets were successfully imported.
+  - Could not find tile 2564. Make sure the tilesets were successfully imported.
+  - Could not find tile 2585. Make sure the tilesets were successfully imported.
+  - Could not find tile 2595. Make sure the tilesets were successfully imported.
+  - Could not find tile 2555. Make sure the tilesets were successfully imported.
+  - Could not find tile 2545. Make sure the tilesets were successfully imported.
+  - Could not find tile 2574. Make sure the tilesets were successfully imported.
+  - Could not find tile 2546. Make sure the tilesets were successfully imported.
+  - Could not find tile 2547. Make sure the tilesets were successfully imported.
+  - Could not find tile 2576. Make sure the tilesets were successfully imported.
+  - Could not find tile 2577. Make sure the tilesets were successfully imported.
+  - Could not find tile 2596. Make sure the tilesets were successfully imported.
+  - Could not find tile 2597. Make sure the tilesets were successfully imported.
+  - Could not find tile 2565. Make sure the tilesets were successfully imported.
+  - Could not find tile 2566. Make sure the tilesets were successfully imported.
+  - Could not find tile 2591. Make sure the tilesets were successfully imported.
+  - Could not find tile 2579. Make sure the tilesets were successfully imported.
+  - Could not find tile 2590. Make sure the tilesets were successfully imported.
+  - Could not find tile 2583. Make sure the tilesets were successfully imported.
+  - Could not find tile 2592. Make sure the tilesets were successfully imported.
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  missingTags: []
+  importerVersion: 24
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 2
+  tilesAsObjects: 0
+  sortingMode: 0
+  isIsometric: 0
+  customImporterClassName: 
+  internalTilesets: []

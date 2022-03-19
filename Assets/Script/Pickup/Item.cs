@@ -65,21 +65,7 @@ namespace Script.Pickup
             {
                 player = other;
                 Buying = true;
-                //ShopController.BuyingPhone.SetActive(true);
-                if (GameplaySceneMenu.Isphone == true)
-                {
-                    player = other;
-                    Buying = true;
-                    //ShopController.BuyingPhone.SetActive(true);
-                }
-                else
-                {
-                    player = other;
-                    Buying = true;
-                    //ShopController.BuyingPhone.SetActive(true);
-                    buy.SetActive(Buying);
-                }
-               
+                buy.SetActive(Buying);
             }
         }
 

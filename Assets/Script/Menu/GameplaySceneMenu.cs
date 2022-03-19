@@ -47,8 +47,6 @@ namespace Script.Menu
         [SerializeField] private Sprite PlayerWGun;
         [SerializeField] private SceneName sceneName;
         private PlayerController playerController;
-        
-        public static bool Isphone;
         public bool isPause = false;
         private float DashCd = 0;
         private bool candash = true;
@@ -222,7 +220,6 @@ namespace Script.Menu
         }
         public void Resume()
         {
-            //phoneUI.SetActive(true);
             pauseUi.SetActive(false);
             Time.timeScale = 1;
             isPause = false;

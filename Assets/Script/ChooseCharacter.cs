@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Script.Controller;
 using Script.Spawn;
 using TMPro;
@@ -14,7 +11,7 @@ namespace Script
     //It is responsible for Choose Character and popup confirm 
     public enum SceneName
     {
-        Kao,
+        Map1,
         Tutorial,
     }
 

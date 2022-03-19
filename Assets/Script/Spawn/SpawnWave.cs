@@ -113,7 +113,7 @@ namespace Script.Spawn
                     }
                     nextwaveGameObject.SetActive(true);
                     var a = timeshopshow -= Time.deltaTime;
-                    Nextwavetext.text = $"Next Wave in coming in {a:0.##} Sce";
+                    Nextwavetext.text = $"Next Wave in coming in {a:0.##} Sec";
                 }
             }
         }
