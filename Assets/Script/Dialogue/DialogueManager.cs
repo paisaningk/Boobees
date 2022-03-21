@@ -27,11 +27,11 @@ public class DialogueManager : MonoBehaviour
 
    [Header("DialogueChoices")] 
    [SerializeField] private GameObject[] ChoiceGameObjects;
-   private TextMeshProUGUI[] ChoiceTexts;
+   private TextMeshProUGUI[] choiceTexts;
    
    private static DialogueManager instance;
    private Story currentStory;
-   private bool dialoguePlaying;
+   public bool DialoguePlaying;
 
    private void Awake()
    {
@@ -46,13 +46,13 @@ public class DialogueManager : MonoBehaviour
       }
       
       //set dialogue set active false
-      dialoguePlaying = false;
-      Dialogue.SetActive(dialoguePlaying);
+      DialoguePlaying = false;
+      Dialogue.SetActive(DialoguePlaying);
 
-      ChoiceTexts = new TextMeshProUGUI[ChoiceGameObjects.Length];
+      choiceTexts = new TextMeshProUGUI[ChoiceGameObjects.Length];
       for (var i = 0; i < ChoiceGameObjects.Length; i++)
       { 
-         ChoiceTexts[i] =ChoiceGameObjects[i].GetComponentInChildren<TextMeshProUGUI>();
+         choiceTexts[i] =ChoiceGameObjects[i].GetComponentInChildren<TextMeshProUGUI>();
       }
       
    }
@@ -64,7 +64,7 @@ public class DialogueManager : MonoBehaviour
 
    private void Update()
    {
-      if (!dialoguePlaying)
+      if (!DialoguePlaying)
       {
          return;
       }
@@ -93,17 +93,17 @@ public class DialogueManager : MonoBehaviour
    public void EnterDialogueMode(TextAsset ink)
    {
       currentStory = new Story(ink.text);
-      dialoguePlaying = true;
-      Dialogue.SetActive(dialoguePlaying);
+      DialoguePlaying = true;
+      Dialogue.SetActive(DialoguePlaying);
 
       ContinueStory();
    }
 
    public IEnumerator ExitDialogueMode()
    {
-      yield return new WaitForSeconds(0);
-      dialoguePlaying = false;
-      Dialogue.SetActive(dialoguePlaying);
+      Dialogue.SetActive(false);
+      yield return new WaitForSeconds(0.1f);
+      DialoguePlaying = false;
       DialogueText.text = null;
    }
 
@@ -123,7 +123,7 @@ public class DialogueManager : MonoBehaviour
       foreach(Choice choice in currentChoices) 
       {
          ChoiceGameObjects[index].gameObject.SetActive(true);
-         ChoiceTexts[index].text = choice.text;
+         choiceTexts[index].text = choice.text;
          index++;
       }
       // go through the remaining choices the UI supports and make sure they're hidden
