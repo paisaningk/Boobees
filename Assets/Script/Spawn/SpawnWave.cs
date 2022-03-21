@@ -44,7 +44,7 @@ namespace Script.Spawn
         public static int WaveNumberText = 1;
         private float timeshopshow;
         private ShopController ShopController;
-        private bool shopOpen = false;
+        //private bool shopOpen = false;
         private GameObject Player;
         private SpawnPlayer spawnPlayer;
         private bool canSpawn = false;
@@ -149,7 +149,7 @@ namespace Script.Spawn
             Shop.SetActive(true);
             ShopController.RngItemandSpawn();
             Counttimenextwave = true;
-            shopOpen = true;
+            //shopOpen = true;
             
             yield return new WaitForSeconds(shopingtime);
             
@@ -158,7 +158,7 @@ namespace Script.Spawn
             NextSpawnWave();
             Counttimenextwave = false;
             nextwaveGameObject.SetActive(false);
-            shopOpen = false;
+            //shopOpen = false;
 
         }
 

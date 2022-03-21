@@ -21,7 +21,7 @@ public class NpcTest : MonoBehaviour
         Button.SetActive(playerInRange);
         if (playerInRange)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(InkJson);
             }

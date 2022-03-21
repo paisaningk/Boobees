@@ -69,27 +69,24 @@ public class DialogueManager : MonoBehaviour
          return;
       }
 
-      if (Input.GetKeyDown(KeyCode.E))
+      if (currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.E))
       {
          ContinueStory();
       }
-      Debug.Log(currentStory.currentChoices);
    }
 
    private void ContinueStory()
    {
-      if (currentStory.canContinue)
+      if (currentStory.canContinue) 
       {
-         //set text for the current dialogue line
+         // set text for the current dialogue line
          DialogueText.text = currentStory.Continue();
-         
-         // display choice, if any, for this dialogue line
+         // display choices, if any, for this dialogue line
          DisplayChoices();
-        
       }
-      else
+      else 
       {
-         ExitDialogueMode();
+         StartCoroutine(ExitDialogueMode());
       }
    }
 
@@ -102,8 +99,9 @@ public class DialogueManager : MonoBehaviour
       ContinueStory();
    }
 
-   public void ExitDialogueMode()
+   public IEnumerator ExitDialogueMode()
    {
+      yield return new WaitForSeconds(0);
       dialoguePlaying = false;
       Dialogue.SetActive(dialoguePlaying);
       DialogueText.text = null;
@@ -147,7 +145,6 @@ public class DialogueManager : MonoBehaviour
 
    public void MakeChoice(int choiceIndex)
    {
-      Debug.Log(choiceIndex);
       currentStory.ChooseChoiceIndex(choiceIndex);
       ContinueStory();
    }

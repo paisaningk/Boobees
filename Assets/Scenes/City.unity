@@ -201,7 +201,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112118531}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1260c8a408912248a7bf4f777085c6b, type: 3}
   m_Name: 
@@ -1093,6 +1093,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 803115903}
     m_Modifications:
+    - target: {fileID: 5105912758939187064, guid: cedf9de6a0c5278479e2400d85352a75,
+        type: 3}
+      propertyPath: soundClips.Array.data[1].soundVolume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5105912758939187065, guid: cedf9de6a0c5278479e2400d85352a75,
         type: 3}
       propertyPath: m_RootOrder
@@ -1250,8 +1255,9 @@ Transform:
   - {fileID: 754968661}
   - {fileID: 1440700280}
   - {fileID: 1058770136}
+  - {fileID: 1683579327}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856616448
 GameObject:
@@ -1346,7 +1352,7 @@ RectTransform:
   m_Children:
   - {fileID: 783814996}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1432,7 +1438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038339144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.7, y: -12.3, z: -1}
+  m_LocalPosition: {x: 10.1, y: -12.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 112118532}
@@ -2425,11 +2431,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683579325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 165.68, y: -176, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 157.13562, y: -162.4461, z: -179.01323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 803115903}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1830562050
@@ -2556,7 +2562,7 @@ Transform:
   m_Children:
   - {fileID: 1570001521}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1889571943 stripped
 Transform:
@@ -2814,8 +2820,8 @@ GameObject:
   - component: {fileID: 2132391105641021472}
   - component: {fileID: 2132391105641021485}
   - component: {fileID: 2132391105641021486}
-  - component: {fileID: 2132391105641021487}
   - component: {fileID: 2132391105641021484}
+  - component: {fileID: 2132391105641021476}
   m_Layer: 10
   m_Name: PlayerSword
   m_TagString: Player
@@ -2823,6 +2829,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2132391105641021476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132391105641021475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4f08ae8438dcb4cb97cf38c38c2ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 15
 --- !u!114 &2132391105641021484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2894,30 +2913,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2132391105641021487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132391105641021475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03ba8b4e1ee3a7c4e812197366341102, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashLayerMask:
-    serializedVersion: 2
-    m_Bits: 768
-  GameplaySceneMenu: {fileID: 0}
-  playerType: 0
-  Gun: {fileID: 0}
-  gunController: {fileID: 0}
-  knockback: 0
-  fire: 0
-  canfire: 1
-  Ammo: 0
-  ReloadTime: 2
 --- !u!61 &2132391105921345241
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -160,10 +160,9 @@ namespace Script.Controller
             var a = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
             var mouse = cam.ScreenToWorldPoint(a);
             
-            Vector3 difference = mouse - transform.position;
+            Vector2 difference = mouse - transform.position;
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             Gun.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
-           // Debug.Log(rotationZ);
 
             if (canfire && fire)
             {
@@ -261,11 +260,6 @@ namespace Script.Controller
         {
             yield return new WaitForSeconds(dashcooldown);
             CanDash = true;
-        }
-        
-        public void DashButton()
-        {
-            Dash();
         }
 
         private void AttackFinish()

@@ -15,7 +15,7 @@ namespace Script
         public GameObject Text;
         public GameObject Text01;
         public GameObject Save;
-        private int Killneed = 20;
+        // private int Killneed = 20;
         public bool Lock = false;
 
         private void Start()
