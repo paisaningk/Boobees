@@ -7,16 +7,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[System.Serializable]
-public class Wave
-{
-   public string WaveName;
-   public int numberOfEnemy;
-   public float spawnTime;
-   public GameObject[] typeOfEnemy;
-
-}
-
 public class DialogueManager : MonoBehaviour
 {
    [Header("Dialogue UI")]
@@ -90,12 +80,19 @@ public class DialogueManager : MonoBehaviour
       }
    }
 
-   public void EnterDialogueMode(TextAsset ink)
+   public void EnterDialogueMode(TextAsset ink,string name,Sprite imageProfile)
    {
+      NameText.text = $"{name}";
+      ImageProfile.sprite = imageProfile;
+      StartCoroutine(EnterDialogueDelay(ink));
+   }
+
+   public IEnumerator EnterDialogueDelay(TextAsset ink)
+   {
+      yield return new WaitForSeconds(0.1f);
       currentStory = new Story(ink.text);
       DialoguePlaying = true;
       Dialogue.SetActive(DialoguePlaying);
-
       ContinueStory();
    }
 

@@ -14,7 +14,6 @@ namespace Script.Base
     public class EnemyCharacter : MonoBehaviour
     {
         [SerializeField] public CharacterSO EnemyCharacterSo;
-        [SerializeField] private LayerMask knockbackLayerMask;
         [SerializeField] private GameObject GoldPrefab;
         [SerializeField] private EnemyType enemyType;
         [SerializeField] private bool isBoss;
@@ -141,7 +140,6 @@ namespace Script.Base
 
         IEnumerator Deaddelay()
         {
-            SaveData.Instance.Killednow++;
             DropGold();
             yield return new WaitForSeconds(0.1f);
             Destroy(this.gameObject);
@@ -154,7 +152,7 @@ namespace Script.Base
             var knockbackForce = 300;
             Vector2 difference = (Rb.transform.position - other.transform.position).normalized;
             Vector2 force = difference * knockbackForce;
-            var raycastHit2D = Physics2D.Raycast(transform.position,difference,knockbackForce,knockbackLayerMask);
+            var raycastHit2D = Physics2D.Raycast(transform.position,difference,knockbackForce);
             if (raycastHit2D.collider != null) force = raycastHit2D.point;
             Rb.AddForce(force,ForceMode2D.Impulse);
         }

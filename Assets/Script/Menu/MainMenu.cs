@@ -28,7 +28,7 @@ namespace Script.Menu
 
         private void StartGame()
         {
-            SceneManager.LoadScene("ChooseCharacter");
+            SceneManager.LoadScene($"{SceneName.City}");
         }
 
         private void QuitGame()
