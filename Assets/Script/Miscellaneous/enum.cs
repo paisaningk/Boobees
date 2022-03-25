@@ -6,5 +6,6 @@ public enum SceneName
 {
     Map1,
     MainMenu_PC,
-    City,
+    Takuma,
+    Takuma_A,
 }

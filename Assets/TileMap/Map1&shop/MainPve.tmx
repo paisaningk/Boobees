@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="41" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="17">
+ <tileset firstgid="1" source="EPIC RPG World Pack - Cemetery V1.3.1/TiledMap Editor/Terrain - cemetery.tsx"/>
+ <tileset firstgid="2341" source="EPIC RPG World Pack - Crypt V.1.2/Tiled Map Editor/Tileset-Terrain.tsx"/>
+ <tileset firstgid="4741" source="Prop.tsx"/>
+ <tileset firstgid="8056" source="EPIC RPG World Pack - Crypt V.1.2/Tiled Map Editor/Tileset-baluster-2.tsx"/>
+ <tileset firstgid="10456" source="Prop2.tsx"/>
+ <tileset firstgid="11284" source="cemetery-tileset-whole2.tsx"/>
+ <layer id="1" name="Ground1" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJy9WUFSAkEM5OQBPqHXdU/8ZzkgB1/hK/iTbxIvMuWmiF2dTmZZPKTATKank0kyoTw9bTanq7xdZX+Vo/t+nr978fqj0x9n/R50fu951uE+dob/+3P7f/K9vXEwHqeA79F9vu5+5Wt7+650TSaiazLMwtaaXBb6FuFFMiQ8mW2vjPAdcWydxXAUHHBN7W3YmX3Fx0ncdWQ3OGyVDyqPFD/EHOGsyKfsztn6BHiN7zTrR9iD/qMO42F2mCOIi77a2cxXH88hsIniY3s9BuNSOYNhecymZ/Hqzc/KHY7wiXrMI1WDFWHnZXWNMc+wzVfLT4wzYiqJ/PM1qrAiu+r5iGU4Y0csfEzs3KhG/BrLF+avqnXfIzB/rF8gj6i+kXsUQ/Sd9UTcz/JExUDdE64ze4xF5T1SXKr51Ox63nnP7bD7e192Jt7hAPsmch7yZbgVX1B3gRxRuRzFN7P15/bY+hxnbwJyzvKbvT1qvqrOFco3nHmU//auqzxgfiG/e2ZNP1urnoccKr6Zvdn5vqdmTHzjGaeoZ/l1X29RH2D6qB+pWGQ8s7mI+dQzczJ+LH6q97M5g91FFKesR2cxZnWjcsQ4Vvu0OtvOPAhufnZmPvs6ZrYRD6y7bHa5FPrTkt9+lTvG32cZNuZo5R2P9iv+flbC2Kp+/vHCRdVThMfmhuweFFZbOwiOTdg5vbHEd4dh4fzpY9HyUXE0qcx9pvc1wfrGQGwzv9+f6xLVSBSTzHZNrKW9XtmuiYW21V5fsV0TK5uzKvcTvQtrYql4ZveTra2B9YjcXRPrntxdM46Pzt0ojkvroJqPFdue/wMorB9hcQHA
+  </data>
+ </layer>
+ <layer id="9" name="carpet" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztmEtOwzAQhr1NadrwOEET0QWH4CFKOQCUnqM8RSXWwEWApAK2sOMYQFPOAOIAjFWP6jhOYjspDai/9MtJpBl/HkeNp4TMNZe+fIuQAPxhzZokWXaFkDp4sTJrkmT9d8a1Bf2YbpWQqwx3qnHGmoQxaBAyzDBl1OVswvyf4Ds37jPwqk2IK2GU1fEcGI4hZhvcAu+A28L1ScOMcQ84OnaUr++On3U1GW8g7pSyCCNd77I3YdThbLIaDsAhx+gB2z7j1mF8ZfG3wuiDA1ZHKh1OZKQ1O2D1vHfH15cGdXyD2Hc3Pg5ZDZAROVUZca+paf1CjjkPY5+xpTGqcFLGJ+B4Ft5Hen8B47UmYxXeOdubjDVurHtRRlV9wzpeMvwlrJUyhlacsQ3zr2S4ZcBoojJ/Z/AsMbTGjCN2PyjJ2cLn2NA15lEJOGV8okcFnNUCy9zIFypw5pmH3xvZNR03wY7kGTI4CWw8e2hF48U4WV70YQ5vcPM7wlroM7zfyjlPHvU4Tt58LSjf0Yx/i2ScDle/WfOhesLe496WhY/Xb39nTHsFGaNJLhUV2SuY5FJllPUKDxm9gpPASHM9Cnx+Si5VRsyTt1cwyaXKuOQV0yvI+o5BRi5VRtxr3432CruuPqNu36HKmNQr+Cm9guw/gLRcjifPpSLTXkFWR5Nc01JSP1MmlbmfQc0Zi9FfeB/Xp3Qm+wFDbg++
+  </data>
+ </layer>
+ <layer id="18" name="PropOnFence" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20LL6AAAAAAAAB4GhmgAAE=
+  </data>
+ </layer>
+ <layer id="3" name="Wall1" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztkEFKw1AQhmchgulCe4LkJdm5NsuCegRv0dq00PYG6imqgqDewPYUWoqHUDe5QmcgQybhvYCCeYvODx8Z3gwzHymOAArBcQRwIugjNyHALXIX2vsXJXIPv9nmaQ/PuPbxDPVNUOdc3CQukTecXyHr0N6fl8g9/Gabpz0849rHM9S/CurMxE1igXzh/DfyE9r7LyVyD7/Z5mkPz7j28Qz1m3kWN4nX6Hf9/96n+XsCY2dguvU47bldcgdTD46EzYWSCx9fjtem3VGG3iYeHdmTXZqO/ObLMW/5l018O0pPyha/wxRglNbrp44dH8RtcpROBzHAEut7ZJxU9WfHjhtT3SZHrskvQ96x/kAek6o+jLt1PBMeWaPWaDQajUaj0Wg0Go1Gsx/ZAdtDiCY=
+  </data>
+ </layer>
+ <layer id="5" name="Wall2" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztlLkNwkAQRacFjgQIDLLXzQCtUAAV0AviSBGtEBgSjoAaGMfM7K7EALvSf9JLrFnPk2W7M6bkaYr3a1tHtGP3Tj5zLYlu7L2M2xGa9+07FXJjw7Nn9qI0DiqiITuq4hpD8759WmO3Juqx/Vq+55R3zdh5ZGNo3rdPa0yJXBpXTvahvIvf4ql0tC4m8pl/NEq0zxGN8aDRBl+j9i0dftx49HzXOfwf0fg5aLQBjTag0QY02oBGG9BoAxptQKMNaLQBjTag0YZcGjfsMmHX7Av9kpOZ
+  </data>
+ </layer>
+ <layer id="4" name="Wall3" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztzssNglAYBeG/C1ip2IuopQLSCw97UWDD7N3ehJs4XzLbkxORRlNEtNTRi/oi0XBCA59Gmmimd4YfP3z60kIrbRl+PJURZ7pQRdfy6Ee/bnyq6U4Pemb4UZIkSZIkSZL0v3bUKBCb
+  </data>
+ </layer>
+ <layer id="6" name="prop1" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt2M0JgDAMhuFs4Az+XFqPDuNW6gjOUB3QHEUMYq1Y5H3gu6TwNeeIPFe4e/MvdMYu1vwNgxcZNZM/f++NXaz5VV+MoF2LZk3UGds3t2n+BwAAAAAAAIC90olUmlrTZHTDPsrtRprbPn+wASMnDzw=
+  </data>
+ </layer>
+ <layer id="7" name="prop2" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt2DkOwjAUhOF3lbAUDiVngFBAWuAIVCwtcASWhoMQoEBcjh8BUtgKi4gEaT5p5MiWnietzf5HvZZ3g0e+fdqhWYfEYTb3d5nTI32PeYEzK5EyqbjX8xGzxmSSUccpc2Zk/mHevU8r1aXBd5NEt/3oTc9fqXL3gGzIMNXjshfwT3vWw1P/vBzpcCpADxEREREREREREfnOwpktyYqsC/rmt6VXQnbu+k4q/s4Kihke
+  </data>
+ </layer>
+ <layer id="15" name="prop3" width="41" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzt0MEJwkAQheFpJPE820eMrURjKWosxUT788GykFPA02zw/+DBHH/GDAD+Q5PMWu2QoksAAAAAAAB+N7rZ1aMrtk3qewY3lj912lHrtdOq6a37E9xY/jRoZ+3iubsm5U837a49PHfX6KWuWVs8d+/FF8OgE+M=
+  </data>
+ </layer>
+ <objectgroup id="21" name="Object Layer 1">
+  <object id="1" x="-227.333" y="-198.667" width="244.667" height="1729.33"/>
+  <object id="2" x="-47.4378" y="-203" width="1364.48" height="288"/>
+  <object id="3" x="1300" y="-206.667" width="256" height="1733.33"/>
+  <object id="4" x="-51.1515" y="1261.03" width="1464" height="266.727"/>
+  <object id="7" x="272" y="85.3333">
+   <polygon points="0,0 -0.416667,36.75 -69.3333,36.5833 -67.5,104 -67.3333,104 -62.25,393.417 -256,393.667 -254.5,-1.33333"/>
+  </object>
+  <object id="9" x="295.333" y="74.3333" width="83.6667" height="50"/>
+  <object id="10" x="399.667" y="85.6667" width="129.333" height="31.3333"/>
+  <object id="12" x="588.333" y="85.3333">
+   <polygon points="0,0 -1,66.3333 29.3333,67 29.6667,50.3333 47,50.6667 46.6667,10.3333 46.3333,-1"/>
+  </object>
+  <object id="13" x="724.667" y="85">
+   <polygon points="2,0.363636 2,68.3333 -29.6667,67.6667 -30,50.6667 -45.3333,51 -46,9 -46.1212,0 -39,0"/>
+  </object>
+  <object id="14" x="782" y="84.6667" width="131" height="33.3333"/>
+  <object id="15" x="936.667" y="75" width="80.3333" height="49.3333"/>
+  <object id="16" x="1040" y="84.3333">
+   <polygon points="0,0 -0.666667,43 112,43.6667 112,107.667 66,108 62.6667,386 62.3333,389 260,389 257.333,-4.33333"/>
+  </object>
+ </objectgroup>
+</map>

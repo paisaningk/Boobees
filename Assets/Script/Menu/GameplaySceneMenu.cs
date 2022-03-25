@@ -230,12 +230,12 @@ namespace Script.Menu
 
         private void Quit()
         {
-            SceneManager.LoadScene("MainMenu_PC");
+            SceneManager.LoadScene($"{SceneName.Takuma_A}");
         }
         
         private void Restart()
         {
-            SceneManager.LoadScene($"{sceneName}");
+            SceneManager.LoadScene($"{SceneName.Takuma_A}");
         }
 
         public void Dead()

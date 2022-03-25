@@ -15,10 +15,11 @@ namespace Script
     public class ChooseCharacter : MonoBehaviour
     {
         public Camera Camera;
-        public new CinemachineVirtualCamera camera;
+        public CinemachineVirtualCamera VirtualCamera;
         public LayerMask LayerMask;
         public GameObject PlayerRonin;
         public GameObject PlayerGun;
+        public bool IsSelect = false;
         public GameObject Text;
         private Ray ray;
         
@@ -26,6 +27,7 @@ namespace Script
         void Update()
         {
             ray = Camera.ScreenPointToRay(Input.mousePosition);
+            if (IsSelect) return;
             if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
             if (Physics.Raycast(ray,out var hit,Mathf.Infinity,LayerMask))
             {
@@ -35,16 +37,19 @@ namespace Script
                 hit.transform.gameObject.SetActive(false);
                 Text.SetActive(false);
                 SpawnPlayer.instance.PlayerType = playAnimation.PlayerType;
-                    
+                IsSelect = true;
+
                 if (playAnimation.PlayerType == PlayerType.SwordMan)
                 {
                     PlayerRonin.SetActive(true);
-                    camera.Follow = PlayerRonin.transform;
+                    Camera.transform.position = PlayerRonin.transform.position;
+                    VirtualCamera.Follow = PlayerRonin.transform;
                 }
                 else
                 {
                     PlayerGun.SetActive(true);
-                    camera.Follow = PlayerGun.transform;
+                    Camera.transform.position = PlayerGun.transform.position;
+                    VirtualCamera.Follow = PlayerGun.transform;
                 }
             }
         }

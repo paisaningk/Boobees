@@ -32,6 +32,10 @@ namespace Script.Spawn
         [SerializeField] private GameObject nextwaveGameObject;
         [SerializeField] private GameObject PlayerSword;
         [SerializeField] private GameObject PlayerGun;
+        [SerializeField] private Camera CameraMap;
+        [SerializeField] private Camera CameraShop;
+        [SerializeField] private Transform MapPoint;
+        [SerializeField] private Transform ShopPoint;
 
         private Wave CurrentWave;
         private Wave[] Wave;
@@ -45,15 +49,13 @@ namespace Script.Spawn
         private float timeshopshow;
         private ShopController ShopController;
         //private bool shopOpen = false;
-        private GameObject Player;
-        private SpawnPlayer spawnPlayer;
+        //private GameObject SpawnPlayer;
         private bool canSpawn = false;
+        [SerializeField] private GameObject Player;
 
         private void Awake()
         {
-            Player = GameObject.FindGameObjectWithTag("SpawnPlayer");
-            spawnPlayer = Player.GetComponent<SpawnPlayer>();
-            if (spawnPlayer.PlayerType == PlayerType.Gun) 
+            if (SpawnPlayer.instance.PlayerType == PlayerType.Gun) 
             {
                 Wave = WaveForPlayerGun;
                 PlayerGun.SetActive(true);
@@ -72,6 +74,7 @@ namespace Script.Spawn
             Shop.SetActive(false);
             timeshopshow = shopingtime;
             StartCoroutine(Wait());
+            Player = GameObject.FindWithTag("Player");
         }
 
         private void FixedUpdate()
@@ -94,6 +97,7 @@ namespace Script.Spawn
                         if (nextwave)
                         {
                             StartCoroutine(Shoping());
+                            Player.transform.position = ShopPoint.position;
                             nextwave = false;
                             timeshopshow = shopingtime;
                         }
@@ -144,6 +148,8 @@ namespace Script.Spawn
         
         private IEnumerator Shoping()
         {
+            CameraMap.gameObject.SetActive(false);
+            CameraShop.gameObject.SetActive(true);
             SoundManager.Instance.Play(SoundManager.Sound.OpenShop);
             ShopController = Shop.GetComponent<ShopController>();
             Shop.SetActive(true);
@@ -153,6 +159,8 @@ namespace Script.Spawn
             
             yield return new WaitForSeconds(shopingtime);
             
+            CameraMap.gameObject.SetActive(true);
+            CameraShop.gameObject.SetActive(false);
             Shop.SetActive(false);
             ShopController.Deleteitem();
             NextSpawnWave();
@@ -164,6 +172,7 @@ namespace Script.Spawn
 
         private void NextSpawnWave()
         {
+            Player.transform.position = MapPoint.position;
             WaveNumberText++;
             CurrentWaveNumber++;
             CanSpawn = true;

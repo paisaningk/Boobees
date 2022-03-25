@@ -1,0 +1,54 @@
+fileFormatVersion: 2
+guid: e69eaacade58529408883d170eb6a59e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
+  missingFiles: []
+  errors:
+  - Errors detected in tileset 'Prop.tsx'. Check the tileset inspector for more details.
+    Your map may be broken until these are fixed.
+  - Errors detected in tileset 'cemetery-tileset-whole2.tsx'. Check the tileset inspector
+    for more details. Your map may be broken until these are fixed.
+  - Could not find tile 6057. Make sure the tilesets were successfully imported.
+  - Could not find tile 6058. Make sure the tilesets were successfully imported.
+  - Could not find tile 6059. Make sure the tilesets were successfully imported.
+  - Could not find tile 6060. Make sure the tilesets were successfully imported.
+  - Could not find tile 6061. Make sure the tilesets were successfully imported.
+  - Could not find tile 6096. Make sure the tilesets were successfully imported.
+  - Could not find tile 6097. Make sure the tilesets were successfully imported.
+  - Could not find tile 6098. Make sure the tilesets were successfully imported.
+  - Could not find tile 6099. Make sure the tilesets were successfully imported.
+  - Could not find tile 6100. Make sure the tilesets were successfully imported.
+  - Could not find tile 6135. Make sure the tilesets were successfully imported.
+  - Could not find tile 6136. Make sure the tilesets were successfully imported.
+  - Could not find tile 6137. Make sure the tilesets were successfully imported.
+  - Could not find tile 6138. Make sure the tilesets were successfully imported.
+  - Could not find tile 6139. Make sure the tilesets were successfully imported.
+  - Could not find tile 6174. Make sure the tilesets were successfully imported.
+  - Could not find tile 6175. Make sure the tilesets were successfully imported.
+  - Could not find tile 6176. Make sure the tilesets were successfully imported.
+  - Could not find tile 6177. Make sure the tilesets were successfully imported.
+  - Could not find tile 6178. Make sure the tilesets were successfully imported.
+  - Could not find tile 6213. Make sure the tilesets were successfully imported.
+  - Could not find tile 6214. Make sure the tilesets were successfully imported.
+  - Could not find tile 6215. Make sure the tilesets were successfully imported.
+  - Could not find tile 6216. Make sure the tilesets were successfully imported.
+  - Could not find tile 6217. Make sure the tilesets were successfully imported.
+  warnings: []
+  missingSortingLayers: []
+  missingLayers: []
+  missingTags: []
+  importerVersion: 24
+  pixelsPerUnit: 100
+  edgesPerEllipse: 32
+  numberOfObjectsImported: 2
+  tilesAsObjects: 0
+  sortingMode: 0
+  isIsometric: 0
+  customImporterClassName: 
+  internalTilesets: []

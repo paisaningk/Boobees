@@ -28,7 +28,7 @@ namespace Script.Menu
 
         private void StartGame()
         {
-            SceneManager.LoadScene($"{SceneName.City}");
+            SceneManager.LoadScene($"{SceneName.Takuma}");
         }
 
         private void QuitGame()

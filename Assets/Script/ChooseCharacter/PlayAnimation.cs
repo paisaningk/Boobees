@@ -9,20 +9,33 @@ namespace Script
 {
     public class PlayAnimation : MonoBehaviour
     {
+        public ChooseCharacter ChooseCharacter;
         public Animator Animator;
         public PlayerType PlayerType;
         public GameObject Ui;
 
+        public void OnTriggerEnter(Collider other)
+        {
+            
+        }
+
         private void OnMouseEnter()
         {
-            Animator.SetBool("select",true);
-            Ui.SetActive(true);
+            if (!ChooseCharacter.IsSelect)
+            {
+                Animator.SetBool("select",true);
+                Ui.SetActive(true);
+            }
         }
 
         private void OnMouseExit()
         {
-            Animator.SetBool("select",false);
-            Ui.SetActive(false);
+            if (!ChooseCharacter.IsSelect)
+            {
+                Animator.SetBool("select",false);
+                Ui.SetActive(false);    
+            }
+            
         }
     }
 }

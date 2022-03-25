@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="15">
+ <tileset firstgid="1" source="EPIC RPG World Pack - Crypt V.1.2/Tiled Map Editor/Tileset-Terrain.tsx"/>
+ <tileset firstgid="2401" source="EPIC RPG World Pack - Crypt V.1.2/Tiled Map Editor/Tileset-baluster-2.tsx"/>
+ <tileset firstgid="4801" source="Prop2.tsx"/>
+ <layer id="1" name="Ground" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJytVFsOBCEIM1mPg17J+59hfzYmQ1I7BfzYD+ILC+3UGb2176e10c9YT/D+jvmMBncx1/q5t3NM4Kz+vjsIR+Uwlq9ngMO1VD3VX8YdMVyDrD5qvIKaU+RGGIqfn+8Re6m4+ffh/peoydpl2AvO7eKu1zJR1/GU/q5d5DHWm/15EyuY/yPwfbBOqOEsPIB8ret+8e1yD/iWlZczDSL9q5jB3Huq/hEZRw7rp7cqLZVOFQd/M+hTxlDa3XJTXHmNeIpj5g3MzzziZz/bkGj0
+  </data>
+ </layer>
+ <layer id="4" name="carpet" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4Ay0AbE7QRwBwnmvQTi11D8ComNjN+SaN4bqD5ZRghGNgvEJ9U8ZP3obqTEvDdoNLn+hbkDlxsp8S8M76SS+2A0yLw3ULeSYp40UL8/ASzPSIKBo4BoAAAVR0JG
+  </data>
+ </layer>
+ <layer id="6" name="Prop1" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4B0oC3CwKAjQp5eTaA+LSS9vMIMDP5AfgCZ5vkC9fkh6TUAmlcM5JeQaV4hUF8Rkl4joHlBQPxImDzz6AF0ge7VI9O/U4H6pqHpDQTyg8g0bydQ3y40vaVAfhmZ5t0F6ruHpNcQGg/cQJqbTDNHAXUAAGKWDlQ=
+  </data>
+ </layer>
+ <layer id="7" name="Prop2" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFAwU4RAbaBeSBVUB3r0Zzu60oA4OdKKZabOJLgHqXIuk/B2SfRzMvEagnCYt52MRPAPWeRNL/Ccj+TEHYvgHqfUuluOERZmAIBuIQYeqYhwtYAd1rjeRmYuPDDqjHHotf44Bi8UjixMZHElBPMpp5XEC/NwHFmskI0zagnnYs+irICE+QHl5hiHtCaRwflIK5VHRfFdAsbhr5FwAnPxp0
+  </data>
+ </layer>
+ <layer id="8" name="Prop3" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApIBwAGQAAB
+  </data>
+ </layer>
+ <layer id="2" name="Wall" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJw7zsnAcBwJ/4TiX0B8mgE7/oGk7jgeDDJDmwuCdYD4LwN2rMWFUPcDzYxsNDNioTgOiPUZseMYJHXIZmcBzZrLiWpGPxRPAGJcoA9JHbLZc4BmneckzgxizJ4NNCuTdCNwglSGUfNGzRs1b9Q8hHlmQMxMJWwCxADkHj1P
+  </data>
+ </layer>
+ <layer id="3" name="wall2" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAMuPkYGHj4iFCIBYQC9YWh6bUF8u34CKvDBtqBajooVBcnzMAQLwxh7wSq2UWEecjqkPWDQBOQ3SyMXR8xgFL9o2AUjIJRMBAAAAthC+k=
+  </data>
+ </layer>
+ <layer id="5" name="Wall3" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYMANpISJEyMW2GHRi01sFIyCUTAKRsHgBwDVNwD9
+  </data>
+ </layer>
+ <objectgroup id="10" name="Object Layer 1">
+  <object id="1" x="-62.6667" y="-93.3333" width="78.6667" height="791.333"/>
+  <object id="2" x="1.33333" y="-80" width="641.667" height="166.667"/>
+  <object id="3" x="625" y="-79" width="134" height="721.667"/>
+  <object id="4" x="-49.3333" y="623.5" width="813.333" height="80.5"/>
+  <object id="5" x="528.5" y="73" width="111.5" height="79"/>
+  <object id="6" x="431.5" y="71" width="103.5" height="50"/>
+  <object id="7" x="1.5" y="75.5" width="110.75" height="75"/>
+  <object id="8" x="106.5" y="72.25" width="101.75" height="47"/>
+  <object id="9" x="76.5" y="247" width="39" height="65"/>
+  <object id="10" x="84.1818" y="247.091">
+   <polygon points="0,0 0.363636,-7.81818 -2.36364,-8.90909 -38.3636,9.63636 -40,55.2727 -38.7273,59.8182 -36.9091,60.7273 -33.6364,60.1818 -26.7273,56.9091 -16.3636,51.6364 -9.09091,48 -1.81818,43.6364 -0.363636,40.7273"/>
+  </object>
+  <object id="11" x="555.75" y="407.5" width="39" height="65"/>
+  <object id="12" x="563.682" y="405.091">
+   <polygon points="0,0 0.363636,-7.81818 -2.36364,-8.90909 -38.3636,9.63636 -40,55.2727 -38.7273,59.8182 -36.9091,60.7273 -33.6364,60.1818 -26.7273,56.9091 -16.3636,51.6364 -9.09091,48 -1.81818,43.6364 -0.363636,40.7273"/>
+  </object>
+  <object id="13" x="555.833" y="247.5" width="42.6667" height="65"/>
+  <object id="14" x="74.6667" y="409.833" width="42.6667" height="65"/>
+ </objectgroup>
+</map>
