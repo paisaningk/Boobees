@@ -27,6 +27,7 @@ namespace Script.Controller
         private bool Attack03 = false;
         [SerializeField] private Transform Gun;
         [SerializeField] private GunController gunController;
+        [SerializeField] private Animator Gunanimator;
         public static bool CanDash = true;
         public bool knockback = false;
         public bool fire = false;
@@ -166,6 +167,7 @@ namespace Script.Controller
 
             if (canfire && fire)
             {
+                Gunanimator.SetBool("Fire",true);
                 StartCoroutine(FireRate());
                 Ammo++;
                 fire = false;
@@ -180,14 +182,17 @@ namespace Script.Controller
         {
             FireRateCoolDown = false;
             yield return new WaitForSeconds(0.2f);
+            Gunanimator.SetBool("Fire",false);
             FireRateCoolDown = true;
         }
 
         IEnumerator Reload()
         {
+            Gunanimator.SetBool("Reload",true);
             fire = false;
             canfire = false;
             yield return new WaitForSeconds(ReloadTime);
+            Gunanimator.SetBool("Reload",false);
             canfire = true;
             fire = false;
         }

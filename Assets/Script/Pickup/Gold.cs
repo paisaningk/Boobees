@@ -18,7 +18,7 @@ namespace Script.Pickup
             }
         }
 
-        private void AddGold(Collider2D other ,int goldPlus)
+        public void AddGold(Collider2D other ,int goldPlus)
         {
             var player = other.GetComponent<PlayerCharacter>();
             player.Gold += goldPlus;

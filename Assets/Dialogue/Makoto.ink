@@ -1,17 +1,20 @@
 VAR a = false
 
-สวัสดีนายพึ่งจะเคยมาที่นี้ยังงั้นเหรอ 
---> main
+สวัสดีนายพึ่งเคยมาที่ Takuma ครั้งแรกยังงั้นหรอ
 
-=== main ===
+--> introduce
+
+=== introduce ===
 นายอยากจะให้ฉันแนะนำที่นี้ให้ไหม  ?
     + [ได้เลย]
         -> chosen("ได้เลย")
     + [ไม่ดีกว่า]
-        -> chosen("Bulbasaur")
+        -> chosen("ไม่ดีกว่า")
         
 === chosen(pokemon) ===
-You chose {pokemon}!
+คุณได้เลือก {pokemon}!
+
+-> DONE
 
 
 * aaaaaaaaaaaaaaaaaa

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using Script.Base;
 using Script.Controller;
+using Script.Pickup;
 using Script.Sound;
 using TMPro;
 using UnityEngine;
@@ -52,6 +54,7 @@ namespace Script.Spawn
         //private GameObject SpawnPlayer;
         private bool canSpawn = false;
         [SerializeField] private GameObject Player;
+        private PlayerCharacter playerCharacter;
 
         private void Awake()
         {
@@ -75,6 +78,7 @@ namespace Script.Spawn
             timeshopshow = shopingtime;
             StartCoroutine(Wait());
             Player = GameObject.FindWithTag("Player");
+            playerCharacter = Player.GetComponent<PlayerCharacter>();
         }
 
         private void FixedUpdate()
@@ -97,6 +101,13 @@ namespace Script.Spawn
                         if (nextwave)
                         {
                             StartCoroutine(Shoping());
+                            var coin = GameObject.FindGameObjectsWithTag("Coin");
+                            Debug.Log(coin.Length);
+                            foreach (var gold in coin)
+                            {
+                                playerCharacter.Gold += gold.GetComponent<Gold>().goldAmount;;
+                                Destroy(gold);
+                            }
                             Player.transform.position = ShopPoint.position;
                             nextwave = false;
                             timeshopshow = shopingtime;

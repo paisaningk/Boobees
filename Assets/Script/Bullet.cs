@@ -1,3 +1,4 @@
+using System;
 using Script.Base;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Script
         public int Atk;
         public int CritRate;
         public int CritAtk;
+        public Renderer renderer;
 
         public void OnEnable()
         {
@@ -16,14 +18,23 @@ namespace Script
             CritAtk = a.CritAtk;
             CritRate = a.CritRate;
         }
+
+        public void Update()
+        {
+            if (!renderer.isVisible) 
+            {
+                gameObject.SetActive(false);
+            }
+        }
+
+        // public void OnBecameInvisible () 
+        // {
+        //     gameObject.SetActive(false);
+        // }
     
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
-            { 
-                gameObject.SetActive(false);
-            }
-            if (other.CompareTag("Wall"))
             { 
                 gameObject.SetActive(false);
             }

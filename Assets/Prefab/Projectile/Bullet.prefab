@@ -148,3 +148,4 @@ MonoBehaviour:
   Atk: 0
   CritRate: 0
   CritAtk: 0
+  renderer: {fileID: 790813266620018340}

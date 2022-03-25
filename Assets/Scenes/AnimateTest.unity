@@ -849,6 +849,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charger
       objectReference: {fileID: 0}
+    - target: {fileID: 7436173545196264177, guid: 2a87c24bf2bc88f458cf939a43d351d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7436173545196264184, guid: 2a87c24bf2bc88f458cf939a43d351d0,
         type: 3}
       propertyPath: m_RootOrder
@@ -917,6 +922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Charger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415369796899227905, guid: 2a733f34f78073343a417f57fcc79c72,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3415369796899227928, guid: 2a733f34f78073343a417f57fcc79c72,
         type: 3}
@@ -1042,6 +1052,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charger (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5334403965510718207, guid: b364c41dd4567bf46a9cfb7a5473c512,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b364c41dd4567bf46a9cfb7a5473c512, type: 3}
 --- !u!1001 &7459522375120330155
@@ -1110,11 +1125,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: maskman
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459522374310189891, guid: d9de12c828123fd4396e5ae1e9e851d5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9de12c828123fd4396e5ae1e9e851d5, type: 3}
