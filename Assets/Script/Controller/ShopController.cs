@@ -58,8 +58,8 @@ namespace Script.Controller
                 var range = Random.Range(0, talk.Length);
                 shopMenu.SetActive(true);
                 text.text = talk[range];
-                healCostText.text = $"{healCost}";
-                rngText.text = $"{rngCost}";
+                healCostText.text = $"{healCost} Gold";
+                rngText.text = $"{rngCost} Gold";
                 shoping = true;
                 PlayerController.playerInput.Disable();
             }

@@ -235,7 +235,7 @@ namespace Script.Menu
         
         private void Restart()
         {
-            SceneManager.LoadScene($"{SceneName.Takuma_A}");
+            SceneManager.LoadScene($"{SceneName.Map1}");
         }
 
         public void Dead()

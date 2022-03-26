@@ -27,7 +27,6 @@ public class Npc : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && DialogueManager.GetInstance().DialoguePlaying == false)
             {
                 DialogueManager.GetInstance().EnterDialogueMode(InkJson,Name,ImageProfile);
-                
             }
         }
     }
@@ -46,7 +45,7 @@ public class Npc : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            DialogueManager.GetInstance().ExitDialogueMode();
+            StartCoroutine(DialogueManager.GetInstance().ExitDialogueMode());
         }
     }
 }

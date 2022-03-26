@@ -27,6 +27,10 @@ namespace Script
         void Update()
         {
             ray = Camera.ScreenPointToRay(Input.mousePosition);
+            // if (Input.GetKeyDown(KeyCode.E))
+            // {
+            //     SceneManager.LoadScene($"{SceneName.Takuma_A}");
+            // }
             if (IsSelect) return;
             if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
             if (Physics.Raycast(ray,out var hit,Mathf.Infinity,LayerMask))

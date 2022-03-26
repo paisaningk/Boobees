@@ -9,7 +9,7 @@ namespace Script
         public int Atk;
         public int CritRate;
         public int CritAtk;
-        public Renderer renderer;
+        public new Renderer renderer;
 
         public void OnEnable()
         {
@@ -27,11 +27,6 @@ namespace Script
             }
         }
 
-        // public void OnBecameInvisible () 
-        // {
-        //     gameObject.SetActive(false);
-        // }
-    
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))

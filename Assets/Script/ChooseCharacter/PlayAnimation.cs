@@ -13,10 +13,22 @@ namespace Script
         public Animator Animator;
         public PlayerType PlayerType;
         public GameObject Ui;
+        private bool playerInRange = false;
 
-        public void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            
+            if (other.CompareTag("Player"))
+            {
+                playerInRange = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                playerInRange = false;
+            }
         }
 
         private void OnMouseEnter()

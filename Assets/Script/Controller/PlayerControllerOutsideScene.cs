@@ -16,7 +16,6 @@ namespace Script.Controller
         void Awake()
         {
             PlayerInput = new Playerinput();
-            PlayerInput.Enable();
             animator = GetComponent<Animator>();
             rd = GetComponent<Rigidbody2D>();
         }
@@ -24,6 +23,7 @@ namespace Script.Controller
         private void Start()
         {
             SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
+            PlayerInput.Enable();
         }
         
         void Update()
@@ -48,11 +48,13 @@ namespace Script.Controller
                 soundplay = true;
                 animator.SetBool("Walking",false); 
             }
+            rd.velocity = moveDie * moveSpeed;
+            Debug.Log(rd.velocity);
         }
         
         private void FixedUpdate()
         {
-            rd.velocity = moveDie * moveSpeed;
+            
         }
     }
 }

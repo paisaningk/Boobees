@@ -1,4 +1,4 @@
-VAR a = false
+INCLUDE globals.ink
 
 สวัสดีนายพึ่งเคยมาที่ Takuma ครั้งแรกยังงั้นหรอ
 
@@ -12,11 +12,8 @@ VAR a = false
         -> chosen("ไม่ดีกว่า")
         
 === chosen(pokemon) ===
-คุณได้เลือก {pokemon}!
+โอเค 
 
 -> DONE
-
-
-* aaaaaaaaaaaaaaaaaa
 
 -> END

@@ -50,8 +50,6 @@ namespace Script.Spawn
         public static int WaveNumberText = 1;
         private float timeshopshow;
         private ShopController ShopController;
-        //private bool shopOpen = false;
-        //private GameObject SpawnPlayer;
         private bool canSpawn = false;
         [SerializeField] private GameObject Player;
         private PlayerCharacter playerCharacter;
