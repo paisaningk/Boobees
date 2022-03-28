@@ -76,6 +76,7 @@ namespace Script.Controller
         private void Cheat()
         {
             playerCharacter.Gold += 100;
+            playerCharacter.MaxHp += 100;
             playerCharacter.Hp += 100;
         }
 
