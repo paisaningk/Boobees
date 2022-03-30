@@ -86,6 +86,7 @@ namespace Script.Controller
             MoveSpeed = playerCharacter.Speed;
             //Walk
             var walk = playerInput.PlayerAction.Move.ReadValue<Vector2>();
+            Debug.Log(playerInput.PlayerAction.Mouse.ReadValue<Vector2>().normalized);
             MoveDie = walk.normalized;
             
             if (playerType == PlayerType.Gun)

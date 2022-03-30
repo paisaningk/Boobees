@@ -13,8 +13,24 @@ namespace Script
         public Animator Animator;
         public PlayerType PlayerType;
         public GameObject Ui;
+        [Header("Text")]
+        public TextAsset InkJson;
+        public Sprite ImageProfile;
+        public string Name;
         private bool playerInRange = false;
 
+        private void Update()
+        {
+            //Button.SetActive(playerInRange);
+            if (playerInRange)
+            {
+                if (Input.GetKeyDown(KeyCode.E) && DialogueManager.GetInstance().DialoguePlaying == false)
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(InkJson,Name,ImageProfile);
+                }
+            }
+        }
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Player"))
