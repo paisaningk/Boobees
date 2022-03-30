@@ -49,7 +49,6 @@ namespace Script.Controller
                 animator.SetBool("Walking",false); 
             }
             rd.velocity = moveDie * moveSpeed;
-            Debug.Log(rd.velocity);
         }
         
         private void FixedUpdate()

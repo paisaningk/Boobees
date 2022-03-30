@@ -63,7 +63,6 @@ namespace Script.Controller
             {
                 playerInput.PlayerAction.Attack.performed += context => Shot();
                 playerInput.PlayerAction.Reload.performed += context => AllReload();
-                cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
                 gunController = GetComponent<GunController>();
             }
             OnEnable();
@@ -71,6 +70,7 @@ namespace Script.Controller
         private void Start()
         {
             SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
+            cam = Camera.main;
         }
 
         private void Cheat()
@@ -86,7 +86,6 @@ namespace Script.Controller
             MoveSpeed = playerCharacter.Speed;
             //Walk
             var walk = playerInput.PlayerAction.Move.ReadValue<Vector2>();
-            Debug.Log(playerInput.PlayerAction.Mouse.ReadValue<Vector2>().normalized);
             MoveDie = walk.normalized;
             
             if (playerType == PlayerType.Gun)
@@ -161,7 +160,7 @@ namespace Script.Controller
         {
             Vector2 mousePosition = playerInput.PlayerAction.Mouse.ReadValue<Vector2>();
             var a = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
-            var mouse = cam.ScreenToWorldPoint(a);
+            var mouse = Camera.main.ScreenToWorldPoint(a);
             
             Vector2 difference = mouse - transform.position;
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
@@ -210,6 +209,10 @@ namespace Script.Controller
         {
             if (IsAttacking == false)
             {
+                var positionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 vectorAttack = (positionMouse - transform.position).normalized;
+                animator.SetFloat("AttackX",vectorAttack.x);
+                animator.SetFloat("AttackY",vectorAttack.y);
                 if (Attack01 == false)
                 {
                     SoundManager.Instance.Play(SoundManager.Sound.PlayerHit1);
@@ -240,7 +243,6 @@ namespace Script.Controller
                     knockback = true;
                     //Debug.Log($"Attack 3");
                 }
-
             }
         }
         
