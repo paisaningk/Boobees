@@ -81,3 +81,10 @@ crashlytics-build.properties
 !/Assets/Plugins/Sirenix/Demos/*.unitypackage 
 Assets/Package/ConsolePro/
 Assets/Package/ConsolePro.meta
+Assets/Feel/FeelDemos/
+Assets/Feel/FeelDemosHDRP/Falcon/Lighting/FeelFalconReflectionProbe-1.exr.meta
+Assets/Feel/FeelDemosHDRP/
+Assets/Feel/FeelDemosURP/
+Assets/Feel/FeelDemosURP.meta
+Assets/Feel/FeelDemosHDRP.meta
+Assets/Feel/FeelDemos.meta
