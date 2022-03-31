@@ -1,23 +1,17 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using Script.Controller;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Npc : MonoBehaviour
+public class ChangeCharacter : MonoBehaviour
 {
-    [Header("Button")]
-    public GameObject Button;
     [Header("Text")]
     public TextAsset InkJson;
     public Sprite ImageProfile;
     public string Name;
-    private bool playerInRange;
-
-
-    private void Start()
-    {
-        Button.SetActive(false);
-        playerInRange = false;
-    }
+    public GameObject Button;
+    private bool playerInRange = false;
 
     private void Update()
     {
@@ -30,11 +24,13 @@ public class Npc : MonoBehaviour
             }
         }
     }
-    
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("adc");
             playerInRange = true;
         }
     }
