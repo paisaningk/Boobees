@@ -209,7 +209,7 @@ namespace Script.Controller
         {
             if (IsAttacking == false)
             {
-                var positionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                var positionMouse = cam.ScreenToWorldPoint(playerInput.PlayerAction.Mouse.ReadValue<Vector2>());
                 Vector3 vectorAttack = (positionMouse - transform.position).normalized;
                 animator.SetFloat("AttackX",vectorAttack.x);
                 animator.SetFloat("AttackY",vectorAttack.y);
