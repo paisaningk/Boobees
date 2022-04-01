@@ -15,6 +15,7 @@ namespace Script.Base
     {
         [SerializeField] public CharacterSO EnemyCharacterSo;
         [SerializeField] private GameObject GoldPrefab;
+        [SerializeField] private GameObject Monster;
         [SerializeField] private EnemyType enemyType;
         [SerializeField] private bool isBoss;
         [SerializeField] private GameObject Popup;
@@ -28,6 +29,7 @@ namespace Script.Base
         private Vector3 offset;
         [SerializeField] private SpriteRenderer spriteRenderer;
         public bool isDeadForBoss = false;
+        private bool CanHit = false;
 
 
         public void Start()
@@ -60,38 +62,41 @@ namespace Script.Base
         {
             if (other.CompareTag("PlayerHitBox"))
             {
-                var atkPlayer = other.GetComponentInParent<PlayerCharacter>();
-                playerCritRate = atkPlayer.CritRate;
-                var critPercentRand = Random.Range(1, 101);
+                if (CanHit == false)
+                {
+                    StartCoroutine(CanAttack());
+                    var atkPlayer = other.GetComponentInParent<PlayerCharacter>();
+                    playerCritRate = atkPlayer.CritRate;
+                    var critPercentRand = Random.Range(1, 101);
                 
-                if (critPercentRand <= playerCritRate)
-                {
-                    var atkCrit = atkPlayer.Atk * atkPlayer.CritAtk;
-                    ShowPopUpCrit(atkCrit);
-                    Hp -= atkCrit;
-                    StartCoroutine(Setcoloattack());
-                }
-                else
-                {
-                    ShowPopUp(atkPlayer.Atk);
-                    Hp -= atkPlayer.Atk;
-                    StartCoroutine(Setcoloattack());
-                }
-                
-                if (Hp <= 0)
-                {
-                    if (isBoss == true)
+                    if (critPercentRand <= playerCritRate)
                     {
-                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
-                        isDeadForBoss = true;
+                        var atkCrit = atkPlayer.Atk * atkPlayer.CritAtk;
+                        ShowPopUpCrit(atkCrit);
+                        Hp -= atkCrit;
+                        StartCoroutine(Setcoloattack());
                     }
                     else
                     {
-                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
-                        StartCoroutine(Deaddelay());
+                        ShowPopUp(atkPlayer.Atk);
+                        Hp -= atkPlayer.Atk;
+                        StartCoroutine(Setcoloattack());
+                    }
+                
+                    if (Hp <= 0)
+                    {
+                        if (isBoss == true)
+                        {
+                            SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
+                            isDeadForBoss = true;
+                        }
+                        else
+                        {
+                            SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
+                            StartCoroutine(Deaddelay());
+                        }
                     }
                 }
-                
             }
             else if (other.CompareTag("Bullet"))
             {
@@ -128,6 +133,13 @@ namespace Script.Base
                     
                 }
             }
+        }
+        
+        IEnumerator CanAttack()
+        {
+            CanHit = true;
+            yield return new WaitForSeconds(0.2f);
+            CanHit = false;
         }
 
         IEnumerator Setcoloattack()
@@ -201,6 +213,11 @@ namespace Script.Base
                     break;
             }
             Instantiate(GoldPrefab,transform.position, Quaternion.identity);
+            var DropMonster = Random.Range(1, 100);
+            if (DropMonster >= 50)
+            {
+                Instantiate(Monster,transform.position, Quaternion.identity);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
-using Ink.UnityIntegration;
+using Script.Spawn;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -14,13 +14,15 @@ public class DialogueManager : MonoBehaviour
    [SerializeField] private TextMeshProUGUI DialogueText;
    [SerializeField] private TextMeshProUGUI NameText;
    [SerializeField] private Image ImageProfile;
+   [SerializeField] private GameObject Heart;
 
    [Header("DialogueChoices")] 
    [SerializeField] private GameObject[] ChoiceGameObjects;
    private TextMeshProUGUI[] choiceTexts;
 
-   [Header("Globals Ink File")] [SerializeField]
-   private InkFile globalsInkFile;
+   [Header("Load Globals Text Asset")] 
+   [SerializeField] private TextAsset LoadGlobals;
+   // [SerializeField] private TextAsset GlobalsTextAsset;
    
    private static DialogueManager instance;
    private Story currentStory;
@@ -42,14 +44,20 @@ public class DialogueManager : MonoBehaviour
       //set dialogue set active false
       DialoguePlaying = false;
       Dialogue.SetActive(DialoguePlaying);
-      DialogueVariables = new DialogueVariables(globalsInkFile.filePath);
+      DialogueVariables = new DialogueVariables(LoadGlobals);
 
       choiceTexts = new TextMeshProUGUI[ChoiceGameObjects.Length];
       for (var i = 0; i < ChoiceGameObjects.Length; i++)
       { 
          choiceTexts[i] =ChoiceGameObjects[i].GetComponentInChildren<TextMeshProUGUI>();
       }
-      
+   }
+
+   private void Start()
+   {
+      ((Ink.Runtime.IntValue) GetVariableState("Item")).value = SpawnPlayer.instance.Item;
+      ((Ink.Runtime.IntValue) GetVariableState("Monster")).value = SpawnPlayer.instance.Monster;
+      Heart.SetActive(false);
    }
 
    public static DialogueManager GetInstance()
@@ -76,6 +84,7 @@ public class DialogueManager : MonoBehaviour
       {
          // set text for the current dialogue line
          DialogueText.text = currentStory.Continue();
+         
          // display choices, if any, for this dialogue line
          DisplayChoices();
       }
@@ -85,11 +94,15 @@ public class DialogueManager : MonoBehaviour
       }
    }
 
-   public void EnterDialogueMode(TextAsset ink,string name,Sprite imageProfile)
+   public void EnterDialogueMode(TextAsset ink,string name,Sprite imageProfile,NpcType npcType)
    {
       NameText.text = $"{name}";
       ImageProfile.sprite = imageProfile;
       StartCoroutine(EnterDialogueDelay(ink));
+      if (npcType == NpcType.CanFlirt)
+      {
+         Heart.SetActive(true);
+      }
    }
 
    public IEnumerator EnterDialogueDelay(TextAsset ink)
@@ -109,6 +122,7 @@ public class DialogueManager : MonoBehaviour
       DialogueVariables.StopListening(currentStory);
       DialoguePlaying = false;
       DialogueText.text = null;
+      Heart.SetActive(false);
    }
 
    private void DisplayChoices()

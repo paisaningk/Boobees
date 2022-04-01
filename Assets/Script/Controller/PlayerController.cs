@@ -213,6 +213,7 @@ namespace Script.Controller
                 Vector3 vectorAttack = (positionMouse - transform.position).normalized;
                 animator.SetFloat("AttackX",vectorAttack.x);
                 animator.SetFloat("AttackY",vectorAttack.y);
+
                 if (Attack01 == false)
                 {
                     SoundManager.Instance.Play(SoundManager.Sound.PlayerHit1);

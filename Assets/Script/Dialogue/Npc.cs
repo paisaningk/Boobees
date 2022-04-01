@@ -9,6 +9,7 @@ public class Npc : MonoBehaviour
     [Header("Text")]
     public TextAsset InkJson;
     public Sprite ImageProfile;
+    public NpcType NpcType;
     public string Name;
     private bool playerInRange;
 
@@ -26,7 +27,7 @@ public class Npc : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && DialogueManager.GetInstance().DialoguePlaying == false)
             {
-                DialogueManager.GetInstance().EnterDialogueMode(InkJson,Name,ImageProfile);
+                DialogueManager.GetInstance().EnterDialogueMode(InkJson,Name,ImageProfile,NpcType);
             }
         }
     }

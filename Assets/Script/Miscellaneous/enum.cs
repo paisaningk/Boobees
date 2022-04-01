@@ -9,3 +9,14 @@ public enum SceneName
     Takuma,
     Takuma_A,
 }
+public enum NpcType
+{
+    Normal,
+    CanFlirt
+}
+
+public enum ItemTypeForNpc
+{
+    Monster,
+    Item
+}

@@ -33434,6 +33434,17 @@ PrefabInstance:
       propertyPath: healCostText
       value: 
       objectReference: {fileID: 3025452782775832713}
+    - target: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
+      propertyPath: item.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
+      propertyPath: item.Array.data[0]
+      value: 
+      objectReference: {fileID: 725072164638687697, guid: a6eebe8d75fd7a44a9849bc647ea6638,
+        type: 3}
     - target: {fileID: 1068096307863586356, guid: c1eab51a60dcad643b9a6fdcae2e0732,
         type: 3}
       propertyPath: m_LocalPosition.x

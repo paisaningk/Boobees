@@ -6,6 +6,7 @@
         Uncommon,
         Rare,
         Epic,
-        Cursed
+        Cursed,
+        ItemForNPC
     }
 }

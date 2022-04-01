@@ -20,7 +20,7 @@ public class ChangeCharacter : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && DialogueManager.GetInstance().DialoguePlaying == false)
             {
-                DialogueManager.GetInstance().EnterDialogueMode(InkJson,Name,ImageProfile);
+                DialogueManager.GetInstance().EnterDialogueMode(InkJson,Name,ImageProfile,NpcType.Normal);
             }
         }
     }

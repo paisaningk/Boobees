@@ -17,6 +17,7 @@ namespace Script.Controller
         [SerializeField] private GameObject[] rare;
         [SerializeField] private GameObject[] epic;
         [SerializeField] private GameObject[] cursed;
+        [SerializeField] private GameObject[] item;
         [SerializeField] private GameObject shopMenu;
         [SerializeField] private GameObject ePopup;
         [SerializeField] private Button backButton;
@@ -151,7 +152,7 @@ namespace Script.Controller
         {
             foreach (var t in spawnPoint)
             {
-                var rngTier = Random.Range(1 , 156);
+                var rngTier = Random.Range(1 , 200);
                 if (rngTier <= 68)
                 {
                     var rngitem = Random.Range(0, common.Length);
@@ -176,6 +177,11 @@ namespace Script.Controller
                 {
                     var rngitem = Random.Range(0, common.Length);
                     Instantiate(cursed[rngitem], t.position ,Quaternion.identity);
+                }
+                else if (rngTier <= 200)
+                {
+                    var rngitem = Random.Range(0, item.Length);
+                    Instantiate(item[rngitem], t.position ,Quaternion.identity);
                 }
             }
         }

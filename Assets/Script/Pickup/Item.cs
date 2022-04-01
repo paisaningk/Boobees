@@ -4,6 +4,7 @@ using Script.Base;
 using Script.Controller;
 using Script.Menu;
 using Script.Sound;
+using Script.Spawn;
 using UnityEngine;
 
 namespace Script.Pickup
@@ -96,6 +97,9 @@ namespace Script.Pickup
                 case Tier.Cursed:
                     price = 100;
                     break;
+                case Tier.ItemForNPC:
+                    price = 35;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -105,6 +109,11 @@ namespace Script.Pickup
 
         private void PickUp(Collider2D other)
         {
+            if (tier ==  Tier.ItemForNPC)
+            {
+                SpawnPlayer.instance.Item++;
+                Debug.Log(SpawnPlayer.instance.Item);
+            }
             var Player = other.GetComponent<PlayerCharacter>();
             Player.MaxHp += maxHp;
             Player.Hp += maxHp;

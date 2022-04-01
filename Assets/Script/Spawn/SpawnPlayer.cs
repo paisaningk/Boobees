@@ -7,6 +7,9 @@ namespace Script.Spawn
     {
         public static SpawnPlayer instance;
         public PlayerType PlayerType;
+        public int Item = 0;
+        public int Monster = 0;
+        
         void Awake()
         {
             if (instance != null && instance != this)
