@@ -1,5 +1,6 @@
 using System.Collections;
 using Script.Sound;
+using Script.Spawn;
 using UnityEngine;
 
 namespace Script.Controller
@@ -23,6 +24,11 @@ namespace Script.Controller
             Rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             player = GameObject.FindWithTag("Player").transform;
+            if (SpawnPlayer.instance.PlayerType == PlayerType.Gun)
+            {
+                stoppingDistance = 1.5f;
+            }
+
         }
 
         private void FixedUpdate()

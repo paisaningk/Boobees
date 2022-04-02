@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Script.scriptableobject.Character
+namespace scriptableobject.Character
 {
     [CreateAssetMenu(menuName = "CharacterSO")]
     public class CharacterSO : ScriptableObject
@@ -8,7 +8,7 @@ namespace Assets.Script.scriptableobject.Character
         public string Name;
         public int MaxHp;
         public int Atk;
-        [Range(3f, 8f)]
+        [Range(3f, 15f)]
         public float Speed;
         public GameObject Popup;
         

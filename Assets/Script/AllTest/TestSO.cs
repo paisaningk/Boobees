@@ -1,4 +1,4 @@
-﻿using Assets.Script.scriptableobject.Character;
+﻿using scriptableobject.Character;
 using UnityEngine;
 
 namespace Script.AllTest

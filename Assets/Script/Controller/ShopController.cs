@@ -29,8 +29,8 @@ namespace Script.Controller
         [Header("Cost")]
         [SerializeField] private int healCost = 20;
         [SerializeField] private int rngCost = 20;
-        private bool _shop = false;
-        private Collider2D _player;
+        private bool shop = false;
+        private Collider2D player;
         public bool shoping = false;
         
         
@@ -47,7 +47,7 @@ namespace Script.Controller
 
         private void Talk()
         {
-            if (_shop == true)
+            if (shop == true)
             {
                 SoundManager.Instance.Play(SoundManager.Sound.TalkWithShop);
                 var talk = new[]
@@ -77,21 +77,21 @@ namespace Script.Controller
         {
             if (other.CompareTag("Player"))
             {
-                _player = other;
-                _shop = true;
+                player = other;
+                shop = true;
 
             }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            _shop = false;
+            shop = false;
             ePopup.SetActive(false);
         }
 
         public void CheckGoldForReroll()
         {
-            var playerCharacter = _player.GetComponent<PlayerCharacter>();
+            var playerCharacter = player.GetComponent<PlayerCharacter>();
             if (playerCharacter.Gold >= rngCost)
             {
                 playerCharacter.Gold -= rngCost;
@@ -123,7 +123,7 @@ namespace Script.Controller
 
         private void Heal()
         {
-            var playerCharacter = _player.GetComponent<PlayerCharacter>();
+            var playerCharacter = player.GetComponent<PlayerCharacter>();
             if (playerCharacter.Gold >= healCost && playerCharacter.Hp < playerCharacter.MaxHp)
             {
                 playerCharacter.Gold -= healCost;
@@ -152,7 +152,7 @@ namespace Script.Controller
         {
             foreach (var t in spawnPoint)
             {
-                var rngTier = Random.Range(1 , 200);
+                var rngTier = Random.Range(1 , 165);
                 if (rngTier <= 68)
                 {
                     var rngitem = Random.Range(0, common.Length);
@@ -178,7 +178,7 @@ namespace Script.Controller
                     var rngitem = Random.Range(0, common.Length);
                     Instantiate(cursed[rngitem], t.position ,Quaternion.identity);
                 }
-                else if (rngTier <= 200)
+                else if (rngTier <= 165)
                 {
                     var rngitem = Random.Range(0, item.Length);
                     Instantiate(item[rngitem], t.position ,Quaternion.identity);

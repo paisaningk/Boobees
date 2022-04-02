@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using Assets.Script.scriptableobject.Character;
 using Assets.scriptableobject.Item;
 using Script.Controller;
 using Script.Sound;
+using scriptableobject.Character;
 using UnityEngine;
 
 namespace Script.Base

@@ -160,7 +160,7 @@ namespace Script.Controller
         {
             Vector2 mousePosition = playerInput.PlayerAction.Mouse.ReadValue<Vector2>();
             var a = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
-            var mouse = Camera.main.ScreenToWorldPoint(a);
+            var mouse = cam.ScreenToWorldPoint(a);
             
             Vector2 difference = mouse - transform.position;
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
@@ -249,7 +249,7 @@ namespace Script.Controller
         
         private void Dash()
         {
-            if (CanDash)
+            if (CanDash && MoveDie != Vector3.zero)
             {
                 CanDash = false;
                 SoundManager.Instance.Play(SoundManager.Sound.PlayerDash);

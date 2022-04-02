@@ -26,7 +26,7 @@ namespace Script
         public LayerMask LayerMask;
         public GameObject PlayerRonin;
         public GameObject MarksMan;
-        public bool IsSelect = false;
+        public static bool IsSelect = false;
         public GameObject Text;
         public SpawnPoint SpawnPoint;
         private Ray ray;
@@ -34,6 +34,11 @@ namespace Script
         private bool Mark;
         
 
+        private void Awake()
+        {
+            Time.timeScale = 1;
+            IsSelect = false;
+        }
         void Update()
         {
             Mark = ((Ink.Runtime.BoolValue) DialogueManager.GetInstance().GetVariableState("MarksMan")).value;

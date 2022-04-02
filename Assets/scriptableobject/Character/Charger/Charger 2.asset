@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea91e71a58608243b4236919f390779, type: 3}
   m_Name: Charger 2
   m_EditorClassIdentifier: 
-  Name: 
-  MaxHp: 0
-  Atk: 0
-  Speed: 0
+  Name: Charger
+  MaxHp: 55
+  Atk: 15
+  Speed: 15
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

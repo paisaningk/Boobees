@@ -19,13 +19,4 @@ public class Heart : MonoBehaviour
         heart = ((Ink.Runtime.IntValue) DialogueManager.GetInstance().GetVariableState("RinHeart")).value;
         animator.SetInteger(Heart1,heart);
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            heart++;
-            animator.SetInteger(Heart1,heart);
-        }
-    }
 }

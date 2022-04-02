@@ -12,6 +12,7 @@ public class ChangeCharacter : MonoBehaviour
     public string Name;
     public GameObject Button;
     private bool playerInRange = false;
+    
 
     private void Update()
     {

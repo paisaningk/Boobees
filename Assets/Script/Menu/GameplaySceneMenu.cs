@@ -43,15 +43,13 @@ namespace Script.Menu
         [SerializeField] private GameObject Ammoui;
         [SerializeField] private GameObject[] Ammo;
         [SerializeField] private GameObject AmmoText;
-        [SerializeField] private SpriteRenderer statusSpriteRenderer;
-        [SerializeField] private Sprite PlayerWGun;
-        [SerializeField] private SceneName sceneName;
         private PlayerController playerController;
         public bool isPause = false;
         private float DashCd = 0;
         private bool candash = true;
         private bool StatusShow = false;
         private bool isReload;
+        private GameObject player;
         
 
         private void Awake()
@@ -69,7 +67,7 @@ namespace Script.Menu
 
         private void Start()
         {
-            var player = GameObject.FindWithTag("Player");
+            player = GameObject.FindWithTag("Player");
             PlayerCharacter = player.GetComponent<PlayerCharacter>();
             playerController = player.GetComponent<PlayerController>();
             Ammoui.SetActive(PlayerCharacter.PlayerType == PlayerType.Gun);
@@ -77,8 +75,8 @@ namespace Script.Menu
             if (PlayerCharacter.PlayerType == PlayerType.Gun)
             {
                 PlayerController.playerInput.PlayerAction.Reload.performed += context => Reloadative();
-                statusSpriteRenderer.sprite = PlayerWGun;
             }
+            PlayerController.playerInput.Enable();
         }
 
         private void Update()
@@ -121,7 +119,6 @@ namespace Script.Menu
             goldText.text = $"Gold : {PlayerCharacter.Gold}";
             var playerHp = PlayerCharacter.Hp / PlayerCharacter.MaxHp;
             blood.fillAmount = playerHp;
-            SetStatus();
             if (PlayerController.CanDash == false)
             {
                 if (candash == true)
@@ -168,7 +165,7 @@ namespace Script.Menu
         {
             if (StatusShow == false)
             {
-                //phoneUI.SetActive(false);
+                SetStatus();
                 StatusUI.SetActive(true);
                 StatusShow = true;
                 Time.timeScale = 0;
@@ -185,7 +182,6 @@ namespace Script.Menu
             StatusUI.SetActive(false);
             StatusShow = false;
             Time.timeScale = 1;
-            //phoneUI.SetActive(true);
         }
 
         IEnumerator SetDashCd()
@@ -230,7 +226,7 @@ namespace Script.Menu
 
         private void Quit()
         {
-            SceneManager.LoadScene($"{SceneName.Takuma_A}");
+            SceneManager.LoadScene($"{SceneName.Takuma}");
         }
         
         private void Restart()

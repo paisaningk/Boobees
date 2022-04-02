@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Shoter
   MaxHp: 90
   Atk: 10
-  Speed: 4.12
+  Speed: 5
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

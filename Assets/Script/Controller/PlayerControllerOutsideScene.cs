@@ -8,6 +8,7 @@ namespace Script.Controller
     {
         [SerializeField]private float moveSpeed;
         public static Playerinput PlayerInput;
+        public Playerinput playerInput;
         private Rigidbody2D rd;
         private Vector2 moveDie;
         private Animator animator;
@@ -16,6 +17,7 @@ namespace Script.Controller
         void Awake()
         {
             PlayerInput = new Playerinput();
+            playerInput = new Playerinput();
             animator = GetComponent<Animator>();
             rd = GetComponent<Rigidbody2D>();
         }

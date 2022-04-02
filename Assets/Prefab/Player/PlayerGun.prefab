@@ -171,10 +171,11 @@ MonoBehaviour:
   dashLayerMask:
     serializedVersion: 2
     m_Bits: 768
-  playMenu: {fileID: 0}
+  GameplaySceneMenu: {fileID: 0}
   playerType: 1
   Gun: {fileID: 2897250008421361763}
   gunController: {fileID: 2897250007268149236}
+  Gunanimator: {fileID: 0}
   knockback: 0
   fire: 0
   canfire: 1
@@ -202,7 +203,7 @@ MonoBehaviour:
   DashCd: 5
   CritAtk: 2
   CritRate: 2
-  PlayerType: 1
+  PlayerType: 0
   ItemSo: []
 --- !u!114 &2897250007268149236
 MonoBehaviour:

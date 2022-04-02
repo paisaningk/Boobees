@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
-using Assets.Script.scriptableobject.Character;
 using Script.Controller;
 using Script.Pickup;
 using Script.Save;
 using Script.Sound;
 using Script.Spawn;
+using scriptableobject.Character;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -159,8 +159,6 @@ namespace Script.Base
 
         private void Knockback(Collider2D other)
         {
-            //Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            //playerController.knockback = false;
             var knockbackForce = 300;
             Vector2 difference = (Rb.transform.position - other.transform.position).normalized;
             Vector2 force = difference * knockbackForce;
@@ -191,7 +189,7 @@ namespace Script.Base
             switch (enemyType)
             {
                 case EnemyType.Slime:
-                    gold = Random.Range(3 , 10);
+                    gold = Random.Range(5 , 15);
                     gold /= 2;
                     GoldPrefab.GetComponent<Gold>().goldAmount = gold;
                     break;
@@ -216,7 +214,7 @@ namespace Script.Base
             var DropMonster = Random.Range(1, 100);
             if (DropMonster >= 50)
             {
-                Instantiate(Monster,transform.position, Quaternion.identity);
+                Instantiate(Monster,transform.position + new Vector3(2,0), Quaternion.identity);
             }
         }
     }
