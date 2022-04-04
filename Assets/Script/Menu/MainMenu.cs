@@ -1,4 +1,5 @@
 using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace Script.Menu
         [SerializeField] private Button startButton;
         [SerializeField] private Button tutorialButton;
         [SerializeField] private Button quitButton;
+        public MMFeedbacks LoadScene;
 
         private void Awake()
         {
@@ -28,7 +30,7 @@ namespace Script.Menu
 
         private void StartGame()
         {
-            SceneManager.LoadScene($"{SceneName.Takuma}");
+            LoadScene?.PlayFeedbacks();
         }
 
         private void QuitGame()

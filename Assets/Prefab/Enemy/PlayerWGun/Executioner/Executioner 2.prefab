@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StarMove: 1
-  StarMoveslowe: 1.5
+  StarMoveslowe: 2
 --- !u!1 &2520280702558990941
 GameObject:
   m_ObjectHideFlags: 0

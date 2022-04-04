@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class WarpToGameplay : MonoBehaviour
 {
     public GameObject[] Icons;
+    public MMFeedbacks GamePlay;
     private bool playerInRange = false;
     private void Update()
     {
@@ -14,7 +16,7 @@ public class WarpToGameplay : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene($"{SceneName.Map1}");
+                GamePlay.PlayFeedbacks();
             }
         }   
         

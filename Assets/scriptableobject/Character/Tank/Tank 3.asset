@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tank 3
   m_EditorClassIdentifier: 
   Name: Tank
-  MaxHp: 100
-  Atk: 20
-  Speed: 5
+  MaxHp: 300
+  Atk: 30
+  Speed: 6
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

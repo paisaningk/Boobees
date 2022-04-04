@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using MoreMountains.Feedbacks;
 using Script.Base;
 using Script.Controller;
 using Script.Sound;
@@ -43,6 +45,10 @@ namespace Script.Menu
         [SerializeField] private GameObject Ammoui;
         [SerializeField] private GameObject[] Ammo;
         [SerializeField] private GameObject AmmoText;
+        [Header("Gun")]
+        public MMFeedbacks BackToHub;
+        public MMFeedbacks PlayAgain;
+        
         private PlayerController playerController;
         public bool isPause = false;
         private float DashCd = 0;
@@ -128,7 +134,11 @@ namespace Script.Menu
                     candash = false;
                 }
             }
+            
+        }
 
+        public void FixedUpdate()
+        {
             if (candash == false)
             {
                 DashCd += Time.deltaTime;
@@ -226,12 +236,12 @@ namespace Script.Menu
 
         private void Quit()
         {
-            SceneManager.LoadScene($"{SceneName.Takuma}");
+            BackToHub?.PlayFeedbacks();
         }
         
         private void Restart()
         {
-            SceneManager.LoadScene($"{SceneName.Map1}");
+            PlayAgain?.PlayFeedbacks();
         }
 
         public void Dead()

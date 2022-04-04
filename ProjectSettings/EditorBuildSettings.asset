@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Takuma_A.unity
     guid: 00d3f122e95ee9c48a516f75a4b3056c
+  - enabled: 1
+    path: Assets/Feel/MMTools/Tools/MMSceneLoading/LoadingScreens/LoadingScreen.unity
+    guid: 888394d52616e5e42b3b54c3f2bbd3eb
   m_configObjects: {}

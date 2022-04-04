@@ -23,7 +23,6 @@ namespace Script.Spawn
     public class SpawnWave : MonoBehaviour
     {
         [Header("Wave")]
-        [SerializeField] private Wave[] WaveForPlayerMelee;
         [SerializeField] private Wave[] WaveForPlayerGun;
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
@@ -60,14 +59,13 @@ namespace Script.Spawn
         {
             if (SpawnPlayer.instance.PlayerType == PlayerType.Gun) 
             {
-                Wave = WaveForPlayerGun;
                 PlayerGun.SetActive(true);
             }
             else
             {
-                Wave = WaveForPlayerMelee;
                 PlayerSword.SetActive(true);
             }
+            Wave = WaveForPlayerGun;
             PlayerController.playerInput.PlayerAction.Skip.performed += context =>  Close();
         }
         private void Start()

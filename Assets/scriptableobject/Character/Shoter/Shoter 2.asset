@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shoter 2
   m_EditorClassIdentifier: 
   Name: Shoter
-  MaxHp: 50
-  Atk: 10
+  MaxHp: 100
+  Atk: 15
   Speed: 5
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

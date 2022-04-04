@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: executioner 2
   m_EditorClassIdentifier: 
   Name: 'executioner '
-  MaxHp: 70
-  Atk: 25
-  Speed: 5
+  MaxHp: 180
+  Atk: 30
+  Speed: 3
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

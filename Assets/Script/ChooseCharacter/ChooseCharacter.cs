@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using Cinemachine;
+using MoreMountains.Feedbacks;
 using Script.Controller;
 using Script.Spawn;
 using TMPro;
@@ -29,18 +31,29 @@ namespace Script
         public static bool IsSelect = false;
         public GameObject Text;
         public SpawnPoint SpawnPoint;
+        public MMFeedbacks Fade;
+        public CanvasGroup CanvasGroup;
         private Ray ray;
         private bool Ronin;
         private bool Mark;
+        private bool playFade;
         
 
         private void Awake()
         {
             Time.timeScale = 1;
             IsSelect = false;
+            CanvasGroup.alpha = 1;
         }
+
+        private void Start()
+        {
+            StartCoroutine(Wait());
+        }
+
         void Update()
         {
+           
             Mark = ((Ink.Runtime.BoolValue) DialogueManager.GetInstance().GetVariableState("MarksMan")).value;
             Ronin = ((Ink.Runtime.BoolValue) DialogueManager.GetInstance().GetVariableState("Ronin")).value;
             CheckAndChangeCharacter();
@@ -67,6 +80,12 @@ namespace Script
                     ((Ink.Runtime.BoolValue) DialogueManager.GetInstance().GetVariableState("MarksMan")).value = true;
                 }
             }
+        }
+
+        IEnumerator Wait()
+        {
+            yield return null;
+            Fade.PlayFeedbacks();
         }
 
         private void CheckAndChangeCharacter()

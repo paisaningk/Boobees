@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b21f811fe12a9147bbedbf188a52027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StarMove: 1.5
-  StarMoveslowe: 2
+  StarMove: 1
+  StarMoveslowe: 3
 --- !u!1 &131390158526496552
 GameObject:
   m_ObjectHideFlags: 0
