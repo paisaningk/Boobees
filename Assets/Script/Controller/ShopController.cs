@@ -79,7 +79,7 @@ namespace Script.Controller
             {
                 player = other;
                 shop = true;
-
+                ePopup.SetActive(true);
             }
         }
 

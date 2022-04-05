@@ -178,7 +178,7 @@ MonoBehaviour:
     numberOfEnemy: 1
     spawnTime: 0
     typeOfEnemy:
-    - {fileID: 904702811331331927, guid: 260b0a672545bd64fa7ce869405076a0, type: 3}
+    - {fileID: 2267681831048928476, guid: 3a762b16bc18bc74db7c3501f1f7e108, type: 3}
   SpawnPoint:
   - {fileID: 1566331500107093031}
   - {fileID: 1566331500089613474}

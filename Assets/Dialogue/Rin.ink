@@ -1,4 +1,6 @@
 INCLUDE globals.ink
+{FistTalkrin == false: -> introduce | -> Check}
+
 === Check ===
 สวัสดี
  { 

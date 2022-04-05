@@ -15,8 +15,7 @@ public class TakumaUI : MonoBehaviour
     [SerializeField] private Button quitButton;
     [SerializeField] private Button pauseButton;
     private bool isPause = false;
-    private bool Setup = false;
-    
+
     private void Awake()
     {
         pauseButton.onClick.AddListener(Resume);

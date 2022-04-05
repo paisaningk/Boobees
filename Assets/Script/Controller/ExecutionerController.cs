@@ -24,7 +24,7 @@ namespace Script.Controller
             Rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             player = GameObject.FindWithTag("Player").transform;
-            if (SpawnPlayer.instance.PlayerType == PlayerType.Gun)
+            if (SpawnPlayer.instance?.PlayerType == PlayerType.Gun)
             {
                 stoppingDistance = 1.5f;
             }
@@ -36,7 +36,10 @@ namespace Script.Controller
             if (nextMove == false)
             {
                 Selectnextmove();
+                var direction = (player.position - transform.position).normalized;
+                transform.localScale = direction.x < 0 ? new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
             }
+            
         }
     
         private void moveCharacter(Vector3 direction)

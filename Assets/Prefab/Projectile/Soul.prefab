@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   DMG: 12
+  renderer: {fileID: 1831773851010157862}
 --- !u!50 &680822647412136826
 Rigidbody2D:
   serializedVersion: 4

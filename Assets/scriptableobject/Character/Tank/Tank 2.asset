@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Tank
   MaxHp: 100
   Atk: 20
-  Speed: 5
+  Speed: 6
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

@@ -24,6 +24,10 @@ public class DialogueManager : MonoBehaviour
    [SerializeField] private TextAsset LoadGlobals;
    // [SerializeField] private TextAsset GlobalsTextAsset;
    
+   // [Header("Item")] 
+   // [SerializeField] private TextMeshProUGUI MonsterText;
+   // [SerializeField] private TextMeshProUGUI BookText;
+   
    private static DialogueManager instance;
    private Story currentStory;
    public bool DialoguePlaying;
@@ -49,7 +53,7 @@ public class DialogueManager : MonoBehaviour
       choiceTexts = new TextMeshProUGUI[ChoiceGameObjects.Length];
       for (var i = 0; i < ChoiceGameObjects.Length; i++)
       { 
-         choiceTexts[i] =ChoiceGameObjects[i].GetComponentInChildren<TextMeshProUGUI>();
+         choiceTexts[i] = ChoiceGameObjects[i].GetComponentInChildren<TextMeshProUGUI>();
       }
    }
 

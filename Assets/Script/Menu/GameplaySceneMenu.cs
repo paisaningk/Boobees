@@ -179,6 +179,7 @@ namespace Script.Menu
                 StatusUI.SetActive(true);
                 StatusShow = true;
                 Time.timeScale = 0;
+                PlayerController.playerInput.Disable();
             }
             else
             {
@@ -192,6 +193,7 @@ namespace Script.Menu
             StatusUI.SetActive(false);
             StatusShow = false;
             Time.timeScale = 1;
+            PlayerController.playerInput.Enable();
         }
 
         IEnumerator SetDashCd()

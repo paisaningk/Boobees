@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using MoreMountains.Feedbacks;
 using Script.Controller;
 using Script.Pickup;
 using Script.Save;
@@ -19,6 +20,8 @@ namespace Script.Base
         [SerializeField] private EnemyType enemyType;
         [SerializeField] private bool isBoss;
         [SerializeField] private GameObject Popup;
+        public MMFeedbacks SlowTime;
+        public MMFeedbacks Cam;
         private string Name;
         public int Hp;
         public int Atk;
@@ -64,6 +67,7 @@ namespace Script.Base
             {
                 if (CanHit == false)
                 {
+                    Cam?.PlayFeedbacks();
                     StartCoroutine(CanAttack());
                     var atkPlayer = other.GetComponentInParent<PlayerCharacter>();
                     playerCritRate = atkPlayer.CritRate;
@@ -94,12 +98,14 @@ namespace Script.Base
                         {
                             SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
                             StartCoroutine(Deaddelay());
+                            SlowTime?.PlayFeedbacks();
                         }
                     }
                 }
             }
             else if (other.CompareTag("Bullet"))
             {
+                Cam?.PlayFeedbacks();
                 var atkPlayer = other.GetComponent<Bullet>();
                 playerCritRate = atkPlayer.CritRate;
                 var critPercentRand = Random.Range(1, 101);
@@ -127,6 +133,7 @@ namespace Script.Base
                     }
                     else
                     {
+                        SlowTime?.PlayFeedbacks();
                         SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
                         StartCoroutine(Deaddelay());
                     }

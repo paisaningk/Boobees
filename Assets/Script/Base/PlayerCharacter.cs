@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Assets.scriptableobject.Item;
+using MoreMountains.Feedbacks;
 using Script.Controller;
 using Script.Sound;
 using scriptableobject.Character;
@@ -20,6 +21,7 @@ namespace Script.Base
         [SerializeField] public float DashCd;
         [SerializeField] public int CritAtk = 1;
         [SerializeField] public int CritRate = 2;
+        public MMFeedbacks PlayerHit;
         public PlayerType PlayerType;
         public ItemSO[] ItemSo;
 
@@ -64,6 +66,7 @@ namespace Script.Base
             {
                 if (other.CompareTag("EnemyHitBox"))
                 {
+                    PlayerHit?.PlayFeedbacks();
                     SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit);
                     var enemyCharacter = other.GetComponentInParent<EnemyCharacter>();
                     Hp -= enemyCharacter.Atk;
@@ -80,6 +83,7 @@ namespace Script.Base
 
                 if (other.CompareTag("Projectile"))
                 {
+                    PlayerHit?.PlayFeedbacks();
                     SoundManager.Instance.Play(SoundManager.Sound.PlayerTakeHit);
                     var arrow = other.GetComponent<Arrow>();
                     Hp -= arrow.DMG;

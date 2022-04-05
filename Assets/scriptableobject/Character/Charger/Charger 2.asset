@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Charger 2
   m_EditorClassIdentifier: 
   Name: Charger
-  MaxHp: 55
-  Atk: 15
+  MaxHp: 250
+  Atk: 20
   Speed: 15
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}
