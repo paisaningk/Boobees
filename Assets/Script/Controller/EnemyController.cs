@@ -38,6 +38,11 @@ namespace Script.Controller
         {
             SoundManager.Instance.Play(SoundManager.Sound.TankAttack);
         }
+        
+        private void Playsound02()
+        {
+            SoundManager.Instance.Play(SoundManager.Sound.EyeAttack);
+        }
     
         private void MoveCharacter(Vector3 direction)
         {

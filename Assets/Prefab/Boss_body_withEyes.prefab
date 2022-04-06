@@ -723,7 +723,7 @@ MonoBehaviour:
     type: 3}
   Monster: {fileID: 1773397397586262774, guid: 2dfef8fb6c280be47bddb6c2f571038a, type: 3}
   enemyType: 4
-  isBoss: 0
+  isBoss: 1
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}
   SlowTime: {fileID: 0}
   Cam: {fileID: 0}

@@ -18,12 +18,13 @@ namespace Script.Base
         [SerializeField] private GameObject GoldPrefab;
         [SerializeField] private GameObject Monster;
         [SerializeField] private EnemyType enemyType;
-        [SerializeField] private bool isBoss;
+        public bool isBoss;
         [SerializeField] private GameObject Popup;
         public MMFeedbacks SlowTime;
         public MMFeedbacks Cam;
         private string Name;
-        public int Hp;
+        public float MaxHp;
+        public float Hp;
         public int Atk;
         public float Speed;
         private Rigidbody2D Rb;
@@ -44,6 +45,7 @@ namespace Script.Base
         private void SetSO()
         {
             Name = EnemyCharacterSo.Name;
+            MaxHp = EnemyCharacterSo.MaxHp;
             Hp = EnemyCharacterSo.MaxHp;
             Atk = EnemyCharacterSo.Atk;
             Speed = EnemyCharacterSo.Speed;
@@ -67,6 +69,7 @@ namespace Script.Base
             {
                 if (CanHit == false)
                 {
+                    SoundManager.Instance.Play(SoundManager.Sound.Hit);
                     Cam?.PlayFeedbacks();
                     StartCoroutine(CanAttack());
                     var atkPlayer = other.GetComponentInParent<PlayerCharacter>();
@@ -89,22 +92,15 @@ namespace Script.Base
                 
                     if (Hp <= 0)
                     {
-                        if (isBoss == true)
-                        {
-                            SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
-                            isDeadForBoss = true;
-                        }
-                        else
-                        {
-                            SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
-                            StartCoroutine(Deaddelay());
-                            SlowTime?.PlayFeedbacks();
-                        }
+                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
+                        StartCoroutine(Deaddelay());
+                        SlowTime?.PlayFeedbacks();
                     }
                 }
             }
             else if (other.CompareTag("Bullet"))
             {
+                SoundManager.Instance.Play(SoundManager.Sound.Hit);
                 Cam?.PlayFeedbacks();
                 var atkPlayer = other.GetComponent<Bullet>();
                 playerCritRate = atkPlayer.CritRate;
@@ -126,17 +122,10 @@ namespace Script.Base
                 
                 if (Hp <= 0)
                 {
-                    if (isBoss == true)
-                    {
-                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
-                        isDeadForBoss = true;
-                    }
-                    else
-                    {
-                        SlowTime?.PlayFeedbacks();
-                        SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
-                        StartCoroutine(Deaddelay());
-                    }
+                    SlowTime?.PlayFeedbacks();
+                    SoundManager.Instance.Play(SoundManager.Sound.EnemyTakeHit);
+                    SoundManager.Instance.Play(SoundManager.Sound.Die);
+                    StartCoroutine(Deaddelay());
                     
                 }
             }

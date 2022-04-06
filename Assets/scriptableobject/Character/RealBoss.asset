@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RealBoss
   m_EditorClassIdentifier: 
   Name: BIGBOSS
-  MaxHp: 7000
-  Atk: 150
+  MaxHp: 5000
+  Atk: 60
   Speed: 8
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}

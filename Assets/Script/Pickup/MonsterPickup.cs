@@ -10,7 +10,7 @@ public class MonsterPickup : MonoBehaviour
             
         if (other.CompareTag("Player"))
         {
-            SoundManager.Instance.Play(SoundManager.Sound.Coin);
+            SoundManager.Instance.Play(SoundManager.Sound.Monster);
             SpawnPlayer.instance.Monster++;
             Debug.Log(SpawnPlayer.instance.Monster);
             Destroy(gameObject);

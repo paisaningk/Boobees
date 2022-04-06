@@ -27,7 +27,8 @@ public class DialogueManager : MonoBehaviour
    // [Header("Item")] 
    // [SerializeField] private TextMeshProUGUI MonsterText;
    // [SerializeField] private TextMeshProUGUI BookText;
-   
+   public TextMeshProUGUI Book;
+   public TextMeshProUGUI Monter;
    private static DialogueManager instance;
    private Story currentStory;
    public bool DialoguePlaying;
@@ -45,6 +46,7 @@ public class DialogueManager : MonoBehaviour
          Destroy(gameObject);
       }
       
+
       //set dialogue set active false
       DialoguePlaying = false;
       Dialogue.SetActive(DialoguePlaying);
@@ -59,9 +61,9 @@ public class DialogueManager : MonoBehaviour
 
    private void Start()
    {
+      Heart.SetActive(false);
       ((Ink.Runtime.IntValue) GetVariableState("Item")).value = SpawnPlayer.instance.Item;
       ((Ink.Runtime.IntValue) GetVariableState("Monster")).value = SpawnPlayer.instance.Monster;
-      Heart.SetActive(false);
    }
 
    public static DialogueManager GetInstance()
@@ -71,6 +73,8 @@ public class DialogueManager : MonoBehaviour
 
    private void Update()
    {
+      Book.text = $"{((Ink.Runtime.IntValue) GetVariableState("Item")).value}";
+      Monter.text = $"{((Ink.Runtime.IntValue) GetVariableState("Monster")).value}";
       if (!DialoguePlaying)
       {
          return;
@@ -79,6 +83,12 @@ public class DialogueManager : MonoBehaviour
       if (currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.E))
       {
          ContinueStory();
+      }
+
+      if (Input.GetKeyDown(KeyCode.L))
+      {
+         ((Ink.Runtime.IntValue) GetVariableState("Item")).value += 20;
+         ((Ink.Runtime.IntValue) GetVariableState("Monster")).value += 20;
       }
    }
 

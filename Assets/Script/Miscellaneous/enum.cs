@@ -20,3 +20,9 @@ public enum ItemTypeForNpc
     Monster,
     Item
 }
+
+public enum Mode
+{
+    Easy,
+    Hard
+}

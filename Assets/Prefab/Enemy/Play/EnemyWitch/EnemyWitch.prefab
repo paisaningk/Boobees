@@ -169,8 +169,8 @@ MonoBehaviour:
   speed: 2.5
   stoppingDistance: 5
   retreatDistance: 4
-  StartShot: 1.5
-  EndShot: 2.5
+  StartShot: 2.5
+  EndShot: 3.5
   projectile: {fileID: 4626256943966877042, guid: c6ac7d5af47f51a42bfd4c66234098c8,
     type: 3}
 --- !u!114 &-4304983170205496369
@@ -185,13 +185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e613a744b385c4c95d8708168f02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyCharacterSo: {fileID: 11400000, guid: a5a2357c3cc33a8449b69b6398eee9b0, type: 2}
+  EnemyCharacterSo: {fileID: 11400000, guid: 645a65c32168f3443a4f3d9114d15fef, type: 2}
   GoldPrefab: {fileID: 6553757506690030909, guid: 78ee19a0df208fe4e89f36ba6e168720,
     type: 3}
   Monster: {fileID: 1773397397586262774, guid: 2dfef8fb6c280be47bddb6c2f571038a, type: 3}
   enemyType: 1
   isBoss: 0
   Popup: {fileID: 6959267467585398363, guid: 2e412f90986f8eb43a023124515726f9, type: 3}
+  SlowTime: {fileID: 0}
+  Cam: {fileID: 0}
   Hp: 0
   Atk: 0
   Speed: 0

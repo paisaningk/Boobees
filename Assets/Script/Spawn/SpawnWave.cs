@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using MoreMountains.Feedbacks;
 using Script.Base;
 using Script.Controller;
 using Script.Pickup;
 using Script.Sound;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 
@@ -23,10 +25,10 @@ namespace Script.Spawn
     public class SpawnWave : MonoBehaviour
     {
         [Header("Wave")]
+        [SerializeField] private Wave[] Ezmode;
         [SerializeField] private Wave[] WaveForPlayerGun;
         [SerializeField] private Transform[] SpawnPoint;
         [SerializeField] private TextMeshProUGUI WaveText;
-        [SerializeField] private GameObject boss;
         [SerializeField] private GameObject Shop;
         [SerializeField] private GameObject win;
         [SerializeField] private float shopingtime = 20;
@@ -39,7 +41,10 @@ namespace Script.Spawn
         [SerializeField] private Transform MapPoint;
         [SerializeField] private Transform ShopPoint;
         [SerializeField] private GameObject SkipText;
-
+        [SerializeField] private GameObject UiBoss;
+        [SerializeField] private Image blood;
+        public MMFeedbacks Fade;
+        public MMFeedbacks Fade2;
         private Wave CurrentWave;
         private Wave[] Wave;
         private int CurrentWaveNumber = 0;
@@ -54,6 +59,8 @@ namespace Script.Spawn
         private bool canSpawn = false;
         [SerializeField] private GameObject Player;
         private PlayerCharacter playerCharacter;
+        private bool skip = false;
+        private EnemyCharacter HPboss;
 
         private void Awake()
         {
@@ -65,8 +72,10 @@ namespace Script.Spawn
             {
                 PlayerSword.SetActive(true);
             }
-            Wave = WaveForPlayerGun;
+
+            Wave = SpawnPlayer.instance.Mode == Mode.Easy ? Ezmode : WaveForPlayerGun;
             PlayerController.playerInput.PlayerAction.Skip.performed += context =>  Close();
+            UiBoss.SetActive(false);
         }
         private void Start()
         {
@@ -82,11 +91,18 @@ namespace Script.Spawn
 
         private void Close()
         {
-            if (CountTimeNextWave)
+            if (CountTimeNextWave && skip)
             {
-                StopCoroutine( "Shoping" );
-                CloseShop();
+                StopCoroutine("Shoping");
+                StartCoroutine("WaitFade2");
             }
+        }
+
+        private void Update()
+        {
+            if (HPboss == null) return;
+            var bossHp = HPboss.Hp / HPboss.MaxHp;
+            blood.fillAmount = bossHp;
         }
 
         private void FixedUpdate()
@@ -102,13 +118,14 @@ namespace Script.Spawn
                     if (tolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber + 1 >= Wave.Length)
                     {
                         win.SetActive(true);
+                        UiBoss.SetActive(false);
                         PlayerController.playerInput.PlayerAction.Disable();
                     }
                     else if (tolalEnemies.Length == 0 && !CanSpawn && CurrentWaveNumber + 1 != Wave.Length)
                     {
                         if (nextwave)
                         {
-                            StartCoroutine( "Shoping" );
+                            StartCoroutine( "WaitFade");
                             var coin = GameObject.FindGameObjectsWithTag("Coin");
                             Debug.Log(coin.Length);
                             foreach (var gold in coin)
@@ -116,7 +133,6 @@ namespace Script.Spawn
                                 playerCharacter.Gold += gold.GetComponent<Gold>().goldAmount;;
                                 Destroy(gold);
                             }
-                            Player.transform.position = ShopPoint.position;
                             nextwave = false;
                             timeShopShow = shopingtime;
                         }
@@ -146,6 +162,20 @@ namespace Script.Spawn
             yield return new WaitForSeconds(1.5f);
             canSpawn = true;
         }
+        
+        IEnumerator WaitFade()
+        {
+            Fade.PlayFeedbacks();
+            yield return new WaitForSeconds(1);
+            StartCoroutine( "Shoping");
+        }
+        IEnumerator WaitFade2()
+        {
+            Fade2.PlayFeedbacks();
+            skip = false;
+            yield return new WaitForSeconds(1);
+            CloseShop();
+        }
 
         private void spawnWave()
         {
@@ -156,27 +186,39 @@ namespace Script.Spawn
                 var RandomSpawnPoint = SpawnPoint[Random.Range(0, SpawnPoint.Length)];
                 Instantiate(RandomEnemy, RandomSpawnPoint.position, Quaternion.identity);
                 CurrentWave.numberOfEnemy--;
-                nextSpawnTime = Time.time + CurrentWave.spawnTime;   
-                Debug.Log($"numberOfEnemy {CurrentWave.numberOfEnemy}");
+                nextSpawnTime = Time.time + CurrentWave.spawnTime;
                 if (CurrentWave.numberOfEnemy == 0)
                 {
                     CanSpawn = false;
+                    var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+                    foreach (var VARIABLE in tolalEnemies)
+                    {
+                        var b = VARIABLE.GetComponent<EnemyCharacter>();
+                        if (b.isBoss == true)
+                        {
+                            HPboss = b;
+                            UiBoss.SetActive(true);
+                            SoundManager.Instance.Stop(SoundManager.Sound.BGM);
+                            SoundManager.Instance.Play(SoundManager.Sound.BGMBoss);
+                        }
+                    }
                 }
             }
         }
-        
+
         private IEnumerator Shoping()
         {
             OpenShop();
 
             yield return new WaitForSeconds(shopingtime);
 
-            CloseShop();
+            StartCoroutine(WaitFade2());
 
         }
 
         private void OpenShop()
         {
+            Player.transform.position = ShopPoint.position;
             CameraMap.gameObject.SetActive(false);
             CameraShop.gameObject.SetActive(true);
             SoundManager.Instance.Play(SoundManager.Sound.OpenShop);
@@ -185,10 +227,12 @@ namespace Script.Spawn
             shopController.RngItemandSpawn();
             CountTimeNextWave = true;
             SkipText.SetActive(true);
+            skip = true;
         }
 
         private void CloseShop()
         {
+            skip = false;
             CameraMap.gameObject.SetActive(true);
             CameraShop.gameObject.SetActive(false);
             Shop.SetActive(false);
@@ -197,20 +241,16 @@ namespace Script.Spawn
             CountTimeNextWave = false;
             nextwaveGameObject.SetActive(false);
             SkipText.SetActive(false);
+            Player.transform.position = MapPoint.position;
         }
 
         private void NextSpawnWave()
         {
-            Player.transform.position = MapPoint.position;
+            nextwave = true;
             WaveNumberText++;
             CurrentWaveNumber++;
             CanSpawn = true;
-            nextwave = true;
             soundPlay = true;
-            if (CurrentWaveNumber == Wave.Length)
-            {
-                Instantiate(boss, transform.position, Quaternion.identity);
-            }
             SoundManager.Instance.Stop(SoundManager.Sound.Shop);
             SoundManager.Instance.Playfrompause(SoundManager.Sound.BGM);
         }

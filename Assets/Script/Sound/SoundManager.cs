@@ -53,7 +53,14 @@ namespace Script.Sound
             PlayerDieBGM,
             Shot,
             Reload,
-            Ammo
+            Ammo,
+            BGMBoss,
+            BossAttack01,
+            BossAttack02,
+            EyeAttack,
+            Die,
+            Monster,
+            Hit,
         }
 
         [Serializable]

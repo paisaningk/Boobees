@@ -7,6 +7,7 @@ namespace Script.Spawn
     {
         public static SpawnPlayer instance;
         public PlayerType PlayerType;
+        public Mode Mode;
         public int Item = 0;
         public int Monster = 0;
         

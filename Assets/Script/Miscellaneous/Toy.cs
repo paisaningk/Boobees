@@ -10,14 +10,16 @@ public class Toy : MonoBehaviour
     private bool playerInRange;
     private void Start()
     {
+        Neo.SetActive(false);
         Button.SetActive(false);
         playerInRange = false;
+        
     }
 
     public void Update()
     {
         Button.SetActive(playerInRange);
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)&&playerInRange)
         {
             Neo.SetActive(true);
             Button.SetActive(false);

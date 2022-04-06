@@ -60,6 +60,7 @@ namespace Script.Menu
 
         private void Awake()
         {
+            Time.timeScale = 1;
             resumeButton.onClick.AddListener(Resume);
             quitButton.onClick.AddListener(Quit);
             deadquitButton.onClick.AddListener(Quit);
@@ -248,11 +249,25 @@ namespace Script.Menu
 
         public void Dead()
         {
+            var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var VARIABLE in tolalEnemies)
+            {
+                VARIABLE.SetActive(false);
+            }
+
+            StartCoroutine(SetDead());
+        }
+        
+        IEnumerator SetDead()
+        {
+            yield return new WaitForSeconds(1);
             pauseUi.SetActive(false);
             waveUI.SetActive(false);
             deadUI.SetActive(true);
+            PlayerController.playerInput.PlayerAction.Disable();
+            Time.timeScale = 0;
         }
 
-        
+
     }
 }

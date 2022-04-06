@@ -1,5 +1,6 @@
 using System.Collections;
 using Script.Sound;
+using Script.Spawn;
 using UnityEngine;
 
 namespace Script.Controller
@@ -27,6 +28,10 @@ namespace Script.Controller
         {
             rb = GetComponent<Rigidbody2D>();
             player = GameObject.FindWithTag("Player").transform;
+            if (SpawnPlayer.instance.PlayerType == PlayerType.Gun)
+            {
+                movespeed = 7.5f;
+            }
         }
 
         private void FixedUpdate()
@@ -80,6 +85,17 @@ namespace Script.Controller
         {
             RingAnimator.SetBool("Skill",true);
         }
+        
+        public void Sound01()
+        {
+            SoundManager.Instance.Play(SoundManager.Sound.BossAttack01);
+        }
+        
+        public void Sound02()
+        {
+            SoundManager.Instance.Play(SoundManager.Sound.BossAttack02);
+        }
+        
 
         private void SelectNextMove()
         {
