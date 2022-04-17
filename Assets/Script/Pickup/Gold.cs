@@ -22,8 +22,7 @@ namespace Script.Pickup
         {
             var player = other.GetComponent<PlayerCharacter>();
             player.Gold += goldPlus;
-            Debug.Log($"Player Gold {player.Gold}");
-                
+
             Destroy(gameObject);
         }
     }

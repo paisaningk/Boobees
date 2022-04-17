@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using Script.Base;
 using Script.Menu;
 using Script.Sound;
+using Script.Spawn;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Script.Controller
 {
@@ -42,8 +45,12 @@ namespace Script.Controller
             backButton.onClick.AddListener(Back);
             healButton.onClick.AddListener(Heal);
         }
-        
-        
+
+        public void Update()
+        {
+           
+        }
+
 
         private void Talk()
         {
@@ -66,7 +73,7 @@ namespace Script.Controller
             }
         }
 
-        private void Back()
+        public void Back()
         {
             shopMenu.SetActive(false);
             shoping = false;

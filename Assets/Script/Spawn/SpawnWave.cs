@@ -31,7 +31,7 @@ namespace Script.Spawn
         [SerializeField] private TextMeshProUGUI WaveText;
         [SerializeField] private GameObject Shop;
         [SerializeField] private GameObject win;
-        [SerializeField] private float shopingtime = 20;
+        [SerializeField] private float shopingtime = 120;
         [SerializeField] private TextMeshProUGUI Nextwavetext;
         [SerializeField] private GameObject nextwaveGameObject;
         [SerializeField] private GameObject PlayerSword;
@@ -43,21 +43,22 @@ namespace Script.Spawn
         [SerializeField] private GameObject SkipText;
         [SerializeField] private GameObject UiBoss;
         [SerializeField] private Image blood;
+        [SerializeField] private ShopController shop;
         public MMFeedbacks Fade;
         public MMFeedbacks Fade2;
         private Wave CurrentWave;
         private Wave[] Wave;
         private int CurrentWaveNumber = 0;
-        private bool CountTimeNextWave = false;
+        public bool CountTimeNextWave = false;
         private bool nextwave = true;
         private bool CanSpawn = true;
         private bool soundPlay = true;
         private float nextSpawnTime;
-        public static int WaveNumberText = 1;
+        private int WaveNumberText = 1;
         private float timeShopShow;
         private ShopController shopController;
         private bool canSpawn = false;
-        [SerializeField] private GameObject Player;
+        private GameObject Player;
         private PlayerCharacter playerCharacter;
         private bool skip = false;
         private EnemyCharacter HPboss;
@@ -232,6 +233,7 @@ namespace Script.Spawn
 
         private void CloseShop()
         {
+            shop.Back();
             skip = false;
             CameraMap.gameObject.SetActive(true);
             CameraShop.gameObject.SetActive(false);

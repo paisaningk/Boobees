@@ -28597,7 +28597,7 @@ MonoBehaviour:
         Owner: {fileID: 2006853785}
         DebugActive: 0
         LoadingSceneName: LoadingScreen
-        DestinationSceneName: Map1
+        DestinationSceneName: Boss
         LoadingMode: 1
         Priority: 4
         InterpolateProgress: 1
@@ -35487,6 +35487,11 @@ PrefabInstance:
       objectReference: {fileID: 6589931726670256213}
     - target: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
         type: 3}
+      propertyPath: spawnWave
+      value: 
+      objectReference: {fileID: 1566331500744485670}
+    - target: {fileID: 273751100222277818, guid: c1eab51a60dcad643b9a6fdcae2e0732,
+        type: 3}
       propertyPath: backButton
       value: 
       objectReference: {fileID: 1016526026210558461}
@@ -36489,6 +36494,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1566331500744485668}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1566331500744485670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1566331499945368412, guid: 89d5b00a65a12fa47b2507a3d459b7d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1566331500744485668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b619dd7eaddf57d45ad1a107042b149c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1820153406088911699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2237365530618270096, guid: d594a614554985a42afd89089cc8073c,

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566331499313954826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.8, y: 0, z: 0}
+  m_LocalPosition: {x: 17.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1566331499945368413}
@@ -287,10 +287,9 @@ MonoBehaviour:
   - {fileID: 1566331499313954827}
   - {fileID: 1566331500368633770}
   WaveText: {fileID: 0}
-  boss: {fileID: 904702811331331927, guid: 260b0a672545bd64fa7ce869405076a0, type: 3}
   Shop: {fileID: 0}
   win: {fileID: 0}
-  shopingtime: 20
+  shopingtime: 180
   Nextwavetext: {fileID: 0}
   nextwaveGameObject: {fileID: 0}
   PlayerSword: {fileID: 0}
@@ -300,9 +299,12 @@ MonoBehaviour:
   MapPoint: {fileID: 0}
   ShopPoint: {fileID: 0}
   SkipText: {fileID: 0}
+  UiBoss: {fileID: 0}
+  blood: {fileID: 0}
+  shop: {fileID: 0}
   Fade: {fileID: 0}
   Fade2: {fileID: 0}
-  Player: {fileID: 0}
+  CountTimeNextWave: 0
 --- !u!1 &1566331500089613473
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566331500089613473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.62, z: 0}
+  m_LocalPosition: {x: 0, y: 14.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1566331499945368413}
@@ -387,7 +389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566331500368633769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10.2, z: 0}
+  m_LocalPosition: {x: 0, y: -15.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1566331499945368413}

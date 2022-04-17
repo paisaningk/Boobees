@@ -146,7 +146,7 @@ namespace Script.Menu
                 Dash.fillAmount = DashCd / PlayerCharacter.DashCd;
                 if (DashCd / PlayerCharacter.DashCd >= 1)
                 {
-                    StartCoroutine(SetDashCd());
+                    StartCoroutine("SetDashCd");
                 }
             }
         }
@@ -201,7 +201,7 @@ namespace Script.Menu
         {
             yield return new WaitForSeconds(0.1f);
             candash = true;
-            StopCoroutine(SetDashCd());
+            StopCoroutine(nameof(SetDashCd));
         }
 
         private void SetStatus()

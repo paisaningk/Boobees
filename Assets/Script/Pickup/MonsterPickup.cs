@@ -12,7 +12,6 @@ public class MonsterPickup : MonoBehaviour
         {
             SoundManager.Instance.Play(SoundManager.Sound.Monster);
             SpawnPlayer.instance.Monster++;
-            Debug.Log(SpawnPlayer.instance.Monster);
             Destroy(gameObject);
         }
     }

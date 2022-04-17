@@ -364,6 +364,7 @@ MonoBehaviour:
   text: {fileID: 0}
   healCostText: {fileID: 0}
   rngText: {fileID: 0}
+  spawnWave: {fileID: 0}
   healCost: 15
   rngCost: 10
   shoping: 0
