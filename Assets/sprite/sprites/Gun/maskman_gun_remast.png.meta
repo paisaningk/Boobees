@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      maskman_gun_remast_1: -1832502691473306598
+      maskman_gun_remast_4: -5574127722498878653
+      maskman_gun_remast_5: -237930623975701139
+      maskman_gun_remast_0: -939446824866397989
+      maskman_gun_remast_3: -6442125922098156296
+      maskman_gun_remast_2: -3943332607658853156
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

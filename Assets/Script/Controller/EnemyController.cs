@@ -6,8 +6,8 @@ namespace Script.Controller
 {
     public class EnemyController : MonoBehaviour
     {
-        [SerializeField] private float StarMove = 1.5f;
-        [SerializeField] private float StarMoveslowe = 2f;
+        [SerializeField] private float starMove = 1.5f;
+        [SerializeField] private float starMoveslowe = 2f;
         private Rigidbody2D rb;
         private Transform player;
         private Animator animator;
@@ -58,7 +58,7 @@ namespace Script.Controller
         
         IEnumerator Wait()
         {
-            var a = Random.Range(StarMove,StarMoveslowe);
+            var a = Random.Range(starMove,starMoveslowe);
             yield return new WaitForSeconds(a);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             attacking = false;

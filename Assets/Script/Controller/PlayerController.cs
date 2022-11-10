@@ -13,43 +13,43 @@ namespace Script.Controller
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private LayerMask dashLayerMask;
-        [SerializeField] public GameplaySceneMenu GameplaySceneMenu;
+        [SerializeField] public GameplaySceneMenu gameplaySceneMenu;
         [SerializeField] public PlayerType playerType;
         private PlayerCharacter playerCharacter;
         public static Playerinput playerInput;
-        private Rigidbody2D Rd;
-        private Vector3 MoveDie;
+        private Rigidbody2D rd;
+        private Vector3 moveDie;
         private Animator animator;
         private Camera cam;
-        private bool IsAttacking = false;
-        private bool Attack01 = false;
-        private bool Attack02 = false;
-        private bool Attack03 = false;
-        [SerializeField] private Transform Gun;
+        private bool isAttacking = false;
+        private bool attack01 = false;
+        private bool attack02 = false;
+        private bool attack03 = false;
+        [SerializeField] private Transform gun;
         [SerializeField] private GunController gunController;
-        [SerializeField] private Animator Gunanimator;
-        public static bool CanDash = true;
+        [SerializeField] private Animator gunanimator;
+        public static bool canDash = true;
         public bool knockback = false;
         public bool fire = false;
         public bool canfire = true;
         
 
         //ปรับได้
-        private float MoveSpeed = 5f;
+        private float moveSpeed = 5f;
         float dashAmount = 3f;
         private float dashcooldown = 1;
-        private float Attackcooldowntime;
-        private float Attackcooldown = 2.5f;
-        private bool Soundplay;
-        public int Ammo;
-        public float ReloadTime = 2;
-        private bool FireRateCoolDown = true;
+        private float attackcooldowntime;
+        private float attackcooldown = 2.5f;
+        private bool soundplay;
+        public int ammo;
+        public float reloadTime = 2;
+        private bool fireRateCoolDown = true;
 
         private void Awake()
         {
             Time.timeScale = 1f;
             animator = GetComponent<Animator>();
-            Rd = GetComponent<Rigidbody2D>();
+            rd = GetComponent<Rigidbody2D>();
             playerCharacter = GetComponent<PlayerCharacter>();
             playerInput = new Playerinput();
             playerInput.PlayerAction.Dash.performed += context => Dash();
@@ -83,15 +83,15 @@ namespace Script.Controller
         private void Update()
         {
             dashcooldown = playerCharacter.DashCd;
-            MoveSpeed = playerCharacter.Speed;
+            moveSpeed = playerCharacter.Speed;
             //Walk
             var walk = playerInput.PlayerAction.Move.ReadValue<Vector2>();
-            MoveDie = walk.normalized;
+            moveDie = walk.normalized;
             
             if (playerType == PlayerType.Gun)
             {
                 GunFollowMouse();
-                if (Ammo == 5)
+                if (ammo == 5)
                 {
                     StartCoroutine(ResetAmmo());
                     StartCoroutine(Reload());
@@ -100,10 +100,10 @@ namespace Script.Controller
 
             if (walk != Vector2.zero)
             {
-                if (Soundplay)
+                if (soundplay)
                 {
                     SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
-                    Soundplay = false;
+                    soundplay = false;
                 }
                 animator.SetFloat("MoveX",walk.x);
                 animator.SetFloat("MoveY",walk.y);
@@ -112,11 +112,11 @@ namespace Script.Controller
             else
             {
                 SoundManager.Instance.Stop(SoundManager.Sound.PlayerMovement);
-                Soundplay = true;
+                soundplay = true;
                 animator.SetBool("Walking",false); 
             }
 
-            if (Attackcooldowntime <= Time.time)
+            if (attackcooldowntime <= Time.time)
             {
                 AttackFinish03();
             }
@@ -124,24 +124,24 @@ namespace Script.Controller
 
         private void FixedUpdate()
         {
-            Rd.velocity = MoveDie * MoveSpeed;
+            rd.velocity = moveDie * moveSpeed;
         }
 
         private void Menu()
         {
-            if (GameplaySceneMenu.isPause == false)
+            if (gameplaySceneMenu.isPause == false)
             {
-                GameplaySceneMenu.Pause();
+                gameplaySceneMenu.Pause();
             }
-            else if (GameplaySceneMenu.isPause == true)
+            else if (gameplaySceneMenu.isPause == true)
             {
-                GameplaySceneMenu.Resume();
+                gameplaySceneMenu.Resume();
             }
         }
 
         private void AllReload()
         {
-            if (Ammo > 0)
+            if (ammo > 0)
             {
                 StartCoroutine(ResetAmmo());
                 StartCoroutine(Reload());
@@ -150,7 +150,7 @@ namespace Script.Controller
 
         private void Shot()
         {
-            if (FireRateCoolDown)
+            if (fireRateCoolDown)
             {
                 fire = true;
             }
@@ -164,36 +164,36 @@ namespace Script.Controller
             
             Vector2 difference = mouse - transform.position;
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            Gun.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+            gun.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
 
             if (canfire && fire)
             {
-                Gunanimator.SetBool("Fire",true);
+                gunanimator.SetBool("Fire",true);
                 StartCoroutine(FireRate());
-                Ammo++;
+                ammo++;
                 fire = false;
                 float distance = difference.magnitude;
                 Vector2 direction = difference / distance;
                 direction.Normalize();
-                gunController.FireBullet(direction, rotationZ,Ammo);
+                gunController.FireBullet(direction, rotationZ,ammo);
             }
         }
         
         IEnumerator FireRate()
         {
-            FireRateCoolDown = false;
+            fireRateCoolDown = false;
             yield return new WaitForSeconds(0.2f);
-            Gunanimator.SetBool("Fire",false);
-            FireRateCoolDown = true;
+            gunanimator.SetBool("Fire",false);
+            fireRateCoolDown = true;
         }
 
         IEnumerator Reload()
         {
-            Gunanimator.SetBool("Reload",true);
+            gunanimator.SetBool("Reload",true);
             fire = false;
             canfire = false;
-            yield return new WaitForSeconds(ReloadTime);
-            Gunanimator.SetBool("Reload",false);
+            yield return new WaitForSeconds(reloadTime);
+            gunanimator.SetBool("Reload",false);
             canfire = true;
             fire = false;
         }
@@ -201,44 +201,44 @@ namespace Script.Controller
         IEnumerator ResetAmmo()
         {
             yield return new WaitForSeconds(0.1f);
-            Ammo = 0;
+            ammo = 0;
         }
         
 
         private void Attack()
         {
-            if (IsAttacking == false)
+            if (isAttacking == false)
             {
                 var positionMouse = cam.ScreenToWorldPoint(playerInput.PlayerAction.Mouse.ReadValue<Vector2>());
                 Vector3 vectorAttack = (positionMouse - transform.position).normalized;
                 animator.SetFloat("AttackX",vectorAttack.x);
                 animator.SetFloat("AttackY",vectorAttack.y);
 
-                if (Attack01 == false)
+                if (attack01 == false)
                 {
                     SoundManager.Instance.Play(SoundManager.Sound.PlayerHit1);
-                    IsAttacking = true;
-                    Attack01 = true;
+                    isAttacking = true;
+                    attack01 = true;
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack01",true);
-                    Attackcooldowntime = Time.time + Attackcooldown;
+                    attackcooldowntime = Time.time + attackcooldown;
                     
                 }
-                else if (Attack02 == false)
+                else if (attack02 == false)
                 {
                     SoundManager.Instance.Play(SoundManager.Sound.PlayerHit2);
-                    IsAttacking = true;
-                    Attack02 = true;
+                    isAttacking = true;
+                    attack02 = true;
                     animator.SetBool("Attacking",true);
                     animator.SetBool("Attack02",true);
-                    Attackcooldowntime = Time.time + Attackcooldown;
+                    attackcooldowntime = Time.time + attackcooldown;
                     //Debug.Log($"Attack 2");
                 }
-                else if (Attack03 == false)
+                else if (attack03 == false)
                 {
                     SoundManager.Instance.Play(SoundManager.Sound.PlayerHit3);
-                    IsAttacking = true;
-                    Attack03 = true;
+                    isAttacking = true;
+                    attack03 = true;
                     animator.SetBool("Attacking",true); 
                     animator.SetBool("Attack03",true);
                     knockback = true;
@@ -249,19 +249,19 @@ namespace Script.Controller
         
         private void Dash()
         {
-            if (CanDash && MoveDie != Vector3.zero)
+            if (canDash && moveDie != Vector3.zero)
             {
-                CanDash = false;
+                canDash = false;
                 SoundManager.Instance.Play(SoundManager.Sound.PlayerDash);
-                Vector3 dashPoint = transform.position + MoveDie * dashAmount;
+                Vector3 dashPoint = transform.position + moveDie * dashAmount;
 
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, MoveDie, 
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, moveDie, 
                     dashAmount,dashLayerMask);
                 if (raycastHit2D.collider != null)
                 {
                     dashPoint = raycastHit2D.point;
                 }
-                Rd.MovePosition(dashPoint);
+                rd.MovePosition(dashPoint);
                 StartCoroutine(DashCooldown());
             }
         }
@@ -269,33 +269,33 @@ namespace Script.Controller
         IEnumerator DashCooldown()
         {
             yield return new WaitForSeconds(dashcooldown);
-            CanDash = true;
+            canDash = true;
         }
 
         private void AttackFinish()
         {
             animator.SetBool("Attacking",false);
-            IsAttacking = false;
+            isAttacking = false;
         }
         
         public void AttackFinish03()
         {
-            IsAttacking = false;
-            Attack01 = false;
-            Attack02 = false;
-            Attack03 = false;
+            isAttacking = false;
+            attack01 = false;
+            attack02 = false;
+            attack03 = false;
             animator.SetBool("Attacking",false);
             animator.SetBool("Attack01",false);
             animator.SetBool("Attack02",false);
             animator.SetBool("Attack03",false);
-            Attackcooldowntime = 0;
+            attackcooldowntime = 0;
         }
 
         public void Dead()
         {
             SoundManager.Instance.Play(SoundManager.Sound.PlayerDie);
-            GameplaySceneMenu.Dead();
-            Rd.constraints = RigidbodyConstraints2D.FreezeAll;
+            gameplaySceneMenu.Dead();
+            rd.constraints = RigidbodyConstraints2D.FreezeAll;
             OnDisable();
         }
 

@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      bloodvoid_arm_5: -5683369834848629284
+      bloodvoid_arm_4: -7332712637451586180
+      bloodvoid_arm_0: 4910213120879301289
+      bloodvoid_arm_6: -1641199953699482577
+      bloodvoid_arm_3: 345735049613490707
+      bloodvoid_arm_2: -7206475729146767853
+      bloodvoid_arm_1: 290255533420197378
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

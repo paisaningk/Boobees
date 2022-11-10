@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Ronin_Walk-front-export_4: 4881302818903337275
+      Ronin_Walk-front-export_3: -5408316531773529477
+      Ronin_Walk-front-export_2: -5677306816624849735
+      Ronin_Walk-front-export_1: 1142686751840903692
+      Ronin_Walk-front-export_5: -8380618417750644445
+      Ronin_Walk-front-export_0: -9044027604607069289
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

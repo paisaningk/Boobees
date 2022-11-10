@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -328,6 +329,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Ronin_Deadt_4: 8970077800114451793
+      Ronin_Deadt_1: 7028778199897486925
+      Ronin_Deadt_0: -6108368270885460735
+      Ronin_Deadt_5: 1660984304298392719
+      Ronin_Deadt_3: -7312247554331684821
+      Ronin_Deadt_6: 7459296826786260880
+      Ronin_Deadt_2: 8946482654503335444
+      Ronin_Deadt_7: -2944808630524683382
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

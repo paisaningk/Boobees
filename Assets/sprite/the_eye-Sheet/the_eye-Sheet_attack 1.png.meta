@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      the_eye-Sheet_attack 1_4: 1025138315563661371
+      the_eye-Sheet_attack 1_1: -1676771014970762206
+      the_eye-Sheet_attack 1_0: -1214259807802645073
+      the_eye-Sheet_attack 1_2: -3361382282103354999
+      the_eye-Sheet_attack 1_5: -622257954411528172
+      the_eye-Sheet_attack 1_6: 2833714505939170608
+      the_eye-Sheet_attack 1_3: 6772715073189511539
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

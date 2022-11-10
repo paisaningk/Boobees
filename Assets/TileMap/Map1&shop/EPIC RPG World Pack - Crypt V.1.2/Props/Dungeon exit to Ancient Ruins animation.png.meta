@@ -48,6 +48,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -304,6 +305,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Dungeon exit to Ancient Ruins animation_0: 6282425979378740522
+      Dungeon exit to Ancient Ruins animation_4: -8295181753274673959
+      Dungeon exit to Ancient Ruins animation_1: -2796342321820839763
+      Dungeon exit to Ancient Ruins animation_6: -6000298119356502212
+      Dungeon exit to Ancient Ruins animation_2: 1968537982468491936
+      Dungeon exit to Ancient Ruins animation_5: 6422689560730092357
+      Dungeon exit to Ancient Ruins animation_3: 8863391233672282318
+      Dungeon exit to Ancient Ruins animation_7: 3769237206716597837
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

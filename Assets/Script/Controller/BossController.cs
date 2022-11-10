@@ -8,10 +8,10 @@ namespace Script.Controller
     {
         [SerializeField] private float stoppingDistance = 3f;
         [SerializeField] private float movespeed = 20f;
-        [SerializeField] private float Waitfornextmove = 3f;
+        [SerializeField] private float waitfornextmove = 3f;
 
         private EnemyCharacter enemyCharacter;
-        private Rigidbody2D Rb;
+        private Rigidbody2D rb;
         private Transform player;
         private Animator animator;
         private Vector3 directionnormalized;
@@ -20,7 +20,7 @@ namespace Script.Controller
 
         private void Start()
         {
-            Rb = GetComponent<Rigidbody2D>();
+            rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             enemyCharacter = GetComponent<EnemyCharacter>();
             player = GameObject.FindWithTag("Player").transform;
@@ -59,7 +59,7 @@ namespace Script.Controller
             {
                 if (attacking)
                 {
-                    Rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                    rb.constraints = RigidbodyConstraints2D.FreezeAll;
                     animator.SetBool("Walking",false);
                     animator.SetBool("Attack",true);
                     animator.SetFloat("MoveX",directionnormalized.x);
@@ -86,8 +86,8 @@ namespace Script.Controller
         IEnumerator Wait3Sec()
         {
             //SelectNextMove();
-            yield return new WaitForSeconds(Waitfornextmove);
-            Rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            yield return new WaitForSeconds(waitfornextmove);
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             attacking = true;
             nextMove = true;
         }
@@ -100,7 +100,7 @@ namespace Script.Controller
             animator.SetFloat("MoveY",directionnormalized.y);
             animator.SetBool("Walking",true);
             
-            Rb.MovePosition(move);
+            rb.MovePosition(move);
         }
     }
 }

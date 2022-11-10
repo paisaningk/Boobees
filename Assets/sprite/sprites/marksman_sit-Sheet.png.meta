@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -232,6 +233,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      marksman_sit-Sheet_1: 4832615306281812831
+      marksman_sit-Sheet_2: 6111921718117287321
+      marksman_sit-Sheet_3: -2195135850910055588
+      marksman_sit-Sheet_4: 6344585272745622967
+      marksman_sit-Sheet_0: -5927007936900824167
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

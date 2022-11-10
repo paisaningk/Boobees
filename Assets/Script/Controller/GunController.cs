@@ -5,8 +5,8 @@ namespace Script.Controller
 {
     public class GunController : MonoBehaviour
     {
-        public Transform StartFire;
-        public float BulletSpeed = 3;
+        public Transform startFire;
+        public float bulletSpeed = 3;
 
         public void FireBullet(Vector2 direction, float rotationZ,int ammo)
         {
@@ -17,10 +17,11 @@ namespace Script.Controller
             }
             var bullet = ObjectPool.SharedInstance.GetPooledObject("Bullet");
             bullet.SetActive(true);
-            bullet.transform.position = StartFire.transform.position;
-            var a = Random.Range(-3, 4);
-            bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - a);
-            bullet.GetComponent<Rigidbody2D>().velocity = direction * BulletSpeed;
+            bullet.transform.position = startFire.transform.position;
+            var range = Random.Range(-3, 4);
+            bullet.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - range);
+            
+            bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         }
     }
 }

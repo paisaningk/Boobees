@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Executioner_ chargeattackeffect_4: -1050999014572428208
+      Executioner_ chargeattackeffect_2: 8398494947183734876
+      Executioner_ chargeattackeffect_1: -601452687890026179
+      Executioner_ chargeattackeffect_0: 3928406754521849376
+      Executioner_ chargeattackeffect_3: 816366692593659744
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

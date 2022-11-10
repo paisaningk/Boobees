@@ -39,6 +39,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -232,6 +233,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Ronin_Sit-Sheet_0: -3308936142061797563
+      Ronin_Sit-Sheet_1: 4174521870478955436
+      Ronin_Sit-Sheet_2: 5270608676777083188
+      Ronin_Sit-Sheet_3: 5462665844348430479
+      Ronin_Sit-Sheet_4: 6900933543035399021
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

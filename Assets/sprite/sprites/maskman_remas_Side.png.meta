@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      maskman_remas_Side_3: -6206831771196629943
+      maskman_remas_Side_2: -4681186116646758822
+      maskman_remas_Side_1: 78613163759114048
+      maskman_remas_Side_4: 6982419677793135574
+      maskman_remas_Side_0: -7638518852133609083
+      maskman_remas_Side_5: -6047158254413903475
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

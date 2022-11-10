@@ -36,6 +36,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -232,6 +233,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Ronin_third_Attack_Side-Sheet_2: -7464727244119122466
+      Ronin_third_Attack_Side-Sheet_1: 6524844294854461355
+      Ronin_third_Attack_Side-Sheet_3: -7418167146499842140
+      Ronin_third_Attack_Side-Sheet_0: -3870094986442666774
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

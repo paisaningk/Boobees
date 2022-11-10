@@ -45,6 +45,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -280,6 +281,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      dog2-Sheet_5: -8152083187568086712
+      dog2-Sheet_4: -83021139833227651
+      dog2-Sheet_2: -6156161840205043237
+      dog2-Sheet_0: -3283340188565268165
+      dog2-Sheet_3: 3718847551185633377
+      dog2-Sheet_6: 8710590691182766376
+      dog2-Sheet_1: -6611512029099642427
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

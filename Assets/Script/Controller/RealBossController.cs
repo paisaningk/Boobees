@@ -12,13 +12,13 @@ namespace Script.Controller
     }
     public class RealBossController : MonoBehaviour
     {
-        [SerializeField] private float StarMove = 3f;
-        [SerializeField] private float StarMoveslowe = 4f;
+        [SerializeField] private float starMove = 3f;
+        [SerializeField] private float starMoveslowe = 4f;
         private Rigidbody2D rb;
         private Transform player;
-        public Animator BodyAnimator;
-        public Animator ArmAnimator;
-        public Animator RingAnimator;
+        public Animator bodyAnimator;
+        public Animator armAnimator;
+        public Animator ringAnimator;
         private float movespeed = 5f;
         private float stoppingDistance = 3f;
         private bool nextMove = false;
@@ -48,14 +48,14 @@ namespace Script.Controller
         {
             Vector2 directionNormalized = direction.normalized;
             var move = (Vector2) transform.position + (directionNormalized * movespeed * Time.deltaTime);
-            BodyAnimator.SetBool("Walk",true);
-            ArmAnimator.SetBool("Walk",true);
+            bodyAnimator.SetBool("Walk",true);
+            armAnimator.SetBool("Walk",true);
             rb.MovePosition(move);
         }
         
         IEnumerator Wait()
         {
-            var a = Random.Range(StarMove,StarMoveslowe);
+            var a = Random.Range(starMove,starMoveslowe);
             yield return new WaitForSeconds(a);
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             nextMove = false;
@@ -64,26 +64,26 @@ namespace Script.Controller
 
         public void AttackFinish()
         {
-            BodyAnimator.SetBool("Walk",false);
-            ArmAnimator.SetBool("Walk",false);
-            BodyAnimator.SetBool("Attack",false);
-            ArmAnimator.SetBool("Attack",false);
+            bodyAnimator.SetBool("Walk",false);
+            armAnimator.SetBool("Walk",false);
+            bodyAnimator.SetBool("Attack",false);
+            armAnimator.SetBool("Attack",false);
             StartCoroutine(Wait());
         }
         
         public void RingFinish()
         {
-            BodyAnimator.SetBool("Walk",false);
-            ArmAnimator.SetBool("Walk",false);
-            BodyAnimator.SetBool("Skill",false);
-            ArmAnimator.SetBool("Skill",false);
-            RingAnimator.SetBool("Skill",false);
+            bodyAnimator.SetBool("Walk",false);
+            armAnimator.SetBool("Walk",false);
+            bodyAnimator.SetBool("Skill",false);
+            armAnimator.SetBool("Skill",false);
+            ringAnimator.SetBool("Skill",false);
             StartCoroutine(Wait());
         }
 
         public void StartRing()
         {
-            RingAnimator.SetBool("Skill",true);
+            ringAnimator.SetBool("Skill",true);
         }
         
         public void Sound01()
@@ -116,16 +116,16 @@ namespace Script.Controller
             {
                 if (attackState == AttackState.Attack)
                 {
-                    BodyAnimator.SetBool("Attack",true);
-                    ArmAnimator.SetBool("Attack",true);
+                    bodyAnimator.SetBool("Attack",true);
+                    armAnimator.SetBool("Attack",true);
                     rb.constraints = RigidbodyConstraints2D.FreezeAll;
                     nextMove = true;
                 }
                 else
                 {
-                    BodyAnimator.SetBool("Skill",true);
-                    ArmAnimator.SetBool("Skill",true);
-                    RingAnimator.SetBool("Skill",true);
+                    bodyAnimator.SetBool("Skill",true);
+                    armAnimator.SetBool("Skill",true);
+                    ringAnimator.SetBool("Skill",true);
                     rb.constraints = RigidbodyConstraints2D.FreezeAll;
                     nextMove = true;
                 }

@@ -75,6 +75,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -448,6 +449,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Stab and spin throw (136x32)_11: -1207274363073202414
+      Stab and spin throw (136x32)_4: 4763907613742772509
+      Stab and spin throw (136x32)_9: 5316549787693869139
+      Stab and spin throw (136x32)_8: -6531337960779954755
+      Stab and spin throw (136x32)_10: 5158561475792979943
+      Stab and spin throw (136x32)_12: -3089889005260222832
+      Stab and spin throw (136x32)_0: -6680774778439123786
+      Stab and spin throw (136x32)_6: -5066367698818012323
+      Stab and spin throw (136x32)_3: 1906574376129929926
+      Stab and spin throw (136x32)_7: 7427263213529965723
+      Stab and spin throw (136x32)_1: -4863527838117601062
+      Stab and spin throw (136x32)_5: 327912055649881270
+      Stab and spin throw (136x32)_2: -8479870233318960460
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

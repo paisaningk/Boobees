@@ -7,7 +7,7 @@ namespace Script.Controller
     public class PlayerControllerOutsideScene : MonoBehaviour
     {
         [SerializeField]private float moveSpeed;
-        public static Playerinput PlayerInput;
+        public static Playerinput staticPlayerInput;
         public Playerinput playerInput;
         private Rigidbody2D rd;
         private Vector2 moveDie;
@@ -16,7 +16,7 @@ namespace Script.Controller
 
         void Awake()
         {
-            PlayerInput = new Playerinput();
+            staticPlayerInput = new Playerinput();
             playerInput = new Playerinput();
             animator = GetComponent<Animator>();
             rd = GetComponent<Rigidbody2D>();
@@ -25,12 +25,12 @@ namespace Script.Controller
         private void Start()
         {
             SoundManager.Instance.Play(SoundManager.Sound.PlayerMovement);
-            PlayerInput.Enable();
+            staticPlayerInput.Enable();
         }
         
         void Update()
         {
-            var walk = PlayerInput.PlayerAction.Move.ReadValue<Vector2>();
+            var walk = staticPlayerInput.PlayerAction.Move.ReadValue<Vector2>();
             moveDie = walk.normalized;
             
             if (walk != Vector2.zero)

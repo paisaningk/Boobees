@@ -90,7 +90,7 @@ namespace Script.Menu
         {
             if (PlayerCharacter.PlayerType == PlayerType.Gun)
             {
-                var ammo = playerController.Ammo;
+                var ammo = playerController.ammo;
 
                 if (isReload)
                 {
@@ -126,7 +126,7 @@ namespace Script.Menu
             goldText.text = $"Gold : {PlayerCharacter.Gold}";
             var playerHp = PlayerCharacter.Hp / PlayerCharacter.MaxHp;
             blood.fillAmount = playerHp;
-            if (PlayerController.CanDash == false)
+            if (PlayerController.canDash == false)
             {
                 if (candash == true)
                 {
@@ -153,7 +153,7 @@ namespace Script.Menu
 
         public void Reloadative()
         {
-            if (playerController.Ammo > 0)
+            if (playerController.ammo > 0)
             {
                 StartCoroutine(Reload());
             }
@@ -167,7 +167,7 @@ namespace Script.Menu
                 VARIABLE.SetActive(false);
             }
             AmmoText.SetActive(true);
-            yield return new WaitForSeconds(playerController.ReloadTime);
+            yield return new WaitForSeconds(playerController.reloadTime);
             AmmoText.SetActive(false);
             isReload = true;
         }
@@ -249,12 +249,6 @@ namespace Script.Menu
 
         public void Dead()
         {
-            var tolalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (var VARIABLE in tolalEnemies)
-            {
-                VARIABLE.SetActive(false);
-            }
-
             StartCoroutine(SetDead());
         }
         

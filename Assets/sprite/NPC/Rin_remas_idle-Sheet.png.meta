@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -256,6 +257,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Rin_remas_idle-Sheet_2: -74126988073699211
+      Rin_remas_idle-Sheet_5: -4232081426003167694
+      Rin_remas_idle-Sheet_0: 9168321121366001322
+      Rin_remas_idle-Sheet_1: -1249883880887571789
+      Rin_remas_idle-Sheet_4: 3232540138538505050
+      Rin_remas_idle-Sheet_3: 5109435940258056033
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

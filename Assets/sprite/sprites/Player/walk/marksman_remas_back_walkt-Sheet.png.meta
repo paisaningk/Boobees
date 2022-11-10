@@ -150,6 +150,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -346,6 +347,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      marksman_remas_back_walkt-Sheet_3: 1361011237164004271
+      marksman_remas_back_walkt-Sheet_0: 4706059740326111305
+      marksman_remas_back_walkt-Sheet_1: 559925385789589201
+      marksman_remas_back_walkt-Sheet_2: -4508176370028234072
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
